@@ -6,6 +6,8 @@ import BookScreen from '../screens/BookScreen';
 import ChatScreen from '../screens/ChatScreen';
 import HomeScreen from '../screens/HomeScreen';
 import MapScreen from '../screens/MapScreen';
+import ProfilePage from '../screens/ProfilePage';
+import { FontAwesome } from '@expo/vector-icons'; 
 
 const Tab = createBottomTabNavigator();
 
@@ -48,6 +50,7 @@ function BottomNavigation() {
             ),
           }}
         />
+        
         <Tab.Screen
           name="Map"
           component={MapScreen}
@@ -55,6 +58,16 @@ function BottomNavigation() {
             tabBarLabel: 'Map',
             tabBarIcon: ({ color, size }) => (
               <Icon name="map-outline" color={color} size={size} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name=" "
+          component={ProfilePage}
+          options={{
+            tabBarLabel: 'Profile',
+            tabBarIcon: ({ color, size }) => (
+              <FontAwesome name="user" color={color} size={size}/>
             ),
           }}
         />
