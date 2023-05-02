@@ -19,26 +19,6 @@ function BottomNavigation() {
         }}
       >
         <Tab.Screen
-          name="Book"
-          component={BookScreen}
-          options={{
-            tabBarLabel: 'Book',
-            tabBarIcon: ({ color, size }) => (
-              <Icon name="book-outline" color={color} size={size} />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Chat"
-          component={ChatScreen}
-          options={{
-            tabBarLabel: 'Chat',
-            tabBarIcon: ({ color, size }) => (
-              <Icon name="chatbubbles-outline" color={color} size={size} />
-            ),
-          }}
-        />
-        <Tab.Screen
           name="Home"
           component={HomeScreen}
           options={{
@@ -55,6 +35,16 @@ function BottomNavigation() {
             tabBarLabel: 'Map',
             tabBarIcon: ({ color, size }) => (
               <Icon name="map-outline" color={color} size={size} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Profile"
+          component={ChatScreen}
+          options={{
+            tabBarLabel: 'Profile',
+            tabBarIcon: ({ color, size }) => (
+              <Icon name="person-outline" color={color} size={size} />
             ),
           }}
         />
