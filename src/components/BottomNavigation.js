@@ -21,26 +21,6 @@ function BottomNavigation() {
         }}
       >
         <Tab.Screen
-          name="Book"
-          component={BookScreen}
-          options={{
-            tabBarLabel: 'Book',
-            tabBarIcon: ({ color, size }) => (
-              <Icon name="book-outline" color={color} size={size} />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Chat"
-          component={ChatScreen}
-          options={{
-            tabBarLabel: 'Chat',
-            tabBarIcon: ({ color, size }) => (
-              <Icon name="chatbubbles-outline" color={color} size={size} />
-            ),
-          }}
-        />
-        <Tab.Screen
           name="Home"
           component={HomeScreen}
           options={{
@@ -62,12 +42,12 @@ function BottomNavigation() {
           }}
         />
         <Tab.Screen
-          name=" "
-          component={ProfilePage}
+          name="Profile"
+          component={ChatScreen}
           options={{
             tabBarLabel: 'Profile',
             tabBarIcon: ({ color, size }) => (
-              <FontAwesome name="user" color={color} size={size}/>
+              <Icon name="person-outline" color={color} size={size} />
             ),
           }}
         />
