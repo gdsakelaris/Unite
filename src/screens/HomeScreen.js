@@ -1,8 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, TextInput, SafeAreaView , TouchableOpacity, Image} from 'react-native';
 import { EvilIcons, Ionicons } from '@expo/vector-icons';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import ProductCard from '../components/Card';
 
 
 const HomeScreen = () => {
@@ -30,9 +28,56 @@ const HomeScreen = () => {
 
         {/* Cards container */}
         <View style={styles.cardsContainer}>
-            <ProductCard description={'Shelter'} title={'Shel'} ></ProductCard>
+              {/* shelter */}
+              <View style={styles.cardStyle}>
+                <Image source={require('../images/shelter.png')} style={styles.cardImage} resizeMode='cover'/>
+                <View style={styles.cardTitleContainer}>
+                  <Text style={styles.cardTitle} adjustsFontSizeToFit={true} minimumFontScale={0.5} >Shelter</Text>
+                </View>
+              </View>
 
+              <View style={styles.cardStyle}>
+                <Image source={require('../images/education.jpeg')} style={styles.cardImage} resizeMode='cover'/>
+                <View style={styles.cardTitleContainer}>
+                  <Text style={styles.cardTitle} adjustsFontSizeToFit={true} minimumFontScale={0.5} >Education</Text>
+                </View>
+
+              </View>
+
+              <View style={styles.cardStyle}>
+                <Image source={require('../images/community.jpeg')} style={styles.cardImage} resizeMode='cover'/>
+                  <View style={styles.cardTitleContainer}>
+                    <Text style={styles.cardTitle} adjustsFontSizeToFit={true} minimumFontScale={0.5} >Community</Text>
+                  </View>
+              </View>
+
+              <View style={styles.cardStyle}>
+                <Image source={require('../images/food.jpeg')} style={styles.cardImage} resizeMode='cover'/>
+                  <View style={styles.cardTitleContainer}>
+                    <Text style={styles.cardTitle} adjustsFontSizeToFit={true} minimumFontScale={0.5} >Food</Text>
+                  </View>
+              </View>
+
+              <View style={styles.cardStyle}>
+                <Image source={require('../images/employment.jpeg')} style={styles.cardImage} resizeMode='cover'/>
+                  <View style={styles.cardTitleContainer}>
+                    <Text style={styles.cardTitle} adjustsFontSizeToFit={true} minimumFontScale={0.5} >Employment</Text>
+                  </View>
+              </View>
+
+              <View style={styles.cardStyle}>
+                <Image source={require('../images/health.jpeg')} style={styles.cardImage} resizeMode='cover'/>
+                  <View style={styles.cardTitleContainer}>
+                    <Text style={styles.cardTitle} adjustsFontSizeToFit={true} minimumFontScale={0.5} >Health</Text>
+                  </View>
+              </View>
         </View>
+
+
+
+
+
+
 
     </SafeAreaView>
   );
@@ -110,8 +155,48 @@ const styles = StyleSheet.create({
 
   cardsContainer: {
     flex:8,
-    backgroundColor:'green'
+    flexWrap:'wrap',
+    alignContent: 'space-around',
+    paddingTop: '6%',
+    
+  },
+
+  cardStyle : {
+    width: '45%',
+    height: '25%',
+    marginBottom: '5%',
+    backgroundColor: "#FFF",
+    borderWidth: 0.05,
+    borderRadius:'12%',
+    shadowColor: '#171717',
+    shadowOffset: {width: 0, height: 4},
+    shadowOpacity: 0.5,
+    shadowRadius: 3,
+    elevation: 20
+  },
+  cardImage: {
+    width: '100%',
+    height: '100%',
+    borderRadius:'12%',
+  },
+  cardTitleContainer: {
+    position: 'absolute',
+    backgroundColor: "#FFF",
+    justifyContent:'center',
+    alignItems:'center',
+    width: '100%',
+    top: '70%',
+    borderBottomLeftRadius:'12%',
+    borderBottomRightRadius:'12%',
+    height: '30%'
+
+  },
+  cardTitle: {
+    fontSize: 20,
+    fontWeight: '500'
   }
+
+
 
 })
 export default HomeScreen;
