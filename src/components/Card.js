@@ -1,30 +1,45 @@
-import { Card } from "react-bootstrap";
+import React from "react";
+import { View, Text, Image, StyleSheet } from "react-native";
 
-// Each card will need have a picture, title, and description.
-const ProductCard = ({ picture, title, description }) => {
+const Card = ({ picture, title, description }) => {
   return (
-    <Card
-      className="mb-3"
-      style={{ border: "1px solid", borderColor: "var(--border-color)" }}
-    >
-      <Card.Img
-        className="product-card-image"
-        variant="top"
-        src={
+    <View style={styles.card}>
+      <Image
+        style={styles.image}
+        source={
           picture !== null
-            ? picture
-            : "https://placehold.co/400?text=No+image+available"
+            ? { uri: picture }
+            : { uri: "https://placehold.co/400?text=No+image+available" }
         }
       />
-      <Card.Body
-        className="d-flex align-items-center justify-content-center overflow-auto"
-        style={{ minHeight: "160px", maxHeight: "160px" }}
-      >
-        <Card.Title>{title}</Card.Title>
-        <Card.Text className="text-center">{description}</Card.Text>
-      </Card.Body>
-    </Card>
+      <View style={styles.content}>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.description}>{description}</Text>
+      </View>
+    </View>
   );
 };
 
-export default ProductCard;
+const styles = StyleSheet.create({
+  card: {
+    borderWidth: 1,
+    borderColor: "#000", // replace with your desired color
+    marginBottom: 10,
+  },
+  image: {
+    width: "100%",
+    height: 200, // adjust as needed
+  },
+  content: {
+    padding: 10,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  description: {
+    fontSize: 14,
+  },
+});
+
+export default Card;
