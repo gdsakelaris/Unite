@@ -1,84 +1,164 @@
-import React from 'react';
-import { View, Text, StyleSheet, TextInput, SafeAreaView , TouchableOpacity, Image} from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, TextInput, SafeAreaView, Image, Pressable} from 'react-native';
 import { EvilIcons, Ionicons } from '@expo/vector-icons';
 
 
 const HomeScreen = () => {
+  const [isFocus, setIsFocus] = useState(false)
   return (
     <SafeAreaView style={styles.container}>
         {/* search bar */}
         <View style={styles.searchBarContainer}>
           <View style={styles.searchBarView}>
-            <TextInput style={styles.searchBar} placeholder={'Search...'} autoCapitalize={false} autoComplete={false} clearButtonMode={true} inputMode={'text'}/>
+            <TextInput style={styles.searchBar} 
+                       placeholder={'Search...'} 
+                       autoCapitalize={false} 
+                       autoComplete={false} 
+                       clearButtonMode={true} 
+                       inputMode={'text'}/>
   
-            <EvilIcons name="search" size={30} color="black" style={styles.searchIcon}  adjustsFontSizeToFit={true} minimumFontScale={0.5} />
+            <EvilIcons 
+                       name="search" 
+                       size={30} 
+                       color="black" 
+                       style={styles.searchIcon}  
+                       adjustsFontSizeToFit={true} 
+                       minimumFontScale={0.5} />
           </View>
         </View>
 
         {/* Location sign */}
         <View style={styles.locationSignContainer}>
-              <Ionicons name="ios-location-sharp" size={24} color="#FF4A0E"  adjustsFontSizeToFit={true} minimumFontScale={0.5}  style={styles.locationIcon} />
-              <View style={styles.locationTextContainer}>
-                <TouchableOpacity>
-                  <Text style={styles.locationText} adjustsFontSizeToFit={true} minimumFontScale={0.5}>Florida, USA</Text>
-                </TouchableOpacity>
+              <Ionicons 
+                       name="ios-location-sharp" 
+                       size={24} 
+                       color="#FF4A0E"  
+                       adjustsFontSizeToFit={true} 
+                       minimumFontScale={0.5}  
+                       style={styles.locationIcon} />
+              <View 
+                       style={styles.locationTextContainer}>
+                  <Pressable 
+                       onPressIn={() => setIsFocus(true)} 
+                       onPressOut={() => setIsFocus(false)}>
+                    <Text 
+                        style={isFocus ? [styles.locationText, {textDecorationLine: 'underline'}] : styles.locationText } 
+                        adjustsFontSizeToFit={true} 
+                        minimumFontScale={0.5}>
+                            Florida, USA
+                    </Text>
+                  </Pressable>
               </View>
-
+                   
         </View>
 
         {/* Cards container */}
-        <View style={styles.cardsContainer}>
+        <View 
+              style={styles.cardsContainer}>
               {/* shelter */}
-              <View style={styles.cardStyle}>
-                <Image source={require('../images/shelter.png')} style={styles.cardImage} resizeMode='cover'/>
-                <View style={styles.cardTitleContainer}>
-                  <Text style={styles.cardTitle} adjustsFontSizeToFit={true} minimumFontScale={0.5} >Shelter</Text>
-                </View>
+              <View 
+                    style={styles.cardStyle}>
+                    <Image 
+                          source={require('../images/shelter.png')} 
+                          style={styles.cardImage} 
+                          resizeMode='cover'/>
+                    <View 
+                          style={styles.cardTitleContainer}>
+                          <Text 
+                                style={styles.cardTitle} 
+                                adjustsFontSizeToFit={true} 
+                                minimumFontScale={0.5}>
+                                      Shelter
+                          </Text>
+                    </View>
               </View>
 
-              <View style={styles.cardStyle}>
-                <Image source={require('../images/education.jpeg')} style={styles.cardImage} resizeMode='cover'/>
-                <View style={styles.cardTitleContainer}>
-                  <Text style={styles.cardTitle} adjustsFontSizeToFit={true} minimumFontScale={0.5} >Education</Text>
-                </View>
-
+              <View 
+                    style={styles.cardStyle}>
+                    <Image 
+                           source={require('../images/education.jpeg')} 
+                           style={styles.cardImage} 
+                           resizeMode='cover'/>
+                    <View 
+                           style={styles.cardTitleContainer}>
+                           <Text 
+                                 style={styles.cardTitle} 
+                                 adjustsFontSizeToFit={true} 
+                                 minimumFontScale={0.5}>
+                                        Education
+                           </Text>
+                    </View>
               </View>
 
-              <View style={styles.cardStyle}>
-                <Image source={require('../images/community.jpeg')} style={styles.cardImage} resizeMode='cover'/>
-                  <View style={styles.cardTitleContainer}>
-                    <Text style={styles.cardTitle} adjustsFontSizeToFit={true} minimumFontScale={0.5} >Community</Text>
-                  </View>
+              <View 
+                    style={styles.cardStyle}>
+                    <Image 
+                            source={require('../images/community.jpeg')} 
+                            style={styles.cardImage} 
+                            resizeMode='cover'/>
+                    <View 
+                            style={styles.cardTitleContainer}>
+                            <Text 
+                                  style={styles.cardTitle} 
+                                  adjustsFontSizeToFit={true} 
+                                  minimumFontScale={0.5}>
+                                         Community
+                            </Text>
+                    </View>
               </View>
 
-              <View style={styles.cardStyle}>
-                <Image source={require('../images/food.jpeg')} style={styles.cardImage} resizeMode='cover'/>
-                  <View style={styles.cardTitleContainer}>
-                    <Text style={styles.cardTitle} adjustsFontSizeToFit={true} minimumFontScale={0.5} >Food</Text>
-                  </View>
+              <View 
+                    style={styles.cardStyle}>
+                    <Image 
+                            source={require('../images/food.jpeg')} 
+                            style={styles.cardImage} 
+                            resizeMode='cover'/>
+                    <View 
+                            style={styles.cardTitleContainer}>
+                            <Text 
+                                  style={styles.cardTitle} 
+                                  adjustsFontSizeToFit={true} 
+                                  minimumFontScale={0.5}>
+                                           Food
+                            </Text>
+                    </View>
               </View>
 
-              <View style={styles.cardStyle}>
-                <Image source={require('../images/employment.jpeg')} style={styles.cardImage} resizeMode='cover'/>
-                  <View style={styles.cardTitleContainer}>
-                    <Text style={styles.cardTitle} adjustsFontSizeToFit={true} minimumFontScale={0.5} >Employment</Text>
-                  </View>
+              <View 
+                    style={styles.cardStyle}>
+                    <Image 
+                            source={require('../images/employment.jpeg')} 
+                            style={styles.cardImage} 
+                            resizeMode='cover'/>
+                    <View 
+                            style={styles.cardTitleContainer}>
+                            <Text 
+                                  style={styles.cardTitle} 
+                                  adjustsFontSizeToFit={true}
+                                  minimumFontScale={0.5}>
+                                          Employment
+                            </Text>
+                    </View>
               </View>
 
-              <View style={styles.cardStyle}>
-                <Image source={require('../images/health.jpeg')} style={styles.cardImage} resizeMode='cover'/>
-                  <View style={styles.cardTitleContainer}>
-                    <Text style={styles.cardTitle} adjustsFontSizeToFit={true} minimumFontScale={0.5} >Health</Text>
-                  </View>
+              <View 
+                    style={styles.cardStyle}>
+                    <Image 
+                            source={require('../images/health.jpeg')} 
+                            style={styles.cardImage} 
+                            resizeMode='cover'/>
+                    <View 
+                            style={styles.cardTitleContainer}>
+                            <Text 
+                                  style={styles.cardTitle} 
+                                  adjustsFontSizeToFit={true} 
+                                  minimumFontScale={0.5}>
+                                          Health
+                            </Text>
+                    </View>
               </View>
         </View>
-
-
-
-
-
-
-
+        
     </SafeAreaView>
   );
 };
@@ -107,7 +187,8 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 0, height: 4},
     shadowOpacity: 0.5,
     shadowRadius: 3,
-    elevation: 20
+    elevation: 20,
+  
 
    
    
@@ -147,7 +228,7 @@ const styles = StyleSheet.create({
   locationText: {
     fontSize: '20%',
     color:'#337155',
-    fontWeight: '600'
+    fontWeight: '600',
   },
   locationIcon: {
     //top:'2%'
@@ -157,7 +238,7 @@ const styles = StyleSheet.create({
     flex:8,
     flexWrap:'wrap',
     alignContent: 'space-around',
-    paddingTop: '6%',
+    paddingTop: '5%',
     
   },
 
@@ -169,10 +250,11 @@ const styles = StyleSheet.create({
     borderWidth: 0.05,
     borderRadius:'12%',
     shadowColor: '#171717',
-    shadowOffset: {width: 0, height: 4},
-    shadowOpacity: 0.5,
+    shadowOffset: {width: 0, height: 5},
+    shadowOpacity: 0.55,
     shadowRadius: 3,
-    elevation: 20
+    elevation: 20,
+    
   },
   cardImage: {
     width: '100%',
