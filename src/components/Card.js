@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
 
-const Card = ({ picture, title, description }) => {
+const Card = ({ picture, title }) => {
   return (
     <View style={styles.card}>
       <Image
@@ -14,7 +14,6 @@ const Card = ({ picture, title, description }) => {
       />
       <View style={styles.content}>
         <Text style={styles.title}>{title}</Text>
-        <Text style={styles.description}>{description}</Text>
       </View>
     </View>
   );
