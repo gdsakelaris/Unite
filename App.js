@@ -12,7 +12,6 @@ function App() {
     setIsLoggedIn(true);
   };
 
-  // return isLoggedIn ? <BottomNavigation /> : <LoginScreen onLogin={handleLogin} />;
   return <Profile></Profile>;
 }
 
