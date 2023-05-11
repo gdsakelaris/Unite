@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, SafeAreaView, Image, Pressable} from 'react-native';
 import { EvilIcons, Ionicons } from '@expo/vector-icons';
 
-
 const HomeScreen = () => {
   const [isFocus, setIsFocus] = useState(false)
   return (

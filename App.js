@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -8,17 +9,15 @@ import HomeScreen from './src/screens/HomeScreen';
 
 
 function App() {
-
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = () => {
     setIsLoggedIn(true);
   };
 
-  // return isLoggedIn ? <BottomNavigation /> : <LoginScreen onLogin={handleLogin} />;
-  return (
-    <HomeScreen></HomeScreen>
-  )
+
+  return <Profile></Profile>;
+
 }
 
 export default App;
