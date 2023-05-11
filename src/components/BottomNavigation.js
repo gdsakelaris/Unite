@@ -64,7 +64,7 @@ function BottomNavigation() {
         />
         <Tab.Screen
           name="Profile"
-          component={ChatScreen}
+          component={ProfilePage}
           options={{
             tabBarLabel: 'Profile',
             tabBarIcon: ({ color, size }) => (

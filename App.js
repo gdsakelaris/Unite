@@ -16,7 +16,17 @@ function App() {
   };
 
 
-  return <Profile></Profile>;
+  if (isLoggedIn)  {
+    return (
+      <BottomNavigation />
+    );
+  } else {
+    return (
+      <LoginScreen onLogin={handleLogin} />
+    );
+
+    }
+
 
 }
 
