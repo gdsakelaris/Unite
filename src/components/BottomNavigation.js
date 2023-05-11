@@ -1,11 +1,14 @@
-import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Icon from "react-native-vector-icons/Ionicons";
-import BookScreen from "../screens/BookScreen";
-import ChatScreen from "../screens/ChatScreen";
-import HomeScreen from "../screens/HomeScreen";
-import MapScreen from "../screens/MapScreen";
+
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Icon from 'react-native-vector-icons/Ionicons';
+import BookScreen from '../screens/BookScreen';
+import ChatScreen from '../screens/ChatScreen';
+import HomeScreen from '../screens/HomeScreen';
+import MapScreen from '../screens/MapScreen';
+import ProfilePage from '../screens/ProfilePage';
+import { FontAwesome } from '@expo/vector-icons'; 
 
 const Tab = createBottomTabNavigator();
 
@@ -48,6 +51,7 @@ function BottomNavigation() {
             ),
           }}
         />
+        
         <Tab.Screen
           name="Map"
           component={MapScreen}
