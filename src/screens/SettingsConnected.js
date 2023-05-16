@@ -41,42 +41,41 @@ export default function Setting_connected() {
         <TouchableOpacity style={styles.rowContainer}>
           <Text style={{ marginLeft: 15, flex: 1, fontSize: 16 }}>Google</Text>
           <CustomSwitch 
-            value={switch1On}
             onSwitch={toggleSwitch1}
+            onSwitchReverse={toggleSwitch1}
             buttonWidth={25}
             switchWidth={58}
             buttonPadding={2}
             switchBackgroundColor={switch1On ? '#00FF00' : '#FF0000'}
-            switchLeftText="OFF"
-            switchRightText="ON"
+            switchLeftText="ON"
+            switchRightText="OFF"
             
           />
         </TouchableOpacity>
         <TouchableOpacity style={styles.rowContainer}>
           <Text style={{ marginLeft: 15, flex: 1, fontSize: 16 }}>Facebook</Text>
           <CustomSwitch 
-            value={switch2On}
             onSwitch={toggleSwitch2}
+            onSwitchReverse={toggleSwitch2}
             buttonWidth={25}
             switchWidth={58}
             buttonPadding={2}
-            
             switchBackgroundColor={switch2On ? '#00FF00' : '#FF0000'}
-            switchLeftText="OFF"
-            switchRightText="ON"
+            switchLeftText="ON"
+            switchRightText="OFF"
           />
         </TouchableOpacity>
         <TouchableOpacity style={styles.rowContainer}>
           <Text style={{ marginLeft: 15, flex: 1, fontSize: 16 }}>Twitter</Text>
           <CustomSwitch 
-            value={switch3On}
             onSwitch={toggleSwitch3}
+            onSwitchReverse={toggleSwitch3}
             buttonWidth={25}
             switchWidth={58}
             buttonPadding={2}
             switchBackgroundColor={switch3On ? '#00FF00' : '#FF0000'}
-            switchLeftText="OFF"
-            switchRightText="ON"
+            switchLeftText="ON"
+            switchRightText="OFF"
           />
         </TouchableOpacity>
       </View>
