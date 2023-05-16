@@ -5,7 +5,7 @@ import CustomSwitch from 'react-native-custom-switch';
 
 
 
-export default function Setting_lang() {
+export default function Setting_connected() {
   const [switch1On, setSwitch1On] = useState(true);
   const [switch2On, setSwitch2On] = useState(true);
   const [switch3On, setSwitch3On] = useState(true);
