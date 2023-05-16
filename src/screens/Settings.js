@@ -6,7 +6,7 @@ import { AntDesign } from '@expo/vector-icons';
 
 
 
-function Settings(props) {
+function Settings({navigation}) {
   const [pushNotification, setPushNotification] = useState(false);
   const toggleNotification = () => setPushNotification(prevVal => !prevVal)
   return (
@@ -81,7 +81,7 @@ function Settings(props) {
                 <View 
                     style={styles.settingButton}>
                     <TouchableOpacity 
-                                  onPress={() => console.log("Pressed")}>
+                                  onPress={() => navigation.navigate('Language')}>
                                   <AntDesign 
                                             name="right" 
                                             size={20} 
@@ -126,7 +126,7 @@ function Settings(props) {
                 </Text>
                 <View style={styles.settingButton}>
                     <TouchableOpacity 
-                                    onPress={() => console.log("Pressed")}>
+                                   >
                                     <AntDesign 
                                               name="right" 
                                               size={20} 
@@ -149,7 +149,7 @@ function Settings(props) {
                 <View 
                       style={styles.settingButton}>
                       <TouchableOpacity 
-                                      onPress={() => console.log("Pressed")}>
+                                      onPress={() => navigation.navigate('ConnectedAccount')}>
                                       <AntDesign 
                                                 name="right" 
                                                 size={20} 
