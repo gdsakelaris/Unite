@@ -18,7 +18,6 @@ function App() {
   };
 
 
-<<<<<<< HEAD
   if (isLoggedIn)  {
     return (
       <BottomNavigation />
@@ -30,9 +29,6 @@ function App() {
 
     }
 
-=======
-  return <Setting_connected></Setting_connected>;
->>>>>>> Yash-Unite-Demo
 
 }
 
