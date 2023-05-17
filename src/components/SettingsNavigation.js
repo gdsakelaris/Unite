@@ -1,10 +1,10 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Settings from '../screens/Settings';
-import ConnectedAccount from '../screens/ConnectedAccount';
-import Language from '../screens/Language';
 import { View, StyleSheet } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
+import Setting_connected from '../screens/SettingsConnected';
+import Setting_lang from '../screens/SettingsLanguage';
 const Stack = createStackNavigator();
 function SettingsNavigation(props) {
   return (
@@ -19,14 +19,14 @@ function SettingsNavigation(props) {
                 
               
               },
-              headerBackground: () => <View style={{backgroundColor:'#f2f2f2', width: '100%', height: '100%'}}></View>,
+              headerBackground: () => <View style={{backgroundColor:'white', width: '100%', height: '100%'}}></View>,
               headerStyle: {
                 height: 150
               }
             }}>
       <Stack.Screen name='Settings' component={Settings}/>
-      <Stack.Screen name= 'Language' component={Language}/>
-      <Stack.Screen name='ConnectedAccount' component={ConnectedAccount}/>
+      <Stack.Screen name= 'Language' component={Setting_lang}/>
+      <Stack.Screen name='ConnectedAccount' component={Setting_connected}/>
 
 
     </Stack.Navigator>

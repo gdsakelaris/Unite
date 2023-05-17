@@ -70,116 +70,130 @@ function Settings({navigation}) {
             </View>
 
             {/* Language */}
-            <View 
-                style={styles.settingOptContainer}>
-                <Text 
-                    style={styles.settingOptText}
-                    adjustsFontSizeToFit={true}
-                    minimumFontScale={0.5}>
-                          Language
-                </Text> 
-                <View 
-                    style={styles.settingButton}>
-                    <TouchableOpacity 
-                                  onPress={() => navigation.navigate('Language')}>
-                                  <AntDesign 
-                                            name="right" 
-                                            size={20} 
-                                            color="black" 
-                                            adjustsFontSizeToFit={true}
-                                            minimumFontScale={0.5}/>
-                    </TouchableOpacity>
-                </View> 
-            </View>
+            <TouchableOpacity 
+                          style={styles.settingOptContainer}
+                          onPress={() => navigation.navigate('Language')}>
+                      
+                        
+                          <Text 
+                              style={styles.settingOptText}
+                              adjustsFontSizeToFit={true}
+                              minimumFontScale={0.5}>
+                                    Language
+                          </Text> 
+                          <View 
+                              style={styles.settingButton}>
+                                        <AntDesign 
+                                                  name="right" 
+                                                  size={20} 
+                                                  color="black" 
+                                                  adjustsFontSizeToFit={true}
+                                                  minimumFontScale={0.5}/>
+                            
+                          </View> 
+                      
+            </TouchableOpacity>
 
             {/* Privacy & Security */}
-            <View 
-                style={styles.settingOptContainer}> 
-                <Text 
-                    style={styles.settingOptText}
-                    adjustsFontSizeToFit={true}
-                    minimumFontScale={0.5}>
-                          Privacy & Security
-                </Text> 
-                <View 
-                    style={styles.settingButton}>
-                    <TouchableOpacity 
-                                    onPress={() => console.log("Pressed")}>
-                                    <AntDesign 
-                                            name="right" 
-                                            size={20} 
-                                            color="black"
-                                            adjustsFontSizeToFit={true}
-                                            minimumFontScale={0.5}/>
-                    </TouchableOpacity>
-                </View> 
-            </View>
+            <TouchableOpacity 
+                          style={styles.settingOptContainer}
+                          onPress={() => console.log('Pressed')}>
+                      
+                        
+                          <Text 
+                              style={styles.settingOptText}
+                              adjustsFontSizeToFit={true}
+                              minimumFontScale={0.5}>
+                                    Privacy & Security
+                          </Text> 
+                          <View 
+                              style={styles.settingButton}>
+                                        <AntDesign 
+                                                  name="right" 
+                                                  size={20} 
+                                                  color="black" 
+                                                  adjustsFontSizeToFit={true}
+                                                  minimumFontScale={0.5}/>
+                            
+                          </View> 
+                      
+            </TouchableOpacity>
 
             {/* Terms of Service */}
-            <View 
-                style={styles.settingOptContainer}>
-                <Text 
-                    style={styles.settingOptText}
-                    adjustsFontSizeToFit={true}
-                    minimumFontScale={0.5}>
-                            Terms of Service
-                </Text>
-                <View style={styles.settingButton}>
-                    <TouchableOpacity 
-                                   >
-                                    <AntDesign 
-                                              name="right" 
-                                              size={20} 
-                                              color="black" 
-                                              adjustsFontSizeToFit={true}
-                                              minimumFontScale={0.5}/>
-                    </TouchableOpacity>
-                </View> 
-            </View>
+            <TouchableOpacity 
+                          style={styles.settingOptContainer}
+                          onPress={() => console.log('Pressed')}>
+                      
+                        
+                          <Text 
+                              style={styles.settingOptText}
+                              adjustsFontSizeToFit={true}
+                              minimumFontScale={0.5}>
+                                    Terms of Service
+                          </Text> 
+                          <View 
+                              style={styles.settingButton}>
+                                        <AntDesign 
+                                                  name="right" 
+                                                  size={20} 
+                                                  color="black" 
+                                                  adjustsFontSizeToFit={true}
+                                                  minimumFontScale={0.5}/>
+                            
+                          </View> 
+                      
+            </TouchableOpacity>
 
             {/* Connected Account */}
-            <View 
-                style={styles.settingOptContainer}>
-                <Text 
-                      style={styles.settingOptText}
-                      adjustsFontSizeToFit={true}
-                      minimumFontScale={0.5}>
-                            Connected Accounts
-                </Text>
-                <View 
-                      style={styles.settingButton}>
-                      <TouchableOpacity 
-                                      onPress={() => navigation.navigate('ConnectedAccount')}>
-                                      <AntDesign 
-                                                name="right" 
-                                                size={20} 
-                                                color="black" 
-                                                adjustsFontSizeToFit={true}
-                                                minimumFontScale={0.5}/>
-                    </TouchableOpacity>
-                </View> 
-            </View>
+            <TouchableOpacity 
+                          style={styles.settingOptContainer}
+                          onPress={() => navigation.navigate('ConnectedAccount')}>
+                      
+                        
+                          <Text 
+                              style={styles.settingOptText}
+                              adjustsFontSizeToFit={true}
+                              minimumFontScale={0.5}>
+                                    Connected Accounts
+                          </Text> 
+                          <View 
+                              style={styles.settingButton}>
+                                        <AntDesign 
+                                                  name="right" 
+                                                  size={20} 
+                                                  color="black" 
+                                                  adjustsFontSizeToFit={true}
+                                                  minimumFontScale={0.5}/>
+                            
+                          </View> 
+                      
+            </TouchableOpacity>
 
             {/* App Info */}
-            <View 
-                  style={styles.settingOptContainer}>
-                  <Text 
-                        style={styles.settingOptText}>
-                              App Info
-                  </Text>
-                  <View 
-                        style={styles.settingButton}>
-                        <TouchableOpacity 
-                                          onPress={() => console.log("Pressed")}>
-                                          <AntDesign 
-                                                    name="right" 
-                                                    size={20} 
-                                                    color="black" 
-                                                    adjustsFontSizeToFit={true}
-                                                    minimumFontScale={0.5}/>
-                        </TouchableOpacity>
-                </View> 
-            </View>
+            <TouchableOpacity 
+                          style={styles.settingOptContainer}
+                          onPress={() => console.log('Pressed')}>
+                      
+                        
+                          <Text 
+                              style={styles.settingOptText}
+                              adjustsFontSizeToFit={true}
+                              minimumFontScale={0.5}>
+                                    App Info
+                          </Text> 
+                          <View 
+                              style={styles.settingButton}>
+                                        <AntDesign 
+                                                  name="right" 
+                                                  size={20} 
+                                                  color="black" 
+                                                  adjustsFontSizeToFit={true}
+                                                  minimumFontScale={0.5}/>
+                            
+                          </View> 
+                      
+            </TouchableOpacity>
+            
       </View>
 
     </View>
@@ -189,11 +203,10 @@ function Settings({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent:'center',
-    alignItems:'center'
+    backgroundColor:'white'
   },
   settingContainer: {
-    height: '60%',
+    height: '90%',
     width: '100%'
   },
   settingOptContainer: {
