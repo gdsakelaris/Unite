@@ -12,12 +12,7 @@ export default function Setting_lang() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.flex_container}>
-        <TouchableOpacity>
-          <AntDesign name="arrowleft" size={26} color="black" />
-        </TouchableOpacity>
-        <Text style={styles.Font}> Settings </Text>
-      </View>
+      
       <View style={styles.details_container}>
         <TouchableOpacity
           style={[
@@ -142,6 +137,7 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     height: "100%",
+    marginTop: "10%",
     backgroundColor: "white",
   },
   text: {

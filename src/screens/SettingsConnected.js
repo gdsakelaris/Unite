@@ -30,12 +30,7 @@ export default function Setting_connected() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.flex_container}>
-        <TouchableOpacity>
-          <AntDesign name="arrowleft" size={26} color="black" />
-        </TouchableOpacity>
-        <Text style={styles.Font}> Settings </Text>
-      </View>
+      
 
       <View style={styles.details_container}>
         <TouchableOpacity style={styles.rowContainer}>
@@ -46,8 +41,10 @@ export default function Setting_connected() {
             buttonWidth={25}
             switchWidth={58}
             buttonPadding={2}
-            switchBackgroundColor={switch1On ? '#00FF00' : '#FF0000'}
+            switchBackgroundColor={switch1On ? '#0F993E' : '#AD2525'}
+            switchLeftTextStyle={{ fontSize: 10}}
             switchLeftText="ON"
+            switchRightTextStyle={{ fontSize: 10}}
             switchRightText="OFF"
             
           />
@@ -60,8 +57,10 @@ export default function Setting_connected() {
             buttonWidth={25}
             switchWidth={58}
             buttonPadding={2}
-            switchBackgroundColor={switch2On ? '#00FF00' : '#FF0000'}
+            switchBackgroundColor={switch2On ? '#0F993E' : '#AD2525'}
+            switchLeftTextStyle={{ fontSize: 10}}
             switchLeftText="ON"
+            switchRightTextStyle={{ fontSize: 10}}
             switchRightText="OFF"
           />
         </TouchableOpacity>
@@ -73,8 +72,10 @@ export default function Setting_connected() {
             buttonWidth={25}
             switchWidth={58}
             buttonPadding={2}
-            switchBackgroundColor={switch3On ? '#00FF00' : '#FF0000'}
+            switchBackgroundColor={switch3On ? '#AD2525' : '#0F993E'}
+            switchLeftTextStyle={{ fontSize: 10}}
             switchLeftText="ON"
+            switchRightTextStyle={{ fontSize: 10}}
             switchRightText="OFF"
           />
         </TouchableOpacity>
@@ -86,6 +87,7 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     height: "100%",
+    marginTop: "10%",
     backgroundColor: "white",
   },
   text: {
