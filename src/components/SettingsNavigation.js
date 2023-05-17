@@ -14,7 +14,7 @@ function SettingsNavigation(props) {
               headerBackTitle: 'Settings',
               headerTitle:'',
               headerBackTitleStyle: {
-                fontSize: 24,
+                fontSize: 30,
                 color: '#252525',
                 
               
