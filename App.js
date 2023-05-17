@@ -6,6 +6,8 @@ import LoginScreen from './src/screens/LoginScreen';
 import BottomNavigation from './src/components/BottomNavigation';
 import Profile from './src/screens/Profile';
 import HomeScreen from './src/screens/HomeScreen';
+import Setting_lang from './src/screens/SettingsLanguage';
+import Setting_connected from './src/screens/SettingsConnected';
 
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
   };
 
 
+<<<<<<< HEAD
   if (isLoggedIn)  {
     return (
       <BottomNavigation />
@@ -27,6 +30,9 @@ function App() {
 
     }
 
+=======
+  return <Setting_connected></Setting_connected>;
+>>>>>>> Yash-Unite-Demo
 
 }
 
