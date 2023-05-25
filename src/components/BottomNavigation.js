@@ -61,6 +61,7 @@ function BottomNavigation() {
             tabBarIcon: ({ color, size }) => (
               <Icon name="map-outline" color={color} size={size} />
             ),
+            headerShown: false
           }}
         />
         <Tab.Screen
