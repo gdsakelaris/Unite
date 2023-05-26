@@ -211,7 +211,6 @@ const styles = StyleSheet.create({
 
   locationSignContainer: {
     flex:1,
-   // backgroundColor:'blue',
     flexDirection:'row',
     justifyContent:'center',
     alignItems:'center'

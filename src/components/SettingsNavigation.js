@@ -6,23 +6,17 @@ import { AntDesign } from '@expo/vector-icons';
 import Setting_connected from '../screens/SettingsConnected';
 import Setting_lang from '../screens/SettingsLanguage';
 const Stack = createStackNavigator();
-function SettingsNavigation(props) {
+const SettingsNavigation = () => {
+  const headerCustom = () => (<AntDesign name="arrowleft" size={30} color="#252525" style={styles.headerCustomIcon}/>)
   return (
     <Stack.Navigator
             screenOptions={{
-              headerBackImage: () => (<AntDesign name="arrowleft" size={30} color="#252525" style={{marginLeft: '10%', marginRight: '4%'}}/>),
+              headerBackImage: headerCustom,
               headerBackTitle: 'Settings',
               headerTitle:'',
-              headerBackTitleStyle: {
-                fontSize: 30,
-                color: '#252525',
-                
-              
-              },
-              headerBackground: () => <View style={{backgroundColor:'white', width: '100%', height: '100%'}}></View>,
-              headerStyle: {
-                height: 150
-              }
+              headerBackTitleStyle: styles.headerBackTitleStyle,
+              headerBackground: () => <View style={styles.headerBackground}/>,
+              headerStyle: styles.headerStyle
             }}>
       <Stack.Screen name='Settings' component={Settings}/>
       <Stack.Screen name= 'Language' component={Setting_lang}/>
@@ -33,7 +27,25 @@ function SettingsNavigation(props) {
 
   );
 }
+const styles = StyleSheet.create({
+  headerCustomIcon: {
+    marginLeft: '10%',
+    marginRight: '4%'
+  },
+  headerBackground: {
+    backgroundColor:'white', 
+    width: '100%', 
+    height: '100%'
 
+  },
+  headerStyle: {
+    height: 150
+  },
+  headerBackTitleStyle: {
+    fontSize: 30,
+    color: '#252525', 
+  }
+})
 
 
 export default SettingsNavigation;
