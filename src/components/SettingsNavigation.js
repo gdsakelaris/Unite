@@ -5,6 +5,9 @@ import { View, StyleSheet } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import Setting_connected from '../screens/SettingsConnected';
 import Setting_lang from '../screens/SettingsLanguage';
+import PrivacyAgreementScreen from '../screens/PrivacyAgreementScreen'
+import TermsOfServiceScreen from '../screens/TermsOfServiceScreen'
+
 const Stack = createStackNavigator();
 function SettingsNavigation(props) {
   return (
@@ -27,6 +30,8 @@ function SettingsNavigation(props) {
       <Stack.Screen name='Settings' component={Settings}/>
       <Stack.Screen name= 'Language' component={Setting_lang}/>
       <Stack.Screen name='ConnectedAccount' component={Setting_connected}/>
+      <Stack.Screen name='PrivacyAgreementScreen' component={PrivacyAgreementScreen}/>
+      <Stack.Screen name='TermsOfServiceScreen' component={TermsOfServiceScreen}/>
 
 
     </Stack.Navigator>

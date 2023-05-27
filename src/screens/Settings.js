@@ -97,7 +97,7 @@ function Settings({navigation}) {
             {/* Privacy & Security */}
             <TouchableOpacity 
                           style={styles.settingOptContainer}
-                          onPress={() => console.log('Pressed')}>
+                          onPress={() => navigation.navigate('PrivacyAgreementScreen')}>
                       
                         
                           <Text 
@@ -122,7 +122,7 @@ function Settings({navigation}) {
             {/* Terms of Service */}
             <TouchableOpacity 
                           style={styles.settingOptContainer}
-                          onPress={() => console.log('Pressed')}>
+                          onPress={() => navigation.navigate('TermsOfServiceScreen')}>
                       
                         
                           <Text 
