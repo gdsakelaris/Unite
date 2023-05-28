@@ -1,13 +1,15 @@
+// LoginScreen.js:
+
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import UniteLogo from '../images/Unite_Logo.png';
 
-const LoginScreen = ({onLogin}) => {
+const LoginScreen = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
 
   const handleLogin = () => {
     // Handle login logic here
@@ -40,6 +42,10 @@ const LoginScreen = ({onLogin}) => {
 
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Login</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+        <Text style={styles.signupText}>Don't have an account? Sign Up</Text>
       </TouchableOpacity>
     </View>
   );
@@ -84,6 +90,12 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold'
+  },
+  signupText: {
+    marginTop: 20,
+    color: '#0066cc',
+    fontSize: 18,
+    textDecorationLine: 'underline'
   }
 });
 
