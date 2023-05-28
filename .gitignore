@@ -1,7 +1,3 @@
-# DS
-package.json
-package-lock.json
-#
 node_modules/
 .expo/
 dist/
