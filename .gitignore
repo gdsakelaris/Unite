@@ -12,3 +12,11 @@ web-build/
 
 # macOS
 .DS_Store
+
+# Windows
+Thumbs.db
+
+#idea
+.idea/
+
+.env

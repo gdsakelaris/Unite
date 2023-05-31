@@ -11,7 +11,7 @@ import { FontAwesome } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 
-export default function ProfilePage() {
+export default function ProfilePage({navigation}) {
   return ( 
     <View style={styles.appContainer}>
       <View style={styles.img_container}>
@@ -29,7 +29,7 @@ export default function ProfilePage() {
           <Text style={{ marginLeft: 20, flex: 1 }}>Bookmarked Services</Text>
           <MaterialIcons name="keyboard-arrow-right" size={24} color="black" />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.rowContainer}>
+        <TouchableOpacity style={styles.rowContainer} onPress={() => navigation.navigate('SettingsNavigation')}>
           <Ionicons name="settings-sharp" size={24} color="#ff4500" />
           <Text style={{ marginLeft: 15, flex: 1 }}>Settings</Text>
           <MaterialIcons name="keyboard-arrow-right" size={24} color="black" />

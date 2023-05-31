@@ -44,7 +44,7 @@ const Setting_lang = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1, 
     backgroundColor: "white",
   },
   details_container: {
