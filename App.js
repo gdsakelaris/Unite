@@ -4,11 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from './src/screens/LoginScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
-import BottomNavigation from './src/components/BottomNavigation';
-import Profile from './src/screens/Profile';
-import HomeScreen from './src/screens/HomeScreen';
-import Setting_lang from './src/screens/SettingsLanguage';
-import Setting_connected from './src/screens/SettingsConnected';
+import BottomNavigation from './src/navigations/BottomNavigation'
 
 const Stack = createStackNavigator();
 
