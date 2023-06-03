@@ -7,9 +7,9 @@ const Stack = createStackNavigator();
 function ProfileNavigation(props) {
   return (
     <Stack.Navigator>
+
       {/* Profile */}
       <Stack.Screen name='Profile' component={ProfilePage} />
-
 
       {/* Bookmarked Services
       <Stack.Screen /> */}
@@ -17,16 +17,16 @@ function ProfileNavigation(props) {
       {/* Settings */}
       <Stack.Screen name='SettingsNavigation' component={SettingsNavigation} options={{
         headerShown: false
-      }}/>
+      }} />
 
       {/* Help */}
       {/* <Stack.Screen /> */}
 
       {/* Log out */}
       {/* <Stack.Screen /> */}
-      
+
     </Stack.Navigator>
-    
+
   );
 }
 

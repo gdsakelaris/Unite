@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button } from 'react-native';
+import axios from 'axios';
 
 export default function LoginScreen({ onLogin }) {
   const [email, setEmail] = useState('');
@@ -7,8 +8,19 @@ export default function LoginScreen({ onLogin }) {
 
   const handleSubmit = () => {
     // Perform authentication logic here, e.g. calling an API
-    // If authentication succeeds, call the onLogin function to set the isLoggedIn state to true
-    onLogin();
+    axios.post('http://75.102.242.221:5000/login', {
+      email,
+      password
+    })
+      .then(response => {
+        // If authentication succeeds, call the onLogin function to set the isLoggedIn state to true
+        onLogin();
+      })
+      .catch(error => {
+        // Show an error message
+        Alert.alert('Error', 'Could not log in. Please check your credentials.');
+        console.log(error);
+      });
   };
 
   return (

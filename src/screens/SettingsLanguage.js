@@ -12,7 +12,7 @@ export default function Setting_lang() {
 
   return (
     <View style={styles.container}>
-      
+
       <View style={styles.details_container}>
         <TouchableOpacity
           style={[
@@ -104,7 +104,7 @@ export default function Setting_lang() {
           style={[
             styles.rowContainer,
             selectedLanguage === "Mandarin Chinese" &&
-              styles.selectedRowContainer,
+            styles.selectedRowContainer,
           ]}
           onPress={() => handleLanguageSelection("Mandarin Chinese")}
         >
@@ -135,7 +135,7 @@ export default function Setting_lang() {
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
+    flex: 1,
     backgroundColor: "white",
   },
   text: {
@@ -165,5 +165,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     height: 65,
   },
-  
+
 });
