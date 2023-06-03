@@ -11,7 +11,7 @@ const LoginScreen = ({ onLogin }) => {
 
     const handleLogin = () => {
         // Insert your IP below
-        axios.post('http://75.102.242.221:5000/login', {
+        axios.post('http://<Your IP>:5000/login', {
             email,
             password
         })
