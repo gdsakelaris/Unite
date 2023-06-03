@@ -29,7 +29,6 @@ function authenticateJWT(req, res, next) {
     if (authHeader) {
         const token = authHeader.split(' ')[1];
 
-        // jwt.verify(token, 'your-secret-key', (err, user) => {
         jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
             if (err) {
                 return res.sendStatus(403);
@@ -55,12 +54,12 @@ app.post('/register', async (req, res) => {
         user = new User({
             name,
             email,
-            password // In production, ensure this password is hashed before storage
+            password 
         });
 
         await user.save();
 
-        // Use jwt to create a token
+        // Use JWT to create a token
         const payload = {
             user: {
                 id: user.id

@@ -13,13 +13,14 @@ const SignUpScreen = () => {
     const navigation = useNavigation();
 
     const handleSignUp = () => {
+        // Insert your IP below
         axios.post('http://75.102.242.221:5000/register', {
             name,
             email,
             password
         })
             .then(function (response) {
-                console.log(response.data.token); // access the token
+                console.log(response.data.token); 
             })
             .catch(function (error) {
                 console.log(error);

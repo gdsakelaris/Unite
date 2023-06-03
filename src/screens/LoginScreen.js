@@ -10,16 +10,16 @@ const LoginScreen = ({ onLogin }) => {
     const navigation = useNavigation();
 
     const handleLogin = () => {
+        // Insert your IP below
         axios.post('http://75.102.242.221:5000/login', {
             email,
             password
         })
             .then(response => {
                 console.log(response.data);
-                onLogin(); // If authentication succeeds, call the onLogin function to set the isLoggedIn state to true
+                onLogin(); 
             })
             .catch(error => {
-                // Show an error message
                 Alert.alert('Error', 'Could not log in. Please check your credentials.');
                 console.log(error);
             });
