@@ -67,20 +67,21 @@ const EditProfile = () => {
 
 const makeStyle = (fontScale) => StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor:'white'
   },
   editProfilePicture: {
     flex: 3,
-    //backgroundColor:'red',
     alignItems:'center',
     justifyContent:'center'
   },
   profilePictureView: {
-    width: '37%',
-    height: '55%',
+    width: '33%',
+    height: '67%',
     borderRadius:'100%',
     backgroundColor:'white',
-    top: '8%'
+    bottom:'10%'
+   
   },
   profilePicture: {
     width:'100%',
@@ -89,25 +90,24 @@ const makeStyle = (fontScale) => StyleSheet.create({
   },
   editProfileInfo: {
     flex: 7,
-    //backgroundColor:'blue'
+    bottom:'2%'
   },
   editProfilePictureButtonView: {
     position:'absolute',
-    width: '20%',
-    height:35,
+    width: '22%',
+    height:33,
     borderRadius: '30%',
     backgroundColor:'#167EE6',
     justifyContent:'center',
     alignItems:'center',
     bottom:5, 
-    left: 120
+    left: 110
   },
   editProfileInfoFieldContainer: {
     width:'100%',
     height: '13%',
     marginBottom: '8%',
     marginLeft: '8%',
-   // backgroundColor:'blue',
     justifyContent:'space-around'
   },
   editProfileInfoTitle: {
@@ -117,7 +117,6 @@ const makeStyle = (fontScale) => StyleSheet.create({
   },
   contentTextStyle: {
     width:'100%',
-    //backgroundColor:'red',
     height:'40%',
     fontSize: 20/ fontScale,
     fontWeight:'700',

@@ -18,7 +18,7 @@ export default function ProfilePage({navigation}) {
         <View style={styles.circle}>
           <Image source={img} style={styles.Image} />
         </View>
-        <TouchableOpacity style={styles.editButton}>
+        <TouchableOpacity style={styles.editButton} onPress={() => navigation.navigate('EditProfile')}>
           <Text style={{ color: "#fff" }}> edit profile </Text>
         </TouchableOpacity>
       </View>

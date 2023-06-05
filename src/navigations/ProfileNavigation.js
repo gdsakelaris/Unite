@@ -2,13 +2,20 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import ProfilePage from '../screens/ProfilePage';
 import SettingsNavigation from './SettingsNavigation';
+import EditProfile from '../screens/EditProfile';
+import HeaderNavigation from './HeaderNavigation';
+
 const Stack = createStackNavigator();
+
 
 const ProfileNavigation = () => {
   return (
     <Stack.Navigator>
       {/* Profile */}
-      <Stack.Screen name='Profile' component={ProfilePage} />
+      <Stack.Screen name='Profile' component={ProfilePage} options={{headerShown:false}} />
+
+      {/* Edit Profile */}
+      <Stack.Screen  name='EditProfile' component={EditProfile} options={HeaderNavigation('Profile')}/>
 
 
       {/* Bookmarked Services
@@ -30,6 +37,29 @@ const ProfileNavigation = () => {
   );
 }
 
+const makeStyle = (fontScale, widthOfTheScreen) => StyleSheet.create({
+  headerCustomIcon: {
+    marginLeft: '35%',
+    
+    
+  },
+  headerBackground: {
+    backgroundColor:'white', 
+    width: '100%', 
+    height: '100%'
 
+  },
+  headerStyle: {
+    height: 150,
+    
+  },
+  headerBackTitleStyle: {
+    fontSize: 32 / fontScale,
+    color: '#252525',
+  },
+  headerTitleContainer: {
+    width: (widthOfTheScreen - 130),
+  }
+})
 
 export default ProfileNavigation;
