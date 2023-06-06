@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView } from "react-native";
 import { EvilIcons, AntDesign } from "@expo/vector-icons";
 
 const HelpPage = () => {
@@ -11,22 +11,24 @@ const HelpPage = () => {
     { label: "How to bookmark services", detail: "To update the app, go to the app store on your device and search for the app. If an update is available, you will see an option to update the app. Alternatively, you can enable automatic updates in your device's settings." },
   ];
 
-  const [info, setInfo] = useState("");
-  const [currOption, setCurrOption] = useState("");
+  const [expandedOptions, setExpandedOptions] = useState([]);
 
   const handleClick = (option) => {
-    if (currOption === option) {
-      setCurrOption("");
-    } else {
-      setCurrOption(option);
-    }
+    setExpandedOptions((prevExpandedOptions) => {
+      if (prevExpandedOptions.includes(option)) {
+        return prevExpandedOptions.filter((expandedOptions) => expandedOptions !== option);
+      } else {
+        return [...prevExpandedOptions, option];
+      }
+    });
   };
 
   return (
     <View style={styles.container}>
+        <ScrollView>
       <Text style={styles.heading}>Hi, how can we help you?</Text>
       <View style={styles.searchBarContainer}>
-        <View style={styles.searchBarView}>
+      <View style={styles.searchBarView}>
           <TextInput
             style={styles.searchBar}
             placeholder={"Search..."}
@@ -48,16 +50,21 @@ const HelpPage = () => {
           <View style={styles.optionContainer}>
             <Text style={styles.question}>{item.label}</Text>
             <View style={styles.settingButton}>
-              <AntDesign name={currOption === item.label ? "up" : "down"} size={20} color="black" />
+              <AntDesign
+                name={expandedOptions.includes(item.label) ? "up" : "down"}
+                size={20}
+                color="black"
+              />
             </View>
           </View>
-          {currOption === item.label && (
+          {expandedOptions.includes(item.label) && (
             <View style={styles.detailContainer}>
               <Text style={styles.detailText}>{item.detail}</Text>
             </View>
           )}
         </TouchableOpacity>
       ))}
+      </ScrollView>
     </View>
   );
 };
@@ -75,9 +82,10 @@ const styles = StyleSheet.create({
     searchBarContainer: {
       justifyContent: "center",
       alignItems: "center",
-      width: "100%",
-      height: "10%",
+      Maxwidth: "100%",
+      Maxheight: "10%",
       marginBottom: 28.5,
+      marginTop: 14,
     },
     searchBarView: {
       width: 362,
@@ -134,4 +142,3 @@ const styles = StyleSheet.create({
   
 
 export default HelpPage;
-
