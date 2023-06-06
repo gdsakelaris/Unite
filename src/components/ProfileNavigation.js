@@ -4,7 +4,7 @@ import ProfilePage from '../screens/ProfilePage';
 import SettingsNavigation from './SettingsNavigation';
 const Stack = createStackNavigator();
 
-function ProfileNavigation(props) {
+const ProfileNavigation = () => {
   return (
     <Stack.Navigator>
       {/* Profile */}

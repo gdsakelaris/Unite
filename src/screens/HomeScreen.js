@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, SafeAreaView, Image, Pressable} from 'react-native';
 import { EvilIcons, Ionicons } from '@expo/vector-icons';
-
+import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions';
 const HomeScreen = () => {
+  const {fontScale} = useWindowDimensions()
+  const styles = makeStyle(fontScale)
   const [isFocus, setIsFocus] = useState(false)
   return (
     <SafeAreaView style={styles.container}>
@@ -18,11 +20,10 @@ const HomeScreen = () => {
   
             <EvilIcons 
                        name="search" 
-                       size={30} 
+                       size={30 / fontScale} 
                        color="black" 
                        style={styles.searchIcon}  
-                       adjustsFontSizeToFit={true} 
-                       minimumFontScale={0.5} />
+                        />
           </View>
         </View>
 
@@ -30,10 +31,8 @@ const HomeScreen = () => {
         <View style={styles.locationSignContainer}>
               <Ionicons 
                        name="ios-location-sharp" 
-                       size={24} 
-                       color="#FF4A0E"  
-                       adjustsFontSizeToFit={true} 
-                       minimumFontScale={0.5}  
+                       size={24 /fontScale} 
+                       color="#FF4A0E"   
                        style={styles.locationIcon} />
               <View 
                        style={styles.locationTextContainer}>
@@ -42,8 +41,7 @@ const HomeScreen = () => {
                        onPressOut={() => setIsFocus(false)}>
                     <Text 
                         style={isFocus ? [styles.locationText, {textDecorationLine: 'underline'}] : styles.locationText } 
-                        adjustsFontSizeToFit={true} 
-                        minimumFontScale={0.5}>
+                        >
                             Florida, USA
                     </Text>
                   </Pressable>
@@ -64,9 +62,7 @@ const HomeScreen = () => {
                     <View 
                           style={styles.cardTitleContainer}>
                           <Text 
-                                style={styles.cardTitle} 
-                                adjustsFontSizeToFit={true} 
-                                minimumFontScale={0.5}>
+                                style={styles.cardTitle}>
                                       Shelter
                           </Text>
                     </View>
@@ -81,9 +77,7 @@ const HomeScreen = () => {
                     <View 
                            style={styles.cardTitleContainer}>
                            <Text 
-                                 style={styles.cardTitle} 
-                                 adjustsFontSizeToFit={true} 
-                                 minimumFontScale={0.5}>
+                                 style={styles.cardTitle}>
                                         Education
                            </Text>
                     </View>
@@ -98,9 +92,7 @@ const HomeScreen = () => {
                     <View 
                             style={styles.cardTitleContainer}>
                             <Text 
-                                  style={styles.cardTitle} 
-                                  adjustsFontSizeToFit={true} 
-                                  minimumFontScale={0.5}>
+                                  style={styles.cardTitle}>
                                          Community
                             </Text>
                     </View>
@@ -115,9 +107,7 @@ const HomeScreen = () => {
                     <View 
                             style={styles.cardTitleContainer}>
                             <Text 
-                                  style={styles.cardTitle} 
-                                  adjustsFontSizeToFit={true} 
-                                  minimumFontScale={0.5}>
+                                  style={styles.cardTitle}>
                                            Food
                             </Text>
                     </View>
@@ -132,9 +122,7 @@ const HomeScreen = () => {
                     <View 
                             style={styles.cardTitleContainer}>
                             <Text 
-                                  style={styles.cardTitle} 
-                                  adjustsFontSizeToFit={true}
-                                  minimumFontScale={0.5}>
+                                  style={styles.cardTitle}>
                                           Employment
                             </Text>
                     </View>
@@ -149,9 +137,7 @@ const HomeScreen = () => {
                     <View 
                             style={styles.cardTitleContainer}>
                             <Text 
-                                  style={styles.cardTitle} 
-                                  adjustsFontSizeToFit={true} 
-                                  minimumFontScale={0.5}>
+                                  style={styles.cardTitle}>
                                           Health
                             </Text>
                     </View>
@@ -162,7 +148,7 @@ const HomeScreen = () => {
   );
 };
 
-const styles = StyleSheet.create({
+const makeStyle = fontScale => StyleSheet.create({
   container: {
     flex: 1
   },
@@ -195,7 +181,7 @@ const styles = StyleSheet.create({
 
   searchBar: {
 
-    fontSize: '15%',
+    fontSize: 20 / fontScale,
     flex: 1,
     paddingLeft: '14%',
   },
@@ -211,7 +197,6 @@ const styles = StyleSheet.create({
 
   locationSignContainer: {
     flex:1,
-   // backgroundColor:'blue',
     flexDirection:'row',
     justifyContent:'center',
     alignItems:'center'
@@ -225,7 +210,7 @@ const styles = StyleSheet.create({
   },
 
   locationText: {
-    fontSize: '20%',
+    fontSize: 20 / fontScale,
     color:'#337155',
     fontWeight: '600',
   },
@@ -273,7 +258,7 @@ const styles = StyleSheet.create({
 
   },
   cardTitle: {
-    fontSize: 18,
+    fontSize: 20 / fontScale,
     fontWeight: '500'
   }
 

@@ -3,12 +3,16 @@ import React, { useState } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import CustomSwitch from 'react-native-custom-switch';
 import { AntDesign } from '@expo/vector-icons';
+import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions';
+
 
 
 
 function Settings({navigation}) {
   const [pushNotification, setPushNotification] = useState(false);
   const toggleNotification = () => setPushNotification(prevVal => !prevVal)
+  const {fontScale} = useWindowDimensions()
+  const styles = makeStyle(fontScale)
   return (
 
     <View style={styles.container}>
@@ -18,8 +22,7 @@ function Settings({navigation}) {
                 style={styles.settingOptContainer}>  
                 <Text 
                     style={styles.settingOptText}
-                    adjustsFontSizeToFit={true}
-                    minimumFontScale={0.5}>
+                    >
                           Push Notifications
                 </Text>
                 <View>
@@ -77,18 +80,16 @@ function Settings({navigation}) {
                         
                           <Text 
                               style={styles.settingOptText}
-                              adjustsFontSizeToFit={true}
-                              minimumFontScale={0.5}>
+                              >
                                     Language
                           </Text> 
                           <View 
                               style={styles.settingButton}>
                                         <AntDesign 
                                                   name="right" 
-                                                  size={20} 
+                                                  size={20 / fontScale} 
                                                   color="black" 
-                                                  adjustsFontSizeToFit={true}
-                                                  minimumFontScale={0.5}/>
+                                                  />
                             
                           </View> 
                       
@@ -97,23 +98,21 @@ function Settings({navigation}) {
             {/* Privacy & Security */}
             <TouchableOpacity 
                           style={styles.settingOptContainer}
-                          onPress={() => console.log('Pressed')}>
+                          onPress={() => navigation.navigate('PrivacyAgreementScreen')}>
                       
                         
                           <Text 
                               style={styles.settingOptText}
-                              adjustsFontSizeToFit={true}
-                              minimumFontScale={0.5}>
+                              >
                                     Privacy & Security
                           </Text> 
                           <View 
                               style={styles.settingButton}>
                                         <AntDesign 
                                                   name="right" 
-                                                  size={20} 
+                                                  size={20 / fontScale} 
                                                   color="black" 
-                                                  adjustsFontSizeToFit={true}
-                                                  minimumFontScale={0.5}/>
+                                                  />
                             
                           </View> 
                       
@@ -122,23 +121,21 @@ function Settings({navigation}) {
             {/* Terms of Service */}
             <TouchableOpacity 
                           style={styles.settingOptContainer}
-                          onPress={() => console.log('Pressed')}>
+                          onPress={() => navigation.navigate('TermsOfServiceScreen')}>
                       
                         
                           <Text 
                               style={styles.settingOptText}
-                              adjustsFontSizeToFit={true}
-                              minimumFontScale={0.5}>
+                              >
                                     Terms of Service
                           </Text> 
                           <View 
                               style={styles.settingButton}>
                                         <AntDesign 
                                                   name="right" 
-                                                  size={20} 
+                                                  size={20 / fontScale} 
                                                   color="black" 
-                                                  adjustsFontSizeToFit={true}
-                                                  minimumFontScale={0.5}/>
+                                                  />
                             
                           </View> 
                       
@@ -152,18 +149,16 @@ function Settings({navigation}) {
                         
                           <Text 
                               style={styles.settingOptText}
-                              adjustsFontSizeToFit={true}
-                              minimumFontScale={0.5}>
+                              >
                                     Connected Accounts
                           </Text> 
                           <View 
                               style={styles.settingButton}>
                                         <AntDesign 
                                                   name="right" 
-                                                  size={20} 
+                                                  size={20 / fontScale} 
                                                   color="black" 
-                                                  adjustsFontSizeToFit={true}
-                                                  minimumFontScale={0.5}/>
+                                                  />
                             
                           </View> 
                       
@@ -177,18 +172,16 @@ function Settings({navigation}) {
                         
                           <Text 
                               style={styles.settingOptText}
-                              adjustsFontSizeToFit={true}
-                              minimumFontScale={0.5}>
+                              >
                                     App Info
                           </Text> 
                           <View 
                               style={styles.settingButton}>
                                         <AntDesign 
                                                   name="right" 
-                                                  size={20} 
+                                                  size={20 / fontScale} 
                                                   color="black" 
-                                                  adjustsFontSizeToFit={true}
-                                                  minimumFontScale={0.5}/>
+                                                  />
                             
                           </View> 
                       
@@ -200,7 +193,7 @@ function Settings({navigation}) {
   );
 }
 
-const styles = StyleSheet.create({
+const makeStyle = fontScale => StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor:'white'
@@ -221,7 +214,7 @@ const styles = StyleSheet.create({
 
   },
   settingOptText: {
-    fontSize:18
+    fontSize: 24 / fontScale
   },
   settingButton: {
     paddingRight: '4%'

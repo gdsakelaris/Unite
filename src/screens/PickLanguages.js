@@ -66,7 +66,7 @@ const makeStyle = fontScale => StyleSheet.create({
   },
   button: {
     backgroundColor:'#F78154',
-    borderRadius: 10,
+    borderRadius: '40%',
     width: 330,
     height:'75%',
     justifyContent:'center',
