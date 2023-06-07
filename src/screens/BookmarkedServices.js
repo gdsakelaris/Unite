@@ -8,7 +8,7 @@ import {
   ScrollView,
 } from "react-native";
 import { EvilIcons, Ionicons } from "@expo/vector-icons";
-import img from "../images/Bookmark_dummy.png";
+import img from "../images/Dummyresource.png";
 
 const bookmarkData = [
   {
