@@ -20,7 +20,7 @@ const SignUpScreen = () => {
             password
         })
             .then(function (response) {
-                console.log(response.data.token); 
+                console.log(response.data.token);
             })
             .catch(function (error) {
                 console.log(error);

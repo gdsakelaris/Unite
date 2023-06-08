@@ -17,7 +17,7 @@ const LoginScreen = ({ onLogin }) => {
         })
             .then(response => {
                 console.log(response.data);
-                onLogin(); 
+                onLogin();
             })
             .catch(error => {
                 Alert.alert('Error', 'Could not log in. Please check your credentials.');
