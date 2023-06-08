@@ -5,7 +5,7 @@ import img from "../images/Dummyresource.png"
 import { AntDesign } from '@expo/vector-icons'; 
 
 
-const Shelter = () => {
+const Shelter = ({navigation}) => {
 
     const resourceData = {
         name: "Name of Resource",
@@ -26,10 +26,10 @@ const Shelter = () => {
                 <AntDesign name="down" size={18} color="black" style = {styles.arrow}/>
             </TouchableOpacity>
             <ScrollView>
-            <ResourceCard item={resourceData}/>
-            <ResourceCard item={resourceData}/>
-            <ResourceCard item={resourceData}/>
-            <ResourceCard item={resourceData}/>
+            <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'ShelterService'}/>
+            <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'ShelterService'}/>
+            <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'ShelterService'}/>
+            <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'ShelterService'}/>
             </ScrollView>
         </View>
     );

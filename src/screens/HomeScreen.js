@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, SafeAreaView, Image, Pressable } from 'react-native';
+import { View, Text, StyleSheet, TextInput, SafeAreaView, Image, Pressable, TouchableOpacity} from 'react-native';
 import { EvilIcons, Ionicons } from '@expo/vector-icons';
 import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions';
-
-const HomeScreen = () => {
-  const { width, height } = useWindowDimensions();
-  const styles = makeStyle(width, height);
-  const [isFocus, setIsFocus] = useState(false);
-
+const HomeScreen = ({navigation}) => {
+  const {fontScale} = useWindowDimensions()
+  const styles = makeStyle(fontScale)
+  const [isFocus, setIsFocus] = useState(false)
   return (
     <SafeAreaView style={styles.container}>
       {/* search bar */}
@@ -53,28 +51,101 @@ const HomeScreen = () => {
         </View>
       </View>
 
-      {/* Cards container */}
-      <View style={styles.cardsContainer}>
-        {/* shelter */}
-        <View style={styles.cardStyle}>
-          <Image
-            source={require('../images/shelter.png')}
-            style={styles.cardImage}
-            resizeMode='cover' />
+        {/* Cards container */}
+        <View 
+              style={styles.cardsContainer}>
+              {/* shelter */}
+              <TouchableOpacity
+                    style={styles.cardStyle} onPress={() => navigation.navigate('ShelterCard')}>
+                    <Image 
+                          source={require('../images/shelter.png')} 
+                          style={styles.cardImage} 
+                          resizeMode='cover'/>
+                    <View 
+                          style={styles.cardTitleContainer}>
+                          <Text 
+                                style={styles.cardTitle}>
+                                      Shelter
+                          </Text>
+                    </View>
+              </TouchableOpacity> 
 
-          <View style={styles.cardTitleContainer}>
-            <Text
-              style={styles.cardTitle}
-              adjustsFontSizeToFit={true}
-              minimumFontScale={0.5}>
-              Shelter
-            </Text>
-          </View>
+              <TouchableOpacity 
+                    style={styles.cardStyle} onPress={() => navigation.navigate('EducationCard')}>
+                    <Image 
+                           source={require('../images/education.jpeg')} 
+                           style={styles.cardImage} 
+                           resizeMode='cover'/>
+                    <View 
+                           style={styles.cardTitleContainer}>
+                           <Text 
+                                 style={styles.cardTitle}>
+                                        Education
+                           </Text>
+                    </View>
+              </TouchableOpacity>
+
+              <TouchableOpacity 
+                    style={styles.cardStyle} onPress={() => navigation.navigate('CommunityCard')}>
+                    <Image 
+                            source={require('../images/community.jpeg')} 
+                            style={styles.cardImage} 
+                            resizeMode='cover'/>
+                    <View 
+                            style={styles.cardTitleContainer}>
+                            <Text 
+                                  style={styles.cardTitle}>
+                                         Community
+                            </Text>
+                    </View>
+              </TouchableOpacity>
+
+              <TouchableOpacity 
+                    style={styles.cardStyle} onPress={() => navigation.navigate('FoodResourceCard')}>
+                    <Image 
+                            source={require('../images/food.jpeg')} 
+                            style={styles.cardImage} 
+                            resizeMode='cover'/>
+                    <View 
+                            style={styles.cardTitleContainer}>
+                            <Text 
+                                  style={styles.cardTitle}>
+                                           Food
+                            </Text>
+                    </View>
+              </TouchableOpacity>
+
+              <TouchableOpacity 
+                    style={styles.cardStyle} onPress={() => navigation.navigate('EmploymentCard')}>
+                    <Image 
+                            source={require('../images/employment.jpeg')} 
+                            style={styles.cardImage} 
+                            resizeMode='cover'/>
+                    <View 
+                            style={styles.cardTitleContainer}>
+                            <Text 
+                                  style={styles.cardTitle}>
+                                          Employment
+                            </Text>
+                    </View>
+              </TouchableOpacity>
+
+              <TouchableOpacity 
+                    style={styles.cardStyle} onPress={() => navigation.navigate('HealthCard')}>
+                    <Image 
+                            source={require('../images/health.jpeg')} 
+                            style={styles.cardImage} 
+                            resizeMode='cover'/>
+                    <View 
+                            style={styles.cardTitleContainer}>
+                            <Text 
+                                  style={styles.cardTitle}>
+                                          Health
+                            </Text>
+                    </View>
+              </TouchableOpacity>
         </View>
-
-        {/* other cards */}
-        {/* ... */}
-      </View>
+        
     </SafeAreaView>
   );
 };

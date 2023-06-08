@@ -11,7 +11,7 @@ import ResourceCard from "../components/ResourceCard";
 import img from "../images/Dummyresource.png";
 import { AntDesign } from "@expo/vector-icons";
 
-const Health_Resource = () => {
+const Health_Resource = ({navigation}) => {
   const resourceData = {
     name: "Name of Resource",
     desc: "Lorem ipsum dolor sit amet, consecteturadipiscing elit, sed do eiusmod tempor., dolor sit amet..",
@@ -30,10 +30,10 @@ const Health_Resource = () => {
         <AntDesign name="down" size={18} color="black" style={styles.arrow} />
       </TouchableOpacity>
       <ScrollView>
-        <ResourceCard item={resourceData} />
-        <ResourceCard item={resourceData} />
-        <ResourceCard item={resourceData} />
-        <ResourceCard item={resourceData} />
+      <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'HealthService'}/>
+      <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'HealthService'}/>
+      <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'HealthService'}/>
+      <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'HealthService'}/>
       </ScrollView>
     </View>
   );

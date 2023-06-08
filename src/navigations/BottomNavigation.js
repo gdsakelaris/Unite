@@ -8,7 +8,9 @@ import ChatScreen from '../screens/ChatScreen';
 import HomeScreen from '../screens/HomeScreen';
 import MapScreen from '../screens/MapScreen';
 import ProfileNavigation from './ProfileNavigation';
-import { FontAwesome } from '@expo/vector-icons';
+import HomeScreenNavigation from './HomeScreenNavigation';
+
+
 
 const Tab = createBottomTabNavigator();
 
@@ -43,15 +45,16 @@ const BottomNavigation = () => {
         />
         <Tab.Screen
           name="Home"
-          component={HomeScreen}
+          component={HomeScreenNavigation}
           options={{
             tabBarLabel: "Home",
             tabBarIcon: ({ color, size }) => (
               <Icon name="home-outline" color={color} size={size} />
             ),
+            headerShown:false
           }}
         />
-
+        
         <Tab.Screen
           name="Map"
           component={MapScreen}
@@ -71,8 +74,8 @@ const BottomNavigation = () => {
             tabBarIcon: ({ color, size }) => (
               <Icon name="person-outline" color={color} size={size} />
             ),
-            headerShown: false
-
+            headerShown:false
+            
           }}
         />
       </Tab.Navigator>
