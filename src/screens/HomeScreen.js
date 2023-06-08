@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, SafeAreaView, Image, Pressable} from 'react-native';
+import { View, Text, StyleSheet, TextInput, SafeAreaView, Image, Pressable, TouchableOpacity} from 'react-native';
 import { EvilIcons, Ionicons } from '@expo/vector-icons';
 import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions';
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   const {fontScale} = useWindowDimensions()
   const styles = makeStyle(fontScale)
   const [isFocus, setIsFocus] = useState(false)
@@ -53,8 +53,8 @@ const HomeScreen = () => {
         <View 
               style={styles.cardsContainer}>
               {/* shelter */}
-              <View 
-                    style={styles.cardStyle}>
+              <TouchableOpacity
+                    style={styles.cardStyle} onPress={() => navigation.navigate('ShelterCard')}>
                     <Image 
                           source={require('../images/shelter.png')} 
                           style={styles.cardImage} 
@@ -66,10 +66,10 @@ const HomeScreen = () => {
                                       Shelter
                           </Text>
                     </View>
-              </View>
+              </TouchableOpacity> 
 
-              <View 
-                    style={styles.cardStyle}>
+              <TouchableOpacity 
+                    style={styles.cardStyle} onPress={() => navigation.navigate('EducationCard')}>
                     <Image 
                            source={require('../images/education.jpeg')} 
                            style={styles.cardImage} 
@@ -81,10 +81,10 @@ const HomeScreen = () => {
                                         Education
                            </Text>
                     </View>
-              </View>
+              </TouchableOpacity>
 
-              <View 
-                    style={styles.cardStyle}>
+              <TouchableOpacity 
+                    style={styles.cardStyle} onPress={() => navigation.navigate('CommunityCard')}>
                     <Image 
                             source={require('../images/community.jpeg')} 
                             style={styles.cardImage} 
@@ -96,10 +96,10 @@ const HomeScreen = () => {
                                          Community
                             </Text>
                     </View>
-              </View>
+              </TouchableOpacity>
 
-              <View 
-                    style={styles.cardStyle}>
+              <TouchableOpacity 
+                    style={styles.cardStyle} onPress={() => navigation.navigate('FoodResourceCard')}>
                     <Image 
                             source={require('../images/food.jpeg')} 
                             style={styles.cardImage} 
@@ -111,10 +111,10 @@ const HomeScreen = () => {
                                            Food
                             </Text>
                     </View>
-              </View>
+              </TouchableOpacity>
 
-              <View 
-                    style={styles.cardStyle}>
+              <TouchableOpacity 
+                    style={styles.cardStyle} onPress={() => navigation.navigate('EmploymentCard')}>
                     <Image 
                             source={require('../images/employment.jpeg')} 
                             style={styles.cardImage} 
@@ -126,10 +126,10 @@ const HomeScreen = () => {
                                           Employment
                             </Text>
                     </View>
-              </View>
+              </TouchableOpacity>
 
-              <View 
-                    style={styles.cardStyle}>
+              <TouchableOpacity 
+                    style={styles.cardStyle} onPress={() => navigation.navigate('HealthCard')}>
                     <Image 
                             source={require('../images/health.jpeg')} 
                             style={styles.cardImage} 
@@ -141,7 +141,7 @@ const HomeScreen = () => {
                                           Health
                             </Text>
                     </View>
-              </View>
+              </TouchableOpacity>
         </View>
         
     </SafeAreaView>

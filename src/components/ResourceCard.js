@@ -13,12 +13,14 @@ import { FontAwesome } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { EvilIcons, Ionicons } from "@expo/vector-icons";
 
-const ResourceCard = ({ item }) => {
+const ResourceCard = ({ item, navigation, fullPageServiceName}) => {
   return (
     <View style={styles.container}>
       <View style={styles.card}>
         <View style={styles.cardContent}>
-          <Text style={styles.title}>{item.name}</Text>
+          <TouchableOpacity onPress={() => navigation.navigate(fullPageServiceName)}>
+            <Text style={styles.title}>{item.name}</Text>
+          </TouchableOpacity>
           <View style={styles.rating}>
             <FontAwesome
               style={{ marginBottom: -2 }}
