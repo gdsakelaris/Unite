@@ -4,7 +4,8 @@ import ProfilePage from '../screens/ProfilePage';
 import SettingsNavigation from './SettingsNavigation';
 import EditProfile from '../screens/EditProfile';
 import HeaderNavigation from './HeaderNavigation';
-
+import Bookmark_Services from '../screens/BookmarkedServices';
+import HelpPage from '../screens/HelpPage';
 const Stack = createStackNavigator();
 
 
@@ -20,6 +21,7 @@ const ProfileNavigation = () => {
 
       {/* Bookmarked Services
       <Stack.Screen /> */}
+      <Stack.Screen name='BookmarkedServices' component={Bookmark_Services} options={HeaderNavigation('Bookmarked Services')}/>
 
       {/* Settings */}
       <Stack.Screen name='SettingsNavigation' component={SettingsNavigation} options={{
@@ -27,7 +29,7 @@ const ProfileNavigation = () => {
       }}/>
 
       {/* Help */}
-      {/* <Stack.Screen /> */}
+      <Stack.Screen name='Help' component={HelpPage} options={HeaderNavigation('Profile')}/>
 
       {/* Log out */}
       {/* <Stack.Screen /> */}

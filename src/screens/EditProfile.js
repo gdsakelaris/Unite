@@ -43,10 +43,10 @@ const EditProfileInfoField = ({styles, title, content, ...textInputProp}) => (
 
 
 const EditProfile = () => {
-  const [emailAddress, setEmailAddress] = useState('phongdiep@gmail.com')
-  const [userName, setUserName] = useState('Phong Diep')
+  const [emailAddress, setEmailAddress] = useState('john123@gmail.com')
+  const [userName, setUserName] = useState('John')
   const [password, setPassword] = useState('12345')
-  const [phoneNumber, setPhoneNumber] = useState('4082034049')
+  const [phoneNumber, setPhoneNumber] = useState('408777222')
   const [location, setLocation] = useState('San Jose, CA')
   const {fontScale} = useWindowDimensions()
   const styles = makeStyle(fontScale)

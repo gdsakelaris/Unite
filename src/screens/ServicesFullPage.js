@@ -70,9 +70,6 @@ const ServiceOptionDetail = ({detailOption}) => (
   </View>
 
 )
-
-
-
 const ServicesFullPage = () => {
 
   const [detailOption, setdetailOption] = useState(servicesDetail[0])
@@ -87,11 +84,10 @@ const ServicesFullPage = () => {
     </ServicePageContainer>
   );
 }
-
-
 const makeStyle = (fontScale) => StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor:'white'
   },
   serviceImageStyle: {
     flex: 4,
@@ -157,5 +153,4 @@ const makeStyle = (fontScale) => StyleSheet.create({
     paddingHorizontal: '2%'
   }
 });
-
 export default ServicesFullPage;

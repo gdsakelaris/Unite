@@ -4,7 +4,7 @@ import ResourceCard from "../components/ResourceCard";
 import img from "../images/Dummyresource.png"
 import { AntDesign } from '@expo/vector-icons'; 
 
-const Community = () => {const resourceData = {
+const Community = ({navigation}) => {const resourceData = {
     name: "Name of Resource",
     desc: "Lorem ipsum dolor sit amet, consecteturadipiscing elit, sed do eiusmod tempor., dolor sit amet..",
     score: 9,
@@ -23,10 +23,10 @@ return(
             <AntDesign name="down" size={18} color="black" style = {styles.arrow}/>
         </TouchableOpacity>
         <ScrollView>
-        <ResourceCard item={resourceData}/>
-        <ResourceCard item={resourceData}/>
-        <ResourceCard item={resourceData}/>
-        <ResourceCard item={resourceData}/>
+        <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'CommunityService'}/>
+        <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'CommunityService'}/>
+        <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'CommunityService'}/>
+        <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'CommunityService'}/>
         </ScrollView>
     </View>
 );

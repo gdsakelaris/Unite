@@ -24,7 +24,7 @@ export default function ProfilePage({navigation}) {
       </View>
 
       <View style={styles.details_container}>
-        <TouchableOpacity style={styles.rowContainer}>
+        <TouchableOpacity style={styles.rowContainer} onPress={() => navigation.navigate('BookmarkedServices')}>
           <FontAwesome name="bookmark" size={24} color="#ff4500" />
           <Text style={{ marginLeft: 20, flex: 1 }}>Bookmarked Services</Text>
           <MaterialIcons name="keyboard-arrow-right" size={24} color="black" />
@@ -34,7 +34,7 @@ export default function ProfilePage({navigation}) {
           <Text style={{ marginLeft: 15, flex: 1 }}>Settings</Text>
           <MaterialIcons name="keyboard-arrow-right" size={24} color="black" />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.rowContainer}>
+        <TouchableOpacity style={styles.rowContainer} onPress={() => navigation.navigate('Help')}>
           <Entypo name="help-with-circle" size={24} color="#ff4500" />
           <Text style={{ marginLeft: 16, flex: 1 }}>Help</Text>
           <MaterialIcons name="keyboard-arrow-right" size={24} color="black" />
