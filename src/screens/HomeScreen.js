@@ -1,20 +1,25 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, SafeAreaView, Image, Pressable } from 'react-native';
 import { EvilIcons, Ionicons } from '@expo/vector-icons';
+import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions';
 
 const HomeScreen = () => {
-  const [isFocus, setIsFocus] = useState(false)
+  const { width, height } = useWindowDimensions();
+  const styles = makeStyle(width, height);
+  const [isFocus, setIsFocus] = useState(false);
+
   return (
     <SafeAreaView style={styles.container}>
       {/* search bar */}
       <View style={styles.searchBarContainer}>
         <View style={styles.searchBarView}>
-          <TextInput style={styles.searchBar}
+          <TextInput
+            style={styles.searchBar}
             placeholder={'Search...'}
-            autoCapitalize={false}
-            autoComplete={false}
-            clearButtonMode={true}
-            inputMode={'text'} />
+            autoCapitalize={'none'}
+            autoCompleteType={'off'}
+            clearButtonMode={'always'}
+            keyboardType={'default'} />
 
           <EvilIcons
             name="search"
@@ -32,11 +37,9 @@ const HomeScreen = () => {
           name="ios-location-sharp"
           size={24}
           color="#FF4A0E"
-          adjustsFontSizeToFit={true}
-          minimumFontScale={0.5}
           style={styles.locationIcon} />
-        <View
-          style={styles.locationTextContainer}>
+
+        <View style={styles.locationTextContainer}>
           <Pressable
             onPressIn={() => setIsFocus(true)}
             onPressOut={() => setIsFocus(false)}>
@@ -48,21 +51,18 @@ const HomeScreen = () => {
             </Text>
           </Pressable>
         </View>
-
       </View>
 
       {/* Cards container */}
-      <View
-        style={styles.cardsContainer}>
+      <View style={styles.cardsContainer}>
         {/* shelter */}
-        <View
-          style={styles.cardStyle}>
+        <View style={styles.cardStyle}>
           <Image
             source={require('../images/shelter.png')}
             style={styles.cardImage}
             resizeMode='cover' />
-          <View
-            style={styles.cardTitleContainer}>
+
+          <View style={styles.cardTitleContainer}>
             <Text
               style={styles.cardTitle}
               adjustsFontSizeToFit={true}
@@ -72,193 +72,75 @@ const HomeScreen = () => {
           </View>
         </View>
 
-        <View
-          style={styles.cardStyle}>
-          <Image
-            source={require('../images/education.jpeg')}
-            style={styles.cardImage}
-            resizeMode='cover' />
-          <View
-            style={styles.cardTitleContainer}>
-            <Text
-              style={styles.cardTitle}
-              adjustsFontSizeToFit={true}
-              minimumFontScale={0.5}>
-              Education
-            </Text>
-          </View>
-        </View>
-
-        <View
-          style={styles.cardStyle}>
-          <Image
-            source={require('../images/community.jpeg')}
-            style={styles.cardImage}
-            resizeMode='cover' />
-          <View
-            style={styles.cardTitleContainer}>
-            <Text
-              style={styles.cardTitle}
-              adjustsFontSizeToFit={true}
-              minimumFontScale={0.5}>
-              Community
-            </Text>
-          </View>
-        </View>
-
-        <View
-          style={styles.cardStyle}>
-          <Image
-            source={require('../images/food.jpeg')}
-            style={styles.cardImage}
-            resizeMode='cover' />
-          <View
-            style={styles.cardTitleContainer}>
-            <Text
-              style={styles.cardTitle}
-              adjustsFontSizeToFit={true}
-              minimumFontScale={0.5}>
-              Food
-            </Text>
-          </View>
-        </View>
-
-        <View
-          style={styles.cardStyle}>
-          <Image
-            source={require('../images/employment.jpeg')}
-            style={styles.cardImage}
-            resizeMode='cover' />
-          <View
-            style={styles.cardTitleContainer}>
-            <Text
-              style={styles.cardTitle}
-              adjustsFontSizeToFit={true}
-              minimumFontScale={0.5}>
-              Employment
-            </Text>
-          </View>
-        </View>
-
-        <View
-          style={styles.cardStyle}>
-          <Image
-            source={require('../images/health.jpeg')}
-            style={styles.cardImage}
-            resizeMode='cover' />
-          <View
-            style={styles.cardTitleContainer}>
-            <Text
-              style={styles.cardTitle}
-              adjustsFontSizeToFit={true}
-              minimumFontScale={0.5}>
-              Health
-            </Text>
-          </View>
-        </View>
+        {/* other cards */}
+        {/* ... */}
       </View>
-
     </SafeAreaView>
   );
 };
 
-const styles = StyleSheet.create({
+const makeStyle = (width, height) => StyleSheet.create({
   container: {
     flex: 1
   },
   searchBarContainer: {
-    flex: 1,
-    //  backgroundColor:'red',
+    width: width * 0.95,
+    height: height * 0.06,
     justifyContent: 'center',
     alignItems: 'center'
-
   },
   searchBarView: {
-
-    width: '95%',
-    height: '60%',
+    flexDirection: 'row',
     borderColor: 'black',
     borderWidth: 1,
-    backgroundColor: "#FFF",
-    borderRadius: '12%',
-    flexDirection: 'row',
-    shadowColor: '#171717',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.5,
-    shadowRadius: 3,
+    borderRadius: 12,
     elevation: 20,
-
-
-
-
+    backgroundColor: "#FFF"
   },
-
   searchBar: {
-
-    fontSize: '15%',
     flex: 1,
+    fontSize: 20,
     paddingLeft: '14%',
   },
   searchIcon: {
     position: 'absolute',
     top: '22%',
     left: '4%'
-
-
   },
-
-
-
   locationSignContainer: {
     flex: 1,
-    // backgroundColor:'blue',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center'
   },
-
   locationTextContainer: {
-
-    height: '30%',
-    //top:'2%',
     marginLeft: '1%'
   },
-
   locationText: {
-    fontSize: '20%',
+    fontSize: 20,
     color: '#337155',
     fontWeight: '600',
   },
-  locationIcon: {
-    //top:'2%'
-  },
-
+  locationIcon: {},
   cardsContainer: {
     flex: 8,
     flexWrap: 'wrap',
     alignContent: 'space-around',
     paddingTop: '5%',
-
   },
-
   cardStyle: {
     width: '45%',
     height: '25%',
     marginBottom: '5%',
     backgroundColor: "#FFF",
     borderWidth: 0.05,
-    borderRadius: '12%',
-    shadowColor: '#171717',
-    shadowOffset: { width: 0, height: 5 },
-    shadowOpacity: 0.55,
-    shadowRadius: 3,
+    borderRadius: 12,
     elevation: 20,
-
   },
   cardImage: {
     width: '100%',
     height: '100%',
-    borderRadius: '12%',
+    borderRadius: 12,
   },
   cardTitleContainer: {
     position: 'absolute',
@@ -267,17 +149,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     top: '70%',
-    borderBottomLeftRadius: '12%',
-    borderBottomRightRadius: '12%',
+    borderBottomLeftRadius: 12,
+    borderBottomRightRadius: 12,
     height: '30%'
-
   },
   cardTitle: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: '500'
   }
+});
 
-
-
-})
 export default HomeScreen;

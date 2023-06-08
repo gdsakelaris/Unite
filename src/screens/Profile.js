@@ -3,7 +3,7 @@ import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 import { Ionicons, SimpleLineIcons, Entypo } from '@expo/vector-icons';
 
 
-function Profile(props) {
+const Profile = () => {
   return (
     <View style={styles.container}>
       {/* container for profile image and edit photo button */}
@@ -252,5 +252,4 @@ const styles = StyleSheet.create({
 
 
 });
-
 export default Profile;

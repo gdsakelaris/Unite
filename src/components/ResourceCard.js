@@ -1,87 +1,191 @@
 // ResourceCard Component
 import React from "react";
-import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
+import { Feather } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
+import { EvilIcons, Ionicons } from "@expo/vector-icons";
 
 const ResourceCard = ({ item }) => {
   return (
-    <View style={styles.card}>
-      <View style={styles.cardContent}>
-        <Text style={styles.title}>{item.name}</Text>
-        <Text style={styles.description}>{item.desc}</Text>
-        <Text style={styles.details}>
-          Score: {item.score}, Location: {item.location}
-        </Text>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => {
-            /* Bookmark function */
-          }}
-        >
-          <Text style={styles.buttonText}>Bookmark</Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.imageContainer}>
-        <Image
-          source={
-            typeof item.image === "string" ? { uri: item.image } : item.image // Use local image directly
-          }
-          style={styles.image}
-          resizeMode="cover"
-        />
+    <View style={styles.container}>
+      <View style={styles.card}>
+        <View style={styles.cardContent}>
+          <Text style={styles.title}>{item.name}</Text>
+          <View style={styles.rating}>
+            <FontAwesome
+              style={{ marginBottom: -2 }}
+              name="star"
+              size={14}
+              color="black"
+            />
+            <Text style={styles.bold}> {item.rating} </Text>
+            <Entypo
+              style={{ marginLeft: -7 }}
+              name="dot-single"
+              size={20}
+              color="black"
+            />
+            <Text style={{ marginLeft: -7, fontWeight: "bold" }}>
+              {" "}
+              {item.reviews} Reviews
+            </Text>
+          </View>
+
+          <Text style={styles.description}>{item.desc}</Text>
+
+          
+
+          <View style={styles.row}>
+            <EvilIcons
+              name="location"
+              size={20}
+              color="black"
+              style={styles.icon1}
+            />
+            <Text>{item.location}</Text>
+          </View>
+          <View style={styles.row}>
+            <Ionicons
+              name="ios-call-outline"
+              size={15}
+              color="black"
+              style={styles.icon2}
+            />
+            <Text>{item.number}</Text>
+          </View>
+          
+        </View>
+        <View style={styles.imageContainer}>
+          <Image
+            source={
+              typeof item.image === "string" ? { uri: item.image } : item.image // Use local image directly
+            }
+            style={styles.image}
+            resizeMode="cover"
+          />
+
+          <TouchableOpacity
+            style={styles.bookmarkButton}
+            onPress={() => {
+              /* Bookmark function */
+            }}
+          >
+            <View style={styles.whitebox}>
+              <Feather name="bookmark" size={17} color="black" />
+            </View>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {},
   card: {
-    flexDirection: "row", // change this line
+    flexDirection: "row",
     marginBottom: 10,
     backgroundColor: "#fff",
     borderRadius: 10,
-    shadowColor: "#000",
-    shadowOpacity: 0.3,
-    shadowRadius: 10,
-    shadowOffset: { width: 0, height: 0 },
-    elevation: 5,
-    height: 200, // set card height
+    borderColor: "#285943",
+    shadowColor: '#171717',
+    shadowOffset: {width: 0, height: 5},
+    shadowOpacity:1,
+    shadowRadius: 3,
+    elevation: 10,
+    height: 200,
+    borderWidth: 1,
+    margin: 14,
   },
   imageContainer: {
+    position: "relative",
     padding: 10,
   },
   image: {
-    width: 100,
-    height: "100%",
-    borderRadius: 10,
+    width: 109,
+    height: 156,
+    borderRadius: 12,
+    marginTop: 10,
+   
+   
+
+  },
+  bookmarkButton: {
+    position: "absolute",
+    top: 20,
+    right: 10,
+    zIndex: 1,
+    backgroundColor: "transparent",
   },
   cardContent: {
-    padding: 10,
     flex: 1,
+    padding: 10,
   },
   title: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: "bold",
+    color: "#E87F10",
   },
   description: {
     fontSize: 14,
     marginTop: 5,
     marginBottom: 10,
+    flexWrap: 'wrap',
+    maxWidth: '100%',
+    maxHeight: '100%'
   },
   details: {
     fontSize: 12,
     color: "#888",
     marginBottom: 10,
   },
-  button: {
-    backgroundColor: "#76c4f5",
-    padding: 2, // Reduced padding
-    borderRadius: 5,
+  whitebox: {
+    width: 24,
+    height: 24,
+    backgroundColor: "white",
+    alignItems: "center",
+    justifyContent: "center",
+    margin: 10,
+    borderRadius: 4,
+  },
+  rating: {
+    display: "flex",
+    marginTop: 5,
+    marginBottom: 10,
+    marginLeft: 1,
+    flexDirection: "row",
     alignItems: "center",
   },
-  buttonText: {
-    color: "#fff",
-    fontSize: 12,
+  bold: {
+    fontWeight: "bold",
   },
+
+  row: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: 'center',
+    marginLeft: -2, 
+  },
+
+  icon1: {
+    marginRight: 2,
+    
+
+  },
+
+  icon2: {
+    marginLeft: 3,
+    marginRight: 4,
+  }
+
 });
 
 export default ResourceCard;

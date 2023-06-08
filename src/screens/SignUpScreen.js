@@ -14,7 +14,7 @@ const SignUpScreen = () => {
 
     const handleSignUp = () => {
         // Insert your IP below
-        axios.post('http://<Your IP>:5000/register', {
+        axios.post('<Your IP>:5000/register', {
             name,
             email,
             password

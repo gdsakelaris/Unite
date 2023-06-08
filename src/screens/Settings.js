@@ -1,19 +1,18 @@
-import { PreventRemoveContext } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import CustomSwitch from 'react-native-custom-switch';
 import { AntDesign } from '@expo/vector-icons';
-
-
+import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions';
 
 function Settings({ navigation }) {
   const [pushNotification, setPushNotification] = useState(false);
   const toggleNotification = () => setPushNotification(prevVal => !prevVal)
+  const { fontScale } = useWindowDimensions()
+  const styles = makeStyle(fontScale)
   return (
-
     <View style={styles.container}>
       <View style={styles.settingContainer}>
-        {/* Push Notifications  */}
+        {/* Push Notifications */}
         <View
           style={styles.settingOptContainer}>
           <Text
@@ -38,7 +37,6 @@ function Settings({ navigation }) {
               onSwitch={setPushNotification} //called when the switch is pressed
             />
           </View>
-
         </View>
 
         {/* Dark Mode */}
@@ -64,7 +62,6 @@ function Settings({ navigation }) {
               switchBackgroundColor={'#AD2525'} //default background color of the switch when it's off
               onSwitchBackgroundColor={'#0F993E'} //change background color of the switch when it's on
               onSwitch={setPushNotification} //called when the switch is pressed
-
             />
           </View>
         </View>
@@ -73,8 +70,6 @@ function Settings({ navigation }) {
         <TouchableOpacity
           style={styles.settingOptContainer}
           onPress={() => navigation.navigate('Language')}>
-
-
           <Text
             style={styles.settingOptText}
             adjustsFontSizeToFit={true}
@@ -89,17 +84,13 @@ function Settings({ navigation }) {
               color="black"
               adjustsFontSizeToFit={true}
               minimumFontScale={0.5} />
-
           </View>
-
         </TouchableOpacity>
 
         {/* Privacy & Security */}
         <TouchableOpacity
           style={styles.settingOptContainer}
-          onPress={() => console.log('Pressed')}>
-
-
+          onPress={() => navigation.navigate('PrivacyAgreementScreen')}>
           <Text
             style={styles.settingOptText}
             adjustsFontSizeToFit={true}
@@ -114,17 +105,13 @@ function Settings({ navigation }) {
               color="black"
               adjustsFontSizeToFit={true}
               minimumFontScale={0.5} />
-
           </View>
-
         </TouchableOpacity>
 
         {/* Terms of Service */}
         <TouchableOpacity
           style={styles.settingOptContainer}
-          onPress={() => console.log('Pressed')}>
-
-
+          onPress={() => navigation.navigate('TermsOfServiceScreen')}>
           <Text
             style={styles.settingOptText}
             adjustsFontSizeToFit={true}
@@ -139,17 +126,13 @@ function Settings({ navigation }) {
               color="black"
               adjustsFontSizeToFit={true}
               minimumFontScale={0.5} />
-
           </View>
-
         </TouchableOpacity>
 
         {/* Connected Account */}
         <TouchableOpacity
           style={styles.settingOptContainer}
           onPress={() => navigation.navigate('ConnectedAccount')}>
-
-
           <Text
             style={styles.settingOptText}
             adjustsFontSizeToFit={true}
@@ -164,17 +147,13 @@ function Settings({ navigation }) {
               color="black"
               adjustsFontSizeToFit={true}
               minimumFontScale={0.5} />
-
           </View>
-
         </TouchableOpacity>
 
         {/* App Info */}
         <TouchableOpacity
           style={styles.settingOptContainer}
           onPress={() => console.log('Pressed')}>
-
-
           <Text
             style={styles.settingOptText}
             adjustsFontSizeToFit={true}
@@ -189,18 +168,14 @@ function Settings({ navigation }) {
               color="black"
               adjustsFontSizeToFit={true}
               minimumFontScale={0.5} />
-
           </View>
-
         </TouchableOpacity>
-
       </View>
-
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+const makeStyle = fontScale => StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white'
@@ -218,15 +193,13 @@ const styles = StyleSheet.create({
     paddingLeft: '7%',
     justifyContent: 'space-between',
     paddingRight: '4%'
-
   },
   settingOptText: {
-    fontSize: 18
+    fontSize: 24 / fontScale
   },
   settingButton: {
     paddingRight: '4%'
   }
-
 });
 
 export default Settings;
