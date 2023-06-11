@@ -22,60 +22,60 @@ const Setting_connected = () => {
     setSwitch3On(previousState => !previousState);
   };
 
-  
 
 
-    
-  
+
+
+
 
   return (
     <View style={styles.container}>
-      
+
 
       <View style={styles.details_container}>
         <TouchableOpacity style={styles.rowContainer}>
           <Text style={{ marginLeft: 15, flex: 1, fontSize: 16 }}>Google</Text>
-          <CustomSwitch 
+          <CustomSwitch
             onSwitch={toggleSwitch1}
             onSwitchReverse={toggleSwitch1}
             buttonWidth={25}
             switchWidth={58}
             buttonPadding={2}
             switchBackgroundColor={switch1On ? '#0F993E' : '#AD2525'}
-            switchLeftTextStyle={{ fontSize: 10}}
+            switchLeftTextStyle={{ fontSize: 10 }}
             switchLeftText="ON"
-            switchRightTextStyle={{ fontSize: 10}}
+            switchRightTextStyle={{ fontSize: 10 }}
             switchRightText="OFF"
-            
+
           />
         </TouchableOpacity>
         <TouchableOpacity style={styles.rowContainer}>
           <Text style={{ marginLeft: 15, flex: 1, fontSize: 16 }}>Facebook</Text>
-          <CustomSwitch 
+          <CustomSwitch
             onSwitch={toggleSwitch2}
             onSwitchReverse={toggleSwitch2}
             buttonWidth={25}
             switchWidth={58}
             buttonPadding={2}
             switchBackgroundColor={switch2On ? '#0F993E' : '#AD2525'}
-            switchLeftTextStyle={{ fontSize: 10}}
+            switchLeftTextStyle={{ fontSize: 10 }}
             switchLeftText="ON"
-            switchRightTextStyle={{ fontSize: 10}}
+            switchRightTextStyle={{ fontSize: 10 }}
             switchRightText="OFF"
           />
         </TouchableOpacity>
         <TouchableOpacity style={styles.rowContainer}>
           <Text style={{ marginLeft: 15, flex: 1, fontSize: 16 }}>Twitter</Text>
-          <CustomSwitch 
+          <CustomSwitch
             onSwitch={toggleSwitch3}
             onSwitchReverse={toggleSwitch3}
             buttonWidth={25}
             switchWidth={58}
             buttonPadding={2}
             switchBackgroundColor={switch3On ? '#AD2525' : '#0F993E'}
-            switchLeftTextStyle={{ fontSize: 10}}
+            switchLeftTextStyle={{ fontSize: 10 }}
             switchLeftText="ON"
-            switchRightTextStyle={{ fontSize: 10}}
+            switchRightTextStyle={{ fontSize: 10 }}
             switchRightText="OFF"
           />
         </TouchableOpacity>
@@ -85,7 +85,7 @@ const Setting_connected = () => {
 }
 const styles = StyleSheet.create({
   container: {
-    flex:1,
+    flex: 1,
     backgroundColor: "white",
   },
   text: {
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     paddingVertical: 21,
     borderBottomWidth: 1,
     borderBottomColor: "#ccc",
-    marginRight :6,
+    marginRight: 6,
   }
 });
 

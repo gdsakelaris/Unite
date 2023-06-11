@@ -11,8 +11,8 @@ import { FontAwesome } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 
-export default function ProfilePage({navigation}) {
-  return ( 
+export default function ProfilePage({ navigation }) {
+  return (
     <View style={styles.appContainer}>
       <View style={styles.img_container}>
         <View style={styles.circle}>

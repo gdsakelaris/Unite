@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+import axios from 'axios';
+
 const SignUpScreen = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -11,8 +13,19 @@ const SignUpScreen = () => {
     const navigation = useNavigation();
 
     const handleSignUp = () => {
-        // Handle sign-up logic here
-    }
+        // Insert your IP below
+        axios.post('http://<YOUR IP HERE>:5000/register', {
+            name,
+            email,
+            password
+        })
+            .then(function (response) {
+                console.log(response.data.token);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    };
 
     return (
         <View style={styles.container}>
