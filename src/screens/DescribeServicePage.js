@@ -33,7 +33,7 @@ const AboutSection = () => (
 )
 
 
-const HourOption = ({date, setVisible, openTime, setDayClicked}) => {
+const HourOption = ({date, setVisible, openTime}) => {
   let openAt = ''
   let closeAt = ''
   let isOpen = ''
@@ -50,34 +50,33 @@ const HourOption = ({date, setVisible, openTime, setDayClicked}) => {
     <Text style={styles.availableDay}>
       {date}:
     </Text>
-    <DropDownButton setVisible={setVisible} value={openAt} setDayClicked={setDayClicked} date={date}/>
+    <DropDownButton setVisible={setVisible} value={openAt}/>
     <Text style={styles.availableDay}>
       to
     </Text>
-    <DropDownButton setVisible={setVisible} value={closeAt} setDayClicked={setDayClicked} date={date}/>
+    <DropDownButton setVisible={setVisible} value={closeAt} />
   </View>
 
   ) : <View style={styles.availableDayContainer}>
   <Text style={styles.availableDay}>
     {date}:
   </Text>
-  <DropDownButton setVisible={setVisible} value={'Closed'} setDayClicked={setDayClicked} date={date}/>
+  <DropDownButton setVisible={setVisible} value={'Closed'}/>
 </View>
 
 }
-const DropDownButton = ({setVisible, value, setDayClicked, date}) => {
+const DropDownButton = ({setVisible, value}) => {
   return (<View style={styles.dropDownButtonContainer}>
     <View style={{ width:'82%', alignItems:'center'}}>
       <Text style={{fontSize:14, color:'black', }}>{value}</Text>
     </View>
-    <TouchableOpacity onPress={() => {setVisible(true)
-                                      setDayClicked(date)}} >
+    <TouchableOpacity onPress={() => setVisible(true)}>
       <MaterialIcons name="keyboard-arrow-down" size={20} color="black" style={styles.arrowDownIcon}/>
     </TouchableOpacity>
   </View>)
 }
-const HourSection = ({setVisible, openTime, setDayClicked}) => {
-  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+const HourSection = ({setVisible, openTime}) => {
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
   return (
   <View style={[styles.sectionContainer, {flex: 3}]}>
     <View style={styles.titleSectionContainer}>
@@ -87,7 +86,7 @@ const HourSection = ({setVisible, openTime, setDayClicked}) => {
     </View>
     <View style={[styles.sectionContainer, {flex: 7}]}>
       {days.map((e,i) => (
-        <HourOption date={e} setVisible={setVisible} key={i.toString()} openTime={openTime} setDayClicked={setDayClicked}/>
+        <HourOption date={e} setVisible={setVisible} key={i.toString()} openTime={openTime}/>
       ))}
     </View>
   </View>)
@@ -161,7 +160,6 @@ const DescribeServicePage = () => {
     {date: 'Friday', openAt: '0:00', closeAt: '0:00', isOpen: 'Open'},
     {date: 'Saturday', openAt: '0:00', closeAt: '0:00', isOpen: 'Open'},
   ])
-  const [dateclicked, setDayClicked] = useState('')
   const [imageUris, setImageUris] = useState([])
   const addImageUri = (uri) => setImageUris([...imageUris, uri])
   const removeImageUri = (uri) => setImageUris(imageUris.filter(imageUri => imageUri !== uri)) 
@@ -170,12 +168,12 @@ const DescribeServicePage = () => {
       <View style={styles.container}>
           <Title titleOnLine1={'Describe your'} titleOnLine2={'service'}  styles={styles}/>
           <AboutSection/>
-          <HourSection setVisible={setVisible} openTime={openTime} setDayClicked={setDayClicked}/>
+          <HourSection setVisible={setVisible} openTime={openTime}/>
           <MediaSection/>
           <LocationSection/>
           <AddImageSection imageUris={imageUris} addImageUri={addImageUri} removeImageUri={removeImageUri} /> 
           <NextButton/>
-          <CustomModalDatetimePicker visible={visible} setVisible={setVisible} setOpenTime={setOpentime} openTime={openTime} dateClicked={dateclicked}/>
+          <CustomModalDatetimePicker visible={visible} setVisible={setVisible}/>
       </View>
      
     

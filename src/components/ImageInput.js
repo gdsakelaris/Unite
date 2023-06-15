@@ -37,7 +37,7 @@ const ImageInput = ({imageUri, onChangeImage}) => {
     }}>
       <View style={styles.container}>
         {!imageUri && <MaterialCommunityIcons name='camera' size={40}/>}
-        {imageUri && <Image source={{uri: imageUri}} style={styles.image}/>}
+        {imageUri && <Image source={{uri: imageUri}} style={styles.image} resizeMode='cover'/>}
       </View>
     </TouchableWithoutFeedback>
   );

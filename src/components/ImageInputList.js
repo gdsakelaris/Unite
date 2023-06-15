@@ -6,7 +6,6 @@ const ImageInputList = ({imageUris = [], onRemoveImage, onAddImage}) => {
   return (
     <View style={styles.container}>
       {imageUris.map(uri => (
-     
         <ImageInput imageUri={uri} onChangeImage ={() => onRemoveImage(uri)} key={uri}/>
      
       ))}
@@ -21,7 +20,7 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     width:'100%',
     flexWrap:'wrap',
-    justifyContent:'space-between'
+    
   },
 
 
