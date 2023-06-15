@@ -6,10 +6,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import img from "../images/Reslogo.png";
-import { Ionicons } from "@expo/vector-icons";
-import { FontAwesome } from "@expo/vector-icons";
-import { Entypo } from "@expo/vector-icons";
-import { MaterialIcons } from "@expo/vector-icons";
+import { Ionicons, FontAwesome, Entypo, MaterialIcons } from "@expo/vector-icons";
 
 export default function ProfilePage({ navigation }) {
   return (
@@ -27,6 +24,11 @@ export default function ProfilePage({ navigation }) {
         <TouchableOpacity style={styles.rowContainer} onPress={() => navigation.navigate('BookmarkedServices')}>
           <FontAwesome name="bookmark" size={24} color="#ff4500" />
           <Text style={{ marginLeft: 20, flex: 1 }}>Bookmarked Services</Text>
+          <MaterialIcons name="keyboard-arrow-right" size={24} color="black" />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.rowContainer} onPress={() => console.log('Pressed')}>
+          <Ionicons name="md-document-outline" size={24} color="#ff4500" />
+          <Text style={{ marginLeft: 20, flex: 1 }}>View Published Service</Text>
           <MaterialIcons name="keyboard-arrow-right" size={24} color="black" />
         </TouchableOpacity>
         <TouchableOpacity style={styles.rowContainer} onPress={() => navigation.navigate('SettingsNavigation')}>
