@@ -154,29 +154,37 @@ const HomeScreen = ({ navigation }) => {
 
 // const makeStyle = (width, height) => StyleSheet.create({
 const makeStyle = (fontScale) => {
-  const { width, height } = useWindowDimensions();
 
   return StyleSheet.create({
     container: {
       flex: 1
     },
     searchBarContainer: {
-      width: width * 0.95,
-      height: height * 0.06,
+      width: '100%',
+      height:'6%',
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',
+      paddingHorizontal: '2%',
+      
     },
     searchBarView: {
       flexDirection: 'row',
       borderColor: 'black',
-      borderWidth: 1,
-      borderRadius: 12,
-      elevation: 20,
-      backgroundColor: "#FFF"
+      borderWidth: 1 / fontScale,
+      borderRadius: 12 / fontScale,
+      elevation: 20 / fontScale,
+      backgroundColor: "#FFF",
+      height:'100%',
+      backgroundColor: '#FFFFFF',
+      shadowColor: '#171717',
+      shadowOffset: { width: 0 / fontScale, height: 4 / fontScale },
+      shadowOpacity: 0.5 /fontScale,
+      shadowRadius: 3 /fontScale,
+      elevation: 20 / fontScale, 
     },
     searchBar: {
       flex: 1,
-      fontSize: 20,
+      fontSize: 20 / fontScale,
       paddingLeft: '14%',
     },
     searchIcon: {
@@ -194,11 +202,10 @@ const makeStyle = (fontScale) => {
       marginLeft: '1%'
     },
     locationText: {
-      fontSize: 20,
+      fontSize: 20 / fontScale,
       color: '#337155',
       fontWeight: '600',
     },
-    locationIcon: {},
     cardsContainer: {
       flex: 8,
       flexWrap: 'wrap',
@@ -210,9 +217,15 @@ const makeStyle = (fontScale) => {
       height: '25%',
       marginBottom: '5%',
       backgroundColor: "#FFF",
-      borderWidth: 0.05,
-      borderRadius: 12,
-      elevation: 20,
+      borderWidth: 0.05 / fontScale,
+      borderRadius: 12 / fontScale,
+      elevation: 20 / fontScale,
+      backgroundColor: '#FFFFFF',
+      shadowColor: '#171717',
+      shadowOffset: { width: 0, height: 4 / fontScale },
+      shadowOpacity: 0.5 / fontScale,
+      shadowRadius: 4 / fontScale,
+      elevation: 20 / fontScale,
     },
     cardImage: {
       width: '100%',
@@ -231,7 +244,7 @@ const makeStyle = (fontScale) => {
       height: '30%'
     },
     cardTitle: {
-      fontSize: 20,
+      fontSize: 20 / fontScale,
       fontWeight: '500'
     }
   });
