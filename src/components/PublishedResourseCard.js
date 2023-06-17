@@ -6,70 +6,77 @@ import {
   Image,
   StyleSheet,
   TouchableOpacity,
-  ScrollView,
 } from "react-native";
-import { Feather } from "@expo/vector-icons";
-import { FontAwesome } from "@expo/vector-icons";
-import { Entypo } from "@expo/vector-icons";
-import { EvilIcons, Ionicons } from "@expo/vector-icons";
+import { Feather, FontAwesome, Entypo, EvilIcons, Ionicons } from "@expo/vector-icons";
+import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions';
 
-const PublishedResCard = ({ item, navigation, fullPageServiceName}) => {
-    return (
-        <View style={styles.container}>
-          <View style={styles.card}>
-            <View style={styles.cardContent}>
-              <TouchableOpacity onPress={() => navigation.navigate(fullPageServiceName)}>
-                <Text style={styles.title}>{item.name}</Text>
-              </TouchableOpacity>
-              <View style={styles.rating}>
-                <FontAwesome
-                  style={{ marginBottom: -2 }}
-                  name="star"
-                  size={14}
-                  color="black"
-                />
-                <Text style={styles.bold}> {item.rating} </Text>
-                <Entypo
-                  style={{ marginLeft: -7 }}
-                  name="dot-single"
-                  size={20}
-                  color="black"
-                />
-                <Text style={{ marginLeft: -7, fontWeight: "bold" }}>
-                  {" "}
-                  {item.reviews} Reviews
-                </Text>
-              </View>
-    
-              <Text style={styles.description}>{item.desc}</Text>
-    
-              
-    
-              <View style={styles.row}>
-                <EvilIcons
-                  name="location"
-                  size={20}
-                  color="black"
-                  style={styles.icon1}
-                />
-                <Text>{item.location}</Text>
-              </View>
-              <View style={styles.row}>
-                <Ionicons
-                  name="ios-call-outline"
-                  size={15}
-                  color="black"
-                  style={styles.icon2}
-                />
-                <Text>{item.number}</Text>
-              </View>
-              
-            </View>
-            
-            <View style={styles.imageContainer}>
+const ResourceCardContainer = ({cardStyle, children}) => (
+  <View style={cardStyle}>
+      {children}
+  </View>)
+
+const CardTitle = ({title, onPress, titleStyle}) => (
+  <TouchableOpacity onPress={onPress}>
+      <Text style={titleStyle}>{title}</Text>
+  </TouchableOpacity>
+)
+const CardContent = ({cardContentStyle, children}) => (
+  <View style={cardContentStyle}>
+      {children}
+  </View>
+) 
+const RatingAndReview = ({rating, ratingContainerStyle, textStyle, review }) => (
+  <View style={ratingContainerStyle}>
+        <FontAwesome
+          name="star"
+          size={14}
+          color="black"
+        />
+        <Text style={textStyle}> {rating} </Text>
+        <Entypo
+          name="dot-single"
+          size={20}
+          color="black"
+        />
+        <Text style={textStyle}>
+          {" "}
+          {review} Reviews
+        </Text>
+  </View>
+)
+
+const Description = ({description, descriptionTextStyle, descriptionContainer}) => (
+  <View style={{width:'100%', flexWrap: 'wrap', flexDirection:'row', paddingVertical:10}}>
+        <Text style={descriptionTextStyle}>{description}</Text>
+  </View>
+)
+
+const ContactInfo = ({location, number, contactContainerStyle, contactInfoText}) => (
+    location ?
+      <View style={contactContainerStyle}>
+        <EvilIcons
+          name="location"
+          size={20}
+          color="black"
+          
+        />
+        <Text style={contactInfoText}>{location}</Text>
+      </View>
+        : 
+        <View style={contactContainerStyle}>
+          <Ionicons
+              name="ios-call-outline"
+              size={20}
+              color="black"
+        />
+        <Text style={contactInfoText}>{number}</Text>
+        </View>
+)
+const ResourceImage = ({picture, styles}) => (
+  <View style={styles.imageContainer}>
               <Image
                 source={
-                  typeof item.image === "string" ? { uri: item.image } : item.image // Use local image directly
+                  typeof picture === "string" ? { uri: picture } : picture
                 }
                 style={styles.image}
                 resizeMode="cover"
@@ -89,19 +96,28 @@ const PublishedResCard = ({ item, navigation, fullPageServiceName}) => {
               <TouchableOpacity style = {styles.editbtn}>
                 <Text style = {styles.edtbtntxt}> edit </Text>
             </TouchableOpacity>
-            </View>
+  </View>
+)
+const PublishedResCard = ({ item, navigation, fullPageServiceName}) => {
+  const {fontScale} = useWindowDimensions()
+  const styles = makeStyle(fontScale)
+    return (
+      <ResourceCardContainer cardStyle={styles.card}>
+          <CardContent cardContentStyle={styles.cardContent}>
+              <CardTitle title={item.name} titleStyle={styles.title}/>
+              <RatingAndReview rating={item.rating} ratingContainerStyle={styles.rating} textStyle={styles.ratingAndReviewText} review={item.reviews}/>
+              <Description description={item.desc} descriptionTextStyle={styles.description}/>
+              <ContactInfo location={item.location} contactContainerStyle={styles.contactContainerStyle} contactInfoText={styles.contactInfoText}/>
+              <ContactInfo number={item.number} contactContainerStyle={styles.contactContainerStyle} contactInfoText={styles.contactInfoText}/>
+          </CardContent>
 
-            
-           
-            
-            
-          </View>
-        </View>
-      );
+          <ResourceImage picture={item.image} styles={styles}/>
+      </ResourceCardContainer>
+        
+    );
 };
 
-const styles = StyleSheet.create({
-    container: {},
+const makeStyle = fontScale => StyleSheet.create({
     card: {
       flexDirection: "row",
       marginBottom: 10,
@@ -110,7 +126,7 @@ const styles = StyleSheet.create({
       borderColor: "#285943",
       shadowColor: 'grey',
       shadowOffset: {width: 0, height: 5},
-      shadowOpacity:1,
+      shadowOpacity: 1,
       shadowRadius: 3,
       elevation: 10,
       height: 239,
@@ -118,50 +134,44 @@ const styles = StyleSheet.create({
       margin: 14,
     },
     imageContainer: {
-      position: "relative",
-      padding: 10,
+     // position: "relative",
+      padding:10, 
+      flex:1,
+      alignItems:'center',
+      //backgroundColor:'red',
+      justifyContent:'space-between'
+      
     },
     image: {
-      width: 109,
-      height: 156,
+      width: '100%',
+      height: '80%',
       borderRadius: 12,
       marginTop: 10,
-     
-     
   
     },
     bookmarkButton: {
       position: "absolute",
       top: 20,
       right: 10,
-      zIndex: 1,
+     // zIndex: 1,
       backgroundColor: "transparent",
     },
     cardContent: {
-      flex: 1,
+      flex: 2,
       padding: 10,
     },
     title: {
-      fontSize: 20,
+      fontSize: 20 / fontScale,
       fontWeight: "bold",
       color: "#E87F10",
     },
     description: {
-      fontSize: 14,
-      marginTop: 5,
-      marginBottom: 10,
-      flexWrap: 'wrap',
-      maxWidth: '100%',
-      maxHeight: '100%'
-    },
-    details: {
-      fontSize: 12,
-      color: "#888",
-      marginBottom: 10,
+      fontSize: 16 / fontScale,
+     
     },
     whitebox: {
-      width: 24,
-      height: 24,
+      width: 25 / fontScale,
+      height: 27 / fontScale,
       backgroundColor: "white",
       alignItems: "center",
       justifyContent: "center",
@@ -170,56 +180,42 @@ const styles = StyleSheet.create({
     },
     rating: {
       display: "flex",
-      marginTop: 5,
-      marginBottom: 10,
-      marginLeft: 1,
+      // marginTop: 5,
+      // marginBottom: 10,
+      // marginLeft: 1,
       flexDirection: "row",
       alignItems: "center",
+      paddingVertical:5
     },
-    bold: {
-      fontWeight: "bold",
+    ratingAndReviewText: {
+      fontWeight: '700',
+      fontSize: 14 / fontScale
     },
   
-    row: {
+    contactContainerStyle: {
       display: "flex",
       flexDirection: "row",
       alignItems: 'center',
-      marginLeft: -2, 
+      marginBottom:'2%'
     },
-  
-    icon1: {
-      marginRight: 2,
-      
-  
-    },
-  
-    icon2: {
-      marginLeft: 3,
-      marginRight: 4,
-    },
-
     editbtn: {
-        width: 63,
-        height: 17,
+        width: '60%',
+        height: '10%',
         borderRadius: 5,
         backgroundColor: '#F78154',
-        alignItems: 'center',
-        marginTop: 20,
-        marginLeft: 45,
-
-    
+        justifyContent:'center',
+        alignItems:'center',
+        alignSelf: 'flex-end',
     },
 
     edtbtntxt: {
         color: 'white',
-        fontSize: 14,
+        fontSize: 16 / fontScale,
         fontWeight: 'bold',
-
-
+    },
+    contactInfoText: {
+      fontSize: 16 / fontScale
     }
-
-
-  
   });
 
   export default PublishedResCard;

@@ -1,136 +1,54 @@
 import React from 'react';
 import { View, StyleSheet, Image, Text } from 'react-native';
 import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions';
+import afghanistanflag from '../images/countryflags/afghanistanflag.png'
+import americanflag from '../images/countryflags/americanflag.png'
+import brazilflag from '../images/countryflags/brazilflag.png'
+import franceflag from '../images/countryflags/franceflag.png'
+import germanyflag from '../images/countryflags/germanyflag.png'
+import italianflag from '../images/countryflags/italianflag.png'
+import japanflag from '../images/countryflags/japanflag.png'
+import russiaflag from '../images/countryflags/russiaflag.png'
+import spainflag from '../images/countryflags/spainflag.png'
+import turkeyflag from '../images/countryflags/turkeyflag.png'
+import ukraineflag from '../images/countryflags/ukraineflag.png'
+import unitedarabflag from '../images/countryflags/unitedarabflag.png'
 
+const LanguageCard = ({picture, styles, title}) => (
+      <View style={styles.languageContainer}>
+            <Image
+                  source={ picture !== null
+                        ? { uri: picture }
+                        : { uri: "https://placehold.co/400?text=No+image+available" }}
+                  style={styles.image} />
+            <Text
+                  style={styles.text}>
+                  {title}
+            </Text>
+      </View>
+
+)
 const LanguageContainer = () => {
       const { fontScale } = useWindowDimensions();
       const styles = makeStyles(fontScale)
+      const supportedLanguages = [
+            {title: 'English', picture: Image.resolveAssetSource(americanflag).uri},
+            {title: 'Italiano', picture: Image.resolveAssetSource(italianflag).uri},
+            {title: 'عربي', picture: Image.resolveAssetSource(unitedarabflag).uri},
+            {title: 'پښتو', picture: Image.resolveAssetSource(afghanistanflag).uri},
+            {title: 'Português', picture: Image.resolveAssetSource(brazilflag).uri},
+            {title: 'Deutsch', picture: Image.resolveAssetSource(germanyflag).uri},
+            {title: 'Español', picture: Image.resolveAssetSource(spainflag).uri},
+            {title: 'Français', picture: Image.resolveAssetSource(franceflag).uri},
+            {title: 'Türkçe', picture: Image.resolveAssetSource(turkeyflag).uri},
+            {title: 'українська', picture: Image.resolveAssetSource(ukraineflag).uri},
+            {title: '日本語', picture: Image.resolveAssetSource(japanflag).uri},
+            {title: 'русский', picture: Image.resolveAssetSource(russiaflag).uri},
+      ]
       return (
             <View style={styles.container}>
-                  {/* English */}
-                  <View style={styles.languageContainer}>
-
-                        <Image
-                              source={require('../../images/countryflags/americanflag.png')}
-                              style={styles.image} />
-                        <Text
-                              style={[styles.text, { marginRight: '15%' }]}>
-                              English
-                        </Text>
-                  </View>
-                  {/* Italia */}
-                  <View style={styles.languageContainer}>
-                        <Image
-                              source={require('../../images/countryflags/italianflag.png')}
-                              style={styles.image} />
-                        <Text
-                              style={[styles.text, { marginRight: '15%' }]}>
-                              Italiano
-                        </Text>
-                  </View>
-                  {/* arab */}
-                  <View style={styles.languageContainer}>
-                        <Image
-                              source={require('../../images/countryflags/unitedarabflag.png')}
-                              style={styles.image} />
-                        <Text
-                              style={[styles.text, { marginRight: '30%' }]}>
-                              عربي
-
-                        </Text>
-                  </View>
-                  {/* afghan */}
-                  <View style={styles.languageContainer}>
-                        <Image
-                              source={require('../../images/countryflags/afghanistanflag.png')}
-                              style={styles.image} />
-                        <Text
-                              style={[styles.text, { marginRight: '30%' }]}>
-                              پښتو
-
-                        </Text>
-                  </View>
-                  {/* Brazil */}
-                  <View style={styles.languageContainer}>
-                        <Image
-                              source={require('../../images/countryflags/brazilflag.png')}
-                              style={styles.image} />
-                        <Text
-                              style={[styles.text]}>
-                              Português
-
-                        </Text>
-                  </View>
-                  {/* Germany */}
-                  <View style={styles.languageContainer}>
-                        <Image
-                              source={require('../../images/countryflags/germanyflag.png')}
-                              style={styles.image} />
-                        <Text
-                              style={[styles.text, { marginRight: '10%' }]}>
-                              Deutsch
-                        </Text>
-                  </View>
-                  {/* Spain */}
-                  <View style={styles.languageContainer}>
-                        <Image
-                              source={require('../../images/countryflags/spainflag.png')}
-                              style={styles.image} />
-                        <Text
-                              style={[styles.text, { marginRight: '10%' }]}>
-                              Español
-                        </Text>
-                  </View>
-                  {/* France */}
-                  <View style={styles.languageContainer}>
-                        <Image
-                              source={require('../../images/countryflags/franceflag.png')}
-                              style={styles.image} />
-                        <Text
-                              style={[styles.text, { marginRight: '8%' }]}>
-                              Français
-                        </Text>
-                  </View>
-                  {/* Turkey */}
-                  <View style={styles.languageContainer}>
-                        <Image
-                              source={require('../../images/countryflags/turkeyflag.png')}
-                              style={styles.image} />
-                        <Text
-                              style={[styles.text, { marginRight: '17%' }]}>
-                              Türkçe
-                        </Text>
-                  </View>
-                  {/* Ukraine */}
-                  <View style={styles.languageContainer}>
-                        <Image
-                              source={require('../../images/countryflags/ukraineflag.png')}
-                              style={styles.image} />
-                        <Text
-                              style={styles.text}>
-                              українська
-                        </Text>
-                  </View>
-                  {/* Japan */}
-                  <View style={styles.languageContainer}>
-                        <Image
-                              source={require('../../images/countryflags/japanflag.png')}
-                              style={styles.image} />
-                        <Text
-                              style={[styles.text, { marginRight: '15%' }]}>
-                              日本語
-                        </Text>
-                  </View>
-                  {/* Russia */}
-                  <View style={styles.languageContainer}>
-                        <Image
-                              source={require('../../images/countryflags/russiaflag.png')}
-                              style={styles.image} />
-                        <Text
-                              style={styles.text}>
-                              русский
-                        </Text>
-                  </View>
+                 {supportedLanguages.map((language, i) => 
+                                                      <LanguageCard picture={language.picture} title={language.title} key={i.toString()} styles={styles}/>)}
             </View>
       );
 }

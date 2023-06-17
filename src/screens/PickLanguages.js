@@ -33,12 +33,10 @@ const PickLanguages = () => {
             style={styles.buttonContainer}>
         <TouchableOpacity 
                         style={styles.button}>
-                        <View>
-                              <Text 
-                                    style={styles.buttonText}>
-                                                Other
-                              </Text>
-                        </View>
+                          <Text 
+                                style={styles.buttonText}>
+                                            Other
+                          </Text> 
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -67,8 +65,8 @@ const makeStyle = fontScale => StyleSheet.create({
   button: {
     backgroundColor:'#F78154',
     borderRadius: '40%',
-    width: 330,
-    height:'75%',
+    width: 330 / fontScale,
+    height:'80%',
     justifyContent:'center',
     alignItems:'center'
   },
