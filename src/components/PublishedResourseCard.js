@@ -46,7 +46,7 @@ const RatingAndReview = ({rating, ratingContainerStyle, textStyle, review }) => 
 )
 
 const Description = ({description, descriptionTextStyle, descriptionContainer}) => (
-  <View style={{width:'100%', flexWrap: 'wrap', flexDirection:'row', paddingVertical:10}}>
+  <View style={descriptionContainer}>
         <Text style={descriptionTextStyle}>{description}</Text>
   </View>
 )
@@ -72,7 +72,7 @@ const ContactInfo = ({location, number, contactContainerStyle, contactInfoText})
         <Text style={contactInfoText}>{number}</Text>
         </View>
 )
-const ResourceImage = ({picture, styles}) => (
+const ResourceImage = ({picture, styles, hasEditButton}) => (
   <View style={styles.imageContainer}>
               <Image
                 source={
@@ -92,13 +92,15 @@ const ResourceImage = ({picture, styles}) => (
                   <Feather name="bookmark" size={17} color="black" />
                 </View>
               </TouchableOpacity>
-
-              <TouchableOpacity style = {styles.editbtn}>
-                <Text style = {styles.edtbtntxt}> edit </Text>
-            </TouchableOpacity>
+            {hasEditButton && <EditButton text={'edit'} editButtonStyle={styles.editbtn} editButtonTextStyle={styles.edtbtntxt}/>}
   </View>
 )
-const PublishedResCard = ({ item, navigation, fullPageServiceName}) => {
+const EditButton = ({text, editButtonStyle, editButtonTextStyle}) => (
+  <TouchableOpacity style = {editButtonStyle}>
+      <Text style = {editButtonTextStyle}>{text}</Text>
+  </TouchableOpacity>
+)
+const PublishedResCard = ({ item, navigation, fullPageServiceName, hasEditButton}) => {
   const {fontScale} = useWindowDimensions()
   const styles = makeStyle(fontScale)
     return (
@@ -106,12 +108,12 @@ const PublishedResCard = ({ item, navigation, fullPageServiceName}) => {
           <CardContent cardContentStyle={styles.cardContent}>
               <CardTitle title={item.name} titleStyle={styles.title}/>
               <RatingAndReview rating={item.rating} ratingContainerStyle={styles.rating} textStyle={styles.ratingAndReviewText} review={item.reviews}/>
-              <Description description={item.desc} descriptionTextStyle={styles.description}/>
+              <Description description={item.desc} descriptionTextStyle={styles.description} descriptionContainer={styles.descriptionContainer}/>
               <ContactInfo location={item.location} contactContainerStyle={styles.contactContainerStyle} contactInfoText={styles.contactInfoText}/>
               <ContactInfo number={item.number} contactContainerStyle={styles.contactContainerStyle} contactInfoText={styles.contactInfoText}/>
           </CardContent>
 
-          <ResourceImage picture={item.image} styles={styles}/>
+          <ResourceImage picture={item.image} styles={styles} hasEditButton={hasEditButton}/>
       </ResourceCardContainer>
         
     );
@@ -164,6 +166,12 @@ const makeStyle = fontScale => StyleSheet.create({
       fontSize: 20 / fontScale,
       fontWeight: "bold",
       color: "#E87F10",
+    },
+    descriptionContainer: {
+      width:'100%', 
+      flexWrap: 'wrap', 
+      flexDirection:'row', 
+      paddingVertical:10
     },
     description: {
       fontSize: 16 / fontScale,
