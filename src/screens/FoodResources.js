@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView,} from "react-native";
-import ResourceCard from "../components/ResourceCard";
+import PublishedResCard from "../components/PublishedResourseCard";
 import img from "../images/Dummyresource.png"
 import { AntDesign } from '@expo/vector-icons'; 
 
@@ -19,16 +19,15 @@ const FoodResources = ({navigation}) => {
 
     return(
         <View style = {styles.container}>
-
             <TouchableOpacity style = {styles.sortbutton}>
                 <Text> Sort by</Text>
                 <AntDesign name="down" size={18} color="black" style = {styles.arrow}/>
             </TouchableOpacity>
             <ScrollView>
-            <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'FoodResourceService'}/>
-            <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'FoodResourceService'}/>
-            <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'FoodResourceService'}/>
-            <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'FoodResourceService'}/>
+            <PublishedResCard item={resourceData} navigation={navigation} fullPageServiceName={'FoodResourceService'} hasEditButton={false}/>
+            <PublishedResCard item={resourceData} navigation={navigation} fullPageServiceName={'FoodResourceService'} hasEditButton={false}/>
+            <PublishedResCard item={resourceData} navigation={navigation} fullPageServiceName={'FoodResourceService'} hasEditButton={false}/>
+            <PublishedResCard item={resourceData} navigation={navigation} fullPageServiceName={'FoodResourceService'} hasEditButton={false}/>
             </ScrollView>
         </View>
     );

@@ -1,16 +1,15 @@
 import React from "react";
 import {
-  View,
+  SafeAreaView,
   Text,
-  Image,
   StyleSheet,
   TouchableOpacity,
   ScrollView,
 } from "react-native";
-import ResourceCard from "../components/ResourceCard";
 import img from "../images/Dummyresource.png";
 import { AntDesign } from "@expo/vector-icons";
 import PublishedResCard from "../components/PublishedResourseCard";
+import useWindowDimensions from "react-native/Libraries/Utilities/useWindowDimensions";
 
 const PublishedServices = () => {
   const resourceData = {
@@ -23,33 +22,35 @@ const PublishedServices = () => {
     reviews: 6,
     number: "603-678-976",
   };
+  const { fontScale } = useWindowDimensions();
+  const styles = makeStyle(fontScale);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.headin}>My Published Services</Text>
 
       <ScrollView>
-        <PublishedResCard item={resourceData} />
-        <PublishedResCard item={resourceData} />
-        <PublishedResCard item={resourceData} />
+        <PublishedResCard item={resourceData} hasEditButton={true} />
+        <PublishedResCard item={resourceData}  hasEditButton={true}/>
+        <PublishedResCard item={resourceData} hasEditButton={true}/>
       </ScrollView>
 
       <TouchableOpacity style={styles.addbtn}>
-        <AntDesign name="plus" size={34} color="white" />
+        <AntDesign name="plus" size={34 / fontScale} color="white" />
         <Text style={styles.addbtntext}> Add </Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 
-const styles = StyleSheet.create({
+const makeStyle = fontScale => StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
   },
 
   headin: {
-    fontSize: 36,
+    fontSize: 36 / fontScale,
     fontWeight: "bold",
     padding: 14,
     maxWidth: 327,
@@ -58,10 +59,10 @@ const styles = StyleSheet.create({
   addbtn: {
     display: "flex",
     flexDirection: "row",
-    width: 155,
-    height: 42,
+    width: '40%',
+    height: '7%',
     backgroundColor: "#F78154",
-    borderRadius: 15,
+    borderRadius: '15%',
     justifyContent: "space-evenly",
     alignItems: "center",
     position: "absolute",
@@ -72,8 +73,7 @@ const styles = StyleSheet.create({
   addbtntext: {
     fontWeight: "bold",
     color: "white",
-    fontSize: 24,
-    //paddingTop: 2,
+    fontSize: 26 / fontScale,
   },
 });
 

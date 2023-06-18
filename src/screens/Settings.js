@@ -4,174 +4,91 @@ import CustomSwitch from 'react-native-custom-switch';
 import { AntDesign } from '@expo/vector-icons';
 import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions';
 
-function Settings({ navigation }) {
+const SettingOptWithoutSwitchBtn = ({title, navigateTo, settings}) => (
+  <TouchableOpacity
+          style={settings.settingOptContainer}
+          onPress={() => settings.navigation.navigate(navigateTo)}>
+          <Text
+            style={settings.settingOptText}>
+            {title}
+          </Text>
+          <View
+            style={settings.settingButton}>
+            <AntDesign
+              name="right"
+              size={20}
+              color="black"/>
+          </View>
+  </TouchableOpacity>
+)
+const SettingOptWithSwitchBtn = ({settings, title}) => (
+  <View
+      style={settings.settingOptContainer}>
+      <Text
+        style={settings.settingOptText}>
+        {title}
+      </Text>
+      <View>
+        <CustomSwitch
+          buttonWidth={30}
+          switchLeftText={"ON"}
+          switchLeftTextStyle={settings.switchBtnText}
+          switchRightText={"OFF"}
+          switchRightTextStyle={settings.switchBtnText}
+          switchWidth={80}
+          buttonPadding={4}
+          buttonColor={'#FFFFFF'}
+          startOnLeft={settings.pushNotification} //set the default of the switch value is off
+          switchBackgroundColor={'#AD2525'} //default background color of the switch when it's off
+          onSwitchBackgroundColor={'#0F993E'} //change background color of the switch when it's on
+          onSwitch={settings.setPushNotification} //called when the switch is pressed
+        />
+      </View>
+  </View>
+
+)
+const SettingContainer = ({container, children, settingContainer}) => (
+  <View style={container}>
+      <View style={settingContainer}>
+        {children}
+      </View>
+  </View>
+
+)
+
+const Settings = ({ navigation }) => {
   const [pushNotification, setPushNotification] = useState(false);
   const toggleNotification = () => setPushNotification(prevVal => !prevVal)
   const { fontScale } = useWindowDimensions()
   const styles = makeStyle(fontScale)
+  const settings = {
+    settingOptContainer: styles.settingOptContainer,
+    settingOptText: styles.settingOptText,
+    switchBtnText: styles.switchBtnText,
+    pushNotification: pushNotification,
+    setPushNotification: setPushNotification,
+    navigation: navigation,
+    settingButton: styles.settingButton
+  }
+  const settingsOption = [
+    {title: 'Push Notification'},
+    {title: 'Dark Mode'},
+    {title: 'Language', navigateTo: 'Language'},
+    {title: 'Privacy & Security', navigateTo: 'PrivacyAgreementScreen'},
+    {title: 'Terms of Service', navigateTo: 'TermsOfServiceScreen'},
+    {title: 'Connected Accounts', navigateTo: 'ConnectedAccount'},
+    {title: 'App Info', navigateTo: 'AppInfo'}
+  ]
   return (
-    <View style={styles.container}>
-      <View style={styles.settingContainer}>
-        {/* Push Notifications */}
-        <View
-          style={styles.settingOptContainer}>
-          <Text
-            style={styles.settingOptText}
-            adjustsFontSizeToFit={true}
-            minimumFontScale={0.5}>
-            Push Notifications
-          </Text>
-          <View>
-            <CustomSwitch
-              buttonWidth={30}
-              switchLeftText={"ON"}
-              switchLeftTextStyle={{ color: '#fff', fontSize: 14 }}
-              switchRightText={"OFF"}
-              switchRightTextStyle={{ color: '#fff', fontSize: 14 }}
-              switchWidth={80}
-              buttonPadding={4}
-              buttonColor={'#FFFFFF'}
-              startOnLeft={pushNotification} //set the default of the switch value is off
-              switchBackgroundColor={'#AD2525'} //default background color of the switch when it's off
-              onSwitchBackgroundColor={'#0F993E'} //change background color of the switch when it's on
-              onSwitch={setPushNotification} //called when the switch is pressed
-            />
-          </View>
-        </View>
+    <SettingContainer container={styles.container} settingContainer={styles.settingContainer}>
+      {settingsOption.map((opt, i) => 
+                                      {
+                                        if (opt.title === 'Push Notification' || opt.title === 'Dark Mode') return <SettingOptWithSwitchBtn settings={settings} title={opt.title} key={i.toString()}/>
+                                        else return <SettingOptWithoutSwitchBtn settings={settings} title={opt.title} navigateTo={opt.navigateTo} key={i.toString()}/>
+                                      })}
 
-        {/* Dark Mode */}
-        <View
-          style={styles.settingOptContainer}>
-          <Text
-            style={styles.settingOptText}
-            adjustsFontSizeToFit={true}
-            minimumFontScale={0.5}>
-            Dark Mode
-          </Text>
-          <View>
-            <CustomSwitch
-              buttonWidth={30}
-              switchLeftText={"ON"}
-              switchLeftTextStyle={{ color: '#fff', fontSize: 14 }}
-              switchRightText={"OFF"}
-              switchRightTextStyle={{ color: '#fff', fontSize: 14 }}
-              switchWidth={80}
-              buttonPadding={4}
-              buttonColor={'#FFFFFF'}
-              startOnLeft={pushNotification} //set the default of the switch value is off
-              switchBackgroundColor={'#AD2525'} //default background color of the switch when it's off
-              onSwitchBackgroundColor={'#0F993E'} //change background color of the switch when it's on
-              onSwitch={setPushNotification} //called when the switch is pressed
-            />
-          </View>
-        </View>
-
-        {/* Language */}
-        <TouchableOpacity
-          style={styles.settingOptContainer}
-          onPress={() => navigation.navigate('Language')}>
-          <Text
-            style={styles.settingOptText}
-            adjustsFontSizeToFit={true}
-            minimumFontScale={0.5}>
-            Language
-          </Text>
-          <View
-            style={styles.settingButton}>
-            <AntDesign
-              name="right"
-              size={20}
-              color="black"
-              adjustsFontSizeToFit={true}
-              minimumFontScale={0.5} />
-          </View>
-        </TouchableOpacity>
-
-        {/* Privacy & Security */}
-        <TouchableOpacity
-          style={styles.settingOptContainer}
-          onPress={() => navigation.navigate('PrivacyAgreementScreen')}>
-          <Text
-            style={styles.settingOptText}
-            adjustsFontSizeToFit={true}
-            minimumFontScale={0.5}>
-            Privacy & Security
-          </Text>
-          <View
-            style={styles.settingButton}>
-            <AntDesign
-              name="right"
-              size={20}
-              color="black"
-              adjustsFontSizeToFit={true}
-              minimumFontScale={0.5} />
-          </View>
-        </TouchableOpacity>
-
-        {/* Terms of Service */}
-        <TouchableOpacity
-          style={styles.settingOptContainer}
-          onPress={() => navigation.navigate('TermsOfServiceScreen')}>
-          <Text
-            style={styles.settingOptText}
-            adjustsFontSizeToFit={true}
-            minimumFontScale={0.5}>
-            Terms of Service
-          </Text>
-          <View
-            style={styles.settingButton}>
-            <AntDesign
-              name="right"
-              size={20}
-              color="black"
-              adjustsFontSizeToFit={true}
-              minimumFontScale={0.5} />
-          </View>
-        </TouchableOpacity>
-
-        {/* Connected Account */}
-        <TouchableOpacity
-          style={styles.settingOptContainer}
-          onPress={() => navigation.navigate('ConnectedAccount')}>
-          <Text
-            style={styles.settingOptText}
-            adjustsFontSizeToFit={true}
-            minimumFontScale={0.5}>
-            Connected Accounts
-          </Text>
-          <View
-            style={styles.settingButton}>
-            <AntDesign
-              name="right"
-              size={20}
-              color="black"
-              adjustsFontSizeToFit={true}
-              minimumFontScale={0.5} />
-          </View>
-        </TouchableOpacity>
-
-        {/* App Info */}
-        <TouchableOpacity
-          style={styles.settingOptContainer}
-          onPress={() => console.log('Pressed')}>
-          <Text
-            style={styles.settingOptText}
-            adjustsFontSizeToFit={true}
-            minimumFontScale={0.5}>
-            App Info
-          </Text>
-          <View
-            style={styles.settingButton}>
-            <AntDesign
-              name="right"
-              size={20}
-              color="black"
-              adjustsFontSizeToFit={true}
-              minimumFontScale={0.5} />
-          </View>
-        </TouchableOpacity>
-      </View>
-    </View>
+    </SettingContainer>
+    
   );
 }
 
@@ -199,7 +116,10 @@ const makeStyle = fontScale => StyleSheet.create({
   },
   settingButton: {
     paddingRight: '4%'
+  },
+  switchBtnText: {
+    color: '#fff', 
+    fontSize: 14
   }
 });
-
 export default Settings;

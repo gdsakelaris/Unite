@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Image, Text, Pressable} from 'react-native';
+import { View, StyleSheet, Image, Text, Pressable, ScrollView} from 'react-native';
 import { FontAwesome, EvilIcons } from '@expo/vector-icons';
 import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions';
 
@@ -52,7 +52,7 @@ const ServiceDetail = ({styles,detailOption, setdetailOption}) => (
                {/* Media */}
                <ServiceOption styles={styles} title='Media' setdetailOption={setdetailOption} detailOption={detailOption} index={2}/>
           </View>
-          {detailOption && <ServiceOptionDetail detailOption={detailOption}/>}
+          {detailOption && <ServiceOptionDetail detailOption={detailOption} serviceOptionDetail={styles.serviceOptionDetail}/>}
 
       </View>
   </View>
@@ -64,9 +64,12 @@ const ServiceOption = ({title, setdetailOption, detailOption, index, styles}) =>
     </Pressable>
 </View>
 )
-const ServiceOptionDetail = ({detailOption}) => (
-  <View style={{flexWrap:'wrap', flexDirection:'row'}}> 
-        <Text>{detailOption && detailOption.detail}</Text>    
+const ServiceOptionDetail = ({detailOption, serviceOptionDetail}) => (
+
+  <View style={serviceOptionDetail}> 
+      <ScrollView>
+        <Text >{detailOption && detailOption.detail}</Text>    
+      </ScrollView>
   </View>
 
 )
@@ -127,7 +130,8 @@ const makeStyle = (fontScale) => StyleSheet.create({
   },
   serviceDetailStyle: {
     flex: 4,
-   // backgroundColor:'green'
+    
+  //  backgroundColor:'green'
   },
   serviceDetailOptionStyle: {
     width:'20%', 
@@ -135,7 +139,7 @@ const makeStyle = (fontScale) => StyleSheet.create({
     borderBottomColor:'#FE7940'
   },
   serviceDetailOptionTextStyle: {
-    fontSize:'26%', 
+    fontSize: 30 / fontScale, 
     fontWeight:'300'
   },
   servicesDetailInnerContainer: {
@@ -146,11 +150,21 @@ const makeStyle = (fontScale) => StyleSheet.create({
 
   },
   serviceDetailOptionContainer: {
-    width:'85%', 
+    width:'100%%', 
     height:'100%', 
     flexDirection:'row', 
-    justifyContent:'space-between',
-    paddingHorizontal: '2%'
+    justifyContent: 'space-around',
+    paddingHorizontal: '2%',
+
+  },
+  serviceOptionDetail: {
+    flexWrap:'wrap', 
+    flexDirection:'row',
+    height: 300,
+    paddingVertical: 10,
+    paddingHorizontal:20
+
+
   }
 });
 export default ServicesFullPage;

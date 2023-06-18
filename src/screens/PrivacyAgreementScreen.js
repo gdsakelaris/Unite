@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ScrollView, View, Text, StyleSheet } from 'react-native';
+import useWindowDimensions from "react-native/Libraries/Utilities/useWindowDimensions";
 const PrivacyAgreementScreen = () => {
 
     //this is just some test data to simulate getting something from the api, replace it with an actual call
@@ -33,6 +34,8 @@ const PrivacyAgreementScreen = () => {
     let response_obj = JSON.parse(jsonString);
     let _r_text = response_obj.data;
     const effectivedate = response_obj.effectivedate;
+    const { fontScale } = useWindowDimensions();
+    const styles = makeStyle(fontScale);
     
     return (
         <View style={styles.container}>
@@ -45,7 +48,7 @@ const PrivacyAgreementScreen = () => {
 }
 
 
-const styles = StyleSheet.create({
+const makeStyle = fontScale => StyleSheet.create({
     container: {
         flex: 1,
         paddingLeft: 29,
@@ -68,11 +71,12 @@ const styles = StyleSheet.create({
 
     },
     subHeader: {
-        fontSize: 14,
+        fontSize: 18 / fontScale,
         fontWeight: 'bold',
         paddingBottom: 16,
     },
     content: {
+        fontSize: 16 / fontScale
     },
     settingOptText: {
         fontSize: 18,

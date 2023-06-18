@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView,} from "react-native";
-import ResourceCard from "../components/ResourceCard";
+import PublishedResCard from "../components/PublishedResourseCard";
 import img from "../images/Dummyresource.png"
 import { AntDesign } from '@expo/vector-icons'; 
 
@@ -25,10 +25,10 @@ const Employment = ({navigation}) => {
                 <AntDesign name="down" size={18} color="black" style = {styles.arrow}/>
             </TouchableOpacity>
             <ScrollView>
-            <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'EmploymentService'}/>
-            <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'EmploymentService'}/>
-            <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'EmploymentService'}/>
-            <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'EmploymentService'}/>
+            <PublishedResCard item={resourceData} navigation={navigation} fullPageServiceName={'EmploymentService'} hasEditButton={false}/>
+            <PublishedResCard item={resourceData} navigation={navigation} fullPageServiceName={'EmploymentService'} hasEditButton={false}/>
+            <PublishedResCard item={resourceData} navigation={navigation} fullPageServiceName={'EmploymentService'} hasEditButton={false}/>
+            <PublishedResCard item={resourceData} navigation={navigation} fullPageServiceName={'EmploymentService'} hasEditButton={false}/>
             </ScrollView>
         </View>
     );

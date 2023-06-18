@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView } from "react-native";
 import { EvilIcons, AntDesign } from "@expo/vector-icons";
+import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions';
+import SearchBar from "../components/SearchBar";
 
 const HelpPage = () => {
   const detailedInfo = [
@@ -22,23 +24,14 @@ const HelpPage = () => {
       }
     });
   };
-
+  const {fontScale} = useWindowDimensions()
+  const styles = makeStyle(fontScale)
   return (
     <View style={styles.container}>
         <ScrollView>
       <Text style={styles.heading}>Hi, how can we help you?</Text>
       <View style={styles.searchBarContainer}>
-      <View style={styles.searchBarView}>
-          <TextInput
-            style={styles.searchBar}
-            placeholder={"Search..."}
-            autoCapitalize={false}
-            autoComplete={false}
-            clearButtonMode={true}
-            inputMode={"text"}
-          />
-          <EvilIcons name="search" size={30} color="black" style={styles.searchIcon} />
-        </View>
+        <SearchBar style={styles.searchBarView}/>
       </View>
 
       {detailedInfo.map((item, index) => (
@@ -69,23 +62,23 @@ const HelpPage = () => {
   );
 };
 
-const styles = StyleSheet.create({
+const makeStyle = fontScale => StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: "white",
     },
     heading: {
-      fontSize: 24,
+      fontSize: 26 / fontScale,
       fontWeight: "bold",
       marginLeft: 20,
     },
     searchBarContainer: {
-      justifyContent: "center",
-      alignItems: "center",
-      Maxwidth: "100%",
-      Maxheight: "10%",
-      marginBottom: 28.5,
-      marginTop: 14,
+      width: '100%',
+      height: '6%',
+      justifyContent: 'center',
+      alignItems: 'center',
+      paddingHorizontal:'2%',
+      marginVertical:'7%'
     },
     searchBarView: {
       width: 362,
@@ -101,16 +94,6 @@ const styles = StyleSheet.create({
       shadowRadius: 3,
       elevation: 20,
     },
-    searchBar: {
-        flex: 1,
-        paddingHorizontal: 50,
-        fontSize: 15,
-    },
-    searchIcon: {
-      position: "absolute",
-      top: "22%",
-      left: "4%",
-    },
     settingOptContainer: {
       borderBottomWidth: 0.25,
       borderColor: "black",
@@ -121,10 +104,11 @@ const styles = StyleSheet.create({
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "space-between",
-      height: 70,
+      height: 90,
+      
     },
     question: {
-      fontSize: 16,
+      fontSize: 21 / fontScale,
       color: "#E87F10",
     },
     settingButton: {
@@ -135,7 +119,7 @@ const styles = StyleSheet.create({
       paddingRight: 5
     },
     detailText: {
-      fontSize: 14,
+      fontSize: 16 / fontScale,
       color: "black",
     },
   });

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { Entypo } from "@expo/vector-icons";
+import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions';
 
 const languageOptions = [
   { label: "English" },
@@ -15,6 +16,8 @@ const languageOptions = [
 
 const Setting_lang = () => {
   const [selectedLanguage, setSelectedLanguage] = useState("");
+  const {fontScale} = useWindowDimensions()
+  const styles = makeStyle(fontScale)
 
   const handleLanguageSelection = (language) => {
     setSelectedLanguage(language);
@@ -45,7 +48,7 @@ const Setting_lang = () => {
   );
 };
 
-const styles = StyleSheet.create({
+const makeStyle = fontScale => StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
@@ -61,15 +64,15 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "#ccc",
     paddingHorizontal: 10,
-    height: 65,
+    height: '11%',
   },
   selectedRowContainer: {
     backgroundColor: "#F0F0F0",
   },
   languageText: {
-    marginLeft: 16,
+    marginLeft: '4%',
     flex: 1,
-    fontSize: 16,
+    fontSize: 18 / fontScale,
   },
 });
 

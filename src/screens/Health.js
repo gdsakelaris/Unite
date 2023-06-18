@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
-import ResourceCard from "../components/ResourceCard";
+import PublishedResCard from "../components/PublishedResourseCard";
 import img from "../images/Dummyresource.png";
 import { AntDesign } from "@expo/vector-icons";
 
@@ -22,7 +22,6 @@ const Health_Resource = ({navigation}) => {
     reviews: 6,
     number: "603-678-976",
   };
-
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.sortbutton}>
@@ -30,10 +29,14 @@ const Health_Resource = ({navigation}) => {
         <AntDesign name="down" size={18} color="black" style={styles.arrow} />
       </TouchableOpacity>
       <ScrollView>
-      <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'HealthService'}/>
-      <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'HealthService'}/>
-      <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'HealthService'}/>
-      <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'HealthService'}/>
+      <PublishedResCard item={resourceData} navigation={navigation} fullPageServiceName={'HealthService'}
+      hasEditButton={false}/>
+      <PublishedResCard item={resourceData} navigation={navigation} fullPageServiceName={'HealthService'}
+      hasEditButton={false}/>
+      <PublishedResCard item={resourceData} navigation={navigation} fullPageServiceName={'HealthService'}
+      hasEditButton={false}/>
+      <PublishedResCard item={resourceData} navigation={navigation} fullPageServiceName={'HealthService'}
+      hasEditButton={false}/>
       </ScrollView>
     </View>
   );
