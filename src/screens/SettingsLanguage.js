@@ -1,73 +1,40 @@
 import React, { useState } from "react";
-import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
-import { Entypo } from "@expo/vector-icons";
+import {StyleSheet } from "react-native";
 import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions';
+import { RadioButton } from 'react-native-paper';
 
 const languageOptions = [
-  { label: "English" },
-  { label: "Spanish" },
-  { label: "French" },
-  { label: "Germany" },
-  { label: "Italian" },
-  { label: "Russian" },
-  { label: "Mandarin Chinese" },
-  { label: "Arabic" },
+  { label: "English", value: "english" },
+  { label: "Spanish", value: "spanish" },
+  { label: "French", value: "french" },
+  { label: "Germany", value: "germany" },
+  { label: "Italian", value: "italian"},
+  { label: "Russian", value: "russian" },
+  { label: "Mandarin Chinese", value: "madarin" },
+  { label: "Arabic", value:"arabic" },
 ];
 
 const Setting_lang = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState("");
+  const [selectedLanguage, setSelectedLanguage] = useState(languageOptions[0].value);
   const {fontScale} = useWindowDimensions()
   const styles = makeStyle(fontScale)
 
   const handleLanguageSelection = (language) => {
     setSelectedLanguage(language);
   };
-
   return (
-    <View style={styles.container}>
-      <View style={styles.details_container}>
-        {languageOptions.map((option) => (
-          <TouchableOpacity
-            key={option.label}
-            style={[
-              styles.rowContainer,
-              selectedLanguage === option.label && styles.selectedRowContainer,
-            ]}
-            onPress={() => handleLanguageSelection(option.label)}
-          >
-            <Text style={styles.languageText}>
-              {option.label}
-            </Text>
-            {selectedLanguage === option.label && (
-              <Entypo name="check" size={24} color="black" />
-            )}
-          </TouchableOpacity>
-        ))}
-      </View>
-    </View>
+    <RadioButton.Group onValueChange={newLang => handleLanguageSelection(newLang)} value={selectedLanguage}>
+      {languageOptions.map((language, i) => 
+                                  <RadioButton.Item label={language.label} value={language.value} key={i.toString()} style={styles.rowContainer} labelStyle={styles.languageText}/>)}
+    </RadioButton.Group>
   );
 };
 
 const makeStyle = fontScale => StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "white",
-  },
-  details_container: {
-    margin: "3%",
-  },
   rowContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingVertical: 21,
     borderBottomWidth: 1,
     borderBottomColor: "#ccc",
-    paddingHorizontal: 10,
-    height: '11%',
-  },
-  selectedRowContainer: {
-    backgroundColor: "#F0F0F0",
+    height: 80 
   },
   languageText: {
     marginLeft: '4%',
@@ -75,5 +42,4 @@ const makeStyle = fontScale => StyleSheet.create({
     fontSize: 18 / fontScale,
   },
 });
-
 export default Setting_lang;
