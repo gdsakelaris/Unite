@@ -1,50 +1,27 @@
-import React from 'react';
-import { View, StyleSheet, TextInput } from 'react-native';
-import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions';
-import { EvilIcons} from '@expo/vector-icons';
+import * as React from 'react';
+import { StyleSheet} from 'react-native';
+import { Searchbar } from 'react-native-paper';
+const SearchBar = ({style}) => {
+  const [searchQuery, setSearchQuery] = React.useState('');
 
+  const onChangeSearch = query => setSearchQuery(query);
 
-const SearchBar = ({style, ...props}) => {
-  const { fontScale } = useWindowDimensions()
-  const styles = makeStyle(fontScale)
   return (
-    <View style={[styles.searchBarView, style]}>
-          <TextInput
-            style={styles.searchBar}
-            placeholder={'Search...'}
-            autoCapitalize={'none'}
-            autoCompleteType={'off'}
-            clearButtonMode={'always'}
-            {...props} />
-
-          <EvilIcons
-            name="search"
-            size={30}
-            color="black"
-            style={styles.searchIcon}
-          />
-    </View>
+    <Searchbar
+      placeholder="Search"
+      onChangeText={onChangeSearch}
+      value={searchQuery}
+      style={[styles.searhBarDefaultStyle, style]}
+    />
   );
-}
-
-const makeStyle = fontScale => StyleSheet.create({
-  searchBarView: {
-    flexDirection: 'row',
-    borderColor: 'black',
-    borderWidth: 0.80 ,
-    borderRadius: 12,
-    height:'100%',
-  },
-  searchBar: {
-    flex: 1,
-    fontSize: 20 / fontScale,
-    paddingLeft: '14%',
-  },
-  searchIcon: {
-    position: 'absolute',
-    top: '22%',
-    left: '4%'
-  },
-});
+};
+const styles = StyleSheet.create({
+  searhBarDefaultStyle: {
+    backgroundColor:'white', 
+    borderColor:'black', 
+    marginHorizontal:'3%', 
+    borderWidth:1
+  }
+})
 
 export default SearchBar;

@@ -75,9 +75,7 @@ const HomeScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       {/* Search bar */}
-      <View style={styles.searchBarContainer}>
-          <SearchBar/>
-      </View>
+      <SearchBar/>
       {/* Location sign */}
       <Location location={'Florida, USA'} styles={styles}/>
 
