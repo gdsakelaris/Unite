@@ -1,44 +1,60 @@
 import * as React from 'react';
-import { Card, Avatar, Text, Button } from 'react-native-paper';
-import { StyleSheet, View, Dimensions, ScrollView } from 'react-native';
+import { Card, Avatar, Text} from 'react-native-paper';
+import { StyleSheet, View } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons'; //star: black star, star-o: white star, star-half-empty: haft black half white star
-
-
+import AvatarIcon from './AvatarIcon';
 const FiveStars = () => {
-  const fivestarsArr = Array.from({length: 5})
-  return (
-    <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-      {fivestarsArr.map((_, i) => 
-                                  <FontAwesome name='star' size={20} key={i.toString()}/>
-                                  )}
-    </View>
-  )
-  
-}
-const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
-
+  const arr = Array.from({length: 5})
+  return (<View style={styles.fiveStars}>
+      {arr.map((_, i) => (
+        <FontAwesome name='star' size={15} key={i.toString()}/>
+      ))}
+      
+  </View>)
+} 
 function ReviewCard(props) {
-  const [componentHeight, setComponentHeight] = React.useState(0);
-
-  const handleLayout = (event) => {
-    const { height } = event.nativeEvent.layout;
-    console.log(height)
-    setComponentHeight(height);
-  };
+  const {reviewerName, content, reviewerProfileUri, ratings, postedDate} = props
+  const avatarSetting = {
+    source: reviewerProfileUri
+  }
   return (
-    <Card>
-      <Card.Title title='Phong Diep' left={() => <Avatar.Image source={require('../images/Dummyresource.png')}/>} right={() => <Text>2 days ago</Text>} subtitle={<Text variant='labelLarge'><FiveStars/> 5.0</Text>}/>
-      <Card.Content style={{backgroundColor:'red',}}>
-              <ScrollView style={{height: 2000}}>
-                <Text variant='bodyLarge'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.</Text>
-                </ScrollView>
+    <Card mode='outlined' style={styles.container} >
+      <Card.Title 
+                title={<Text variant='titleLarge' style={styles.titleText}>
+                            {reviewerName}
+                        </Text>} 
+                left={() => <AvatarIcon avatarSettings={avatarSetting}/>} 
+                right={() => <Text style={styles.postedDateStyle}>{postedDate}</Text>} 
+                subtitle={<Text variant='labelLarge'><FiveStars/> {parseFloat(ratings)}</Text>} 
+                subtitleStyle={styles.titleMargin} 
+                titleStyle={styles.titleMargin}/>
+      <Card.Content >
+          <Text variant='bodyMedium'>{content}</Text>
       </Card.Content>
     </Card>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {}
+  container: {
+    borderColor:'transparent'
+  },
+  titleText: {
+    fontWeight:'600',
+  },
+  titleMargin: {
+    marginLeft:'7%'
+  },
+  fiveStars: {
+    flexDirection:'row', 
+    justifyContent:'space-between',
+    marginRight: 10
+  },
+  postedDateStyle: {
+    fontWeight: '300',
+  
+  }
+
 });
 
 export default ReviewCard;
