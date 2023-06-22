@@ -1,5 +1,6 @@
+//this file will create a dialog meassage (will be used for logout notification, login/signup error msg )
 import * as React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { dialog as styles } from './css';
 import { Dialog, Portal, Text, Button} from 'react-native-paper';
 
 // iconStyle : expect object of expected following keys: color, size, 
@@ -11,7 +12,6 @@ const DialogMessage = ({title, content, error, iconStyle, titleStyle, contentSty
   const [visible, setVisible] = React.useState(true);
   const showDialog = () => setVisible(true);
   const hideDialog = () => setVisible(false);
-  
   return (
     <Portal>
       <Dialog visible={visible} onDismiss={hideDialog}>
@@ -29,11 +29,4 @@ const DialogMessage = ({title, content, error, iconStyle, titleStyle, contentSty
     </Portal>
   );
 }
-
-const styles = StyleSheet.create({
-  dialogDefaultTitleStyle: {
-    textAlign:'center'
-  }
-});
-
 export default DialogMessage;

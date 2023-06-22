@@ -1,11 +1,10 @@
+//this file will create a search bar
 import * as React from 'react';
-import { StyleSheet} from 'react-native';
+import { searchBar as styles } from './css';
 import { Searchbar } from 'react-native-paper';
 const SearchBar = ({style}) => {
   const [searchQuery, setSearchQuery] = React.useState('');
-
   const onChangeSearch = query => setSearchQuery(query);
-
   return (
     <Searchbar
       placeholder="Search"
@@ -15,13 +14,4 @@ const SearchBar = ({style}) => {
     />
   );
 };
-const styles = StyleSheet.create({
-  searhBarDefaultStyle: {
-    backgroundColor:'white', 
-    borderColor:'black', 
-    marginHorizontal:'3%', 
-    borderWidth:1
-  }
-})
-
 export default SearchBar;

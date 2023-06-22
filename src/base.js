@@ -11,5 +11,11 @@ export const colors = {
   white: '#FFFFFF',
   darkorange: '#F24E1E',
   lightgray: '#F4F4F4',
-  lightdark: '#4E4E4E'
+  lightdark: '#4E4E4E',
+  green: '#337155',
+  orange: '#E87F10',
+  transparent: "transparent",
+  lightpink: '#ffe4df',
+  switchOff: '#AD2525',
+  switchOn: '#0F993E'
 }
