@@ -38,15 +38,14 @@ const Setting_connected = () => {
           <CustomSwitch
             onSwitch={toggleSwitch1}
             onSwitchReverse={toggleSwitch1}
-            buttonWidth={25}
-            switchWidth={58}
-            buttonPadding={2}
+            buttonWidth={30}
+            switchWidth={80}
+            buttonPadding={4}
             switchBackgroundColor={switch1On ? '#0F993E' : '#AD2525'}
-            switchLeftTextStyle={{ fontSize: 10 }}
+            switchLeftTextStyle={{color: 'white', fontSize: 14 }}
             switchLeftText="ON"
-            switchRightTextStyle={{ fontSize: 10 }}
+            switchRightTextStyle={{color: 'white', fontSize: 14 }}
             switchRightText="OFF"
-
           />
         </TouchableOpacity>
         <TouchableOpacity style={styles.rowContainer}>
@@ -54,13 +53,13 @@ const Setting_connected = () => {
           <CustomSwitch
             onSwitch={toggleSwitch2}
             onSwitchReverse={toggleSwitch2}
-            buttonWidth={25}
-            switchWidth={58}
-            buttonPadding={2}
+            buttonWidth={30}
+            switchWidth={80}
+            buttonPadding={4}
             switchBackgroundColor={switch2On ? '#0F993E' : '#AD2525'}
-            switchLeftTextStyle={{ fontSize: 10 }}
+            switchLeftTextStyle={{color: 'white', fontSize: 14 }}
             switchLeftText="ON"
-            switchRightTextStyle={{ fontSize: 10 }}
+            switchRightTextStyle={{color: 'white', fontSize: 14 }}
             switchRightText="OFF"
           />
         </TouchableOpacity>
@@ -69,13 +68,13 @@ const Setting_connected = () => {
           <CustomSwitch
             onSwitch={toggleSwitch3}
             onSwitchReverse={toggleSwitch3}
-            buttonWidth={25}
-            switchWidth={58}
-            buttonPadding={2}
-            switchBackgroundColor={switch3On ? '#AD2525' : '#0F993E'}
-            switchLeftTextStyle={{ fontSize: 10 }}
+            buttonWidth={30}
+            switchWidth={80}
+            buttonPadding={4}
+            switchBackgroundColor={switch3On ? '#0F993E' : '#AD2525'}
+            switchLeftTextStyle={{color: 'white', fontSize: 14 }}
             switchLeftText="ON"
-            switchRightTextStyle={{ fontSize: 10 }}
+            switchRightTextStyle={{color: 'white', fontSize: 14 }}
             switchRightText="OFF"
           />
         </TouchableOpacity>

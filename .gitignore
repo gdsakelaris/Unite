@@ -20,3 +20,7 @@ Thumbs.db
 .idea/
 
 .env
+package-lock.json
+package.json
+src/navigations/ProfileNavigation.js
+src/navigations/SettingsNavigation.js
