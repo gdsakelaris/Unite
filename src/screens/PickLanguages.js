@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet,Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import LanguageContainer from '../components/LanguageContainer';
+import LanguageContainer from './PickLanguageScreen/LanguageContainer';
 import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions';
 
 const PickLanguages = () => {

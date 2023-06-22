@@ -1,6 +1,6 @@
 import React from 'react';
 import {Avatar} from 'react-native-paper';
-
+// this function will receive one param and return the correct type of Avatar based on that param
 const getAvartaType = (type) => {
   if (type.icon) return <Avatar.Icon {...type}/>
   else if (type.source) {
