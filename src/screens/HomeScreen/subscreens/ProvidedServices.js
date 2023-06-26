@@ -12,9 +12,4 @@ const ProvidedServices = ({navigation}) => {
     </ProvidedServicesContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {}
-});
-
 export default ProvidedServices;

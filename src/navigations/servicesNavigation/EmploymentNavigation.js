@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Employment from '../../screens/Employment';
-import ServicesFullPage from '../../screens/ServicesFullPage';
+import Employment from '../../screens/services/Employment';
+import ServicesFullPage from '../../screens/ServiceFullPageScreen/ServicesFullPage';
 import Header from '../Header';
 const EmploymentNavigation = () => {
   const Stack = createStackNavigator();

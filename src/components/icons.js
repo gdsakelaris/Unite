@@ -1,5 +1,5 @@
 //this file contains all the icons that is used in this component folder
-import { MaterialCommunityIcons, FontAwesome, Feather} from '@expo/vector-icons';  //star: black star, star-o: white star, star-half-empty: haft black half white star
+import { MaterialCommunityIcons, FontAwesome, Feather, Entypo, EvilIcons, Ionicons} from '@expo/vector-icons';  //star: black star, star-o: white star, star-half-empty: haft black half white star
 import { fontScale } from '../base';
 export const cameraIcon = <MaterialCommunityIcons name='camera' size={40 / fontScale}/>
 

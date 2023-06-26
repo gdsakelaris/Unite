@@ -11,10 +11,14 @@ const LocationText = ({location}) => {
         {locationIcon}
         <View style={styles.locationTextContainer}>
           <Pressable
-            onPressIn={() => handleLocationTextFocused(setIsFocus)}
-            onPressOut={() => handleLocationTextBlurred(setIsFocus)}>
+            //onPressIn={() => handleLocationTextFocused(setIsFocus)}
+            onPressIn={() => console.log('Pressed')}
+            //onPressOut={() => handleLocationTextBlurred(setIsFocus)}
+            onPressOut={() => console.log('Pressed')}
+            >
             <Text
-              style={getSpecificStyleForlocationText(isFocus)}>
+              //style={getSpecificStyleForlocationText(isFocus)}
+              >
                 {location}
             </Text>
           </Pressable>

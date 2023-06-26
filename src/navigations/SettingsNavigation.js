@@ -1,10 +1,10 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Settings from '../screens/Settings';
-import Setting_connected from '../screens/SettingsConnected';
-import Setting_lang from '../screens/SettingsLanguage';
-import PrivacyAgreementScreen from '../screens/PrivacyAgreementScreen'
-import TermsOfServiceScreen from '../screens/TermsOfServiceScreen'
+import Settings from '../screens/SettingsScreen/Settings';
+import SettingsConnected from '../screens/SettingsConnectedScreen/SettingsConnected'
+import SettingsLanguage from '../screens/SettingsLanguageScreen/SettingsLanguage'
+import PrivacyAgreementScreen from '../screens/PolicyScreens/PrivacyAgreementScreen'
+import TermsOfServiceScreen from '../screens/PolicyScreens/TermsOfServiceScreen'
 import Header from './Header';
 const Stack = createStackNavigator();
 const SettingsNavigation = () => {
@@ -13,10 +13,10 @@ const SettingsNavigation = () => {
       <Stack.Screen name='Settings' component={Settings} options={{header: ({navigation}) => (
         <Header navigation={navigation} title={'Settings'}/>
       )}}/>
-      <Stack.Screen name= 'Language' component={Setting_lang} options={{header: ({navigation}) => (
+      <Stack.Screen name= 'Language' component={SettingsLanguage} options={{header: ({navigation}) => (
         <Header navigation={navigation} title={'Settings'}/>
       )}}/>
-      <Stack.Screen name='ConnectedAccount' component={Setting_connected} options={{header: ({navigation}) => (
+      <Stack.Screen name='ConnectedAccount' component={SettingsConnected} options={{header: ({navigation}) => (
         <Header navigation={navigation} title={'Settings'}/>
       )}}/>
       <Stack.Screen name='PrivacyAgreementScreen' component={PrivacyAgreementScreen} options={{header: ({navigation}) => (

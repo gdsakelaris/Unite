@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Shelter from '../../screens/Shelter';
-import ServicesFullPage from '../../screens/ServicesFullPage';
+import  Shelter from '../../screens/services/Shelter'
+import ServicesFullPage from '../../screens/ServiceFullPageScreen/ServicesFullPage';
 import Header from '../Header';
 const ShelterNavigation = () => {
   const Stack = createStackNavigator();

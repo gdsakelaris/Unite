@@ -1,14 +1,12 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import ProfilePage from '../screens/ProfilePage';
+import ProfilePage from '../screens/ProfileScreen/ProfilePage';
 import SettingsNavigation from './SettingsNavigation';
-import EditProfile from '../screens/EditProfile';
+import EditProfile from '../screens/EditProfileScreen/EditProfile'
 import Header from './Header';
-import Bookmark_Services from '../screens/BookmarkedServices';
-import HelpPage from '../screens/HelpPage';
+import BookmarkedServices from '../screens/BookmarkedScreen/BookmarkedServices';
+import HelpPage from '../screens/HelpScreen/HelpPage';
 const Stack = createStackNavigator();
-
-
 const ProfileNavigation = () => {
   return (
     <Stack.Navigator>
@@ -23,7 +21,7 @@ const ProfileNavigation = () => {
 
       {/* Bookmarked Services
       <Stack.Screen /> */}
-      <Stack.Screen name='BookmarkedServices' component={Bookmark_Services} options={{header: ({navigation}) => (
+      <Stack.Screen name='BookmarkedServices' component={BookmarkedServices} options={{header: ({navigation}) => (
         <Header navigation={navigation} title={'Bookmarked Services'}/>
       )}}/>
 
@@ -44,30 +42,4 @@ const ProfileNavigation = () => {
     
   );
 }
-
-const makeStyle = (fontScale, widthOfTheScreen) => StyleSheet.create({
-  headerCustomIcon: {
-    marginLeft: '35%',
-    
-    
-  },
-  headerBackground: {
-    backgroundColor:'white', 
-    width: '100%', 
-    height: '100%'
-
-  },
-  headerStyle: {
-    height: 150,
-    
-  },
-  headerBackTitleStyle: {
-    fontSize: 32 / fontScale,
-    color: '#252525',
-  },
-  headerTitleContainer: {
-    width: (widthOfTheScreen - 130),
-  }
-})
-
 export default ProfileNavigation;

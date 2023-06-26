@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import LoginScreen from './src/screens/LoginScreen';
-import SignUpScreen from './src/screens/SignUpScreen';
+import LoginScreen from './src/screens/LoginScreen/LoginScreen'
+import SignupScreen from './src/screens/SignupScreen/SignUpScreen'
 import BottomNavigation from './src/navigations/BottomNavigation'
 import { PaperProvider } from 'react-native-paper';
 
@@ -27,7 +27,7 @@ function App() {
           <Stack.Screen name="Login" options={{ headerShown: false }}>
             {(props) => <LoginScreen {...props} onLogin={handleLogin} />}
           </Stack.Screen>
-          <Stack.Screen name="SignUp" component={SignUpScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="SignUp" component={SignupScreen} options={{ headerShown: false }} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>
