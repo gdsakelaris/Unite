@@ -3,10 +3,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
-import BookScreen from '../screens/BookScreen';
-import ChatScreen from '../screens/ChatScreen';
-//import HomeScreen from '../screens/HomeScreen';
-import MapScreen from '../screens/MapScreen';
+import MapScreen from '../screens/MapScreen/MapScreen';
 import ProfileNavigation from './ProfileNavigation';
 import HomeScreenNavigation from './HomeScreenNavigation';
 
@@ -22,25 +19,16 @@ const BottomNavigation = () => {
         screenOptions={{
           tabBarActiveTintColor: "#2f95dc",
         }}
-      >
+      > 
         <Tab.Screen
-          name="Book"
-          component={BookScreen}
+          name="Map"
+          component={MapScreen}
           options={{
-            tabBarLabel: "Book",
+            tabBarLabel: "Map",
             tabBarIcon: ({ color, size }) => (
-              <Icon name="book-outline" color={color} size={size} />
+              <Icon name="map-outline" color={color} size={size} />
             ),
-          }}
-        />
-        <Tab.Screen
-          name="Chat"
-          component={ChatScreen}
-          options={{
-            tabBarLabel: "Chat",
-            tabBarIcon: ({ color, size }) => (
-              <Icon name="chatbubbles-outline" color={color} size={size} />
-            ),
+            headerShown: false
           }}
         />
         <Tab.Screen
@@ -52,18 +40,6 @@ const BottomNavigation = () => {
               <Icon name="home-outline" color={color} size={size} />
             ),
             headerShown:false
-          }}
-        />
-        
-        <Tab.Screen
-          name="Map"
-          component={MapScreen}
-          options={{
-            tabBarLabel: "Map",
-            tabBarIcon: ({ color, size }) => (
-              <Icon name="map-outline" color={color} size={size} />
-            ),
-            headerShown: false
           }}
         />
         <Tab.Screen

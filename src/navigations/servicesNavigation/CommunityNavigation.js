@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Community from '../../screens/Community';
-import ServicesFullPage from '../../screens/ServicesFullPage';
+import Community from '../../screens/services/Community';
+import ServicesFullPage from '../../screens/ServiceFullPageScreen/ServicesFullPage';
 import Header from '../Header';
 const CommunityNavigation = () => {
   const Stack = createStackNavigator();
