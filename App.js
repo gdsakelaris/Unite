@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import LoginScreen from './src/screens/LoginScreen/LoginScreen'
-import SignUpScreen from './src/screens/SignupScreen/SignUpScreen'
+import LoginScreen from './src/screens/LoginSignupScreen/LoginScreen';
+import SignUpScreen from './src/screens/LoginSignupScreen/SignUpScreen';
 import BottomNavigation from './src/navigations/BottomNavigation'
 import { PaperProvider } from 'react-native-paper';
 

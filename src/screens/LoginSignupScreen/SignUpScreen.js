@@ -1,16 +1,16 @@
 // SignUpScreen.js:
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import BackgroundColor from "../LoginScreen/subscreens/BackgroundColor";
-import ContinueAsGuestText from '../LoginScreen/subscreens/ContinueAsGuestText'
-import InputField from '../LoginScreen/subscreens/InputField'
-import LoginBox from '../LoginScreen/subscreens/LoginBox'
-import LoginContainer from '../LoginScreen/subscreens/LoginContainer'
-import Logo from '../LoginScreen/subscreens/Logo'
-import OrText from '../LoginScreen/subscreens/OrText'
-import Slider from '../LoginScreen/subscreens/Slider'
-import SocialBox from '../LoginScreen/subscreens/SocialBox'
-import SignupBtn from "./subscreens/SignupBtn";
+import BackgroundColor from "./subscreens/BackgroundColor"
+import ContinueAsGuestText from "./subscreens/ContinueAsGuestText";
+import InputField from "./subscreens/InputField";
+import InputBox from "./subscreens/InputBox";
+import SignupBtn from './signupsubscreens/SignupBtn'
+import Container from "./subscreens/Container";
+import OrText from "./subscreens/OrText";
+import Slider from "./subscreens/Slider";
+import SocialBox from "./subscreens/SocialBox";
+import Logo from "./subscreens/Logo";
 const SignUpScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,9 +21,9 @@ const SignUpScreen = () => {
 
   return (
     <BackgroundColor>
-      <LoginContainer>
+      <Container>
         <Logo/>
-        <LoginBox>
+        <InputBox>
           <Slider navigation={navigation}/>
           <InputField 
                       placeholder={placeHolderText}
@@ -48,8 +48,8 @@ const SignUpScreen = () => {
           <OrText/>
           <SocialBox/>
           <ContinueAsGuestText/>
-        </LoginBox>
-      </LoginContainer>
+        </InputBox>
+      </Container>
     </BackgroundColor>
   );
 };

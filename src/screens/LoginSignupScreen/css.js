@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { fontScale, colors } from "../../base";
+//import { fontScale, colors } from "../../base";
 export const loginScreenContainer = StyleSheet.create({
   loginContainer: {
     flex: 1,

@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import BackgroundColor from "./subscreens/BackgroundColor";
+import BackgroundColor from "./subscreens/BackgroundColor"
 import ContinueAsGuestText from "./subscreens/ContinueAsGuestText";
-import ForgotPasswordText from "./subscreens/ForgotPasswordText";
+import ForgotPasswordText from "./loginsubscreens/ForgotPasswordText";
 import InputField from "./subscreens/InputField";
-import LoginBox from "./subscreens/LoginBox";
-import LoginBtn from "./subscreens/LoginBtn";
-import LoginContainer from "./subscreens/LoginContainer";
+import InputBox from "./subscreens/InputBox";
+import LoginBtn from "./loginsubscreens/LoginBtn";
+import Container from "./subscreens/Container";
 import OrText from "./subscreens/OrText";
 import Slider from "./subscreens/Slider";
 import SocialBox from "./subscreens/SocialBox";
-import { useNavigation } from "@react-navigation/native";
 import Logo from "./subscreens/Logo";
+import { useNavigation } from "@react-navigation/native";
 const LoginScreen = ({ onLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,9 +18,9 @@ const LoginScreen = ({ onLogin }) => {
   const placeHolderText = "Enter Email/Phone Number/Username";
   return (
     <BackgroundColor>
-      <LoginContainer>
+      <Container>
         <Logo/>
-        <LoginBox>
+        <InputBox>
           <Slider navigation={navigation}/>
           <InputField 
                        placeholder={placeHolderText}
@@ -39,8 +39,8 @@ const LoginScreen = ({ onLogin }) => {
           <OrText/>
           <SocialBox/>
           <ContinueAsGuestText/>
-        </LoginBox>
-      </LoginContainer>
+        </InputBox>
+      </Container>
 
     </BackgroundColor>
     

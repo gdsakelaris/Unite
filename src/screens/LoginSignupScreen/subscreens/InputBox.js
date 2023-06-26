@@ -1,9 +1,9 @@
 import React from 'react';
 import { View} from 'react-native';
 import { loginBox as styles } from '../css';
-const LoginBox = ({children}) => (
+const InputBox = ({children}) => (
   <View style={styles.loginBox}>
     {children}
   </View>
 )
-export default LoginBox;
+export default InputBox;
