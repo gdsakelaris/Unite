@@ -3,15 +3,15 @@ import PickLanguageBtn from './subscreens/PickLanguageBtn';
 import PickLanguageContainer from './subscreens/PickLanguageContainer';
 import SupportedLangsView from './subscreens/SupportedLangsView';
 import Title from './subscreens/Title';
-const PickLanguages = () => {
+const PickLanguages = ({navigation}) => {
   return (
     <PickLanguageContainer>
       {/* Title */}
       <Title/>
       {/* Supported Languages View */}
-      <SupportedLangsView/>
+      <SupportedLangsView navigation={navigation}/>
       {/* Button */}
-      <PickLanguageBtn/>
+      <PickLanguageBtn navigation={navigation}/>
     </PickLanguageContainer>
    
   );

@@ -4,8 +4,8 @@ import {Text } from 'react-native-paper';
 import { pickLanguageBtnStyle as styles} from '../css';
 import { TouchableOpacity, View} from 'react-native';
 
-const PickLanguageBtn = () => (
-  <TouchableOpacity style={styles.buttonContainer}>
+const PickLanguageBtn = ({navigation}) => (
+  <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('LoginSignup')}>
     <View style={styles.button}>
         <Text style={styles.buttonLabel}>
           Other

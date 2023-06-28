@@ -15,7 +15,7 @@ import ukraineflag from '../../../images/countryflags/ukraineflag.png'
 import unitedarabflag from '../../../images/countryflags/unitedarabflag.png'
 import LanguageCard from './LanguageCard';
 import { supportedLangsViewStyle as styles } from '../css';
-const SupportedLangsView = () => {
+const SupportedLangsView = ({navigation}) => {
       // a list of supported languages in this app along with the image's uri
       const supportedLanguages = [
             {name: 'English', picture: Image.resolveAssetSource(americanflag).uri},
@@ -36,7 +36,7 @@ const SupportedLangsView = () => {
             <View style={styles.supportedLangsContainer}>
                   <View style={styles.innerViewOfSupportedLangs}>
                   {supportedLanguages.map((language, i) => 
-                                                            <LanguageCard picture={language.picture} languageName={language.name} key={i.toString()}/>)}
+                                                            <LanguageCard picture={language.picture} languageName={language.name} key={i.toString()} navigation={navigation}/>)}
                   </View>
             </View>
       );

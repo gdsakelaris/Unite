@@ -11,9 +11,9 @@ const renderCountryImage = (picture) => {
   }
   return <AvatarIcon avatarSettings={avatarSettings}/>
 }
-const LanguageCard = ({picture, languageName}) => {
+const LanguageCard = ({picture, languageName, navigation}) => {
   return (
-          <TouchableOpacity style={styles.languageCardContainer}>
+          <TouchableOpacity style={styles.languageCardContainer} onPress={() => navigation.navigate('LoginSignup')}>
             <Card.Title 
             title={<Text
                          style={styles.languageName}>

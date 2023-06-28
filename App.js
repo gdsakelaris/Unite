@@ -3,9 +3,12 @@ import React, { useState } from 'react';
 import LoginSignupScreen from './src/screens/LoginSignupScreen/LoginSignupScreen';
 import BottomNavigation from './src/navigations/BottomNavigation'
 import { PaperProvider } from 'react-native-paper';
+import { createStackNavigator } from '@react-navigation/stack';
+import PickLanguages from './src/screens/PickLanguageScreen/PickLanguages';
+import { NavigationContainer } from '@react-navigation/native';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  const Stack = createStackNavigator()
   const handleLogin = () => {
     setIsLoggedIn(true);
   };
@@ -16,7 +19,12 @@ function App() {
   } else {
     return (
     <PaperProvider>
-      <LoginSignupScreen/>
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{headerShown: false}}>
+          <Stack.Screen name='PickLanguage' component={PickLanguages}/>
+          <Stack.Screen name='LoginSignup' component={LoginSignupScreen}/>
+        </Stack.Navigator>
+      </NavigationContainer>
     </PaperProvider>
     );
   }
