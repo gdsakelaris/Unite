@@ -45,7 +45,7 @@ export const profileOption = StyleSheet.create({
     borderBottomColor: "#ccc",
     paddingHorizontal:'2%',
     width:'100%',
-    height:'16%'
+    height:'20%'
   },
   optionText: {
     fontSize: 16 / fontScale,

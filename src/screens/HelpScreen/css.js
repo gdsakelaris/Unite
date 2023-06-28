@@ -20,7 +20,6 @@ export const helpPageOpt = StyleSheet.create({
     borderBottomWidth: 0.25,
     borderColor: colors.lightdark,
     paddingHorizontal: "4%",
-    paddingTop: "2%",
   },
   optionContainer: {
     flexDirection: "row",
@@ -32,7 +31,7 @@ export const helpPageOpt = StyleSheet.create({
   },
   question: {
     fontSize: 21 / fontScale,
-    color: "#E87F10",
+    color: colors.lightorange,
   },
   settingButton: {
     paddingRight: "4%",

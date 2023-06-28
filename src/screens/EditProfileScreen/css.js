@@ -38,8 +38,8 @@ export const editProfileInfoContainer = StyleSheet.create({
 export const editProfileBtn = StyleSheet.create({
   editProfilePictureButtonView: {
     position:'absolute',
-    bottom: '22%', 
-    left:'56%%'
+    bottom: '16%', 
+    left:'56%'
   },
 })
 
