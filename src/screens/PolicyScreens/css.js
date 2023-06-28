@@ -8,8 +8,11 @@ export const policyScreen = StyleSheet.create({
     backgroundColor: colors.white,
 },
   subHeader: {
-    fontSize: 14 / fontScale,
+    fontSize: 18 / fontScale,
     fontWeight: 'bold',
     paddingBottom: 16,
 },
+  content: {
+    fontSize: 16 / fontScale
+  }
 })

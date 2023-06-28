@@ -16,6 +16,7 @@ export const section = StyleSheet.create({
   sectionContainer: {
     flex: 2, 
     paddingLeft: 20,
+   // marginTop:'2%'
   },
   titleSectionContainer: {
     flex: 1
@@ -205,7 +206,8 @@ export const addImage = StyleSheet.create({
 export const nextBtn = StyleSheet.create({
   nextBtnContainer: {
     flex: 1, 
-    alignItems:'flex-end'
+    alignItems:'flex-end',
+    justifyContent:'center'
   },
   nextBtnView: {
     backgroundColor: colors.lightorange, 
@@ -213,7 +215,8 @@ export const nextBtn = StyleSheet.create({
     height:'50%', 
     justifyContent:'center', 
     alignItems:'center', 
-    borderRadius:'15%'
+    borderRadius:'15%',
+    
   },
   nextBtnLabel: {
     fontSize: 30 / fontScale, 

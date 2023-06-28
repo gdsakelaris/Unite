@@ -25,10 +25,10 @@ export const profileOptionsContainer = StyleSheet.create({
 export const editBtn = StyleSheet.create({
   editButton: {
     backgroundColor: "green",
-    borderRadius: 5,
+    borderRadius: '8%',
     paddingVertical: 8,
     paddingHorizontal: 20,
-    marginBottom: 10,
+    marginTop: '3%',
   },
   editButtonTxt: {
     color: colors.white
@@ -40,8 +40,22 @@ export const profileOption = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingVertical: 20,
-    // borderBottomWidth: 1,
-    // borderBottomColor: "#ccc",
+    paddingVertical: '7%',
+    borderBottomWidth: 1,
+    borderBottomColor: "#ccc",
+    paddingHorizontal:'2%',
+    width:'100%',
+    height:'16%'
   },
+  optionText: {
+    fontSize: 16 / fontScale,
+    fontWeight:'400',
+   // right:'100%'
+  },
+  optionTextContainer: {
+    width:'70%', 
+    height: '100%',
+    justifyContent:'center'
+  }
+  
 })

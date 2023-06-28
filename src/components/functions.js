@@ -3,6 +3,8 @@ import * as ImagePicker from 'expo-image-picker'
 import { locationIcon, phoneIcon} from './icons'
 import { resourceCard as styles } from './css'
 import { Avatar } from 'react-native-paper'
+import { View } from 'react-native'
+import { Text } from 'react-native-paper'
 //Image Picker
 export const askForAccessPhotoPermission = async () => {
   const {granted} = await ImagePicker.requestMediaLibraryPermissionsAsync()

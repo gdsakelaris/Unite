@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Image } from "react-native";
 import { Text } from "react-native-paper";
-import img from '../images/Allura.png'
+import img from '../../../images/Allura.png'
 import ConfirmPublishedScreenContainer from "./subscreens/ConfirmPublishedScreenContainer";
 import ConfirmPublishedBtn from "./subscreens/ConfirmPublishedBtn";
 import ButtonContainer from "./subscreens/ButtonContainer";

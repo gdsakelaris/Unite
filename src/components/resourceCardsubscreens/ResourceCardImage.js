@@ -1,6 +1,6 @@
 // make a portion to display service image in resource card
 import React from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, TouchableOpacity } from 'react-native';
 import { resourceCard as styles } from '../css';
 import { bookmarkedIcon } from '../icons';
 import EditButton from './ResourceCardEditBtn';

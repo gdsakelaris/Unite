@@ -1,3 +1,4 @@
+import React from 'react';
 import ProfileContainer from "./subscreens/ProfileContainer"
 import ProfileOption from "./subscreens/ProfileOption"
 import ProfileOptionsPortion from "./subscreens/ProfileOptionsPortion"

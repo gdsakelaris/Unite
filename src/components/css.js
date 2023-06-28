@@ -33,7 +33,7 @@ export const servicecard = StyleSheet.create({
     marginBottom: '5%',
     borderWidth: 0.05,
     borderRadius: 12,
-    overflow:'hidden'
+    overflow:'hidden',
   },
   cardImage: {
     width: '100%',

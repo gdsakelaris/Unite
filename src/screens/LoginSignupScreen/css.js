@@ -1,134 +1,96 @@
 import { StyleSheet } from "react-native";
-//import { fontScale, colors } from "../../base";
+import { colors, fontScale } from "../../base";
 export const loginScreenContainer = StyleSheet.create({
   loginContainer: {
-    flex: 1,
+    flex:1.5,
     alignItems: "center",
-    justifyContent: "center",
+   // justifyContent: "center",
     paddingHorizontal: 20,
   },
-  
-  // title: {
-  //   fontSize: 24,
-  //   fontWeight: "bold",
-  //   marginBottom: 20,
-  // },
-
-  
-  // signupText: {
-  //   marginTop: 20,
-  //   color: "#0066cc",
-  //   fontSize: 18,
-  //   textDecorationLine: "underline",
-  // },
-
-  // placeholderText: {
-  //   fontSize: 12,
-  //   color: "#F78154",
-  // },
-
-  // passBox: {
-  //   display: "flex",
-  //   flexDirection: "row",
-  //   alignSelf: "center",
-  //   marginRight: "3%",
-  //   marginLeft: "-3%",
-  // },
-
-  // eyeIcon: {
-  //   marginLeft: "-10%",
-  //   marginTop: 8,
-  // },
 })
 
 export const gradient = StyleSheet.create({
   gradient: {
-    flex: 1
+    flex: 1,
+    borderBottomEndRadius: 20,
   }
 })
 
 export const logo = StyleSheet.create({
   logo: {
-    width: 150,
-    height: 150,
-  },
-  logocontainer: {
-    width: "45%",
-    height: "18.95%",
-    backgroundColor: "white",
-    borderRadius: 100,
-    alignItems: "center",
-    padding: 5,
-    marginBottom: "-10%",
-    marginTop: "15%",
-  },
+    backgroundColor: colors.white, 
+    marginTop: '25%'
+  }
 })
 
 export const loginBox = StyleSheet.create({
   loginBox: {
-    width: "91.79%",
-    height: "60.18%",
-    backgroundColor: "white",
+    width: '90%',
+    height: '60%',
+    backgroundColor: colors.white,
     borderRadius: 43,
-    marginTop: "20%",
+    top: '35%',
     padding: 20,
-    verticalAlign: "middle",
+    position:'absolute',
+    alignSelf:'center',
+    shadowColor:colors.lightdark,
+    shadowOpacity:0.5,
+    shadowRadius:10,
+    borderWidth:1,
+    borderColor:colors.lightgray,
+    shadowOffset:{height: 10},
+  
+    
   },
 })
 
 export const slider = StyleSheet.create({
   sliderBox: {
-    width: "95%",
-    height: 41.45,
+    width: "90%",
+    height: '10%',
     borderRadius: 12,
-    backgroundColor: "white",
+    backgroundColor: colors.white,
     marginTop: "10%",
-    marginBottom: "25%",
-    display: "flex",
+    marginBottom: "15%",
     flexDirection: "row",
-    justifyContent: "space-around",
-    padding: 1,
-    marginLeft: "2%",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-    border: 1.5,
-    borderColor: "#EAEAF5",
+    shadowColor:colors.lightdark,
+    shadowOpacity:0.25,
+    shadowRadius:10,
+    borderWidth:1,
+    borderColor:colors.lightgray,
+    shadowOffset:{height: 9},
+    alignSelf:'center',
+    
   },
 
-  sliderLogin: {
-    backgroundColor: "#F78154",
-    borderRadius: 10,
+  clickedSlider: {
+    flex:1,
+    backgroundColor: colors.lightorange,
+    borderRadius:14,
     width: 133,
     height: "100%",
     justifyContent: "center",
     alignItems: "center",
   },
 
-  sliderLoginText: {
-    color: "white",
-    fontSize: 14,
+  clickedSliderText: {
+    color: colors.white,
+    fontSize: 18 / fontScale,
     fontWeight: "bold",
   },
 
-  sliderSignUp: {
-    backgroundColor: "white",
+  nonClickedSlider: {
+    flex:1,
+    backgroundColor: colors.white,
     borderRadius: 10,
-    width: "50%",
-    height: "100%",
     justifyContent: "center",
     alignItems: "center",
   },
 
-  sliderSignUpText: {
-    fontSize: 14,
+  nonClickedSliderText: {
+    fontSize: 18 / fontScale,
     fontWeight: "bold",
-    color: "#F78154",
+    color: colors.lightorange,
   },
 })
 
@@ -138,87 +100,84 @@ export const inputField = StyleSheet.create({
     height: 30,
     marginBottom: "6%",
     borderBottomWidth: 1,
-    borderBottomColor: "rgba(0, 0, 0, 0.2)",
+    borderBottomColor: colors.lightgray,
     alignSelf: "center",
-    fontSize: 12,
+    fontSize: 15 / fontScale,
   },
 })
 
 export const forgotPass = StyleSheet.create({
   forgotPass: {
-    color: "#F78154",
-    fontSize: 10,
+    color: colors.lightorange,
+    fontSize: 14 / fontScale,
     alignSelf: "flex-end",
-    marginTop: "-3%",
-    marginRight: "-3%",
   },
 })
 
 export const loginBtn = StyleSheet.create({
   button: {
     width: "90%",
-    height: 41,
-    backgroundColor: "#F78154",
-    borderRadius: 5,
+    height: "11%",
+    backgroundColor: colors.lightorange,
+    borderRadius: 43,
     alignItems: "center",
     justifyContent: "center",
     alignSelf: "center",
-    borderRadius: 43,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-    marginTop: "13%",
+    shadowColor:colors.lightdark,
+    shadowOpacity:0.25,
+    shadowRadius:10,
+    borderWidth:1,
+    borderColor:colors.lightgray,
+    shadowOffset:{ height: 9 },
+    marginTop: "10%",
   },
   buttonText: {
-    color: "#fff",
-    fontSize: 20,
+    color: colors.white,
+    fontSize: 24 / fontScale,
     fontWeight: "bold",
   },
 })
 
 export const orText = StyleSheet.create({
   orText: {
-    fontSize: 12,
+    fontSize: 12 / fontScale,
     color: "#A8A7A7",
     alignSelf: "center",
-    marginTop: "10%",
+    marginTop: "7%",
     marginBottom: "5%",
   },
 })
 
 export const socialBox = StyleSheet.create({
    socialBox: {
-    width: 169,
-    height: 48.88,
+    width: '50%',
+    height: '10%',
     alignSelf: "center",
-    display: "flex",
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
   },
 
-  circle: {
-    width: "28%",
-    aspectRatio: 1,
-    borderRadius: "50%",
-    borderWidth: 1,
-    borderColor: "#EAEAF5",
-    justifyContent: "center",
-    alignItems: "center",
+  socialIcon: {
+    backgroundColor:colors.white,
+    borderColor:colors.lightgray,
+    borderWidth:1
   },
 })
 
 export const guestText = StyleSheet.create({
   guestText: {
-    color: "#F78154",
-    fontSize: 14,
+    color: colors.lightorange,
+    fontSize: 14 / fontScale,
     textDecorationLine: "underline",
     alignSelf: "center",
     marginTop: "5%",
+  }
+})
+
+export const bottomPart= StyleSheet.create({
+  bottomPart: {
+    flex:1, 
+    backgroundColor: colors.white
   }
 })

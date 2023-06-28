@@ -1,12 +1,11 @@
 import React from 'react';
-import { View, TouchableOpacity,  } from 'react-native';
-import { editPenIcon } from '../icons';
+import {TouchableOpacity,  } from 'react-native';
+import { editBtnSettings } from '../profileUrl';
 import { editProfileBtn as styles } from '../css';
+import AvatarIcon from '../../../components/AvatarIcon';
 const EditProfileBtn = () => (
-  <TouchableOpacity onPress={()=> console.log('Pressed')} >
-    <View style={styles.editProfilePictureButtonView}>
-      {editPenIcon}
-    </View>
+  <TouchableOpacity style={styles.editProfilePictureButtonView}>
+    <AvatarIcon avatarSettings={editBtnSettings}/>
   </TouchableOpacity>
 )
 export default EditProfileBtn;

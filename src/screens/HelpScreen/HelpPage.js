@@ -7,7 +7,7 @@ import { listOfProvidedHelpOpts } from "./listOfProvidedHelpOpts";
 const HelpPage = () => {
   return (
     <HelpPageContainer>
-      <Title title={'Hi, how can we help you?'}/>
+      <Title title='Hi, how can we help you?'/>
       <SearchBar/>
       {listOfProvidedHelpOpts.map((option, i) =>
                                       <HelpPageOpt detail={option.detail} question={option.question} key={i.toString()}/>)}

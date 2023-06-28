@@ -12,22 +12,23 @@ export const button = StyleSheet.create({
   buttonContainer: {
     display: 'flex',
     flexDirection: 'row',
-    marginTop: '5%'
+    marginTop: '5%',
+    justifyContent:'center'
 
   },
   buttonText: {
-    fontSize: 16,
-    fontWeight: 'bold'
+    fontSize: 18 / fontScale,
+    fontWeight: '500'
   },
   buttons: {
-    width: 163,
-    height: 55,
+    width: '45%',
+    height: '85%',
     borderWidth: 2,
     borderColor: '#F78154',
     margin: '3%',
     borderRadius: '6%',
     paddingHorizontal: '4%',
-    paddingTop: '1.5%'
+    paddingTop: '1.5%',
   }
 })
 
@@ -38,7 +39,7 @@ export const infos = StyleSheet.create({
     alignSelf: 'center'
   },
   congratsText: {
-    fontSize: 16,
+    fontSize: 18 / fontScale,
     alignSelf: 'center',
     marginTop: '4%',
     marginHorizontal: '5%',

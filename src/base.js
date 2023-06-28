@@ -17,5 +17,6 @@ export const colors = {
   transparent: "transparent",
   lightpink: '#ffe4df',
   switchOff: '#AD2525',
-  switchOn: '#0F993E'
+  switchOn: '#0F993E',
+  mediumgray:'#D9D9D9'
 }

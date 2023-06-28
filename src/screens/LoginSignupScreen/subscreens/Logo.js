@@ -1,10 +1,9 @@
 import React from 'react';
-import { View, Image} from 'react-native';
+import { Image} from 'react-native';
 import UniteLogo from '../../../images/Unite_Logo.png'
+import AvatarIcon from '../../../components/AvatarIcon'
 import { logo as styles } from '../css';
-const Logo = ({image}) => (
-  <View style={styles.logocontainer}>
-        <Image source={image ? image : UniteLogo} style={styles.logo} />
-  </View>
+const Logo = () => (
+  <AvatarIcon avatarSettings={{source: Image.resolveAssetSource(UniteLogo).uri, size: 180, style:styles.logo}}/>
 )
 export default Logo;

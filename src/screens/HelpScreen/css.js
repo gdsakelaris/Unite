@@ -18,7 +18,7 @@ export const title = StyleSheet.create({
 export const helpPageOpt = StyleSheet.create({
   helpPageOptContainer: {
     borderBottomWidth: 0.25,
-    borderColor: "black",
+    borderColor: colors.lightdark,
     paddingHorizontal: "4%",
     paddingTop: "2%",
   },
@@ -27,6 +27,7 @@ export const helpPageOpt = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     height: 90,
+
     
   },
   question: {
@@ -46,5 +47,6 @@ export const helpOptDetail = StyleSheet.create({
   detailText: {
     fontSize: 16 / fontScale,
     color: "black",
+    marginBottom:'5%'
   }
 })

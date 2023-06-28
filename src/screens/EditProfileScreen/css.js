@@ -11,7 +11,7 @@ export const editProfile = StyleSheet.create({
   editProfilePictureContainer: {
     flex: 3,
     alignItems:'center',
-    justifyContent:'center'
+    justifyContent:'center',
   },
   profilePictureView: {
     width: '45%',
@@ -38,14 +38,8 @@ export const editProfileInfoContainer = StyleSheet.create({
 export const editProfileBtn = StyleSheet.create({
   editProfilePictureButtonView: {
     position:'absolute',
-    width: '18%',
-    height: 33,
-    borderRadius: '50%',
-    backgroundColor:'#167EE6',
-    justifyContent:'center',
-    alignItems:'center',
-    bottom: '5%', 
-    left: '68%'
+    bottom: '22%', 
+    left:'56%%'
   },
 })
 

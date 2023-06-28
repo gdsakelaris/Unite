@@ -10,37 +10,39 @@ import OrText from "./subscreens/OrText";
 import Slider from "./subscreens/Slider";
 import SocialBox from "./subscreens/SocialBox";
 import Logo from "./subscreens/Logo";
-import { useNavigation } from "@react-navigation/native";
-const LoginScreen = ({ onLogin }) => {
+import BottomPart from "./subscreens/BottomPart";
+const LoginScreen = ({ onLogin, switchScreenHook }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigation = useNavigation();
   const placeHolderText = "Enter Email/Phone Number/Username";
   return (
     <BackgroundColor>
       <Container>
         <Logo/>
-        <InputBox>
-          <Slider navigation={navigation}/>
+      </Container>
+      <BottomPart/>
+      <InputBox>
+          <Slider onLogin={true} switchToLogin={switchScreenHook} />
           <InputField 
                        placeholder={placeHolderText}
                        placeholderTextColor="#F78154"
                        value={email}
                        onChangeText={setEmail}
                        keyboardType="email-address"
-                       autoCapitalize="none"/>
+                       autoCapitalize="none"
+                       clearButtonMode='always'/>
           <InputField  placeholder="Password"
                        placeholderTextColor="#F78154"
                        value={password}
                        onChangeText={setPassword}
-                       secureTextEntry/>
+                       secureTextEntry
+                       clearButtonMode='always'/>
           <ForgotPasswordText/>
           <LoginBtn onLogin={onLogin} email={email} password={password}/>
           <OrText/>
           <SocialBox/>
           <ContinueAsGuestText/>
         </InputBox>
-      </Container>
 
     </BackgroundColor>
     

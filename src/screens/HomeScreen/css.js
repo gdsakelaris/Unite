@@ -33,3 +33,25 @@ export const locationText = StyleSheet.create({
     fontWeight: '600',
   },
 })
+
+export const searchbar = StyleSheet.create({
+   searchbar: { 
+      shadowColor: colors.lightdark,
+      shadowOpacity:0.25,
+      shadowRadius:10,
+      borderWidth:1,
+      borderColor: colors.lightdark,
+      shadowOffset:{ height: 5 }
+  }
+})
+
+export const servicecard = StyleSheet.create({
+   servicecard: { 
+    shadowColor:colors.lightdark,
+    shadowOpacity:0.25,
+    shadowRadius:10,
+    borderWidth:0.25,
+    shadowOffset:{ height: 9 }
+  
+   }
+})

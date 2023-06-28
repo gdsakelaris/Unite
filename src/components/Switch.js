@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import CustomSwitch from 'react-native-custom-switch';
+import { View } from 'react-native';
 import { switchStyle as styles } from './css';
+import { colors } from '../base';
 const Switch = () => {
   const [pushNotification, setPushNotification] = useState(false);
   return (<View>

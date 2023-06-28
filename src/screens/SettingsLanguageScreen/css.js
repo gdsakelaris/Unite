@@ -3,7 +3,7 @@ import {fontScale, colors} from '../../base'
 export const settingsLanguage = StyleSheet.create({
   rowContainer: {
     borderBottomWidth: 1,
-    borderBottomColor: colors.lightdark,
+    borderBottomColor: colors.mediumgray,
     height: 80 
   },
   languageText: {

@@ -1,6 +1,5 @@
 // SignUpScreen.js:
 import React, { useState } from "react";
-import { useNavigation } from "@react-navigation/native";
 import BackgroundColor from "./subscreens/BackgroundColor"
 import ContinueAsGuestText from "./subscreens/ContinueAsGuestText";
 import InputField from "./subscreens/InputField";
@@ -11,11 +10,11 @@ import OrText from "./subscreens/OrText";
 import Slider from "./subscreens/Slider";
 import SocialBox from "./subscreens/SocialBox";
 import Logo from "./subscreens/Logo";
-const SignUpScreen = () => {
+import BottomPart from "./subscreens/BottomPart";
+const SignUpScreen = ({switchScreenHook}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const navigation = useNavigation();
 
   const placeHolderText = "Enter Email/Phone Number/Username";
 
@@ -23,33 +22,37 @@ const SignUpScreen = () => {
     <BackgroundColor>
       <Container>
         <Logo/>
-        <InputBox>
-          <Slider navigation={navigation}/>
+      </Container>
+      <BottomPart/>
+      <InputBox>
+          <Slider onSignup={true} switchToLogin={switchScreenHook}/>
           <InputField 
                       placeholder={placeHolderText}
                       placeholderTextColor="#F78154"
                       value={email}
                       onChangeText={setEmail}
                       keyboardType="email-address"
-                      autoCapitalize="none"/>
+                      autoCapitalize="none"
+                      clearButtonMode='always'/>
           <InputField
                       placeholder="Password"
                       placeholderTextColor="#F78154"
                       value={password}
                       onChangeText={setPassword}
-                      secureTextEntry/>
+                      secureTextEntry
+                      clearButtonMode='always'/>
           <InputField  
                       placeholder="Confirm Password"
                       placeholderTextColor="#F78154"
                       value={confirmPassword}
                       onChangeText={setConfirmPassword}
-                      secureTextEntry/>
+                      secureTextEntry
+                      clearButtonMode='always'/>
           <SignupBtn email={email} password={password} confirmPassword={confirmPassword}/>
           <OrText/>
           <SocialBox/>
           <ContinueAsGuestText/>
         </InputBox>
-      </Container>
     </BackgroundColor>
   );
 };

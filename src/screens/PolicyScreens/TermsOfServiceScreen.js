@@ -8,7 +8,7 @@ const TermsOfServiceScreen = () => {
         <View style={styles.container}>
             <ScrollView>
             <Text style={styles.subHeader}>{effectivedate}</Text>
-            <Text>{_r_text}</Text>
+            <Text style={styles.content}>{_r_text}</Text>
             </ScrollView>
         </View>
     );

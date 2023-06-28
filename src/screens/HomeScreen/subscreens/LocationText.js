@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { View, Pressable} from 'react-native';
 import { locationText as styles } from '../css';
 import {locationIcon} from '../icons'
@@ -11,13 +11,11 @@ const LocationText = ({location}) => {
         {locationIcon}
         <View style={styles.locationTextContainer}>
           <Pressable
-            //onPressIn={() => handleLocationTextFocused(setIsFocus)}
-            onPressIn={() => console.log('Pressed')}
-            //onPressOut={() => handleLocationTextBlurred(setIsFocus)}
-            onPressOut={() => console.log('Pressed')}
+            onPressIn={() => handleLocationTextFocused(setIsFocus)}
+            onPressOut={() => handleLocationTextBlurred(setIsFocus)}
             >
             <Text
-              //style={getSpecificStyleForlocationText(isFocus)}
+              style={getSpecificStyleForlocationText(isFocus)}
               >
                 {location}
             </Text>

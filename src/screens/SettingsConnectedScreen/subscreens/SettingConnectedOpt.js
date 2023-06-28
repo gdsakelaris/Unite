@@ -5,7 +5,7 @@ import Switch from '../../../components/Switch'
 import { settingConnectedOpt as styles } from '../css';
 const SettingConnectedOpt = ({connectedOptName}) => (
   <View style={styles.rowContainer}>
-    <Text>{connectedOptName}</Text>
+    <Text style={styles.text}>{connectedOptName}</Text>
     <Switch/>
   </View>
 )
