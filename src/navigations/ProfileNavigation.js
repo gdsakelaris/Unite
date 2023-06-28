@@ -6,6 +6,7 @@ import EditProfile from '../screens/EditProfileScreen/EditProfile'
 import Header from './Header';
 import BookmarkedServices from '../screens/BookmarkedScreen/BookmarkedServices';
 import HelpPage from '../screens/HelpScreen/HelpPage';
+import AddServicesNavigation from './servicesNavigation/AddServicesNavigation';
 const Stack = createStackNavigator();
 const ProfileNavigation = () => {
   return (
@@ -18,6 +19,8 @@ const ProfileNavigation = () => {
         <Header navigation={navigation} title={'Profile'}/>
       )}}/>
 
+      {/* View Published Service */}
+      <Stack.Screen name='View Published Service' component={AddServicesNavigation} options={{headerShown:false}} />
 
       {/* Bookmarked Services
       <Stack.Screen /> */}

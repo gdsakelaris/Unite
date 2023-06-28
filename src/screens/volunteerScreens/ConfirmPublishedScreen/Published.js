@@ -6,7 +6,7 @@ import ConfirmPublishedScreenContainer from "./subscreens/ConfirmPublishedScreen
 import ConfirmPublishedBtn from "./subscreens/ConfirmPublishedBtn";
 import ButtonContainer from "./subscreens/ButtonContainer";
 import { infos as styles } from "./css";
-const Published = () => {
+const Published = ({navigation}) => {
   return (
     <ConfirmPublishedScreenContainer>
           <Text style = {styles.title}>Published!</Text>
@@ -15,7 +15,7 @@ const Published = () => {
           <Text style = {styles.next}>What's Next?</Text>
           <ButtonContainer>
             <ConfirmPublishedBtn text={'View other services'}/>
-            <ConfirmPublishedBtn text={'View published services'}/>
+            <ConfirmPublishedBtn text={'View published services'} onPress={() => navigation.navigate('Published Service')}/>
           </ButtonContainer>
     </ConfirmPublishedScreenContainer>
   );

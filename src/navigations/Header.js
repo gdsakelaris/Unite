@@ -4,7 +4,7 @@ import { Appbar } from 'react-native-paper';
 
 function Header({navigation, title, hasSearchBar}) {
   return (
-    <Appbar.Header>
+    <Appbar.Header style={styles.headerContainer}>
       <Appbar.BackAction onPress={() => navigation.goBack()} />
      <Appbar.Content title={title} titleStyle={styles.headerTitle}/>
       {hasSearchBar &&
@@ -17,6 +17,9 @@ const styles = StyleSheet.create({
   headerTitle: {
     alignSelf:'flex-start',
     fontSize:25
+  },
+  headerContainer: {
+    backgroundColor: 'white'
   }
 });
 

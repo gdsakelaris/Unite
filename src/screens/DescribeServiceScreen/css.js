@@ -3,7 +3,7 @@ import { colors, fontScale } from "../../base";
 export const title = StyleSheet.create({
     titleContainer: {
       flex: 1, 
-      padding: 20,
+      marginBottom:'2%',
     
     },
     titleStyle : {
@@ -16,10 +16,11 @@ export const section = StyleSheet.create({
   sectionContainer: {
     flex: 2, 
     paddingLeft: 20,
-   // marginTop:'2%'
+   // marginTop:'2%',
   },
   titleSectionContainer: {
-    flex: 1
+    flex: 1,
+    //marginBottom:'3%'
   },
   titleSection: {
     fontSize: 18 / fontScale, 
@@ -229,6 +230,7 @@ export const nextBtn = StyleSheet.create({
 export const describeServicePageContainer = StyleSheet.create({
   describeServicePageContainer: {
     flex: 1,
-    marginRight:25,
+    
+    backgroundColor:colors.white
   }
 })

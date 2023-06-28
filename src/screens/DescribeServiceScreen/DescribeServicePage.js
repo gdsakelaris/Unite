@@ -6,7 +6,7 @@ import MediaSection from "./subscreens/MediaSection";
 import LocationSection from "./subscreens/LocationSection";
 import ImageSection from "./subscreens/ImageSection";
 import NextBtn from "./subscreens/NextBtn";
-const DescribeServicePage = () => {
+const DescribeServicePage = ({navigation}) => {
   return (
     <DescribeServicePageContainer>
       <Title/>
@@ -15,7 +15,7 @@ const DescribeServicePage = () => {
       <MediaSection/>
       <LocationSection/>
       <ImageSection/>
-      <NextBtn/>
+      <NextBtn navigation={navigation}/>
     </DescribeServicePageContainer>
   )
 

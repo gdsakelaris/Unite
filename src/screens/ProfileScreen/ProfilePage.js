@@ -8,7 +8,7 @@ const ProfilePage = ({ navigation }) => (
     <ProfileImage navigation={navigation}/>
     <ProfileOptionsPortion>
       <ProfileOption optionName={'Bookmarked Services'} iconName={'bookmark'} navigateTo={'BookmarkedServices'} navigation={navigation}/>
-      <ProfileOption optionName={'View Published Service'} iconName={'md-document-outline'} navigateTo={'BookmarkedServices'} navigation={navigation}/>
+      <ProfileOption optionName={'View Published Service'} iconName={'md-document-outline'} navigateTo={'View Published Service'} navigation={navigation}/>
       <ProfileOption optionName={'Settings'} iconName={'settings-sharp'} navigateTo={'SettingsNavigation'} navigation={navigation}/>
       <ProfileOption optionName={'Help'} iconName={'help-with-circle'} navigateTo={'Help'} navigation={navigation}/>
       <ProfileOption optionName={'Log Out'} iconName={'log-out-outline'} navigateTo={'BookmarkedServices'} navigation={navigation}/>

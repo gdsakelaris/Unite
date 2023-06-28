@@ -10,7 +10,8 @@ export const serviceFullPageImage = StyleSheet.create({
   serviceImageStyle: {
     flex: 4,
     padding: '2%',
-    justifyContent:'flex-end'
+    justifyContent:'center',
+    
 
   },
   imageStyle: {
@@ -23,6 +24,7 @@ export const serviceFullPageImage = StyleSheet.create({
 export const serviceFullPageInfo = StyleSheet.create({
   serviceInfoStyle: {
     flex: 1,
+    
   },
   infoStyle1: {
     flexDirection:'row',
