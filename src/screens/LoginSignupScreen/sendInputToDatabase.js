@@ -1,8 +1,9 @@
 import axios from "axios";
+import { Alert } from "react-native";
 export const handleLogin = (onLogin, email, password) => {
   // Insert your IP below
   axios
-    .post("http://<IP>/login", {
+    .post("http://<IP Address>:5000/login", {
       email,
       password,
     })
