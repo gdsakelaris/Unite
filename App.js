@@ -22,7 +22,9 @@ function App() {
       <NavigationContainer>
         <Stack.Navigator screenOptions={{headerShown: false}}>
           <Stack.Screen name='PickLanguage' component={PickLanguages}/>
-          <Stack.Screen name='LoginSignup' component={LoginSignupScreen}/>
+          <Stack.Screen name='LoginSignup'>
+          {() => <LoginSignupScreen onLogin={handleLogin}/>}
+          </Stack.Screen>
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

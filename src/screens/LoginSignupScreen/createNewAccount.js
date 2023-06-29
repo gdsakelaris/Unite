@@ -2,7 +2,7 @@ import axios from "axios";
 export const handleSignUp = (email, password, confirmPassword) => {
   // Insert your IP below
   axios
-    .post("http://<YOUR IP HERE>:5000/register", {
+    .post("http://10.0.0.71:3000/register", {
       confirmPassword,
       email,
       password,
