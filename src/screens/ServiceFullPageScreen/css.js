@@ -1,0 +1,92 @@
+import { StyleSheet } from "react-native";
+import {fontScale, colors} from '../../base'
+export const serviceFullPageContainer = StyleSheet.create({
+  serviceFullPagecontainer: {
+    flex: 1,
+    backgroundColor: colors.white
+  },
+})
+export const serviceFullPageImage = StyleSheet.create({
+  serviceImageStyle: {
+    flex: 4,
+    padding: '2%',
+    justifyContent:'center',
+    
+
+  },
+  imageStyle: {
+    width: '100%',
+    height: '70%',
+    borderRadius: '12%'
+  },
+})
+
+export const serviceFullPageInfo = StyleSheet.create({
+  serviceInfoStyle: {
+    flex: 1,
+    
+  },
+  infoStyle1: {
+    flexDirection:'row',
+    padding: '2%',
+    justifyContent:'space-between',
+    alignItems:'baseline'
+  },
+  serviceTitleStyle: {
+      fontSize:30 / fontScale,
+      fontWeight:'bold'
+  },
+  numberOfReviewStyle: {
+     textDecorationLine:'underline',
+     fontWeight:'500'
+  },
+
+  infoStyle2: {
+    paddingHorizontal: '2%',
+    flexDirection:'row',
+  },
+})
+
+export const serviceFullPageDetail = StyleSheet.create({
+  serviceDetailStyle: {
+    flex: 4,
+  },
+  servicesDetailInnerContainer: {
+    width:'100%', 
+    height:'15%', 
+    borderBottomColor:'black', 
+    borderBottomWidth:0.5
+
+  },
+  serviceDetailOptionContainer: {
+    width:'100%%', 
+    height:'100%', 
+    flexDirection:'row', 
+    justifyContent: 'space-around',
+    paddingHorizontal: '2%',
+
+  },
+})
+
+export const serviceOption = StyleSheet.create({
+  serviceDetailOptionStyle: {
+    width:'20%', 
+    justifyContent:'center',
+    borderBottomColor:'#FE7940'
+  },
+  
+  serviceDetailOptionTextStyle: {
+    fontSize: 30 / fontScale, 
+    fontWeight:'300'
+  },
+})
+
+export const serviceOptionDetail = StyleSheet.create({
+  serviceOptionDetail: {
+    flexWrap:'wrap', 
+    flexDirection:'row',
+    height: 300,
+    paddingVertical: 10,
+    paddingHorizontal:20
+  }
+})

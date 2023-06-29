@@ -1,29 +1,18 @@
+//this file will render a list of image picker components
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import ImageInput from './ImageInput';
-
-const ImageInputList = ({imageUris = [], onRemoveImage, onAddImage}) => {
+import { imageInputList as styles } from './css';
+const ImageInputList = ({imageUris = [], onRemoveImage, onAddImage, style,...scrollViewProps}) => {
   return (
-    <View style={styles.container}>
-      {imageUris.map(uri => (
-        <ImageInput imageUri={uri} onChangeImage ={() => onRemoveImage(uri)} key={uri}/>
-     
-      ))}
-      <ImageInput onChangeImage={(uri) => onAddImage(uri)}/>
+    <View style={[styles.inputListContainer, style]}>
+       
+          {imageUris.map(uri => (
+            <ImageInput imageUri={uri} onChangeImage ={() => onRemoveImage(uri)} key={uri}/>
+          ))}
+          <ImageInput onChangeImage={(uri) => onAddImage(uri)}/>  
     </View>
   );
 
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection:'row',
-    width:'100%',
-    flexWrap:'wrap',
-    
-  },
-
-
-});
-
 export default ImageInputList;

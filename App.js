@@ -1,33 +1,31 @@
 // App.js:
 import React, { useState } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import LoginScreen from './src/screens/LoginScreen';
-import SignUpScreen from './src/screens/SignUpScreen';
+import LoginSignupScreen from './src/screens/LoginSignupScreen/LoginSignupScreen';
 import BottomNavigation from './src/navigations/BottomNavigation'
-
-const Stack = createStackNavigator();
-
+import { PaperProvider } from 'react-native-paper';
+import { createStackNavigator } from '@react-navigation/stack';
+import PickLanguages from './src/screens/PickLanguageScreen/PickLanguages';
+import { NavigationContainer } from '@react-navigation/native';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  const Stack = createStackNavigator()
   const handleLogin = () => {
     setIsLoggedIn(true);
   };
 
 
   if (isLoggedIn) {
-    return <BottomNavigation />;
+    return <PaperProvider><BottomNavigation/></PaperProvider>;
   } else {
     return (
+    <PaperProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login">
-          <Stack.Screen name="Login" options={{ headerShown: false }}>
-            {(props) => <LoginScreen {...props} onLogin={handleLogin} />}
-          </Stack.Screen>
-          <Stack.Screen name="SignUp" component={SignUpScreen} options={{ headerShown: false }} />
+        <Stack.Navigator screenOptions={{headerShown: false}}>
+          <Stack.Screen name='PickLanguage' component={PickLanguages}/>
+          <Stack.Screen name='LoginSignup' component={LoginSignupScreen}/>
         </Stack.Navigator>
       </NavigationContainer>
+    </PaperProvider>
     );
   }
 }
