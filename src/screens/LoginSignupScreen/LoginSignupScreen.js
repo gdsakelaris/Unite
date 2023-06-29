@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import SignUpScreen from './SignUpScreen';
 import LoginScreen from './LoginScreen';
 const LoginSignupScreen = () => {
-  const [onLogin, goToLogin] = useState(true)
+  const [isLogin, goToLogin] = useState(true)
   return (
-    onLogin ?
+    isLogin ?
               <LoginScreen switchScreenHook={goToLogin}/>
             : 
               <SignUpScreen  switchScreenHook={goToLogin}/>
