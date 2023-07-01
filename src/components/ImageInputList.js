@@ -6,11 +6,12 @@ import { imageInputList as styles } from './css';
 const ImageInputList = ({imageUris = [], onRemoveImage, onAddImage, style,...scrollViewProps}) => {
   return (
     <View style={[styles.inputListContainer, style]}>
-       
+       <ScrollView >
           {imageUris.map(uri => (
             <ImageInput imageUri={uri} onChangeImage ={() => onRemoveImage(uri)} key={uri}/>
           ))}
-          <ImageInput onChangeImage={(uri) => onAddImage(uri)}/>  
+          <ImageInput onChangeImage={(uri) => onAddImage(uri)}/> 
+        </ScrollView> 
     </View>
   );
 

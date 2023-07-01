@@ -1,3 +1,4 @@
+//this file will render the media section for the describeService page
 import React from 'react';
 import MediaContentContainer from './mediaSubscreens/MediaContentContainer';
 import SectionContainer from './SectionContainer';

@@ -1,3 +1,4 @@
+//the text input for location
 import React from 'react';
 import {View, TextInput} from 'react-native';
 import { location as styles } from '../../css';

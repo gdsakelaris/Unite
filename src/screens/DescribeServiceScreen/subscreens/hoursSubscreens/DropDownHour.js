@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+//drop down hour for picking open time and close time for provided resource
+import React from 'react';
 import { View } from 'react-native';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import CustomButtonsForDropDown from './CustomButtonsForDropDown';

@@ -1,3 +1,4 @@
+//a container that will include the day, the picking hour text input for open period and close period
 import React from 'react';
 import { View } from 'react-native';
 import { hour as styles} from '../../css';

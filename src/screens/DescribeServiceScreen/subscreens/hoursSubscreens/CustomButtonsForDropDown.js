@@ -1,3 +1,4 @@
+//custom button for hour dropdown
 import React from 'react';
 import { View } from 'react-native';
 import { hour as styles } from '../../css';

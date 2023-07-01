@@ -1,3 +1,4 @@
+//this file will render a title for each section in the DescribeServicePage.
 import React from 'react';
 import { View} from 'react-native';
 import {section as styles} from '../css'

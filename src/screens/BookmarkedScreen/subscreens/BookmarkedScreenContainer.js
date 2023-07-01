@@ -1,9 +1,12 @@
+//container for bookmarked service screen. Every content of the bookmarked service screen will be wrapped by this component. 
 import React from 'react';
-import { View } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import { bookmarkedScreenContainer as styles } from '../css';
 const BookmarkedScreenContainer = ({children}) => (
   <View style={styles.bookmarkedScreenContainer} >
-    {children}
+    <ScrollView>
+      {children}
+    </ScrollView>
   </View>
 )
 export default BookmarkedScreenContainer;

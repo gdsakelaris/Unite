@@ -10,10 +10,13 @@ import DropDownHour from './DropDownHour';
 const TimePickingField = ({value}) => {
   const [openModal, setOpenModal] = useState(false)
   return (
+    // the box for time picking 
     <View style={styles.timePickingFieldContainer}>
+      {/* the displayed picking time */}
       <View style={styles.timePickingField}>
         <Text style={styles.displayedPickingTime}>{value}</Text>
       </View>
+      {/* the arrow down button for opening the hour drop down menu */}
       <TouchableOpacity onPress={() => setOpenModal(showDatePicker())}>
         {arrow_downIcon}
       </TouchableOpacity>

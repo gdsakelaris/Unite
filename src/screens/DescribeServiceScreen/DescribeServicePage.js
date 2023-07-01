@@ -1,5 +1,6 @@
+//Describe Service screen which will be used for the volunteer to enter the information about the resource they provides 
 import DescribeServicePageContainer from "./subscreens/DescribeServicePageContainer";
-import Title from "../PickLanguageScreen/subscreens/Title";
+import Title from "./subscreens/Title";
 import AboutSection from "./subscreens/AboutSection";
 import HourSection from "./subscreens/HourSection";
 import MediaSection from "./subscreens/MediaSection";

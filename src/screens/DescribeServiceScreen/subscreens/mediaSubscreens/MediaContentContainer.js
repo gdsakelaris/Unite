@@ -1,3 +1,4 @@
+//a container that stores all the media options for provided resource
 import React from 'react';
 import { View} from 'react-native';
 import { media as styles } from '../../css';
