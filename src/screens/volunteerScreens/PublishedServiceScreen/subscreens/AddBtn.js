@@ -4,7 +4,7 @@ import { addIcon } from '../icons';
 import { TouchableOpacity } from 'react-native';
 import { Text } from 'react-native-paper';
 const AddBtn = ({navigation}) => (
-  <TouchableOpacity style={styles.addbtn} onPress={() => navigation.navigate('First Step')}>
+  <TouchableOpacity style={styles.addbtn} onPress={() => navigation.navigate('Get Started')}>
     {addIcon}
     <Text style={styles.addbtntext}> Add </Text>
   </TouchableOpacity>

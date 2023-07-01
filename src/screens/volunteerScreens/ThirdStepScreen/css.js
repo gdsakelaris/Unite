@@ -19,7 +19,7 @@ export const submitBtn = StyleSheet.create({
   publishBtn: {
     width:'80%',
     height: '7%',
-    bottom:'4%',
+   // bottom:'4%',
     alignSelf:'center',
     justifyContent:'center',
     
