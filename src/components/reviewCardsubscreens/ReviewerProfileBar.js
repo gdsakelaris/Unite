@@ -7,9 +7,9 @@ const ReviewerProfileBar = ({reviewerName, reviewerProfile, postedDate, ratings}
                 title={<Text variant='titleLarge' style={styles.titleText}>
                             {reviewerName}
                         </Text>} 
-                left={renderReviewerPicture(reviewerProfile)} 
-                right={renderPostedDate(postedDate)} 
-                subtitle={renderRating(ratings)} 
+                left={() => renderReviewerPicture(reviewerProfile)} 
+                right={() =>renderPostedDate(postedDate)} 
+                subtitle={() =>renderRating(ratings)} 
                 subtitleStyle={styles.titleMargin} 
                 titleStyle={styles.titleMargin}/>
 
