@@ -1,9 +1,9 @@
 //make a rating and review poriton in resource card
 import React from 'react';
 import { View} from 'react-native';
-import { reviewStar, dotIcon } from '../icons';
+import { reviewStar, dotIcon } from '../../icons';
 import { Text } from 'react-native-paper';
-import { resourceCard as styles } from '../css';
+import { resourceCard as styles } from '../../css';
 const ResourceCardRatingAndReview = ({rating, review}) => {
   return (
     <View style={styles.resourceCardRatingContainer}>

@@ -1,7 +1,7 @@
 //make a reviewer card component that will display the user's review about the service they used
 import * as React from 'react';
 import { Card} from 'react-native-paper';
-import { reviewCard as styles } from './css';
+import { reviewCard as styles } from '../css';
 import ReviewContent from './reviewCardsubscreens/ReviewContent';
 import ReviewerProfileBar from './reviewCardsubscreens/ReviewerProfileBar';
 function ReviewCard(props) {

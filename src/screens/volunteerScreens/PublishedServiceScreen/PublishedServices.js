@@ -4,7 +4,7 @@ import AddBtn from "./subscreens/AddBtn";
 import PublishedServiceContainer from "./subscreens/PublishedServiceContainer";
 import Title from "./subscreens/Title";
 import { mockupdata } from "./mockupdata";
-import ResourceCard from "../../../components/ResourceCard";
+import ResourceCard from "../../../components/ResourceCard/ResourceCard";
 const PublishedServices = ({navigation}) => {
   return (
     <PublishedServiceContainer>

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReviewContainer from './subscreens/ReviewContainer';
-import ReviewCard from '../../components/ReviewCard';
+import ReviewCard from '../../components/ReviewCard/ReviewCard';
 import ScrollListOfReviews from './subscreens/ScrollListOfReviews';
 import WriteReviewBtn from './subscreens/WriteReviewBtn';
 import ResourceAverageRating from './subscreens/ResourceAverageRating';

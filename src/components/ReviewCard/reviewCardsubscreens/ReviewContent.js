@@ -1,4 +1,4 @@
-//make a portion to display the reviewer text in the reviewer card
+//make a portion to display the text on the review card that reviewer typed for the resource
 import React from 'react';
 import { Card, Text } from 'react-native-paper';
 const ReviewContent = ({content}) => (
