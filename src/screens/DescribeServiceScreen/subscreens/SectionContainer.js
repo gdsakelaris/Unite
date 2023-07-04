@@ -1,4 +1,4 @@
-//This component will store all the content of a single section in the DescribeServicePage, including section title, content of section
+//This component will store all the content of a single section including section title, content of section and display it on the Describe Service Page
 import React from 'react';
 import { View} from 'react-native';
 import {section as styles} from '../css' 

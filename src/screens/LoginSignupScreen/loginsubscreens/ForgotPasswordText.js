@@ -1,3 +1,4 @@
+//This file will render a forgot password text that is displayed under the text input for password
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { forgotPass as styles } from '../css';

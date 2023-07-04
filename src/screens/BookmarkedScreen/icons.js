@@ -1,4 +1,5 @@
+//icons for bookmarkedService screen
 import { icons as styles } from "./css";
-import { renderLocationSignIcon, renderPhoneIcon } from '../../base';
-export const locationIcon = renderLocationSignIcon(styles.locationIcon, 20)
-export const phoneIcon = renderPhoneIcon(null, 15)
+import renderExpoIcon from "../../utils/renderExpoIcon";
+export const locationIcon = renderExpoIcon('EvilIcons', 'location', {size: 20, style: styles.locationIcon})
+export const phoneIcon = renderExpoIcon('Ionicons', 'ios-call-outline', {size: 15})

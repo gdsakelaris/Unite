@@ -3,7 +3,7 @@ import { fontScale, colors } from "../../base";
 export const writeReviewPageContainer = StyleSheet.create({
   container: {
     flex: 1,
-    padding: "3.58%",
+    paddingHorizontal: "3.58%",
     backgroundColor: colors.white,
   },
 })
@@ -54,19 +54,19 @@ export const reviewTextInput = StyleSheet.create({
 export const submitBtn = StyleSheet.create({
   submitButton: {
     alignSelf: "center",
-    backgroundColor: colors.lightorange,
-    width: "75%",
+    width: "85%",
     height: "30%",
-    borderRadius: 21,
-    alignItems: "center",
-    marginBottom: "10%",
-    justifyContent:'center'
+    backgroundColor:colors.lightorange
   },
   submitText: {
     color: colors.white,
     fontSize: 24 / fontScale,
     fontWeight: "bold",
+    paddingTop:'3%'
   },
+  contentBtn: {
+    width:'100%'
+  }
 })
 
 export const imageInput = StyleSheet.create({

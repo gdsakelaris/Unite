@@ -1,3 +1,4 @@
+//Write Review screen. This is the screen that the user will see when they run the application
 import React from "react";
 import WriteReviewPageContainer from "./subscreens/WriteReviewPageContainer";
 import SectionTitle from "./subscreens/SectionTitle";

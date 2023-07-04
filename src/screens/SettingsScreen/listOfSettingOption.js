@@ -1,3 +1,4 @@
+//supported setting options
 export const settingsOption = [
   {title: 'Push Notification'},
   {title: 'Dark Mode'},

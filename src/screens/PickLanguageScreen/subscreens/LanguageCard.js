@@ -1,16 +1,9 @@
-//This file will create a language card component
+//This file will create a language card component. User can click on this card component to set their preferred language in this app 
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import {Text,Card } from 'react-native-paper';
-import AvatarIcon from '../../../components/AvatarIcon';
 import {languageCardStyle as styles} from '../css'   
-const renderCountryImage = (picture) => {
-  const avatarSettings = {
-    source: picture ? picture : "https://placehold.co/400?text=No+image+available",
-    size: 50
-  }
-  return <AvatarIcon avatarSettings={avatarSettings}/>
-}
+import renderCountryImage from './renderCountryImage';
 const LanguageCard = ({picture, languageName, navigation}) => {
   return (
           <TouchableOpacity style={styles.languageCardContainer} onPress={() => navigation.navigate('LoginSignup')}>

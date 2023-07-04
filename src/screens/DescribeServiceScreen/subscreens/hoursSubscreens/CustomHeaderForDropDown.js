@@ -1,4 +1,4 @@
-//custom header for hour drop down
+//this file will make a header component that will be rendered inside the dropdown hour
 import React from 'react';
 import { Text } from 'react-native-paper';
 import { View } from 'react-native';

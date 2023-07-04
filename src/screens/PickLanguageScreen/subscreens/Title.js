@@ -1,4 +1,4 @@
-//this file will render a title of the picklanguage page
+//this file will make a title component that displays the title of the picklanguage screen
 import React from 'react';
 import {View} from 'react-native';
 import { Text } from 'react-native-paper';

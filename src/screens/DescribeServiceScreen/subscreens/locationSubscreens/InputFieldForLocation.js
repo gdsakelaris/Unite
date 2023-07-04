@@ -1,4 +1,4 @@
-//the text input for location
+//this file will create a text input component for entering the resoruce's location
 import React from 'react';
 import {View, TextInput} from 'react-native';
 import { location as styles } from '../../css';

@@ -12,7 +12,6 @@ const selectImage = async (onChangeImage) => {
       quality: 0.5
     })
     if (!result.canceled)
-        console.log(result.assets[0].uri)
         onChangeImage(result.assets[0].uri)
     
   } catch (error) {

@@ -1,3 +1,4 @@
+// a screen which displays the employment resources
 import React from "react";
 import { ScrollView} from "react-native";
 import ResourceCard from "../../components/ResourceCard/ResourceCard";
@@ -8,6 +9,7 @@ const Employment = ({navigation}) => (
     <ServiceContainer>
         <SortBtn/>
         <ScrollView>
+            {/* mockup resources */}
             <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'EmploymentService'} hasEditButton={false}/>
             <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'EmploymentService'} hasEditButton={false}/>
             <ResourceCard item={resourceData} navigation={navigation} fullPageServiceName={'EmploymentService'} hasEditButton={false}/>

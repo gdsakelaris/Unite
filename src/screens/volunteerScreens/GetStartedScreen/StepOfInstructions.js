@@ -1,3 +1,4 @@
+//this file will contain all the instructions about how to publish the resource that are displayed on the get started screen
 import { Image } from "react-native"
 import FirstStepPicture from '../../../images/The_Little_Things_Working.png'
 import SecondStepPicture from '../../../images/Stuck_at_Home_Brainstorming.png'

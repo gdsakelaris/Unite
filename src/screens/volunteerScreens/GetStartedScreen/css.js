@@ -29,6 +29,13 @@ export const instructionCard = StyleSheet.create({
   }
 })
 
+export const screenTitle = StyleSheet.create({
+  title: {
+    fontWeight: '300',
+    marginLeft:'4%'
+  }
+})
+
 export const getStartedContainer = StyleSheet.create({
   container: {
     flex: 1,

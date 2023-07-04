@@ -2,8 +2,9 @@
 import React from 'react';
 //import { View} from 'react-native';
 import { Text } from 'react-native-paper';
-const ScreenTitle = ({titleMessage, style}) => (
-  <Text variant='displayMedium' style={style}>{titleMessage}</Text>
+import { screenTitle as styles } from './css';
+const ScreenTitle = ({titleMessage, style, ...textProps}) => (
+  <Text style={[styles.screenTitle, style]} {...textProps}>{titleMessage}</Text>
 )
 
 export default ScreenTitle;

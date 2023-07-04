@@ -6,13 +6,13 @@ import { Text } from 'react-native-paper';
 import { locationIcon, phoneIcon } from '../icons';
 import RemoveBtn from './RemoveBtn';
 import { bookmarkedCard as styles} from '../css';
-//this component will take the name, location, phoneNumber, and picture of the resource to make a card
+//this component will take the name, location, phoneNumber, and picture of the resource to make a resource card
 const BookmarkedCard = ({cardName, location, phoneNumber, source }) => (
   //create the shape of the card
   <View style={styles.bookmarkedCardContainer}>
       {/* load the image of the resource on the card */}
       <Image source={source} />
-      {/* the box that stores all the resources' infos on the card*/}
+      {/* create a box that stores all the resources' infos on the card*/}
       <View style={styles.bookmarkedCardInfoContainer}>
         {/* name of the resource */}
         <Text style={styles.title}>{cardName}</Text>

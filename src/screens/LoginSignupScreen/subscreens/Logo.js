@@ -1,3 +1,4 @@
+//The file will make a logo component that displays the Unite logo on the sign up and login screen
 import React from 'react';
 import { Image} from 'react-native';
 import UniteLogo from '../../../images/Unite_Logo.png'

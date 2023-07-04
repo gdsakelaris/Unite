@@ -1,4 +1,4 @@
-//a container that will store all the days and picking hour boxes
+//this file will create a container that will store all the days and picking hour fields
 import React from 'react';
 import { View} from 'react-native';
 import { hour as styles } from '../../css';

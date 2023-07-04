@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import { colors, fontScale } from "../../base";
-export const loginScreenContainer = StyleSheet.create({
-  loginContainer: {
+export const container = StyleSheet.create({
+  container: {
     flex:1.5,
     alignItems: "center",
    // justifyContent: "center",
@@ -23,8 +23,8 @@ export const logo = StyleSheet.create({
   }
 })
 
-export const loginBox = StyleSheet.create({
-  loginBox: {
+export const inputBox = StyleSheet.create({
+  inputBox: {
     width: '90%',
     height: '60%',
     backgroundColor: colors.white,

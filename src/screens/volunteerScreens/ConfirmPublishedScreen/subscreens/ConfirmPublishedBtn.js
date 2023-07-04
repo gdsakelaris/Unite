@@ -1,3 +1,4 @@
+//this file will make the button for the Published screen 
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { Text } from 'react-native-paper';

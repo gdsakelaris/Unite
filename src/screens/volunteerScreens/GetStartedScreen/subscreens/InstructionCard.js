@@ -1,3 +1,4 @@
+//this file will make the instruction card component which instructs the volunteer how to publish their resource
 import React from 'react';
 import { Card } from 'react-native-paper';
 import { Image } from 'react-native';

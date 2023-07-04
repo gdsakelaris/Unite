@@ -1,10 +1,10 @@
+//this file will make a help question field component for the help screen
 import React, {useState} from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
 import { arrowDownIcon, arrowUpIcon } from '../icons';
 import ExpandedView from './ExpandedView';
 import { helpPageOpt as styles } from '../css';
 import { handleClicked } from '../functions';
-// import { Text } from 'react-native-paper';
 const HelpPageOpt = ({question, detail}) => {
   const [isExpanded, setIsExpanded] = useState(false);
   return (

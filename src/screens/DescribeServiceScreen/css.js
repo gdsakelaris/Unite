@@ -1,14 +1,15 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, useWindowDimensions } from "react-native";
 import { colors, fontScale } from "../../base";
 export const title = StyleSheet.create({
     titleContainer: {
-      flex: 1, 
-      bottom:'4%'
+      bottom:'4%',
+      backgroundColor:'red'
     
     },
     titleStyle : {
-      fontSize: 40 / fontScale,
-      fontWeight: '600',
+      fontSize: 43 / fontScale,
+      lineHeight: '40%'
+
     },
 })
 
@@ -16,6 +17,7 @@ export const section = StyleSheet.create({
   sectionContainer: {
     flex: 2, 
     paddingLeft: 20,
+    
    
   },
   titleSectionContainer: {
@@ -151,10 +153,14 @@ export const hour = StyleSheet.create({
   saveButtonText: {
     fontSize: 20 / fontScale,
     fontWeight:'400',
+    paddingHorizontal:'20%',
+    paddingVertical:'10%'
   },
   cancelButtonText: {
     fontSize: 20 / fontScale,
     fontWeight:'400',
+    paddingHorizontal:'15%',
+    paddingVertical:'10%'
     
   },
   customHeaderForDropDown: {
@@ -216,29 +222,29 @@ export const hour = StyleSheet.create({
 
 export const addImage = StyleSheet.create({
   addImageSection: {
-    flex: 2
+   flex: 2,
+   // backgroundColor:'red'
+  },
+  addImageSectionTitleContainer: {
+    flex: 0.5
   }
 })
 
 export const nextBtn = StyleSheet.create({
   nextBtnContainer: {
-    flex: 0.5, 
-    alignItems:'flex-end',
-    justifyContent:'center'
-  },
-  nextBtnView: {
-    backgroundColor: colors.lightorange, 
-    width:'30%', 
-    height:'100%', 
-    justifyContent:'center', 
-    alignItems:'center', 
+    alignItems:'center',
+    justifyContent:'center',
+    width:'30%',
+    alignSelf:'flex-end',
+    backgroundColor:colors.lightorange,
     borderRadius:'15%',
+    height:'5%'
     
   },
   nextBtnLabel: {
-    fontSize: 30 / fontScale, 
+    fontSize: 21 / fontScale, 
     fontWeight:'700', 
-    color:'white'
+    color:'white',
 
   }
 })

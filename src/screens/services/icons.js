@@ -1,4 +1,5 @@
-import { AntDesign } from '@expo/vector-icons'; 
+//icons for services
 import { service as styles } from './css';
 import {fontScale} from '../../base'
-export const arrowDownIcon =  <AntDesign name="down" size={18 / fontScale} color="black" style = {styles.arrow}/>
+import renderExpoIcon from '../../utils/renderExpoIcon';
+export const arrowDownIcon =  renderExpoIcon('AntDesign', 'down', {size: 18 / fontScale, style: styles.arrow})

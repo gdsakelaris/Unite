@@ -1,3 +1,4 @@
+//provided services
 import shelterPicture from '../../../images/shelter.png'
 import healthPicture from '../../../images/health.jpeg'
 import communityPicture from '../../../images/community.jpeg'

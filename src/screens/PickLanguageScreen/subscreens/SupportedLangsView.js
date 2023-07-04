@@ -1,4 +1,4 @@
-//this file will use the language card component to create a view of supported languages 
+//this file will use the language card component to create a view of all supported languages 
 import React from 'react';
 import { View, Image } from 'react-native';
 import afghanistanflag from '../../../images/countryflags/afghanistanflag.png'
@@ -16,7 +16,7 @@ import unitedarabflag from '../../../images/countryflags/unitedarabflag.png'
 import LanguageCard from './LanguageCard';
 import { supportedLangsViewStyle as styles } from '../css';
 const SupportedLangsView = ({navigation}) => {
-      // a list of supported languages in this app along with the image's uri
+      //list of all supported languages in this app along with the image's uri
       const supportedLanguages = [
             {name: 'English', picture: Image.resolveAssetSource(americanflag).uri},
             {name: 'Italiano', picture: Image.resolveAssetSource(italianflag).uri},

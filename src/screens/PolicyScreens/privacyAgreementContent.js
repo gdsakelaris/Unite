@@ -1,8 +1,5 @@
    //this is just some test data to simulate getting something from the api, replace it with an actual call
-    //this is just some test data to simulate getting something from the api, replace it with an actual call
-    //this is just some test data to simulate getting something from the api, replace it with an actual call
     const _response = new Object();
-    
     //for now, it will just take paragraphs and put them in the same
     //if we need different types of headers, i can add that logic
     _response.data = [
@@ -17,14 +14,8 @@
         "\n2.2 Communication: We may use your personal information to send you important updates, notifications, and promotional materials related to the App. You can opt-out of receiving promotional communications at any time by following the instructions provided in the communication...."
     ];
     _response.effectivedate = "Effective as of 18 May 2023";
-
-
     var jsonString = JSON.stringify(_response);
-    //this is just some test data to simulate getting something from the api, replace it with an actual call
-    //this is just some test data to simulate getting something from the api, replace it with an actual call
-    //this is just some test data to simulate getting something from the api, replace it with an actual call
-    
-
+    //this is just some test data to simulate getting something from the api, replace it with an actual call   
     //once we get the data from the backend, we'll parse
     let response_obj = JSON.parse(jsonString);
     export let _r_text = response_obj.data;

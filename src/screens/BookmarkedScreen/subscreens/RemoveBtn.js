@@ -1,6 +1,5 @@
-//the remove button which will be used to remove the resource card on the bookmarked service
+//the file will make a remove button component which will be used to remove the resource card on the bookmarked service screen
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
 import { Text, Button } from 'react-native-paper';
 import { removeBtn as styles } from '../css';
 const RemoveBtn = () => (

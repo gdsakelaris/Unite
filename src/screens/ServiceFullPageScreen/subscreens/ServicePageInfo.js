@@ -1,3 +1,4 @@
+//this file will make a view component that displays the resource's infos sunch as name, rating, reviews on the service full page screen. 
 import React from 'react';
 import { View} from 'react-native';
 import { Text } from 'react-native-paper';

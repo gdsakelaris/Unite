@@ -9,8 +9,6 @@ export const previewServiceContainer = StyleSheet.create({
 
 export const title = StyleSheet.create({
   title: {
-    fontSize: 36 / fontScale,
-    fontWeight: "bold",
     marginLeft: '2%',
   }
 })
@@ -18,16 +16,18 @@ export const title = StyleSheet.create({
 export const submitBtn = StyleSheet.create({
   publishBtn: {
     width:'80%',
-    height: '7%',
-   // bottom:'4%',
+    height: '6%',
     alignSelf:'center',
     justifyContent:'center',
-    
+    bottom:'5%'
   },
   publishBtnText: {
     color: colors.white, 
-    fontSize: 20 / fontScale, 
-    fontWeight:'700' 
+    fontSize: 25 / fontScale, 
+    fontWeight:'700',
+    paddingHorizontal:'4%',
+    paddingVertical:'2%'
+    
   }
 
 })

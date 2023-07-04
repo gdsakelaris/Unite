@@ -1,4 +1,4 @@
-//drop down hour for picking open time and close time for provided resource
+//this file will create a dropdown hour for picking open time and close time of the resource
 import React from 'react';
 import { View } from 'react-native';
 import DateTimePickerModal from "react-native-modal-datetime-picker";

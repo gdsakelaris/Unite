@@ -1,3 +1,4 @@
+//this function will help to decide what type of setting opt is returned based on the given argument
 import SettingOptWithSwitchBtn from "./subscreens/SettingOptWithSwitchBtn"
 import SettingOptWithoutSwitchBtn from "./subscreens/SettingOptWithoutSwitchBtn"
 export const renderSettingOpt = (opt, i, navigation) => {
