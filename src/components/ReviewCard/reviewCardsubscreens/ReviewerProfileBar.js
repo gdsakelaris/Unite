@@ -9,7 +9,7 @@ const ReviewerProfileBar = ({reviewerName, reviewerProfile, postedDate, ratings}
                         </Text>} 
                 left={() => renderReviewerPicture(reviewerProfile)} 
                 right={() =>renderPostedDate(postedDate)} 
-                subtitle={<ReviewerRating rating={5}/>} 
+                subtitle={<ReviewerRating rating={ratings}/>} 
                 subtitleStyle={styles.titleMargin} 
                 titleStyle={styles.titleMargin}/>
 

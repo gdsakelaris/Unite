@@ -7,6 +7,7 @@ import EmploymentNavigation from './servicesNavigation/EmploymentNavigation';
 
 import HealthNavigation from './servicesNavigation/HealthNavigation';
 import ShelterNavigation from './servicesNavigation/ShelterNavigation';
+import FoodResourceNavigation from './servicesNavigation/FoodResourceNavigation';
 const Stack = createStackNavigator();
 const HomeScreenNavigation = () => (
   <Stack.Navigator screenOptions={{headerShown:false}}>
@@ -18,6 +19,7 @@ const HomeScreenNavigation = () => (
     <Stack.Screen name='CommunityCard' component={CommunityNavigation} />
     <Stack.Screen name='EmploymentCard' component={EmploymentNavigation}  />
     <Stack.Screen name='HealthCard' component={HealthNavigation} />
+    <Stack.Screen name='FoodResourceCard' component={FoodResourceNavigation} />
   </Stack.Navigator>
 
 )

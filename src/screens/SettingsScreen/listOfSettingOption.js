@@ -6,5 +6,4 @@ export const settingsOption = [
   {title: 'Privacy & Security', navigateTo: 'PrivacyAgreementScreen'},
   {title: 'Terms of Service', navigateTo: 'TermsOfServiceScreen'},
   {title: 'Connected Accounts', navigateTo: 'ConnectedAccount'},
-  {title: 'App Info', navigateTo: 'AppInfo'}
 ]

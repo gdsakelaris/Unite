@@ -17,7 +17,7 @@ export const serviceFullPageImage = StyleSheet.create({
   imageStyle: {
     width: '100%',
     height: '70%',
-    borderRadius: '12%'
+    borderRadius: 10
   },
 })
 

@@ -1,18 +1,18 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import  Shelter from '../../screens/services/Shelter'
+import FoodResources from '../../screens/services/FoodResources';
 import ServicesFullPage from '../../screens/ServiceFullPageScreen/ServicesFullPage';
 import Header from '../Header';
-import Review from '../../screens/ViewReviewScreen/Review';
 import WriteReview from '../../screens/WriteReviewScreen/WriteReview';
-const ShelterNavigation = () => {
+import Review from '../../screens/ViewReviewScreen/Review';
+const FoodResourceNavigation = () => {
   const Stack = createStackNavigator();
   return (
       <Stack.Navigator>
-          <Stack.Screen name= 'Shelter' component={Shelter} options={{header: ({navigation}) => (
-        <Header navigation={navigation} title={'Shelter'}/>
-      )}}/>
-          <Stack.Screen name= 'ShelterService' component={ServicesFullPage} options={{header: ({navigation}) => (
+          <Stack.Screen name= 'Food Resource' component={FoodResources} options={{header: ({navigation}) => (
+        <Header navigation={navigation} title={'Food Resources'}/>
+      )}} />
+          <Stack.Screen name= 'FoodResourceService' component={ServicesFullPage} options={{header: ({navigation}) => (
         <Header navigation={navigation}/>
       )}}/>
           <Stack.Screen name= 'Review' component={Review} options={{header: ({navigation}) => (
@@ -26,4 +26,4 @@ const ShelterNavigation = () => {
 }
 
 
-export default ShelterNavigation;
+export default FoodResourceNavigation;

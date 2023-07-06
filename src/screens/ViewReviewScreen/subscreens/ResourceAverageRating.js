@@ -1,16 +1,19 @@
+//this file will make a view component which displays the resource's rating, rating star and the text 'based on reviews' on the Review screen 
 import React from 'react';
 import { View} from 'react-native';
 import { Text } from 'react-native-paper';
-import RatingStar from './RatingStar';
+import renderStarRating from '../../../utils/renderStarRating';
+import { resourceAverageRating as styles } from '../css';
 const ResourceAverageRating = ({rating}) => {
-  const star = Array.from({length: 5})
   return (
-    <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+    //container
+    <View style={styles.container}>
+        {/* resource's rating */}
         <Text variant='displayLarge'>3.0</Text>
-        <View style={{flexDirection:'row'}}>
-            {star.map((_, i) => <RatingStar rating={3} i={parseInt(i)} key={i.toString()}/>)}
-        </View>
-        <Text variant='labelSmall' style={{fontWeight:'300'}}>based on 6 reviews</Text>
+        {/* resource's rating star */}
+        {renderStarRating(rating, styles.starRating)}
+        {/* text */}
+        <Text variant='labelSmall' style={styles.text}>based on 6 reviews</Text>
     </View>
   )
 }

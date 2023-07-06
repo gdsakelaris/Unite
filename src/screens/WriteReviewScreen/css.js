@@ -62,7 +62,7 @@ export const submitBtn = StyleSheet.create({
     color: colors.white,
     fontSize: 24 / fontScale,
     fontWeight: "bold",
-    paddingTop:'3%'
+    paddingTop:'4%'
   },
   contentBtn: {
     width:'100%'

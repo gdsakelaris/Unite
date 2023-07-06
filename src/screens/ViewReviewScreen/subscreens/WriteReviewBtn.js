@@ -1,13 +1,13 @@
+//this file will make a write review btn for the review screen 
 import React from 'react';
 import { View} from 'react-native';
 import { Button, Text} from 'react-native-paper';
 import { btnSettings } from '../../volunteerScreens/ThirdStepScreen/submitBtnProp';
-const WriteReviewBtn = () => (
-  <View style={{flex: .5, justifyContent:'center', alignItems:'center'}}>
-    <Button  {...btnSettings} style={{height:'50%', width:'70%', justifyContent:'center', alignItems:'center'}}>
-        <Text style={{color: 'white', 
-    fontSize: 20 , 
-    fontWeight:'700' }}>Write a Review</Text>
+import { writeReviewBtn as styles } from '../css';
+const WriteReviewBtn = ({onPress}) => (
+  <View style={styles.container}>
+    <Button  {...btnSettings} style={styles.btnView} onPress={onPress}>
+        <Text style={styles.btnText}>Write a Review</Text>
     </Button>
   </View>
 )

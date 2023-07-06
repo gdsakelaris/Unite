@@ -7,12 +7,9 @@ import StarRating from "./subscreens/StarRating";
 import ReviewTextBox from "./subscreens/ReviewTextBox";
 import SubmitBtn from "./subscreens/SubmitBtn";
 import AddImageSection from "./subscreens/AddImageSection";
-const WriteReview = () => {
+const WriteReview = ({navigation}) => {
   return (
     <WriteReviewPageContainer>
-      {/* blank space */}
-      <SectionContainer/>
-
       {/* star rating section */}
       <SectionContainer>
         <SectionTitle title={'Rate your overall experience'}/>
@@ -27,7 +24,7 @@ const WriteReview = () => {
     
       {/* submit btn */}
       <SectionContainer>
-        <SubmitBtn/>
+        <SubmitBtn onPress={() => navigation.navigate('Review')}/>
       </SectionContainer>
     </WriteReviewPageContainer>
   );

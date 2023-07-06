@@ -73,7 +73,8 @@ export const searchBar = StyleSheet.create({
 
 export const reviewCard = StyleSheet.create({
   container: {
-    borderColor:'transparent'
+    borderColor:'transparent',
+    backgroundColor:colors.white
   },
   titleText: {
     fontWeight:'600',

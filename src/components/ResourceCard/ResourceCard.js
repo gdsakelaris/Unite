@@ -11,8 +11,8 @@ const ResourceCard = ({ item, navigation, fullPageServiceName, hasEditButton}) =
   return (
     <ResourceCardContainer>
       <ResourceCardContent>
-        <ResourceCardTitle title={item.name}/>
-        <ResourceCardRatingAndReview rating={item.rating} review={item.reviews}/>
+        <ResourceCardTitle title={item.name} onPress={() => navigation.navigate(fullPageServiceName)}/>
+        <ResourceCardRatingAndReview rating={item.rating} review={item.reviews} onPress={() => navigation.navigate('Review')}/>
         <ResourceCardDescription description={item.desc}/>
         <ResourceCardContactInfo location={item.location}/>
         <ResourceCardContactInfo number={item.number}/>

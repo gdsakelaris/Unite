@@ -1,7 +1,7 @@
 //a screen which displays the food resources resources
 import React from "react";
 import { ScrollView} from "react-native";
-import ResourceCard from "../../components/ResourceCard";
+import ResourceCard from "../../components/ResourceCard/ResourceCard";
 import ServiceContainer from "./subscreens/ServiceContainer";
 import SortBtn from "./subscreens/SortBtn";
 import { resourceData } from "./mockupData";
