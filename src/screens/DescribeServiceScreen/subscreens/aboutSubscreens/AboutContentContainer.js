@@ -1,3 +1,4 @@
+//this file will make a container component that will store all the content of the about section
 import React from 'react';
 import { View } from 'react-native';
 import { about as styles } from '../../css';

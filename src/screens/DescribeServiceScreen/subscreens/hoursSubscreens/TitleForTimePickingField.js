@@ -1,3 +1,4 @@
+//title of the picking hour field 
 import React from 'react';
 import { Text } from 'react-native-paper';
 import { hour as styles } from '../../css';

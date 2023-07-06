@@ -1,3 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+//icons for Map Screen
 import {colors, fontScale} from '../../base'
-export const markerIcon =  <Ionicons name="location-outline" size={44 / fontScale} color={colors.lightorange} /> 
+import renderExpoIcon from '../../utils/renderExpoIcon';
+export const markerIcon = renderExpoIcon('Ionicons', 'location-outline', {size: 44 / fontScale, color: colors.lightorange})

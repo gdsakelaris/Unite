@@ -1,10 +1,14 @@
 //This file will contain all color references as well as several libraries that will be used repeatedly throughout the app.
 import { PixelRatio } from "react-native"
-
+/////////////////////////////////////////////////////////////
+//fontScale
 //this function will return the font scale of the user's device
 //the returned property of this function will make the text resizes automatically based on the device's fontSize preference
 export const fontScale = PixelRatio.getFontScale()
+/////////////////////////////////////////////////////////////
 
+/////////////////////////////////////////////////////////////
+//Colors
 //an object of color references
 export const colors = {
   lightorange: '#F78154',
@@ -18,5 +22,10 @@ export const colors = {
   lightpink: '#ffe4df',
   switchOff: '#AD2525',
   switchOn: '#0F993E',
-  mediumgray:'#D9D9D9'
+  mediumgray:'#D9D9D9',
+  black: '#000000',
+  green: '#337155'
 }
+/////////////////////////////////////////////////////////////
+
+

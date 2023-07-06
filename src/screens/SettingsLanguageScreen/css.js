@@ -4,11 +4,11 @@ export const settingsLanguage = StyleSheet.create({
   rowContainer: {
     borderBottomWidth: 1,
     borderBottomColor: colors.mediumgray,
-    height: 80 
+    height: 92 ,
+    backgroundColor:colors.white
   },
   languageText: {
     marginLeft: '4%',
-    flex: 1,
     fontSize: 18 / fontScale,
   },
 })

@@ -1,3 +1,4 @@
+// this file will make a Privacy Agreement Screen component that displays some paragraphs about the privacy of this app
 import React from 'react';
 import { ScrollView, View } from 'react-native';
 import { Text } from 'react-native-paper';

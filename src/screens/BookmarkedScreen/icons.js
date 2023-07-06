@@ -1,4 +1,5 @@
-import { EvilIcons, Ionicons } from "@expo/vector-icons";
+//icons for bookmarkedService screen
 import { icons as styles } from "./css";
-export const locationIcon = <EvilIcons name="location" size={20} color="black" style={styles.locationIcon}/>
-export const phoneIcon = <Ionicons name="ios-call-outline" size={15} color="black" style={styles.phoneIcon}/>
+import renderExpoIcon from "../../utils/renderExpoIcon";
+export const locationIcon = renderExpoIcon('EvilIcons', 'location', {size: 20, style: styles.locationIcon})
+export const phoneIcon = renderExpoIcon('Ionicons', 'ios-call-outline', {size: 15})

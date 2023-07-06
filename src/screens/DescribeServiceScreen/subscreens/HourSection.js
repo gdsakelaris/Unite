@@ -1,3 +1,4 @@
+//this file will render the hour section for the describeService page
 import React from 'react';
 import SectionContainer from './SectionContainer';
 import SectionTitle from './SectionTitle';

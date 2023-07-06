@@ -1,12 +1,12 @@
+//this file will make an add btn on the PublishedService screen so the user can publish their resources
 import React from 'react';
 import { addBtn as styles } from '../css';
 import { addIcon } from '../icons';
-import { TouchableOpacity } from 'react-native';
-import { Text } from 'react-native-paper';
+import { Button } from 'react-native-paper';
 const AddBtn = ({navigation}) => (
-  <TouchableOpacity style={styles.addbtn} onPress={() => navigation.navigate('First Step')}>
+  <Button style={styles.addbtn} onPress={() => navigation.navigate('Get Started')} contentStyle={styles.addbtnContent} labelStyle={styles.addbtntext}>
     {addIcon}
-    <Text style={styles.addbtntext}> Add </Text>
-  </TouchableOpacity>
+    Add
+  </Button>
 )
 export default AddBtn;

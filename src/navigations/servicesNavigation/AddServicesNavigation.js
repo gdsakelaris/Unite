@@ -6,11 +6,15 @@ import FirstStep from '../../screens/volunteerScreens/FirstStepScreen/FirstStep'
 import ThirdStep from '../../screens/volunteerScreens/ThirdStepScreen/ThirdStep';
 import Published from '../../screens/volunteerScreens/ConfirmPublishedScreen/Published';
 import Header from '../Header';
+import GetStarted from '../../screens/volunteerScreens/GetStartedScreen/GetStarted';
 const AddServicesNavigation = () => {
   const Stack = createStackNavigator();
   return (
     <Stack.Navigator>
       <Stack.Screen name='Published Service' component={PublishedServices} options={{header: ({navigation}) => (
+        <Header navigation={navigation}/>
+      )}}/>
+      <Stack.Screen name='Get Started' component={GetStarted} options={{header: ({navigation}) => (
         <Header navigation={navigation}/>
       )}}/>
       <Stack.Screen name='First Step' component={FirstStep} options={{header: ({navigation}) => (

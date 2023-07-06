@@ -1,3 +1,4 @@
+//Props for making User Profile picture and edit btn
 import img from '../../images/Reslogo.png'
 import { Image } from 'react-native'
 const profileUrl = Image.resolveAssetSource(img).uri

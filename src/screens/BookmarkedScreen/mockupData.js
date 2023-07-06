@@ -1,3 +1,4 @@
+//mockupData for testing purpose
 export const bookmarkData = [
   {
     id: 1,

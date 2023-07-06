@@ -4,7 +4,8 @@ import { fontScale, colors } from "../../base";
 
 export const homeScreenContainer = StyleSheet.create({
   homeScreenContainer: {
-    flex: 1
+    flex: 1,
+    backgroundColor:colors.white
   }
 })
 

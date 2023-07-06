@@ -1,3 +1,4 @@
-import { AntDesign } from '@expo/vector-icons';
+//icons for Setting screen
 import { fontScale} from '../../base';
-export const arrowRight = <AntDesign name="right" size={20 / fontScale} color="black"/>
+import renderExpoIcon from '../../utils/renderExpoIcon';
+export const arrowRight = renderExpoIcon('AntDesign', 'right', {size: 20 / fontScale})

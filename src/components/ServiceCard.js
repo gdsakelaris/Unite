@@ -6,12 +6,14 @@ const ServiceCard = ({ picture, title, style, onPress}) => {
   return (
     <TouchableOpacity
         style={[styles.cardStyle, style]} onPress={onPress}>
+        {/* Image of the service card */}
         <Image
           source={ picture !== null
             ? { uri: picture }
             : { uri: "https://placehold.co/400?text=No+image+available" }}
           style={styles.cardImage}
           resizeMode='cover' />
+          {/* name of the service card */}
         <View
           style={styles.cardTitleContainer}>
           <Text

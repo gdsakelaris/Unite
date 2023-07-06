@@ -1,3 +1,4 @@
-import { FontAwesome } from "@expo/vector-icons";
-export const whiteStarIcon =  <FontAwesome name={'star'} size={26} color="black" /> 
-export const blackStarIcon =  <FontAwesome name={'star-o'} size={26} color="black"/>
+//icons for write review screen
+import renderExpoIcon from "../../utils/renderExpoIcon";
+export const whiteStarIcon =  renderExpoIcon('FontAwesome', 'star', {size: 26})
+export const blackStarIcon =  renderExpoIcon('FontAwesome', 'star-o', {size: 26})

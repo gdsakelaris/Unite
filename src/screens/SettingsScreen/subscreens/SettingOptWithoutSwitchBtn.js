@@ -1,3 +1,4 @@
+//this file will create a component without the switch on the Setting screen that represents a setting option which allows user to perform some actions on the setting screens such as navigating to the SettingConnected screen, SettingLanguage screen.
 import React from 'react';
 import { View, TouchableOpacity} from 'react-native';
 import { Text } from 'react-native-paper';

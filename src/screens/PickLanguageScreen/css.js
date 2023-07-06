@@ -21,20 +21,24 @@ export const pickLanguageBtnStyle = StyleSheet.create({
   buttonContainer: {
     flex: 1,
     alignItems:'center',
+
   },
   button: {
     borderRadius: '40%',
-    width: 330,
-    height:'80%',
-    justifyContent:'center',
-    alignItems:'center',
+    width: '80%',
+    height:'60%',
     backgroundColor:colors.lightorange
   },
+  buttonContent: {
+    width:'100%',
+    height:'100%',
+   
+  }
+  ,
   buttonLabel: {
-    fontSize: 25 / fontScale,
-    fontWeight: '600',
+    fontSize: 21 / fontScale,
+    fontWeight: '700',
     color:colors.white,
-    
   }
 })
 

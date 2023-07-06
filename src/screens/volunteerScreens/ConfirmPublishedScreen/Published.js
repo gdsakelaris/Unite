@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+//Published screen. This is the screen that the user will see when they run the application
+import React from "react";
 import { Image } from "react-native";
 import { Text } from "react-native-paper";
 import img from '../../../images/Allura.png'

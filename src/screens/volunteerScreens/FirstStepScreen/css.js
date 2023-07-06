@@ -18,9 +18,28 @@ export const cardContainer = StyleSheet.create({
 
 export const title = StyleSheet.create({
   title: {
-    fontSize: 40 / fontScale,
-    fontWeight: 'bold',
     padding: 10,
     maxWidth: '80%',
+    lineHeight:'40%'
   },
+})
+
+export const nextBtn = StyleSheet.create({
+  nxtButton: {
+
+    width: '35%',
+    height: '7%',
+    borderRadius: 20,
+    backgroundColor: '#F78154',
+    alignItems: 'center',
+    padding: 3,
+    justifyContent:'center',
+    alignItems:'center',
+    alignSelf:'flex-end'
+  },
+  nxtButtonText: {
+    color: colors.white,
+    fontSize: 30 / fontScale,
+    fontWeight: 'bold',
+},
 })

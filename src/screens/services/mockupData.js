@@ -1,3 +1,4 @@
+//mockup data for making mockup resource card
 import img from '../../images/Dummyresource.png'
 export const resourceData = {
   name: "Name of Resource",

@@ -5,6 +5,12 @@ export const imageInputList = StyleSheet.create({
   inputListContainer: {
     flexDirection:'row',
     width:'100%',
+    height:'60%',
+  },
+  scrollViewContent: {
+    flex: 1,
+    // width:'100%',
+    // height:'100%'
   }
 })
 
@@ -67,7 +73,8 @@ export const searchBar = StyleSheet.create({
 
 export const reviewCard = StyleSheet.create({
   container: {
-    borderColor:'transparent'
+    borderColor:'transparent',
+    backgroundColor:colors.white
   },
   titleText: {
     fontWeight:'600',
@@ -167,8 +174,8 @@ export const resourceCard = StyleSheet.create({
     marginBottom:'2%'
   },
   editbtn: {
-      width: '60%',
-      height: '10%',
+       width: '60%',
+      height: '12%',
       borderRadius: 5,
       backgroundColor: colors.lightorange,
       justifyContent:'center',
@@ -180,6 +187,10 @@ export const resourceCard = StyleSheet.create({
       color: colors.white,
       fontSize: 16 / fontScale,
       fontWeight: 'bold',
+      width:'100%',
+      height:'100%',
+      top:'10%'
+      
   },
   resourceCardcontactInfo: {
     fontSize: 16 / fontScale
@@ -196,5 +207,12 @@ export const switchStyle = StyleSheet.create({
   switchBtnText: {
     color: colors.white, 
     fontSize: 14
+  }
+})
+
+export const screenTitle = StyleSheet.create({
+  screenTitle: {
+    fontSize: 40 / fontScale,
+    fontWeight: 'bold'
   }
 })

@@ -1,14 +1,15 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, useWindowDimensions } from "react-native";
 import { colors, fontScale } from "../../base";
 export const title = StyleSheet.create({
     titleContainer: {
-      flex: 1, 
-      marginBottom:'2%',
+      bottom:'4%',
+      backgroundColor:'red'
     
     },
     titleStyle : {
-      fontSize: 40 / fontScale,
-      fontWeight: '600',
+      fontSize: 43 / fontScale,
+      lineHeight: '40%'
+
     },
 })
 
@@ -16,7 +17,8 @@ export const section = StyleSheet.create({
   sectionContainer: {
     flex: 2, 
     paddingLeft: 20,
-   // marginTop:'2%',
+    
+   
   },
   titleSectionContainer: {
     flex: 1,
@@ -47,7 +49,7 @@ export const about = StyleSheet.create({
     width: '70%',
     height:'100%', 
     borderRadius: colors.lightgray, 
-    borderWidth:0.15, 
+    borderWidth:0.5, 
     borderRadius:5, 
     backgroundColor:colors.lightgray, 
     paddingVertical:3, 
@@ -56,11 +58,11 @@ export const about = StyleSheet.create({
   descriptionTextInput: {
     height:'70%', 
     borderRadius: colors.lightgray, 
-    borderWidth:0.15, 
+    borderWidth:0.5, 
     borderRadius:5, 
     backgroundColor:colors.lightgray,  
     paddingHorizontal:10, 
-    marginTop: 12
+    marginTop: 12,
   },
 })
 
@@ -82,13 +84,16 @@ export const media = StyleSheet.create({
   },
   mediaTextInput: {
     borderRadius: colors.lightgray,
-    borderWidth:0.15, 
+    borderWidth:0.5, 
     borderRadius:7, 
     backgroundColor: colors.lightgray,  
     paddingHorizontal:10, 
     width:'100%', 
-    height:'100%',
-    marginLeft:'4%'
+    height:'90%',
+    marginLeft:'4%',
+    top: '2%'
+
+    
   },
 })
 
@@ -109,13 +114,14 @@ export const location = StyleSheet.create({
   },
   locationTextInput: {
     borderRadius: colors.lightgray, 
-    borderWidth:0.15, 
+    borderWidth:0.5, 
     borderRadius:7, 
     backgroundColor: colors.lightgray,  
     paddingHorizontal:10, 
     width:'100%', 
     height:'100%',
-    marginLeft:'4%'
+    marginLeft:'4%',
+    top: '1%'
   },
 })
 
@@ -147,14 +153,27 @@ export const hour = StyleSheet.create({
   saveButtonText: {
     fontSize: 20 / fontScale,
     fontWeight:'400',
+    paddingHorizontal:'20%',
+    paddingVertical:'10%'
   },
   cancelButtonText: {
     fontSize: 20 / fontScale,
     fontWeight:'400',
+    paddingHorizontal:'15%',
+    paddingVertical:'10%'
     
   },
   customHeaderForDropDown: {
-    alignSelf:'center'
+    alignSelf:'center',
+    fontSize: 24 / fontScale,
+    fontWeight:'600',
+  },
+  customHeaderForDropDownView: {
+    width:'100%', 
+    alignItems:'center', 
+    justifyContent:'center', 
+    borderWidth:0.5,
+    borderBottomColor:colors.black
   },
   timePickingFieldForDayContainer: {
     flexDirection:'row', 
@@ -168,23 +187,26 @@ export const hour = StyleSheet.create({
     width: '35%', 
     height:'70%', 
     borderRadius: colors.lightgray, 
-    borderWidth:0.15, 
+    borderWidth:0.5, 
     borderRadius:5, 
     backgroundColor:colors.lightgray, 
     flexDirection:'row', 
-    //justifyContent:'space-between'
+    
   },
   timePickingField: {
     width:'82%', 
     alignItems:'center',
-    justifyContent:'center'
+    justifyContent:'center',
+    
   },
   displayedPickingTime: {
     fontSize: 14 / fontScale, 
     color:'black'
   },
   arrowDownIcon: {
-    alignSelf:'center'
+    alignSelf:'center',
+    bottom:'20%'
+
   },
   titleForTimePickingField: {
     fontSize: 14 / fontScale
@@ -200,29 +222,29 @@ export const hour = StyleSheet.create({
 
 export const addImage = StyleSheet.create({
   addImageSection: {
-    flex: 1.5
+   flex: 2,
+   // backgroundColor:'red'
+  },
+  addImageSectionTitleContainer: {
+    flex: 0.5
   }
 })
 
 export const nextBtn = StyleSheet.create({
   nextBtnContainer: {
-    flex: 1, 
-    alignItems:'flex-end',
-    justifyContent:'center'
-  },
-  nextBtnView: {
-    backgroundColor: colors.lightorange, 
-    width:'30%', 
-    height:'50%', 
-    justifyContent:'center', 
-    alignItems:'center', 
+    alignItems:'center',
+    justifyContent:'center',
+    width:'30%',
+    alignSelf:'flex-end',
+    backgroundColor:colors.lightorange,
     borderRadius:'15%',
+    height:'5%'
     
   },
   nextBtnLabel: {
-    fontSize: 30 / fontScale, 
+    fontSize: 21 / fontScale, 
     fontWeight:'700', 
-    color:'white'
+    color:'white',
 
   }
 })
@@ -230,7 +252,8 @@ export const nextBtn = StyleSheet.create({
 export const describeServicePageContainer = StyleSheet.create({
   describeServicePageContainer: {
     flex: 1,
-    
-    backgroundColor:colors.white
+    paddingHorizontal:'3%',    
+    backgroundColor:colors.white,
+    justifyContent:'space-evenly'
   }
 })

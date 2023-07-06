@@ -1,3 +1,4 @@
+//mockup data for help screen
 export const listOfProvidedHelpOpts = [
   { question: "Signing up with Unite", detail: "To update the app, go to the app store on your device and search for the app. If an update is available, you will see an option to update the app. Alternatively, you can enable automatic updates in your device's settings." },
   { question: "How to update your email address", detail: "To update the app, go to the app store on your device and search for the app. If an update is available, you will see an option to update the app. Alternatively, you can enable automatic updates in your device's settings." },

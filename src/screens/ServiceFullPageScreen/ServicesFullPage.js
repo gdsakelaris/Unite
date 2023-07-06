@@ -3,9 +3,10 @@ import ServiceDetail from './subscreens/ServiceDetail';
 import ServicePageImage from './subscreens/ServicePageImage';
 import ServicePageInfo from './subscreens/ServicePageInfo';
 import ServicePageContainer from './subscreens/ServicePageContainer';
-import { getServiceOption } from './functions';
+import listOfProvidedSection from './listOfProvidedServiceDetail'
+
 const ServicesFullPage = () => {
-  const [detailOption, setdetailOption] = useState(getServiceOption(0))
+  const [detailOption, setdetailOption] = useState(listOfProvidedSection[0])
   return (
     <ServicePageContainer>
       <ServicePageImage/>

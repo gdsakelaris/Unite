@@ -1,3 +1,4 @@
-import { FontAwesome, EvilIcons } from '@expo/vector-icons';
-export const star = <FontAwesome name="star" size={14} color="black" />
-export const location =  <EvilIcons name="location" size={18} color="black" />
+//icons for Service Full Page
+import renderExpoIcon from '../../utils/renderExpoIcon';
+export const star = renderExpoIcon('FontAwesome', 'star', {size: 14})
+export const location =  renderExpoIcon('EvilIcons', 'location', {size: 18})

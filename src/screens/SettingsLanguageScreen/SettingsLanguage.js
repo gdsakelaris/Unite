@@ -1,3 +1,4 @@
+//SettingsLanguage screen. This is the screen that the user will see when they run the application
 import React from 'react';
 import { languageOptions } from './listOfLanguagesOpt';
 import SettingLanguageContainer from './subscreens/SettingLanguageContainer';

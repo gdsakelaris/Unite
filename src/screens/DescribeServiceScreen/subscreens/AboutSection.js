@@ -1,4 +1,4 @@
-//this file will render an about section for the describeService page
+//this file will render the about section for the describeService page
 import React from 'react';
 import SectionContainer from './SectionContainer';
 import SectionTitle from './SectionTitle';

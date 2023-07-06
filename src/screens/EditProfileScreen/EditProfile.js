@@ -4,6 +4,7 @@ import ProfilePicture from './subscreens/ProfilePicture';
 import EditProfileInfoContainer from './subscreens/EditProfileInfoContainer';
 import ProfileInfoField from './subscreens/ProfileInfoField';
 const EditProfile = () => {
+  //mockup data
   const [emailAddress, setEmailAddress] = useState('john123@gmail.com')
   const [userName, setUserName] = useState('John')
   const [password, setPassword] = useState('12345')

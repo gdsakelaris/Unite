@@ -1,3 +1,4 @@
+//this file will make a field that displays the user's info on the edit profile screen 
 import React from 'react';
 import { View, TextInput } from 'react-native';
 import { Text } from 'react-native-paper';

@@ -1,9 +1,9 @@
 import React from 'react';
-import { getAvartaType } from './functions';
+import renderAvatar from '../utils/renderAvatar';
 //avatarSetting is an object of props in Avatar react-native-paper
 function AvatarIcon({avatarSettings}) {
   return (
-    getAvartaType(avatarSettings)
+    renderAvatar(avatarSettings)
     
   );
 }

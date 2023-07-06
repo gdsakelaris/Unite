@@ -24,14 +24,13 @@ export const profileOptionsContainer = StyleSheet.create({
 
 export const editBtn = StyleSheet.create({
   editButton: {
-    backgroundColor: "green",
+    backgroundColor: colors.green,
     borderRadius: '8%',
-    paddingVertical: 8,
-    paddingHorizontal: 20,
     marginTop: '3%',
   },
   editButtonTxt: {
-    color: colors.white
+    color: colors.white,
+    fontSize: 15 / fontScale,
   }
 })
 

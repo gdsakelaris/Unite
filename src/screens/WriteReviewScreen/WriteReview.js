@@ -1,3 +1,4 @@
+//Write Review screen. This is the screen that the user will see when they run the application
 import React from "react";
 import WriteReviewPageContainer from "./subscreens/WriteReviewPageContainer";
 import SectionTitle from "./subscreens/SectionTitle";
@@ -6,12 +7,9 @@ import StarRating from "./subscreens/StarRating";
 import ReviewTextBox from "./subscreens/ReviewTextBox";
 import SubmitBtn from "./subscreens/SubmitBtn";
 import AddImageSection from "./subscreens/AddImageSection";
-const WriteReview = () => {
+const WriteReview = ({navigation}) => {
   return (
     <WriteReviewPageContainer>
-      {/* blank space */}
-      <SectionContainer/>
-
       {/* star rating section */}
       <SectionContainer>
         <SectionTitle title={'Rate your overall experience'}/>
@@ -26,7 +24,7 @@ const WriteReview = () => {
     
       {/* submit btn */}
       <SectionContainer>
-        <SubmitBtn/>
+        <SubmitBtn onPress={() => navigation.navigate('Review')}/>
       </SectionContainer>
     </WriteReviewPageContainer>
   );

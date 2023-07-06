@@ -9,8 +9,6 @@ export const publishedServiceContainer = StyleSheet.create({
 
 export const title = StyleSheet.create({
   title: {
-    fontSize: 36 / fontScale,
-    fontWeight: "bold",
     padding: 14,
     maxWidth: 327,
   }
@@ -24,7 +22,7 @@ export const addBtn = StyleSheet.create({
     height: '7%',
     backgroundColor: "#F78154",
     borderRadius: '15%',
-    justifyContent: "space-evenly",
+    justifyContent: "space-around",
     alignItems: "center",
     position: "absolute",
     top: "90%",
@@ -35,5 +33,11 @@ export const addBtn = StyleSheet.create({
     fontWeight: "bold",
     color: "white",
     fontSize: 26 / fontScale,
+    paddingTop:'5%',
+    
   },
+  addbtnContent: {
+    width: '100%',
+    
+  }
 })
