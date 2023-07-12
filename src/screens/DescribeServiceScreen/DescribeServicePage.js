@@ -8,15 +8,18 @@ import ImageSection from "./subscreens/ImageSection";
 import NextBtn from "./subscreens/NextBtn";
 import ScreenTitle from "../../components/ScreenTitle";
 import { title as styles } from "./css";
+import {ScrollView} from "react-native";
 const DescribeServicePage = ({navigation}) => {
   return (
     <DescribeServicePageContainer>
       <ScreenTitle titleMessage={'Describe your service'} style={styles.titleStyle} numberOfLines={2}/>
-      <AboutSection/>
-      <HourSection/>
-      <MediaSection/>
-      <LocationSection/>
-      <ImageSection/>
+      <ScrollView>
+        <AboutSection/>
+        <HourSection/>
+        <MediaSection/>
+        <LocationSection/>
+        <ImageSection/>
+      </ScrollView>
       <NextBtn navigation={navigation} navigateTo={'Third Step'}/>
     </DescribeServicePageContainer>
   )

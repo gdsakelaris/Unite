@@ -4,13 +4,15 @@ import {fontScale, colors} from '../base'
 export const imageInputList = StyleSheet.create({
   inputListContainer: {
     flexDirection:'row',
-    width:'100%',
-    height:'60%',
+    // width:'100%',
+    paddingLeft:10,
+    // height:'60%',
   },
   scrollViewContent: {
     flex: 1,
-    // width:'100%',
+    width:'100%',
     // height:'100%'
+    alignItems:'center',
   }
 })
 

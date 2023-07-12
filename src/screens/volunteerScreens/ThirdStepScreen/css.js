@@ -19,15 +19,18 @@ export const submitBtn = StyleSheet.create({
     height: '6%',
     alignSelf:'center',
     justifyContent:'center',
-    bottom:'5%'
+    bottom:'5%',
+    borderWidth: 0,
+    alignItems: 'center',
+
   },
   publishBtnText: {
     color: colors.white, 
-    fontSize: 25 / fontScale, 
+    fontSize: 25 / fontScale,
     fontWeight:'700',
     paddingHorizontal:'4%',
-    paddingVertical:'2%'
-    
+    paddingVertical:'1%',
+    textAlign: 'center',
   }
 
 })

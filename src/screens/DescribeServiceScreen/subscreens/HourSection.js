@@ -7,6 +7,8 @@ import TimePickingFieldForDay from './hoursSubscreens/TimePickingFieldForDay';
 import { hour as styles } from '../css';
 const HourSection = () => {
   const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+  // const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+
   return (
     <SectionContainer style={styles.hourSection}>
       <SectionTitle title={'2 Hours'}/>
