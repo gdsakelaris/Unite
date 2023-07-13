@@ -134,16 +134,17 @@ export const hour = StyleSheet.create({
   },
   saveButton: {
     width:'43%',
-    height:'100%',
+    height: 45,
     borderRadius:'10%',
     backgroundColor: colors.lightorange,
     justifyContent:'center',
     alignItems:'center',
-    borderWidth:1
+    borderWidth:1,
+    borderColor:colors.lightorange
   },
   cancelButton: {
     width:'43%',
-    height:'100%',
+    height: 45,
     borderRadius:'10%',
     backgroundColor: colors.white,
     justifyContent:'center',
@@ -153,15 +154,11 @@ export const hour = StyleSheet.create({
   saveButtonText: {
     fontSize: 20 / fontScale,
     fontWeight:'400',
-    paddingHorizontal:'20%',
-    paddingVertical:'10%'
+    color: colors.white,
   },
   cancelButtonText: {
     fontSize: 20 / fontScale,
     fontWeight:'400',
-    paddingHorizontal:'15%',
-    paddingVertical:'10%'
-    
   },
   customHeaderForDropDown: {
     alignSelf:'center',
@@ -172,8 +169,8 @@ export const hour = StyleSheet.create({
     width:'100%', 
     alignItems:'center', 
     justifyContent:'center', 
-    borderWidth:0.5,
-    borderBottomColor:colors.black
+    borderBottomWidth:0.5,
+    borderBottomColor:colors.lightdark,
   },
   timePickingFieldForDayContainer: {
     flexDirection:'row', 
@@ -187,7 +184,8 @@ export const hour = StyleSheet.create({
     width: '35%',
     height:'80%',
     // borderRadius: colors.lightgray,
-    borderWidth:0.5, 
+    borderWidth:0.5,
+    borderColor:colors.lightgray,
     borderRadius:5, 
     backgroundColor:colors.lightgray, 
     flexDirection:'row', 
