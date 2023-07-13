@@ -31,17 +31,17 @@ export const addBtn = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 1,
     shadowRadius: 4,
+    paddingHorizontal: "20%",
   },
 
   addbtntext: {
     fontWeight: "bold",
     color: "white",
     fontSize: 25 / fontScale,
-    paddingTop:'5%',
-    
+    alignSelf: "center",
   },
-  addbtnContent: {
-    width: '100%',
-    
+  addbtnPressed:{
+    backgroundColor: '#faa281',
   }
+
 })

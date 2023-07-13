@@ -51,7 +51,8 @@ export const about = StyleSheet.create({
     width: '70%',
     height:'100%', 
     borderWidth:0.5,
-    borderRadius:5, 
+    borderRadius:5,
+    borderColor:colors.lightgray,
     backgroundColor:colors.lightgray, 
     paddingVertical:3, 
     paddingHorizontal:20
@@ -59,7 +60,8 @@ export const about = StyleSheet.create({
   descriptionTextInput: {
     height:'70%', 
     borderWidth:0.5,
-    borderRadius:5, 
+    borderRadius:5,
+    borderColor:colors.lightgray,
     backgroundColor:colors.lightgray,  
     paddingHorizontal:10, 
     marginTop: 12,
@@ -83,17 +85,15 @@ export const media = StyleSheet.create({
     paddingBottom: 10,
   },
   mediaTextInput: {
-    // borderRadius: colors.lightgray,
-    borderWidth:0.5, 
-    borderRadius:7, 
+    borderWidth:0.5,
+    borderRadius:7,
+    borderColor:colors.lightgray,
     backgroundColor: colors.lightgray,  
     paddingHorizontal:10, 
     width:'100%', 
     height:'90%',
     marginLeft:'5%',
     top: '2%'
-
-    
   },
 })
 
@@ -113,9 +113,9 @@ export const location = StyleSheet.create({
     width:'70%',
   },
   locationTextInput: {
-    // borderRadius: colors.lightgray,
-    borderWidth:0.5, 
-    borderRadius:7, 
+    borderWidth:0.5,
+    borderRadius:7,
+    borderColor:colors.lightgray,
     backgroundColor: colors.lightgray,  
     paddingHorizontal:10,
     width:'100%', 
