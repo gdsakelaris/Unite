@@ -18,7 +18,8 @@ const BottomNavigation = () => {
         initialRouteName="Home"
         screenOptions={{
           tabBarActiveTintColor: "#2f95dc",
-        }}
+          tabBarVisible: false
+      }}
       > 
         <Tab.Screen
           name="Map"
@@ -28,7 +29,7 @@ const BottomNavigation = () => {
             tabBarIcon: ({ color, size }) => (
               <Icon name="map-outline" color={color} size={size} />
             ),
-            headerShown: false
+            headerShown: false,
           }}
         />
         <Tab.Screen
@@ -39,7 +40,7 @@ const BottomNavigation = () => {
             tabBarIcon: ({ color, size }) => (
               <Icon name="home-outline" color={color} size={size} />
             ),
-            headerShown:false
+            headerShown:false,
           }}
         />
         <Tab.Screen
@@ -50,8 +51,7 @@ const BottomNavigation = () => {
             tabBarIcon: ({ color, size }) => (
               <Icon name="person-outline" color={color} size={size} />
             ),
-            headerShown:false
-            
+            headerShown:false,
           }}
         />
       </Tab.Navigator>

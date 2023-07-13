@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useLayoutEffect} from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import PublishedServices from '../../screens/volunteerScreens/PublishedServiceScreen/PublishedServices';
 import DescribeServicePage from '../../screens/DescribeServiceScreen/DescribeServicePage';
@@ -10,10 +10,14 @@ import GetStarted from '../../screens/volunteerScreens/GetStartedScreen/GetStart
 const AddServicesNavigation = () => {
   const Stack = createStackNavigator();
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        tabBarStyle: { display: 'none' },
+      }}
+    >
       <Stack.Screen name='Published Service' component={PublishedServices} options={{header: ({navigation}) => (
         <Header navigation={navigation}/>
-      )}}/>
+        )}}/>
       <Stack.Screen name='Get Started' component={GetStarted} options={{header: ({navigation}) => (
         <Header navigation={navigation}/>
       )}}/>
