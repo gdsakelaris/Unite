@@ -2,9 +2,10 @@
 import React from 'react';
 import { Button} from 'react-native-paper';
 import { btnSettings } from '../submitBtnProp';
+import {Pressable} from "react-native";
 const PublishedBtn = ({navigation}) => (
   <Button onPress={() => navigation.navigate('Published Message')} {...btnSettings}>
-    Published
+    Publish
   </Button>
 )
 export default PublishedBtn;

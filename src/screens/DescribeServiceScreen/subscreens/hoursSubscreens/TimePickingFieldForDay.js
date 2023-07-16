@@ -9,12 +9,14 @@ const TimePickingFieldForDay = ({day, openAt, closeAt}) => {
     <View style={styles.timePickingFieldForDayContainer}>
       {/* Day */}
       <TitleForTimePickingField title={`${day}:`}/>
-      {/* Hour Picking Field for Open Time  */}
-      <TimePickingField value={openAt}/>
-      {/* to */}
-      <TitleForTimePickingField title={'to'}/>
-      {/* Hour Picking Field for Close Time */}
-      <TimePickingField value={closeAt}/>
+      <View style={styles.openAndCloseHourContainer}>
+        {/* Hour Picking Field for Open Time  */}
+        <TimePickingField value={openAt}/>
+        {/* to */}
+        <TitleForTimePickingField title={'to'}/>
+        {/* Hour Picking Field for Close Time */}
+        <TimePickingField value={closeAt}/>
+      </View>
     </View>
   );
 }

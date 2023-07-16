@@ -7,7 +7,7 @@ export const title = StyleSheet.create({
     
     },
     titleStyle : {
-      fontSize: 43 / fontScale,
+      fontSize: 40 / fontScale,
       lineHeight: '40%'
 
     },
@@ -15,13 +15,15 @@ export const title = StyleSheet.create({
 
 export const section = StyleSheet.create({
   sectionContainer: {
-    flex: 2, 
-    paddingLeft: 20,
-    
-   
+    // flex: 2,
+    // paddingLeft: 20,
+    paddingHorizontal: 5,
+    paddingBottom: 30,
+
   },
   titleSectionContainer: {
     flex: 1,
+    paddingBottom: 10,
     //marginBottom:'3%'
   },
   titleSection: {
@@ -32,7 +34,7 @@ export const section = StyleSheet.create({
 
 export const about = StyleSheet.create({
   contentContainer: {
-    flex: 4, 
+    flex: 4,
     paddingLeft: 20
   },
   inputFieldForTitleContainer: {
@@ -48,18 +50,18 @@ export const about = StyleSheet.create({
   titleTextInput: {
     width: '70%',
     height:'100%', 
-    borderRadius: colors.lightgray, 
-    borderWidth:0.5, 
-    borderRadius:5, 
+    borderWidth:0.5,
+    borderRadius:5,
+    borderColor:colors.lightgray,
     backgroundColor:colors.lightgray, 
     paddingVertical:3, 
     paddingHorizontal:20
   },
   descriptionTextInput: {
     height:'70%', 
-    borderRadius: colors.lightgray, 
-    borderWidth:0.5, 
-    borderRadius:5, 
+    borderWidth:0.5,
+    borderRadius:5,
+    borderColor:colors.lightgray,
     backgroundColor:colors.lightgray,  
     paddingHorizontal:10, 
     marginTop: 12,
@@ -71,29 +73,27 @@ export const media = StyleSheet.create({
     flex: 1
   },  
   contentContainer: {
-    paddingLeft: 20, 
+    paddingLeft: 10,
     flex: 3, 
     justifyContent:'space-around',
-    
   },
   inputFieldForMedia: {
-    paddingLeft:8, 
+    paddingLeft: 10,
     flexDirection:'row', 
     justifyContent:'space-between', 
     width:'53%',
+    paddingBottom: 10,
   },
   mediaTextInput: {
-    borderRadius: colors.lightgray,
-    borderWidth:0.5, 
-    borderRadius:7, 
+    borderWidth:0.5,
+    borderRadius:7,
+    borderColor:colors.lightgray,
     backgroundColor: colors.lightgray,  
     paddingHorizontal:10, 
     width:'100%', 
     height:'90%',
-    marginLeft:'4%',
+    marginLeft:'5%',
     top: '2%'
-
-    
   },
 })
 
@@ -102,26 +102,26 @@ export const location = StyleSheet.create({
     flex: 1
   },  
   contentContainer: {
-    paddingLeft: 20, 
+    paddingLeft: 10,
     flex: 3, 
     justifyContent:'space-around'
   },
   inputFieldForLocation: {
-    paddingLeft:8, 
+    paddingLeft: 8,
     flexDirection:'row', 
     justifyContent:'space-between', 
     width:'70%',
   },
   locationTextInput: {
-    borderRadius: colors.lightgray, 
-    borderWidth:0.5, 
-    borderRadius:7, 
+    borderWidth:0.5,
+    borderRadius:7,
+    borderColor:colors.lightgray,
     backgroundColor: colors.lightgray,  
-    paddingHorizontal:10, 
+    paddingHorizontal:10,
     width:'100%', 
-    height:'100%',
-    marginLeft:'4%',
-    top: '1%'
+    height:'120%',
+    marginLeft:'5%',
+    // top: '1%'
   },
 })
 
@@ -129,21 +129,22 @@ export const hour = StyleSheet.create({
   dropDownHourButtonsContainer: {
     flexDirection:'row', 
     justifyContent:'space-around', 
-    height:'18%', 
+    height:'10%',
     alignItems:'center',
   },
   saveButton: {
     width:'43%',
-    height:'100%',
+    height: 45,
     borderRadius:'10%',
     backgroundColor: colors.lightorange,
     justifyContent:'center',
     alignItems:'center',
-    borderWidth:1
+    borderWidth:1,
+    borderColor:colors.lightorange
   },
   cancelButton: {
     width:'43%',
-    height:'100%',
+    height: 45,
     borderRadius:'10%',
     backgroundColor: colors.white,
     justifyContent:'center',
@@ -153,15 +154,11 @@ export const hour = StyleSheet.create({
   saveButtonText: {
     fontSize: 20 / fontScale,
     fontWeight:'400',
-    paddingHorizontal:'20%',
-    paddingVertical:'10%'
+    color: colors.white,
   },
   cancelButtonText: {
     fontSize: 20 / fontScale,
     fontWeight:'400',
-    paddingHorizontal:'15%',
-    paddingVertical:'10%'
-    
   },
   customHeaderForDropDown: {
     alignSelf:'center',
@@ -172,8 +169,8 @@ export const hour = StyleSheet.create({
     width:'100%', 
     alignItems:'center', 
     justifyContent:'center', 
-    borderWidth:0.5,
-    borderBottomColor:colors.black
+    borderBottomWidth:0.5,
+    borderBottomColor:colors.lightdark,
   },
   timePickingFieldForDayContainer: {
     flexDirection:'row', 
@@ -184,10 +181,11 @@ export const hour = StyleSheet.create({
     fontSize: 14 / fontScale
   },
   timePickingFieldContainer: {
-    width: '35%', 
-    height:'70%', 
-    borderRadius: colors.lightgray, 
-    borderWidth:0.5, 
+    width: '35%',
+    height:'80%',
+    // borderRadius: colors.lightgray,
+    borderWidth:0.5,
+    borderColor:colors.lightgray,
     borderRadius:5, 
     backgroundColor:colors.lightgray, 
     flexDirection:'row', 
@@ -205,8 +203,8 @@ export const hour = StyleSheet.create({
   },
   arrowDownIcon: {
     alignSelf:'center',
-    bottom:'20%'
-
+    bottom:'20%',
+    right:'30%'
   },
   titleForTimePickingField: {
     fontSize: 14 / fontScale
@@ -216,7 +214,13 @@ export const hour = StyleSheet.create({
   },
   hourContentContainer: {
     flex: 7,
-    paddingLeft: 20,
+    paddingLeft: 15,
+  },
+  openAndCloseHourContainer: {
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center',
+    height:'100%',
   }
 })
 
@@ -238,12 +242,17 @@ export const nextBtn = StyleSheet.create({
     alignSelf:'flex-end',
     backgroundColor:colors.lightorange,
     borderRadius:'15%',
-    height:'5%'
-    
+    height:'5%',
+    marginRight:'5%',
+    marginBottom:'10%',
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 1,
+    shadowRadius: 4,
   },
   nextBtnLabel: {
-    fontSize: 21 / fontScale, 
-    fontWeight:'700', 
+    fontSize: 21 / fontScale,
+    fontWeight:'700',
     color:'white',
 
   }
@@ -254,6 +263,7 @@ export const describeServicePageContainer = StyleSheet.create({
     flex: 1,
     paddingHorizontal:'3%',    
     backgroundColor:colors.white,
-    justifyContent:'space-evenly'
+    justifyContent:'space-evenly',
+
   }
 })

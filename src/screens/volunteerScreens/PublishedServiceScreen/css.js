@@ -19,25 +19,29 @@ export const addBtn = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     width: '40%',
-    height: '7%',
+    height: '6%',
     backgroundColor: "#F78154",
-    borderRadius: '15%',
+    borderRadius: '20%',
     justifyContent: "space-around",
     alignItems: "center",
     position: "absolute",
     top: "90%",
     left: "30%",
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 1,
+    shadowRadius: 4,
+    paddingHorizontal: "20%",
   },
 
   addbtntext: {
     fontWeight: "bold",
     color: "white",
-    fontSize: 26 / fontScale,
-    paddingTop:'5%',
-    
+    fontSize: 25 / fontScale,
+    alignSelf: "center",
   },
-  addbtnContent: {
-    width: '100%',
-    
+  addbtnPressed:{
+    backgroundColor: '#faa281',
   }
+
 })
