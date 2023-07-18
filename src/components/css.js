@@ -58,10 +58,26 @@ export const servicecard = StyleSheet.create({
     borderBottomRightRadius: 12,
     height: '30%'
   },
+  cardTitleContainerClicked: {
+    position: 'absolute',
+    backgroundColor: colors.orange ,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    top: '70%',
+    borderBottomLeftRadius: 12,
+    borderBottomRightRadius: 12,
+    height: '30%'
+  },
   cardTitle: {
-    fontSize: 20 / fontScale,
-    fontWeight: '500'
-  }
+    fontSize: 18 / fontScale,
+    fontWeight: '400'
+  },
+  cardTitleClicked: {
+    fontSize: 18 / fontScale,
+    fontWeight: '700',
+    color: colors.white
+  },
 })
 
 export const searchBar = StyleSheet.create({
