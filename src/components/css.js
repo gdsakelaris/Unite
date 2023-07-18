@@ -241,7 +241,7 @@ export const switchStyle = StyleSheet.create({
 
 export const screenTitle = StyleSheet.create({
   screenTitle: {
-    fontSize: 40 / fontScale,
-    fontWeight: 'bold'
+    fontSize: 35 / fontScale,
+    fontWeight: '600'
   }
 })
