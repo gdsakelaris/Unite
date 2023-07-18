@@ -130,6 +130,7 @@ export const resourceCard = StyleSheet.create({
     right: 10,
     backgroundColor: colors.transparent,
   },
+
   resourceCardContent: {
     flex: 2,
     padding: 10,
@@ -149,7 +150,7 @@ export const resourceCard = StyleSheet.create({
     fontSize: 16 / fontScale,
    
   },
-  whitebox: {
+  whiteBox: {
     width: 25 / fontScale,
     height: 27 / fontScale,
     backgroundColor: colors.white,
@@ -158,6 +159,16 @@ export const resourceCard = StyleSheet.create({
     margin: 10,
     borderRadius: 4,
   },
+  orangeBox: {
+    width: 25 / fontScale,
+    height: 27 / fontScale,
+    backgroundColor: colors.orange,
+    alignItems: "center",
+    justifyContent: "center",
+    margin: 10,
+    borderRadius: 4,
+  },
+
   resourceCardRatingContainer: {
     display: "flex",
     flexDirection: "row",
