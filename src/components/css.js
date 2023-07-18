@@ -60,7 +60,7 @@ export const servicecard = StyleSheet.create({
   },
   cardTitleContainerClicked: {
     position: 'absolute',
-    backgroundColor: colors.orange ,
+    backgroundColor: '#F78154' ,
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
@@ -154,7 +154,7 @@ export const resourceCard = StyleSheet.create({
   resourceCardTitle: {
     fontSize: 20 / fontScale,
     fontWeight: "bold",
-    color: colors.orange,
+    color: '#F78154',
   },
   resourceCardDescriptionContainer: {
     width:'100%', 
@@ -178,7 +178,7 @@ export const resourceCard = StyleSheet.create({
   orangeBox: {
     width: 25 / fontScale,
     height: 27 / fontScale,
-    backgroundColor: colors.orange,
+    backgroundColor: '#F78154',
     alignItems: "center",
     justifyContent: "center",
     margin: 10,

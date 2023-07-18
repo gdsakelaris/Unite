@@ -19,12 +19,11 @@ export const icons = StyleSheet.create({
 export const bookmarkedCard = StyleSheet.create({
   bookmarkedCardContainer: {
     flexDirection: "row",
+    alignSelf: "center",
     width: "90%",
     height: '17%',
     backgroundColor: colors.white,
     marginTop: '6%',
-   //marginBottom: -6,
-    marginHorizontal: 13,
     borderRadius: '10%',
     padding: 10,
     shadowColor: colors.lightdark,
@@ -32,8 +31,8 @@ export const bookmarkedCard = StyleSheet.create({
     shadowOpacity: 0.55,
     shadowRadius: 3,
     elevation: 20,
-    borderColor: colors.lightdark,
-    borderWidth: 0.5,
+    borderColor: '#d5d5d5',
+    borderWidth: 1,
   },
 
   bookmarkedCardInfoContainer: {
@@ -66,14 +65,14 @@ export const removeBtn = StyleSheet.create({
     right: '4%',
     width: '30%',
     height: '45%',
-    backgroundColor: "#F24E1E",
+    backgroundColor: "#F78154",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: '6%',
   },
   removeButtonText: {
     color: colors.white,
-    fontSize: 16 / fontScale,
-    fontWeight:'500'
+    fontSize: 17 / fontScale,
+    fontWeight:'400'
   },
 })

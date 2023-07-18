@@ -15,7 +15,7 @@ export const title = StyleSheet.create({
 
 export const submitBtn = StyleSheet.create({
   publishBtn: {
-    width:'60%',
+    // width:'60%',
     height: '6%',
     alignSelf:'center',
     justifyContent:'center',

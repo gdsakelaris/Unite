@@ -2,9 +2,10 @@
 import React from 'react';
 import { Text, Button } from 'react-native-paper';
 import { removeBtn as styles } from '../css';
+import {Pressable} from "react-native";
 const RemoveBtn = () => (
-  <Button style={styles.removeButton} mode='elevated' onPress={()=> console.log('removed btn clicked')}>
+  <Pressable style={styles.removeButton} mode='elevated' onPress={()=> console.log('removed btn clicked')}>
     <Text style={styles.removeButtonText}>Remove</Text>
-  </Button>
+  </Pressable>
 )
 export default RemoveBtn;

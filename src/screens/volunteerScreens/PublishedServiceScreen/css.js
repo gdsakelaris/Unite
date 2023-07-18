@@ -41,7 +41,7 @@ export const addBtn = StyleSheet.create({
     alignSelf: "center",
   },
   addbtnPressed:{
-    backgroundColor: '#faa281',
+    backgroundColor: 'rgb(250,148,118)',
   }
 
 })
