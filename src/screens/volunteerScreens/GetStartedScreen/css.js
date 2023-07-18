@@ -8,7 +8,7 @@ export const instructionCard = StyleSheet.create({
     marginBottom:'2%',
   },
   title: {
-    fontSize: 20 / fontScale, 
+    fontSize: 18 / fontScale,
     fontWeight:'700',
   },
   subTitle: {
@@ -19,7 +19,7 @@ export const instructionCard = StyleSheet.create({
   },
   image: {
     height: '80%', 
-    width: 150
+    width: 130
   },
   leftText: {
     fontSize: 20 / fontScale, 
@@ -31,7 +31,7 @@ export const instructionCard = StyleSheet.create({
 
 export const screenTitle = StyleSheet.create({
   title: {
-    fontWeight: '300',
+    fontWeight: '600',
     marginLeft:'4%'
   }
 })
