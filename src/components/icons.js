@@ -7,3 +7,4 @@ export const dotIcon = renderExpoIcon('Entypo', 'dot-single', {size: 20 / fontSc
 export const locationIcon = renderExpoIcon('EvilIcons', 'location',{size: 20 / fontScale, color: 'black'} )
 export const phoneIcon = renderExpoIcon('Ionicons','ios-call-outline', {size: 20 / fontScale, color: 'black'} )
 export const bookmarkedIcon =  renderExpoIcon('Feather','bookmark', {size: 17 / fontScale, color: 'black'} )
+export const whiteBookmarkedIcon =  renderExpoIcon('Feather','bookmark', {size: 17 / fontScale, color: 'white'} )

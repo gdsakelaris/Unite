@@ -5,17 +5,13 @@ import {resourceCard as styles} from '../../css';
 import EditButton from './ResourceCardEditBtn';
 import renderExpoIcon from "../../../utils/renderExpoIcon";
 import {fontScale} from "../../../base";
+import {bookmarkedIcon, whiteBookmarkedIcon} from "../../icons";
 
 const ResourceCardImage = ({picture, hasEditButton}) => {
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   const handleBookmark = () => {
     setIsBookmarked(!isBookmarked);
-  };
-
-  const bookmarkIconStyle = {
-    size: 17 / fontScale,
-    color: isBookmarked ? 'white' : 'black'
   };
 
   return (
@@ -37,9 +33,9 @@ const ResourceCardImage = ({picture, hasEditButton}) => {
           handleBookmark();
         }}
       >
+        {/*bookmark icon*/}
         <View style={isBookmarked ? styles.orangeBox : styles.whiteBox}>
-          {/*{bookmarkedIcon}*/}
-          {renderExpoIcon('Feather', 'bookmark', bookmarkIconStyle)}
+          {isBookmarked ? whiteBookmarkedIcon : bookmarkedIcon}
         </View>
       </TouchableOpacity>
       {/* edit btn */}
