@@ -76,8 +76,8 @@ export const serviceOption = StyleSheet.create({
   },
   
   serviceDetailOptionTextStyle: {
-    fontSize: 30 / fontScale, 
-    fontWeight:'300'
+    fontSize: 20 / fontScale,
+    fontWeight:'400'
   },
 })
 

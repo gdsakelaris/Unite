@@ -58,10 +58,26 @@ export const servicecard = StyleSheet.create({
     borderBottomRightRadius: 12,
     height: '30%'
   },
+  cardTitleContainerClicked: {
+    position: 'absolute',
+    backgroundColor: '#F78154' ,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    top: '70%',
+    borderBottomLeftRadius: 12,
+    borderBottomRightRadius: 12,
+    height: '30%'
+  },
   cardTitle: {
-    fontSize: 20 / fontScale,
-    fontWeight: '500'
-  }
+    fontSize: 18 / fontScale,
+    fontWeight: '400'
+  },
+  cardTitleClicked: {
+    fontSize: 18 / fontScale,
+    fontWeight: '700',
+    color: colors.white
+  },
 })
 
 export const searchBar = StyleSheet.create({
@@ -130,6 +146,7 @@ export const resourceCard = StyleSheet.create({
     right: 10,
     backgroundColor: colors.transparent,
   },
+
   resourceCardContent: {
     flex: 2,
     padding: 10,
@@ -137,7 +154,7 @@ export const resourceCard = StyleSheet.create({
   resourceCardTitle: {
     fontSize: 20 / fontScale,
     fontWeight: "bold",
-    color: colors.orange,
+    color: '#F78154',
   },
   resourceCardDescriptionContainer: {
     width:'100%', 
@@ -149,7 +166,7 @@ export const resourceCard = StyleSheet.create({
     fontSize: 16 / fontScale,
    
   },
-  whitebox: {
+  whiteBox: {
     width: 25 / fontScale,
     height: 27 / fontScale,
     backgroundColor: colors.white,
@@ -158,6 +175,16 @@ export const resourceCard = StyleSheet.create({
     margin: 10,
     borderRadius: 4,
   },
+  orangeBox: {
+    width: 25 / fontScale,
+    height: 27 / fontScale,
+    backgroundColor: '#F78154',
+    alignItems: "center",
+    justifyContent: "center",
+    margin: 10,
+    borderRadius: 4,
+  },
+
   resourceCardRatingContainer: {
     display: "flex",
     flexDirection: "row",
@@ -214,7 +241,7 @@ export const switchStyle = StyleSheet.create({
 
 export const screenTitle = StyleSheet.create({
   screenTitle: {
-    fontSize: 40 / fontScale,
-    fontWeight: 'bold'
+    fontSize: 35 / fontScale,
+    fontWeight: '600'
   }
 })

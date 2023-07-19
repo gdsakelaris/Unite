@@ -1,6 +1,7 @@
 //for login page
 import axios from "axios";
-import { Alert } from "react-native";
+import {Alert} from "react-native";
+
 export default handleLogin = (onLogin, email, password) => {
   // Insert your IP below
   axios
