@@ -32,3 +32,8 @@ export const bookmarkData = [
   },
   // Add more bookmarkData objects as needed
 ];
+// Function to retrieve saved resources for a given user ID
+export const getSavedResourcesByUserId = (userId) => {
+  const savedResources = bookmarkData.filter((resource) => resource.id === userId);
+  return savedResources;
+};
