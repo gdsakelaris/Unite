@@ -3,6 +3,7 @@ import React from 'react';
 import img from '../../images/Dummyresource.png';
 import BookmarkedScreenContainer from './subscreens/BookmarkedScreenContainer';
 import BookmarkedCard from './subscreens/BookmarkedCard';
+
 //mockup data for testing purpose (Later on, this data will be retrieved from database)
 import { getSavedResourcesByUserId } from './mockupData'; // Import the new function
 

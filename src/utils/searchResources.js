@@ -5,8 +5,12 @@ import { Alert } from "react-native";
 import userip from "./getuserip";
 import { Location } from "expo-location"; // Import the Location object
 
-const searchByLocation = (latitude, longitude, maxDistance, kindOfResource) => { //, token) => { //included for when we do authentication
+const searchByLocation = (latitude, longitude, maxDistance, kindOfResource) => { 
+    //, token) => { //included for when we do authentication
 
+    //take in parameters from resourcedataarray
+
+    //this will proabaly need to change into an sql query
     const queryParams = new URLSearchParams({
         userLatitude: latitude.toString(),
         userLongitude: longitude.toString(),
@@ -14,6 +18,10 @@ const searchByLocation = (latitude, longitude, maxDistance, kindOfResource) => {
         kindofresource: kindOfResource,
       }).toString();
 
+
+    //this will likely need to change as we move on
+
+    //this is the url query
     console.log(queryParams);
     const url = `https://energetic-teal-dugong.cyclic.app/resource/getResources/location?${queryParams}`;
 

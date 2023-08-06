@@ -10,3 +10,4 @@ export const resourceData = {
   reviews: 6,
   number: "603-678-976"
 };
+
