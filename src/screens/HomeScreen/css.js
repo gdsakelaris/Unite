@@ -30,8 +30,8 @@ export const locationText = StyleSheet.create({
   },
   locationText: {
     fontSize: 20 / fontScale,
-    color: colors.green,
-    fontWeight: '600',
+    color: '#CDE6C6',
+    fontWeight: '500',
   },
 })
 

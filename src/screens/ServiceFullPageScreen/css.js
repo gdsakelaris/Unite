@@ -70,9 +70,10 @@ export const serviceFullPageDetail = StyleSheet.create({
 
 export const serviceOption = StyleSheet.create({
   serviceDetailOptionStyle: {
-    width:'20%', 
+    width:'15%', 
     justifyContent:'center',
-    borderBottomColor:'#FE7940'
+    borderBottomColor:colors.appBtn,
+    alignItems:'center'
   },
   
   serviceDetailOptionTextStyle: {

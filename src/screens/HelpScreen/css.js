@@ -31,7 +31,7 @@ export const helpPageOpt = StyleSheet.create({
   },
   question: {
     fontSize: 21 / fontScale,
-    color: colors.lightorange,
+    color: colors.darkgrey,
   },
   settingButton: {
     paddingRight: "4%",

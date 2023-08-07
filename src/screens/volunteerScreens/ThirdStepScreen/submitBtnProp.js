@@ -3,7 +3,7 @@ import { colors } from "../../../base"
 import { submitBtn as styles } from "./css"
 export const btnSettings = {
   mode: "outlined",
-  buttonColor: '#F78154',
+  buttonColor: colors.appBtn,
   textColor: colors.white,
   style: styles.publishBtn,
   labelStyle: styles.publishBtnText

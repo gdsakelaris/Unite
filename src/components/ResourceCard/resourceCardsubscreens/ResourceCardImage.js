@@ -34,7 +34,7 @@ const ResourceCardImage = ({picture, hasEditButton}) => {
         }}
       >
         {/*bookmark icon*/}
-        <View style={isBookmarked ? styles.orangeBox : styles.whiteBox}>
+        <View style={isBookmarked ? styles.greenBox : styles.whiteBox}>
           {isBookmarked ? whiteBookmarkedIcon : bookmarkedIcon}
         </View>
       </TouchableOpacity>

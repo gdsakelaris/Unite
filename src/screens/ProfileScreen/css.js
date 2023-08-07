@@ -3,12 +3,13 @@ import {colors, fontScale} from '../../base'
 export const profileContainer = StyleSheet.create({
   profileContainer: {
     flex: 1,
+    backgroundColor:colors.white
   },
 })
 export const imageContainer = StyleSheet.create({
   imgContainer: {
     flex: 1,
-    backgroundColor: colors.lightpink,
+    backgroundColor: colors.almostwhite,
     alignItems: "center",
     justifyContent: "center",
     marginBottom: 10,
@@ -24,7 +25,7 @@ export const profileOptionsContainer = StyleSheet.create({
 
 export const editBtn = StyleSheet.create({
   editButton: {
-    backgroundColor: colors.green,
+    backgroundColor: colors.gold,
     borderRadius: '8%',
     marginTop: '3%',
   },

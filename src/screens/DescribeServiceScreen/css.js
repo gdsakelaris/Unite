@@ -8,8 +8,7 @@ export const title = StyleSheet.create({
 
   },
   titleStyle: {
-    fontSize: 38 / fontScale,
-    lineHeight: '40%',
+    fontSize: 45 / fontScale,
     paddingBottom: '3%',
   },
 })
@@ -137,11 +136,11 @@ export const hour = StyleSheet.create({
     width: '43%',
     height: 45,
     borderRadius: '10%',
-    backgroundColor: colors.lightorange,
+    backgroundColor: colors.appBtn,
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: colors.lightorange
+    borderColor: colors.appBtn
   },
   cancelButton: {
     width: '43%',
@@ -241,7 +240,7 @@ export const nextBtn = StyleSheet.create({
     justifyContent: 'center',
     width: '30%',
     alignSelf: 'flex-end',
-    backgroundColor: colors.lightorange,
+    backgroundColor: colors.appBtn,
     borderRadius: '15%',
     height: '5%',
     marginRight: '5%',

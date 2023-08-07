@@ -56,7 +56,7 @@ export const submitBtn = StyleSheet.create({
     alignSelf: "center",
     width: "85%",
     height: "30%",
-    backgroundColor:colors.lightorange
+    backgroundColor: colors.appBtn
   },
   submitText: {
     color: colors.white,

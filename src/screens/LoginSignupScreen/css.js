@@ -1,18 +1,14 @@
 import { StyleSheet } from "react-native";
 import { colors, fontScale } from "../../base";
-export const container = StyleSheet.create({
-  container: {
-    flex:1.5,
-    alignItems: "center",
-   // justifyContent: "center",
-    paddingHorizontal: 20,
+export const upperPart = StyleSheet.create({
+  img: {
+    width:'100%'
   },
 })
 
-export const gradient = StyleSheet.create({
-  gradient: {
-    flex: 1,
-    borderBottomEndRadius: 20,
+export const container = StyleSheet.create({
+  container: {
+    flex: 1
   }
 })
 
@@ -39,16 +35,18 @@ export const inputBox = StyleSheet.create({
     borderWidth:1,
     borderColor:colors.lightgray,
     shadowOffset:{height: 10},
-  
-    
   },
+  inputBoxForSignUp: {
+    height:'67%',
+    top: '30%'
+  }
 })
 
 export const slider = StyleSheet.create({
   sliderBox: {
     width: "90%",
-    height: '10%',
-    borderRadius: 12,
+    height: 45,
+    borderRadius: 10,
     backgroundColor: colors.white,
     marginTop: "10%",
     marginBottom: "15%",
@@ -65,7 +63,7 @@ export const slider = StyleSheet.create({
 
   clickedSlider: {
     flex:1,
-    backgroundColor: colors.lightorange,
+    backgroundColor: colors.appBtn,
     borderRadius:14,
     width: 133,
     height: "100%",
@@ -75,7 +73,7 @@ export const slider = StyleSheet.create({
 
   clickedSliderText: {
     color: colors.white,
-    fontSize: 18 / fontScale,
+    fontSize: 16 / fontScale,
     fontWeight: "bold",
   },
 
@@ -88,9 +86,9 @@ export const slider = StyleSheet.create({
   },
 
   nonClickedSliderText: {
-    fontSize: 18 / fontScale,
+    fontSize: 16 / fontScale,
     fontWeight: "bold",
-    color: colors.lightorange,
+    color: colors.darkgrey,
   },
 })
 
@@ -108,7 +106,7 @@ export const inputField = StyleSheet.create({
 
 export const forgotPass = StyleSheet.create({
   forgotPass: {
-    color: colors.lightorange,
+    color: colors.darkgrey,
     fontSize: 14 / fontScale,
     alignSelf: "flex-end",
   },
@@ -117,8 +115,8 @@ export const forgotPass = StyleSheet.create({
 export const loginBtn = StyleSheet.create({
   button: {
     width: "90%",
-    height: "11%",
-    backgroundColor: colors.lightorange,
+    height: "10%",
+    backgroundColor: colors.appBtn,
     borderRadius: 43,
     alignItems: "center",
     justifyContent: "center",
@@ -133,7 +131,7 @@ export const loginBtn = StyleSheet.create({
   },
   buttonText: {
     color: colors.white,
-    fontSize: 24 / fontScale,
+    fontSize: 21 / fontScale,
     fontWeight: "bold",
   },
 })
@@ -167,7 +165,7 @@ export const socialBox = StyleSheet.create({
 
 export const guestText = StyleSheet.create({
   guestText: {
-    color: colors.lightorange,
+    color: colors.darkgrey,
     fontSize: 14 / fontScale,
     textDecorationLine: "underline",
     alignSelf: "center",

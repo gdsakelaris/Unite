@@ -6,6 +6,7 @@ import BookmarkedCard from './subscreens/BookmarkedCard';
 
 //mockup data for testing purpose (Later on, this data will be retrieved from database)
 import { getSavedResourcesByUserId } from './mockupData'; // Import the new function
+import { ScrollView } from 'react-native';
 
 const BookmarkedServices = () => {
 
@@ -15,6 +16,7 @@ const BookmarkedServices = () => {
 
   return (
     <BookmarkedScreenContainer>
+      <ScrollView>
       {/* Render bookmarked cards for the retrieved saved resources */}
       {savedResources.map((resource, i) => (
         <BookmarkedCard
@@ -25,6 +27,7 @@ const BookmarkedServices = () => {
           key={i.toString()}
         />
       ))}
+      </ScrollView>
     </BookmarkedScreenContainer>
   );
 };
