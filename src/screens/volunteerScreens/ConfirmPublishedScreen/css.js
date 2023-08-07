@@ -24,7 +24,7 @@ export const button = StyleSheet.create({
     width: '45%',
     height: '85%',
     borderWidth: 2,
-    borderColor: '#F78154',
+    borderColor: colors.appBtn,
     margin: '3%',
     borderRadius: '6%',
     paddingHorizontal: '4%',

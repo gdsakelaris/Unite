@@ -14,7 +14,7 @@ export const colors = {
   lightorange: '#F78154',
   white: '#FFFFFF',
   darkorange: '#F24E1E',
-  lightgray: '#F4F4F4',
+  lightgray: '#EAEAF5',
   lightdark: '#4E4E4E',
   green: '#337155',
   orange: '#E87F10',
@@ -24,7 +24,11 @@ export const colors = {
   switchOn: '#0F993E',
   mediumgray:'#D9D9D9',
   black: '#000000',
-  green: '#337155'
+  green: '#337155',
+  appBtn: '#94CF49',
+  darkgrey: '#2A3036',
+  gold: '#FCD804',
+  almostwhite: '#FCFCEF'
 }
 /////////////////////////////////////////////////////////////
 

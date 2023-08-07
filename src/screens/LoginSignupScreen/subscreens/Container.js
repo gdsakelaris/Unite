@@ -1,9 +1,9 @@
-//this file will make a container component that wraps around all the content of the sign up screen or the content of the login screen 
+//this file will make a container which store all the contents of all the screens in this folder
 import React from 'react';
-import {View} from 'react-native';
+import { View} from 'react-native';
 import { container as styles } from '../css';
 const Container = ({children}) => (
-  <View style={styles.container}>
+  <View style={styles.container}> 
     {children}
   </View>
 )

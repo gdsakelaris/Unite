@@ -1,4 +1,4 @@
-//this file will create a card for the provided service that will be displayed in the HomeScreen (user's flow) and First Step (volunteer's flow)
+//this file will create a card for the provided service that will be displayed in the First Step (volunteer's flow)
 import React, {useState} from "react";
 import {View, Text, Image, TouchableOpacity} from "react-native";
 import {servicecard as styles} from "./css";

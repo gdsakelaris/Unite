@@ -154,7 +154,7 @@ export const resourceCard = StyleSheet.create({
   resourceCardTitle: {
     fontSize: 20 / fontScale,
     fontWeight: "bold",
-    color: '#F78154',
+    color: colors.appBtn,
   },
   resourceCardDescriptionContainer: {
     width:'100%', 
@@ -175,10 +175,10 @@ export const resourceCard = StyleSheet.create({
     margin: 10,
     borderRadius: 4,
   },
-  orangeBox: {
+  greenBox: {
     width: 25 / fontScale,
     height: 27 / fontScale,
-    backgroundColor: '#F78154',
+    backgroundColor: colors.appBtn,
     alignItems: "center",
     justifyContent: "center",
     margin: 10,
@@ -206,7 +206,7 @@ export const resourceCard = StyleSheet.create({
        width: '60%',
       height: '12%',
       borderRadius: 5,
-      backgroundColor: colors.lightorange,
+      backgroundColor: colors.appBtn,
       justifyContent:'center',
       alignItems:'center',
       alignSelf: 'flex-end',

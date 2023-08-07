@@ -3,6 +3,7 @@ import { colors, fontScale} from "../../base"
 export const pickLanguageContainerStyle = StyleSheet.create({
   container: {
     flex:1,
+    backgroundColor: colors.white
   }
 })
 export const titleStyle = StyleSheet.create({
@@ -27,16 +28,12 @@ export const pickLanguageBtnStyle = StyleSheet.create({
     borderRadius: '40%',
     width: '80%',
     height:'60%',
-    backgroundColor:colors.lightorange
+    backgroundColor:colors.appBtn,
+    alignItems:'center',
+    justifyContent:'center'
   },
-  buttonContent: {
-    width:'100%',
-    height:'100%',
-   
-  }
-  ,
   buttonLabel: {
-    fontSize: 21 / fontScale,
+    fontSize: 30 / fontScale,
     fontWeight: '700',
     color:colors.white,
   }

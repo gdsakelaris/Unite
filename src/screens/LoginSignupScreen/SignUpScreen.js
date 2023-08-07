@@ -1,34 +1,41 @@
 // SignUpScreen.js:
 import React, { useState } from "react";
-import BackgroundColor from "./subscreens/BackgroundColor"
+import Container from "./subscreens/Container";
+import UpperPart from "./subscreens/UpperPart";
 import ContinueAsGuestText from "./subscreens/ContinueAsGuestText";
 import InputField from "./subscreens/InputField";
 import InputBox from "./subscreens/InputBox";
 import SignupBtn from './signupsubscreens/SignupBtn'
-import Container from "./subscreens/Container";
 import OrText from "./subscreens/OrText";
 import Slider from "./subscreens/Slider";
 import SocialBox from "./subscreens/SocialBox";
-import Logo from "./subscreens/Logo";
 import BottomPart from "./subscreens/BottomPart";
+import { colors } from "../../base";
+import { inputBox as styles } from "./css";
 const SignUpScreen = ({switchScreenHook}) => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const placeHolderText = "Enter Email/Phone Number/Username";
-
   return (
-    <BackgroundColor>
-      <Container>
-        <Logo/>
-      </Container>
+    <Container>
+      {/* upper part of the page */}
+      <UpperPart/>
+      {/* bottom part of the page */}
       <BottomPart/>
-      <InputBox>
+      <InputBox style={styles.inputBoxForSignUp}>
           <Slider onSignup={true} switchToLogin={switchScreenHook}/>
           <InputField 
-                      placeholder={placeHolderText}
-                      placeholderTextColor="#F78154"
+                      placeholder={"Enter Full Name"}
+                      placeholderTextColor= {colors.darkgrey}
+                      value={name}
+                      onChangeText={setName}
+                      autoCapitalize="none"
+                      clearButtonMode='always'/>
+          <InputField 
+                      placeholder={"Enter Email"}
+                      placeholderTextColor= {colors.darkgrey}
                       value={email}
                       onChangeText={setEmail}
                       keyboardType="email-address"
@@ -36,14 +43,14 @@ const SignUpScreen = ({switchScreenHook}) => {
                       clearButtonMode='always'/>
           <InputField
                       placeholder="Password"
-                      placeholderTextColor="#F78154"
+                      placeholderTextColor= {colors.darkgrey}
                       value={password}
                       onChangeText={setPassword}
                       secureTextEntry
                       clearButtonMode='always'/>
           <InputField  
                       placeholder="Confirm Password"
-                      placeholderTextColor="#F78154"
+                      placeholderTextColor= {colors.darkgrey}
                       value={confirmPassword}
                       onChangeText={setConfirmPassword}
                       secureTextEntry
@@ -53,7 +60,7 @@ const SignUpScreen = ({switchScreenHook}) => {
           <SocialBox/>
           <ContinueAsGuestText/>
         </InputBox>
-    </BackgroundColor>
+    </Container>
   );
 };
 export default SignUpScreen;

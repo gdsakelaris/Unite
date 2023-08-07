@@ -20,7 +20,6 @@ export const title = StyleSheet.create({
   title: {
     padding: 10,
     maxWidth: '80%',
-    lineHeight:'40%'
   },
 })
 
@@ -30,7 +29,7 @@ export const nextBtn = StyleSheet.create({
     width: '35%',
     height: '7%',
     borderRadius: 20,
-    backgroundColor: '#F78154',
+    backgroundColor: colors.appBtn,
     alignItems: 'center',
     padding: 3,
     justifyContent:'center',

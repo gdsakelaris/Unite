@@ -20,7 +20,7 @@ export const addBtn = StyleSheet.create({
     flexDirection: "row",
     width: '40%',
     height: '6%',
-    backgroundColor: "#F78154",
+    backgroundColor: colors.appBtn,
     borderRadius: '20%',
     justifyContent: "space-around",
     alignItems: "center",

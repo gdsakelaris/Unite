@@ -1,6 +1,7 @@
 //Props for making User Profile picture and edit btn
 import img from '../../images/Reslogo.png'
 import { Image } from 'react-native'
+import { colors } from '../../base'
 const profileUrl = Image.resolveAssetSource(img).uri
 export const avatarSettings = {
   source : profileUrl, 
@@ -10,8 +11,8 @@ export const avatarSettings = {
 export const editBtnSettings = {
   icon: 'pencil',
   size: 30,
-  color: 'black',  
+  color: colors.white,  
   style: {
-    backgroundColor:'#167EE6',
+    backgroundColor:colors.gold,
   }
 }
