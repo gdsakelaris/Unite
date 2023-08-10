@@ -245,3 +245,12 @@ export const screenTitle = StyleSheet.create({
     fontWeight: '600'
   }
 })
+
+export const keyboardAvoidingWrapper = StyleSheet.create({
+  container: {
+    position:'absolute',
+    // width:'90%',
+    // height:'60%',
+    
+  }
+})

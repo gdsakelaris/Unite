@@ -8,7 +8,7 @@ import ImageSection from "./subscreens/ImageSection";
 import NextBtn from "./subscreens/NextBtn";
 import ScreenTitle from "../../components/ScreenTitle";
 import { title as styles } from "./css";
-import {ScrollView, View} from "react-native";
+import {ScrollView} from "react-native";
 const DescribeServicePage = ({navigation}) => {
   return (
     <DescribeServicePageContainer>

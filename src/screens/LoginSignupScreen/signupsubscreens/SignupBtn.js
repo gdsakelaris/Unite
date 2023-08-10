@@ -4,9 +4,15 @@ import { TouchableOpacity } from 'react-native';
 import { Text } from 'react-native-paper';
 import { loginBtn as styles } from '../css';
 import signUpNewAccount from '../../../utils/signUpNewAccount';
-const SignupBtn = ({email, password, confirmPassword}) => (
-  <TouchableOpacity style={styles.button} onPress={() => signUpNewAccount(email, password, confirmPassword)}>
-    <Text style={styles.buttonText}>Sign up</Text>
-  </TouchableOpacity>
-)
+import { useSignupContext } from '../../../context/SignupProvider';
+import { useAuth } from '../../../context/AuthProvider';
+const SignupBtn = () => {
+  const {name, email, password, confirmPassword} = useSignupContext()
+  const {switchPage} = useAuth()
+  return (
+    <TouchableOpacity style={styles.button} onPress={() => signUpNewAccount(name, email, password, confirmPassword, switchPage)}>
+      <Text style={styles.buttonText}>Sign up</Text>
+    </TouchableOpacity>
+  )
+}
 export default SignupBtn;
