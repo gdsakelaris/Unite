@@ -135,7 +135,7 @@ export const hour = StyleSheet.create({
   saveButton: {
     width: '43%',
     height: 45,
-    borderRadius: '10%',
+    borderRadius: 20,
     backgroundColor: colors.appBtn,
     justifyContent: 'center',
     alignItems: 'center',
@@ -145,7 +145,7 @@ export const hour = StyleSheet.create({
   cancelButton: {
     width: '43%',
     height: 45,
-    borderRadius: '10%',
+    borderRadius: 20,
     backgroundColor: colors.white,
     justifyContent: 'center',
     alignItems: 'center',
@@ -241,7 +241,7 @@ export const nextBtn = StyleSheet.create({
     width: '30%',
     alignSelf: 'flex-end',
     backgroundColor: colors.appBtn,
-    borderRadius: '15%',
+    borderRadius: 20,
     height: '5%',
     marginRight: '5%',
     marginBottom: '10%',
