@@ -39,6 +39,11 @@ export const inputBox = StyleSheet.create({
   inputBoxForSignUp: {
     height:'67%',
     top: '30%'
+  },
+  showPasswordEyeIcon: {
+    alignSelf: 'flex-end', 
+    position:'absolute',
+    justifyContent:'center'
   }
 })
 

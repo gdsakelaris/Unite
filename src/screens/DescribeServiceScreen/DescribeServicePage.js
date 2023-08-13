@@ -8,18 +8,20 @@ import ImageSection from "./subscreens/ImageSection";
 import NextBtn from "./subscreens/NextBtn";
 import ScreenTitle from "../../components/ScreenTitle";
 import { title as styles } from "./css";
-import {ScrollView, View} from "react-native";
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+
+
 const DescribeServicePage = ({navigation}) => {
   return (
     <DescribeServicePageContainer>
       <ScreenTitle titleMessage={'Describe your service'} style={styles.titleStyle} numberOfLines={2}/>
-      <ScrollView>
+      <KeyboardAwareScrollView nestedScrollEnabled >
         <AboutSection/>
         <HourSection/>
         <MediaSection/>
         <LocationSection/>
         <ImageSection/>
-      </ScrollView>
+      </KeyboardAwareScrollView>
       <NextBtn navigation={navigation} navigateTo={'Third Step'}/>
     </DescribeServicePageContainer>
   )

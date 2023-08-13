@@ -1,10 +1,10 @@
 //this file will create the hour picking field 
 import React, {useState} from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity, Pressable } from 'react-native';
 import { Text } from 'react-native-paper';
 import showDropDownHour from '../../../../utils/showDropDownHour';
 import { hour as styles } from '../../css';
-import { arrow_downIcon } from '../../icons';
+import { arrow_downIcon} from '../../icons';
 import DropDownHour from './DropDownHour';
 const TimePickingField = ({value}) => {
   const [openModal, setOpenModal] = useState(false)

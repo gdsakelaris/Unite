@@ -3,7 +3,10 @@ import React from 'react';
 import { View, TextInput} from 'react-native';
 import { Text } from 'react-native-paper';
 import { about as styles } from '../../css';
+import { useResourceContext } from '../../../../context/ResourceProvider';
+import { resourceActions } from '../../../../context/resourceTemplate';
 const InputFieldForTitle = () => {
+  const {resource, dispatch} = useResourceContext()
   return (
     <View style={styles.inputFieldForTitleContainer}>
           {/* title  */}
@@ -11,7 +14,10 @@ const InputFieldForTitle = () => {
               Title:
           </Text>
           {/* text input */}
-          <TextInput style={styles.titleTextInput} clearButtonMode='always'/>
+          <TextInput style={styles.titleTextInput} clearButtonMode='always' value={resource.name} onChangeText={(newText) => {
+            dispatch(resourceActions.create({name: newText}))
+            console.log(resource)
+          }}/>
     </View>
   );
 }
