@@ -2,9 +2,11 @@
 import React from 'react';
 import { KeyboardAvoidingView } from 'react-native';
 import { keyboardAvoidingWrapper  as styles } from './css';
-const KeyboardAvoidingWrapper = ({children}) => (
-  <KeyboardAvoidingView style={styles.container} behavior="height">
+import { useHeaderHeight } from '@react-navigation/elements'
+const KeyboardAvoidingWrapper = ({children, ...prop}) => {
+  const height = useHeaderHeight()
+ return (<KeyboardAvoidingView style={styles.container} behavior="padding" {...prop}>
       {children}
-  </KeyboardAvoidingView>
-)
+  </KeyboardAvoidingView>)
+}
 export default KeyboardAvoidingWrapper;

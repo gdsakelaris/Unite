@@ -9,10 +9,12 @@ import Slider from "../subscreens/Slider";
 import SocialBox from "../subscreens/SocialBox";
 import { colors } from "../../../base";
 import { useLoginContext } from "../../../context/LoginProvider";
+import KeyboardAvoidingWrapper from "../../../components/KeyboardAvoidingWrapper";
 const LoginInputBox = () => {
   const {email, setEmail, password, setPassword, passwordInvisible, showPassword} = useLoginContext()
   const placeHolderText = "Enter Email/Phone Number/Username";
   return (
+    <KeyboardAvoidingWrapper keyboardVerticalOffset={-200}>
       <InputBox>
           <Slider onLogin={true}/>
           <InputField 
@@ -37,6 +39,7 @@ const LoginInputBox = () => {
           <SocialBox/>
           <ContinueAsGuestText/>
       </InputBox> 
+    </KeyboardAvoidingWrapper>
   );
 };
 export default LoginInputBox;

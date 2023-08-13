@@ -11,10 +11,10 @@ import { colors } from "../../../base";
 import { inputBox as styles } from "../css";
 import { useSignupContext } from "../../../context/SignupProvider";
 import KeyboardAvoidingWrapper from "../../../components/KeyboardAvoidingWrapper";
-import { KeyboardAvoidingView } from "react-native";
 const SignupInputBox = () => {
   const {name, setName, email, setEmail, password, setPassword, confirmPassword, setConfirmPassword} = useSignupContext()
   return (
+    <KeyboardAvoidingWrapper keyboardVerticalOffset={-100} >
       <InputBox style={styles.inputBoxForSignUp}>
           <Slider/>
           <InputField 
@@ -55,6 +55,7 @@ const SignupInputBox = () => {
           <SocialBox/>
           <ContinueAsGuestText/>
         </InputBox>
+    </KeyboardAvoidingWrapper>
   );
 };
 export default SignupInputBox;
