@@ -8,13 +8,10 @@ import { Dialog, Portal, Text, Button} from 'react-native-paper';
 //contentStyle: object of expected following keys: variant
 //buttonSetting: object of expected following keys: cancelText, okText,  
 //buttons: an array of buttons (each button will be an object containing all the props of making up a button)
-const DialogMessage = ({title, content, error, iconStyle, titleStyle, contentStyle, buttonViewStyle, buttons}) => {
-  const [visible, setVisible] = React.useState(true);
-  const showDialog = () => setVisible(true);
-  const hideDialog = () => setVisible(false);
+const DialogMessage = ({visible, onDismiss, title, content, error, iconStyle, titleStyle, contentStyle, buttonViewStyle, buttons}) => {
   return (
     <Portal>
-      <Dialog visible={visible} onDismiss={hideDialog}>
+      <Dialog visible={visible} onDismiss={onDismiss}>
         {error && <Dialog.Icon {...iconStyle}/>}
         <Dialog.Title style={[styles.dialogDefaultTitleStyle, titleStyle]}>{title}</Dialog.Title>
         <Dialog.Content>

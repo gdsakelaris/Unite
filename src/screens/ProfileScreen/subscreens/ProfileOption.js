@@ -6,9 +6,11 @@ import {Text} from 'react-native-paper';
 import {keyboardArrowRightIcon} from '../icons';
 import {profileOption as styles} from '../css';
 
-const ProfileOption = ({optionName, navigateTo, iconName, navigation}) => {
+const ProfileOption = ({optionName, navigateTo, iconName, navigation, onPress}) => {
+  // If an onPress behavior is not specified, will navigate to the screen specified in navigateTo when pressed.
+  const handlePress = onPress ? onPress : () => navigation.navigate(navigateTo);
   return (
-    <TouchableOpacity onPress={() => navigation.navigate(navigateTo)} style={styles.rowContainer}>
+    <TouchableOpacity onPress={handlePress} style={styles.rowContainer}>
       {getOptionIcon(iconName)}
       <View style={styles.optionTextContainer}>
         <Text style={styles.optionText}>{optionName}</Text>
