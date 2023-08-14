@@ -6,21 +6,25 @@ import showDropDownHour from '../../../../utils/showDropDownHour';
 import { hour as styles } from '../../css';
 import { arrow_downIcon} from '../../icons';
 import DropDownHour from './DropDownHour';
-const TimePickingField = ({value}) => {
-  const [openModal, setOpenModal] = useState(false)
+import { useResourceContext } from '../../../../context/ResourceProvider';
+const TimePickingField = ({type, operationalHour}) => {
+  const {dispatch} = useResourceContext()
+  //console.log(type, 'TimePickingField')
   return (
     // the box for time picking 
     <View style={styles.timePickingFieldContainer}>
-      {/* The time picked in the dropdown hour   */}
+      {/* Display the time picked in the dropdown hour   */}
       <View style={styles.timePickingField}>
-        <Text style={styles.displayedPickingTime}>{value}</Text>
+        <Text style={styles.displayedPickingTime}>{operationalHour[type]}</Text>
       </View>
       {/* the arrow down button for opening the dropdown hour */}
-      <TouchableOpacity onPress={() => setOpenModal(showDropDownHour())}>
+      <TouchableOpacity onPress={() => {
+        console.log(type, 'TimePickingField')
+        showDropDownHour(operationalHour, dispatch)}}>
         {arrow_downIcon}
       </TouchableOpacity>
       {/* dropdown hour */}
-      <DropDownHour visible={openModal} setVisible={setOpenModal}/>
+      
     </View>
   )
 }

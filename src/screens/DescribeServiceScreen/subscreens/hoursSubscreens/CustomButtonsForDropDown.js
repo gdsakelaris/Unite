@@ -3,25 +3,34 @@ import React from 'react';
 import {Pressable, View, Text} from 'react-native';
 import { hour as styles } from '../../css';
 import { colors } from '../../../../base';
-import { Button } from 'react-native-paper';
+import { useResourceContext } from '../../../../context/ResourceProvider';
 import hideDropDownHour from '../../../../utils/hideDropDownHour';
-const CustomButtonsForDropDown = ({setDatePickerVisibility}) => (
-  <View style={styles.dropDownHourButtonsContainer}>
-      <Pressable
-        mode='outlined'
-        buttonColor={colors.white}
-        style={styles.cancelButton}
-        onPress={() => hideDropDownHour(setDatePickerVisibility)}>
-        <Text style={styles.cancelButtonText}>Cancel</Text>
-      </Pressable>
-      <Pressable
-        mode='outlined'
-        buttonColor={colors.white}
-        style={styles.saveButton}
-        onPress={() => hideDropDownHour(setDatePickerVisibility)}>
-        <Text style={styles.saveButtonText}>Save</Text>
-      </Pressable>
-  </View>
-  
-)
+import updateHour from '../../../../utils/updateHour';
+const CustomButtonsForDropDown = ({operationalHour, type, pickedDate}) => {
+  const {dispatch} = useResourceContext()
+  // console.log(`Picking field for ${operationalHour.dayName} with type ${type}`)
+  return (
+    <View style={styles.dropDownHourButtonsContainer}>
+        <Pressable
+          mode='outlined'
+          buttonColor={colors.white}
+          style={styles.cancelButton}
+          onPress={() => {
+            //console.log(type)
+            hideDropDownHour(operationalHour, dispatch, type)}
+            }>
+          <Text style={styles.cancelButtonText}>Cancel</Text>
+        </Pressable>
+        <Pressable
+          mode='outlined'
+          buttonColor={colors.white}
+          style={styles.saveButton}
+          onPress={() => {
+            //console.log(type)
+            updateHour(operationalHour, dispatch, type, pickedDate)}}>
+          <Text style={styles.saveButtonText}>Save</Text>
+        </Pressable>
+    </View>
+  )
+}
 export default CustomButtonsForDropDown;
