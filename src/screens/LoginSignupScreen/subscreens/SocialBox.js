@@ -1,4 +1,8 @@
-//this file will make a view component where it contains all the alternative options for logging in and signing up that the user can use if they don't want to create an account
+/**
+ * @file SocialBox.js
+ * @description This file contains a component for displaying alternative options for logging in and signing up using social media accounts.
+ */
+
 import React from 'react';
 import { View, Image, TouchableOpacity } from 'react-native';
 import GoogleIcon from '../../../images/googleIcon.png'
@@ -10,7 +14,7 @@ const SocialBox = () => (
   <View style={styles.socialBox}>
     {/* Login/Signup through Google */}
     <TouchableOpacity>
-        <AvatarIcon avatarSettings={{source: Image.resolveAssetSource(GoogleIcon).uri, size: 50, style:socialBox.socialIcon}}/>
+        <AvatarIcon  avatarSettings={{source: Image.resolveAssetSource(GoogleIcon).uri, size: 50, style:socialBox.socialIcon}}/>
     </TouchableOpacity>
     {/* Login/Signup through Facebook */}
     <TouchableOpacity>

@@ -1,3 +1,8 @@
+/**
+ * @file css.js
+ * @description This file contains all the css of every files in the LoginSignupScreen folder.
+ */
+
 import { StyleSheet } from "react-native";
 import { colors, fontScale } from "../../base";
 export const upperPart = StyleSheet.create({

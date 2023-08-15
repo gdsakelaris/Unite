@@ -1,4 +1,13 @@
-//template for resource
+/**
+ * @file resourceTemplate.js
+ * @description This file defines the initial state, reducer, and actions for managing resource-related data.
+ * It provides a template for resource data and actions to create and submit resource information.
+ */
+
+/**
+ * @constant initialState
+ * @description The initial state template for resource data of the useReducer hook in the ResourceProvider.js
+ */
 export const initialState = {
   name: null,
   kindOfResource: null,
@@ -10,15 +19,12 @@ export const initialState = {
   website: null,
   rating: null,
   publishedby: 'userId',
-  //click lock icon => set isClose: true, not allow to set popupModal to set value popUpModal
-  //showDropDown: check if isClose to false, it's false allow to set visible
   monday: {
     dayName: 'Monday',
     day: 1,
     isClosed: false,
     openTime: '0:00',
     closeTime: '0:00',
-  //  popUpModal: false
   },
   tuesday: {
     dayName: 'Tuesday',
@@ -26,7 +32,6 @@ export const initialState = {
     isClosed: false,
     openTime: '0:00',
     closeTime: '0:00',
-   // popUpModal: false
   },
   wednesday: {
     dayName: 'Wednesday',
@@ -34,7 +39,6 @@ export const initialState = {
     isClosed: false,
     openTime: '0:00',
     closeTime: '0:00',
-   // popUpModal: false
   },
   thursday: {
     dayName: 'Thursday',
@@ -42,7 +46,6 @@ export const initialState = {
     isClosed: false,
     openTime: '0:00',
     closeTime: '0:00',
-   // popUpModal: false
   },
   friday: {
     dayName: 'Friday',
@@ -50,7 +53,6 @@ export const initialState = {
     isClosed: false,
     openTime: '0:00',
     closeTime: '0:00',
-   // popUpModal: false
   },
   saturday: {
     dayName: 'Saturday',
@@ -58,7 +60,6 @@ export const initialState = {
     isClosed: false,
     openTime: '0:00',
     closeTime: '0:00',
-   // popUpModal: false
   },
   sunday: {
     dayName: 'Sunday',
@@ -66,29 +67,51 @@ export const initialState = {
     isClosed: false,
     openTime: '0:00',
     closeTime: '0:00',
-    //popUpModal: false
   },
-  popUpModal: false
+  popUpModal: false,
+  images: []
 }
 
+
+/**
+ * @constant types
+ * @description Action types for resource-related actions.
+ */
 const types = {
   CREATE: 'CREATE',
   SUBMIT: 'SUBMIT',
 }
 
+/**
+ * @constant resourceActions
+ * @description Action creators for resource-related actions.
+ * whenever use dispatch function to perform an action to the resource state (create or submit), import this object, call the intended action 
+ * resourceActions.create(resourceData)
+ * resourceData: an object value key pair, where the key is key of the field that resource is updated and the value is the new value of that field 
+ * @return an object which would be used to pass to the dispatch() to determine dispatch action
+ * 
+ * resourceActions.submit() 
+ * @return an object which would be used to pass to the dispatch() to determine dispatch action 
+ */
 export const resourceActions = {
-  //will be used to update all the info of resource
   create: (resourceData) => ({type: types.CREATE, data: resourceData}),
-  //submit (clear all the data in state)
   submit: () => ({type: types.SUBMIT}),
 }
 
 
-
+/**
+ * @function reducer
+ * @description The reducer function will be passed to the useReducer hook in ResourceProvider.js as the dispatch function to update resource state based on actions.
+ * @param {object} state - The current resource state.
+ * @param {object} action - The action to perform on the resource state.
+ * @returns {object} The updated resource state.
+ * CREATE: update resource's info with new info
+ * SUBMIT: submit resource's info to the database and clear all the info in the resource state 
+ * 
+ */
 export const reducer = (state, action) => {
   switch (action.type) {
     case types.CREATE:
-      //assume that the key in new object passed in here will override the old value if there are two duplicate keys 
       return {...state, ...action.data}
     case types.SUBMIT:
       return {...initialState}

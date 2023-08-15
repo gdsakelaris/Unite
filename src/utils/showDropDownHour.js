@@ -1,20 +1,24 @@
-import { resourceActions } from "../context/resourceTemplate"
+/**
+ * Opens the dropdown hour modal for time selection.
+ *
+ * This function sets the `popUpModal` state variable to `true` in order to open the modal for time selection.
+ * It checks if the resource is not closed on the selected day before opening the modal.
+ *
+ * @param {Object} operationalHour - An object containing the operational hour data for a specific day.
+ * @param {function} dispatch - A function used to dispatch actions to update the resource-related state.
+ * @returns {void}
+ * @example
+ * // Usage
+ * showDropDownHour(operationalHourData, dispatchFunction);
+ */
 
-//this function will open the dropdown hour
-//change popupModal to true to open modal
+import updateResource from "./updateResource"
 export default showDropDownHour =  (operationalHour, dispatch) => {
-  //if the resource is not closed on the day that this timepickingfield is clicked
+  // Check if the resource is not closed on the selected day
   if (!operationalHour.isClosed) {
-    const params = {
-      // [(operationalHour.dayName).toLowerCase()]: {
-      //   ...operationalHour, 
-      //   popUpModal: true
-      // }
-      popUpModal: true
-    }
-    //open the dropdown menu
-    dispatch(resourceActions.create(params))
-    //return 
+    // Update the 'popUpModal' state variable to true to open the modal
+    updateResource(dispatch, {field: 'popUpModal', value: true})
   }
-  //if the resource is already closed, user can't open the dropdown modal, return some kind of notfications to notice user
+  // If the resource is closed, the modal cannot be opened.
+  // You may want to provide some kind of notification to inform the user.
 }
