@@ -13,11 +13,11 @@ import { Text } from 'react-native-paper';
 import { nextBtn as styles } from '../css';
 import {Pressable} from "react-native";
 
-const NextBtn = ({navigation, navigateTo}) => (
+const NextBtn = ({onPress}) => (
   <Pressable 
             style={styles.nextBtnContainer} 
             onPress={
-                () => navigation.navigate(navigateTo)
+                onPress
             }>
             {/* Text of the button */}
           <Text style={styles.nextBtnLabel}>

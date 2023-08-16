@@ -47,6 +47,7 @@ export const AuthProvider = ({children}) => {
       setIsLoading(true)
       let token = await AsyncStorage.getItem('userToken')
       let info = await AsyncStorage.getItem('userInfo')
+      //console.log(token, info)
       info = JSON.parse(info)
       if (token && info) {
         //if token and userInfo are valid
@@ -66,6 +67,8 @@ export const AuthProvider = ({children}) => {
   const saveUserAuth = async (token, info) => {
     await AsyncStorage.setItem('userToken', token)
     await AsyncStorage.setItem('userInfo', JSON.stringify(info))
+    setUserInfo(info)
+    setUserToken(token)
   }
 
   const logout = async () => {
@@ -79,11 +82,12 @@ export const AuthProvider = ({children}) => {
     await AsyncStorage.removeItem('userToken')
     await AsyncStorage.removeItem('userInfo')
     //move user back to the login signup screen
-    loggingIn()
+    loggingOut()
     setIsLoading(false)
   }
 
-  const loggingIn = () => setLoggedIn(prev => !prev)
+  const loggingIn = () => setLoggedIn(true)
+  const loggingOut = () => setLoggedIn(false)
   const switchPage = () => setInLoginPage(prev => !prev)
 
 
