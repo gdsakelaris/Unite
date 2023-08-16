@@ -239,7 +239,7 @@ export const dialog = StyleSheet.create({
   dialogButton: {
     flex: 1,
     backgroundColor: colors.appBtn,
-    borderRadius: '15%'
+    borderRadius: 15
   },
   dialogButtonText: {
     color: colors.white,
