@@ -59,7 +59,7 @@ const LoginInputBox = () => {
           {/* the box that renders goolgle, facebook, twitter icons */}
           <SocialBox/>
           {/* 'continue as guess' clickable text*/}
-          <ContinueAsGuestText/>
+          {/*<ContinueAsGuestText/>*/}
       </InputBox> 
     </KeyboardAvoidingWrapper>
   );
