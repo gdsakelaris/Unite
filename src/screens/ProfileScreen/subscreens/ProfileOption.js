@@ -7,10 +7,8 @@ import {keyboardArrowRightIcon} from '../icons';
 import {profileOption as styles} from '../css';
 
 const ProfileOption = ({optionName, navigateTo, iconName, navigation, onPress}) => {
-  // If an onPress behavior is not specified, will navigate to the screen specified in navigateTo when pressed.
-  const handlePress = onPress ? onPress : () => navigation.navigate(navigateTo);
   return (
-    <TouchableOpacity onPress={handlePress} style={styles.rowContainer}>
+    <TouchableOpacity onPress={onPress} style={styles.rowContainer}>
       {getOptionIcon(iconName)}
       <View style={styles.optionTextContainer}>
         <Text style={styles.optionText}>{optionName}</Text>
