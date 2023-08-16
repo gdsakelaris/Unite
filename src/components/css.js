@@ -230,9 +230,23 @@ export const resourceCard = StyleSheet.create({
 
 export const dialog = StyleSheet.create({
   dialogDefaultTitleStyle: {
-    textAlign:'center'
-  }
-})
+    textAlign: 'center'
+  },
+  dialogButtonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  dialogButton: {
+    flex: 1,
+    backgroundColor: colors.appBtn,
+    borderRadius: '15%'
+  },
+  dialogButtonText: {
+    color: colors.white,
+    fontSize: 20 / fontScale,
+    fontWeight: '400'
+  },
+});
 
 export const switchStyle = StyleSheet.create({
   switchBtnText: {
