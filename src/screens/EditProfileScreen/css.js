@@ -16,7 +16,7 @@ export const editProfile = StyleSheet.create({
   profilePictureView: {
     width: '45%',
     height: '69%',
-    borderRadius:'100%',
+    borderRadius: 100,
     backgroundColor: colors.white,
     bottom:'10%'
    
@@ -24,7 +24,7 @@ export const editProfile = StyleSheet.create({
   profilePicture: {
     width:'100%',
     height:'100%',
-    borderRadius:'100%'
+    borderRadius:100
   },
 })
 

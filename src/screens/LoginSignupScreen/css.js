@@ -1,3 +1,8 @@
+/**
+ * @file css.js
+ * @description This file contains all the css of every files in the LoginSignupScreen folder.
+ */
+
 import { StyleSheet } from "react-native";
 import { colors, fontScale } from "../../base";
 export const upperPart = StyleSheet.create({
@@ -39,6 +44,11 @@ export const inputBox = StyleSheet.create({
   inputBoxForSignUp: {
     height:'67%',
     top: '30%'
+  },
+  showPasswordEyeIcon: {
+    alignSelf: 'flex-end', 
+    position:'absolute',
+    justifyContent:'center'
   }
 })
 

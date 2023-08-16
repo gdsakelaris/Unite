@@ -24,7 +24,7 @@ export const bookmarkedCard = StyleSheet.create({
     height: '15%',
     backgroundColor: colors.white,
     marginTop: '6%',
-    borderRadius: '10%',
+    borderRadius: 20,
     padding: 10,
     shadowColor: colors.lightdark,
     shadowOffset: { width: 0, height: 5 },
@@ -68,7 +68,7 @@ export const removeBtn = StyleSheet.create({
     backgroundColor: colors.appBtn,
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: '6%',
+    borderRadius: 20,
   },
   removeButtonText: {
     color: colors.white,

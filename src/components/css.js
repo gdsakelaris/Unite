@@ -3,16 +3,18 @@ import { StyleSheet } from "react-native";
 import {fontScale, colors} from '../base'
 export const imageInputList = StyleSheet.create({
   inputListContainer: {
-    flexDirection:'row',
+   // flexDirection:'row',
     // width:'100%',
     paddingLeft:10,
     // height:'60%',
+    //backgroundColor:'red'
   },
   scrollViewContent: {
     flex: 1,
-    width:'100%',
-    // height:'100%'
+   
+   // height:'100%',
     alignItems:'center',
+  
   }
 })
 
@@ -21,11 +23,11 @@ export const imageInput = StyleSheet.create({
     backgroundColor: '#dcdcdc',
     borderRadius: 10, 
     height: 100,
-    width: '27%',
+    width: 100,
     justifyContent:'center',
     alignItems:'center',
     overflow:'hidden',
-    marginRight:'3%'
+    marginRight:10
 
   },
   image: {
@@ -60,7 +62,7 @@ export const servicecard = StyleSheet.create({
   },
   cardTitleContainerClicked: {
     position: 'absolute',
-    backgroundColor: '#F78154' ,
+    backgroundColor: colors.appBtn ,
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
@@ -257,5 +259,22 @@ export const screenTitle = StyleSheet.create({
   screenTitle: {
     fontSize: 35 / fontScale,
     fontWeight: '600'
+  }
+})
+
+export const keyboardAvoidingWrapper = StyleSheet.create({
+  container: {
+    position:'absolute',
+    width:'100%',
+    height:'100%',
+    
+  }
+})
+
+export const loadingActivity = StyleSheet.create({
+  container: {
+    flex: 1, 
+    justifyContent:'center',
+    alignItems:'center'
   }
 })

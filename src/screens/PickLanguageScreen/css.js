@@ -25,7 +25,7 @@ export const pickLanguageBtnStyle = StyleSheet.create({
 
   },
   button: {
-    borderRadius: '40%',
+    borderRadius: 40,
     width: '80%',
     height:'60%',
     backgroundColor:colors.appBtn,
@@ -43,7 +43,7 @@ export const languageCardStyle = StyleSheet.create({
   languageCardContainer: {
     width: '47%',
     height: '12%',
-    borderRadius: '10%',
+    borderRadius: 10,
     backgroundColor: colors.white,
     shadowColor: '#171717',
     shadowOffset: { width: 0, height: 4 },

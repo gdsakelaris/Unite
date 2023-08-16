@@ -1,8 +1,13 @@
-//This file will render a forgot password text that is displayed under the text input for password
+/**
+ * @file ForgotPasswordText.js
+ * @description This file represents the "Forgot Password?" text link displayed under the password input field.
+ */
+
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { forgotPass as styles } from '../css';
 import { Text } from 'react-native-paper';
+
 
 const ForgotPasswordText = () => (
   <TouchableOpacity>
