@@ -13,8 +13,7 @@ const ProfilePage = ({ navigation }) => {
   const handleLogoutConfirmation = () => {
     // Perform any necessary logout actions here
     hideLogoutDialog(); // Close the dialog
-    //useAuth();
-    navigation.navigate('BookmarkedServices')
+    useAuth();
   };
 
   return (
