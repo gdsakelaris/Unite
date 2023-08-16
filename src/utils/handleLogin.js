@@ -39,8 +39,8 @@ export default handleLogin = async (onLogin, saveUserAuth, email, password, setI
     */ 
     console.log(email, password)
     // save returned token and userInfo to asyncstorage
-    saveUserAuth(token, userInfo)
-    //saveUserAuth('fake token', {'email': email, 'password': password})
+    //saveUserAuth(token, userInfo)
+    saveUserAuth('fake token', {'email': email, 'password': password})
     //move user to login page
     onLogin()
     //turn off the loading state
