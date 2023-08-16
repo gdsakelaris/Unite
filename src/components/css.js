@@ -256,3 +256,11 @@ export const keyboardAvoidingWrapper = StyleSheet.create({
     
   }
 })
+
+export const loadingActivity = StyleSheet.create({
+  container: {
+    flex: 1, 
+    justifyContent:'center',
+    alignItems:'center'
+  }
+})

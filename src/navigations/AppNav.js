@@ -9,9 +9,9 @@ import { PaperProvider } from 'react-native-paper';
 import { NavigationContainer } from '@react-navigation/native';
 import PickLanguages from '../screens/PickLanguageScreen/PickLanguages';
 import BottomNavigation from './BottomNavigation';
-
 import LoginSignupScreen from '../screens/LoginSignupScreen/LoginSignupScreen';
 import { useAuth } from '../context/AuthProvider';
+import LoadingActivity from '../components/LoadingActivity';
 
 /**
  * @component AppNav
@@ -20,7 +20,12 @@ import { useAuth } from '../context/AuthProvider';
 const AppNav = () => {
   const Stack = createStackNavigator()
   //get the state variable from AuthProviderContext to check the user's authentication status
-  const {isLoggedIn} = useAuth()
+  const {isLoggedIn, isLoading} = useAuth()
+  //displays loading state while connecting to backend
+  if (isLoading) {
+    return <LoadingActivity/>
+  }
+
   if (isLoggedIn) {
     // If the user is logged in, show the main app navigation with bottom tabs.
     return <PaperProvider><BottomNavigation/></PaperProvider>;

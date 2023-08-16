@@ -17,7 +17,7 @@ import handleLogin from '../../../utils/handleLogin';
  */
 const LoginBtn = () => {
   //get the authetication functions from AuthProvider context to direct user to homepage after their credential is verified
-  const {loggingIn} = useAuth()
+  const {loggingIn, setIsLoading, saveUserAuth} = useAuth()
   
   //get the login-related state variables from LoginProvider context
   const {email,password} = useLoginContext()
@@ -27,7 +27,7 @@ const LoginBtn = () => {
    * @function onPressLogin
    */
   const onPressLogin = () => {
-    handleLogin(loggingIn, email, password);
+    handleLogin(loggingIn, saveUserAuth,email, password, setIsLoading);
   };
 
   return (
