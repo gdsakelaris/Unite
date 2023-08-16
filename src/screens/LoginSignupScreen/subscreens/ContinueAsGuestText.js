@@ -1,4 +1,9 @@
-//this file will make a clickable text component that displays the 'Continue as guest' msg at the bottom of both the login and sign up screens
+/**
+ * @file ContinueAsGuestText.js
+ * @description This file contains a clickable text component that displays the 'Continue as guest' message.
+ */
+
+
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { Text } from 'react-native-paper';

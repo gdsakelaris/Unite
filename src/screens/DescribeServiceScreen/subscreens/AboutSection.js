@@ -1,4 +1,8 @@
-//this file will render the about section for the describeService page
+/**
+ * @file AboutSection.js
+ * @description This file contains a component that renders the "About" section for the describeService page.
+ */
+
 import React from 'react';
 import SectionContainer from './SectionContainer';
 import SectionTitle from './SectionTitle';

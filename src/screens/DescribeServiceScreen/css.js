@@ -1,4 +1,7 @@
-import {StyleSheet, useWindowDimensions} from "react-native";
+/**
+ * the file that contains the css of all the files in DescribeServiceScreen folder
+ */
+import {StyleSheet} from "react-native";
 import {colors, fontScale} from "../../base";
 
 export const title = StyleSheet.create({

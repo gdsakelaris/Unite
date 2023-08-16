@@ -1,4 +1,6 @@
-//icons for DescribeService screen
+/**
+ * the file that contains the icons that are used in DescribeServiceScreen folder
+ */
 import { fontScale } from '../../base';
 import renderExpoIcon from '../../utils/renderExpoIcon';
 import { hour as styles } from './css';

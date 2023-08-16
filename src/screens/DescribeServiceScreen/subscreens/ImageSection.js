@@ -1,22 +1,41 @@
-//this file will render the add image section for the describeService page
-import React, {useState} from 'react';
+/**
+ * ImageSection component.
+ * Represents the section for adding images to a resource on the DescribeService page.
+ *
+ * @returns {React.ReactNode} - The ImageSection component.
+ */
+
+import React from 'react';
 import SectionContainer from './SectionContainer';
 import SectionTitle from './SectionTitle';
 import ImageInputList from '../../../components/ImageInputList';
 import { addImage as styles } from '../css';
-import addImageToImageList from '../../../utils/addImageToImageList';
-import removeImageFromImageList from '../../../utils/removeImageFromImageList';
+import { useResourceContext } from '../../../context/ResourceProvider';
+import updateImage from '../../../utils/updateImage';
 const ImageSection = () => {
-  // an array of added images. The file will base on this array to render all the images for the page
-  const [imageUris, setImageUris] = useState([])
-  //add image function. Whenever we add a new image, the new image will be appended to the imageUris array to render on the screen
-  const addImageUri = (uri) => addImageToImageList(imageUris, setImageUris, uri)
-  //remove image function. Whenever we remove the image by clicking on it, the clicked will be removed from the imageUris array and the removed image will disappear from the page
-  const removeImageUri = (uri) => removeImageFromImageList(imageUris, setImageUris, uri)
+  //get the resource-related state variable from ResourceProvider context
+  const {resource, dispatch} = useResourceContext()
+  
+  // An array of added images. The UI renders images based on this array.
+  const imageUris = resource.images
+  
+  // Function to add an image. Appends the new image to the imageUris array.
+  const addImageUri = (uri) => {
+    updateImage(dispatch, [...imageUris, uri])
+  }
+  // Function to remove an image. Removes the clicked image from the imageUris array.
+  const removeImageUri = (uri) => {
+    updateImage(dispatch, imageUris.filter(imageUri => imageUri != uri))
+  }
   return (
     <SectionContainer style={styles.addImageSection} >
-      <SectionTitle title={'5 Add Image'} sectionTitleContainer={styles.addImageSectionTitleContainer}/>
-        <ImageInputList imageUris={imageUris} onAddImage={addImageUri} onRemoveImage={removeImageUri}/>
+      <SectionTitle 
+                    title={'5 Add Image'} 
+                    sectionTitleContainer={styles.addImageSectionTitleContainer}/>
+      <ImageInputList 
+                    imageUris={imageUris} 
+                    onAddImage={addImageUri} 
+                    onRemoveImage={removeImageUri}/>
     </SectionContainer>
   );
 }

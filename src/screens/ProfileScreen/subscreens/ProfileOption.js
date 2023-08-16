@@ -6,9 +6,9 @@ import {Text} from 'react-native-paper';
 import {keyboardArrowRightIcon} from '../icons';
 import {profileOption as styles} from '../css';
 
-const ProfileOption = ({optionName, navigateTo, iconName, navigation}) => {
+const ProfileOption = ({optionName, navigateTo, iconName, navigation, onPress}) => {
   return (
-    <TouchableOpacity onPress={() => navigation.navigate(navigateTo)} style={styles.rowContainer}>
+    <TouchableOpacity onPress={onPress} style={styles.rowContainer}>
       {getOptionIcon(iconName)}
       <View style={styles.optionTextContainer}>
         <Text style={styles.optionText}>{optionName}</Text>

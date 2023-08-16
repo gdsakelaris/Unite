@@ -1,4 +1,8 @@
-//this file will make a container component that will store all the content of the about section
+/**
+ * @file AboutContentContainer.js
+ * @description This file contains a container component that stores all the content of the "About" section.
+ */
+
 import React from 'react';
 import { View } from 'react-native';
 import { about as styles } from '../../css';

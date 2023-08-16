@@ -5,6 +5,10 @@ import EditProfileInfoContainer from './subscreens/EditProfileInfoContainer';
 import ProfileInfoField from './subscreens/ProfileInfoField';
 const EditProfile = () => {
   //mockup data
+  /**
+ * replace all the states below with the useInfo state from useAuth context 
+ * useAuth is expected to be the object of the following keys 
+ */
   const [emailAddress, setEmailAddress] = useState('john123@gmail.com')
   const [userName, setUserName] = useState('John')
   const [password, setPassword] = useState('12345')

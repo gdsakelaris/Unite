@@ -1,19 +1,30 @@
 // for sign up screen
 import axios from "axios";
 export default signUpNewAccount = (name, email, password, confirmPassword, switchPage) => {
-  // Insert your IP below
-  // axios
-  //   .post("http://<IP Address>:5000/register", {
-  //     confirmPassword,
-  //     email,
-  //     password,
-  //   })
-  //   .then(function (response) {
-  //     console.log(response.data.token);
-  //   })
-  //   .catch(function (error) {
-  //     console.log(error);
-  //   });
+  try {
+    /**
+     * Send post request here
+   axios
+        .post("...."", {
+            name
+            confirmPassword,
+            email,
+            password,
+        })
+        .then(function (response) {
+            console.log(response.data.token);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    */ 
+  //Move to login page after sign up account successfully
   console.log(email, password, confirmPassword, name)
   switchPage()
+    
+
+  }
+  catch(err) {
+    console.log(err)
+  }
 };
