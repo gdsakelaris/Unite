@@ -2,8 +2,8 @@
 import React from 'react';
 import {Button} from 'react-native-paper';
 import { resourceCard as styles } from '../../css';
-const EditButton = ({text}) => (
-  <Button mode='elevated' style={styles.editbtn} labelStyle={styles.edtbtntxt}>
+const EditButton = ({text, onPress}) => (
+  <Button mode='elevated' style={styles.editbtn} labelStyle={styles.edtbtntxt} onPress={onPress}>
       {text}
   </Button>
 )

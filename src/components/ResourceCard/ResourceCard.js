@@ -7,7 +7,7 @@ import ResourceCardDescription from "./resourceCardsubscreens/ResourceCardDescri
 import ResourceCardImage from "./resourceCardsubscreens/ResourceCardImage";
 import ResourceCardRatingAndReview from "./resourceCardsubscreens/ResourceCardRatingAndReview";
 import ResourceCardTitle from "./resourceCardsubscreens/ResourceCardTitle";
-const ResourceCard = ({ item, navigation, fullPageServiceName, hasEditButton}) => {
+const ResourceCard = ({ item, navigation, fullPageServiceName, editBtnFunction}) => {
   return (
     <ResourceCardContainer>
       <ResourceCardContent>
@@ -17,7 +17,7 @@ const ResourceCard = ({ item, navigation, fullPageServiceName, hasEditButton}) =
         <ResourceCardContactInfo location={item.location}/>
         <ResourceCardContactInfo number={item.number}/>
       </ResourceCardContent>
-      <ResourceCardImage picture={item.image} hasEditButton={hasEditButton}/>
+      <ResourceCardImage picture={item.image} editBtnFunction={editBtnFunction}/>
     </ResourceCardContainer>
 
   ) 

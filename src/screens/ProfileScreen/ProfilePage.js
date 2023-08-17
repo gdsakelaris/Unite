@@ -3,17 +3,18 @@ import ProfileContainer from "./subscreens/ProfileContainer"
 import ProfileOption from "./subscreens/ProfileOption"
 import ProfileOptionsPortion from "./subscreens/ProfileOptionsPortion"
 import ProfileImage from "./subscreens/ProfileImage"
-//import { useAuth } from '../../context/AuthProvider';
+import { useAuth } from '../../context/AuthProvider';
 import DialogMessage from "../../components/Dialog";
 const ProfilePage = ({ navigation }) => {
   const [isLogoutDialogVisible, setIsLogoutDialogVisible] = useState(false);
   const showLogoutDialog = () => setIsLogoutDialogVisible(true);
   const hideLogoutDialog = () => setIsLogoutDialogVisible(false);
-
+  const {logout} = useAuth()
   const handleLogoutConfirmation = () => {
     // Perform any necessary logout actions here
+    logout()
     hideLogoutDialog(); // Close the dialog
-    useAuth();
+    
   };
 
   return (

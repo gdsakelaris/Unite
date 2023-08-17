@@ -3,15 +3,27 @@ import EditProfileContainer from './subscreens/EditProfileContainer';
 import ProfilePicture from './subscreens/ProfilePicture';
 import EditProfileInfoContainer from './subscreens/EditProfileInfoContainer';
 import ProfileInfoField from './subscreens/ProfileInfoField';
+import { useAuth } from '../../context/AuthProvider';
 const EditProfile = () => {
   //mockup data
   /**
  * replace all the states below with the useInfo state from useAuth context 
  * useAuth is expected to be the object of the following keys 
+ * 
+ * assume userInfo is the object of the following keys
+ *userInfo = {
+    name,
+    email,
+    phonenumber
+    location,
+    password
+ }
  */
-  const [emailAddress, setEmailAddress] = useState('john123@gmail.com')
+  const {userInfo} = useAuth()
+  console.log(userInfo)
+  const [emailAddress, setEmailAddress] = useState(userInfo.email)
   const [userName, setUserName] = useState('John')
-  const [password, setPassword] = useState('12345')
+  const [password, setPassword] = useState(userInfo.password)
   const [phoneNumber, setPhoneNumber] = useState('408777222')
   const [location, setLocation] = useState('San Jose, CA')
   return (  

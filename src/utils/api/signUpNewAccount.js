@@ -12,7 +12,7 @@ export default signUpNewAccount = (name, email, password, confirmPassword, switc
             password,
         })
         .then(function (response) {
-            console.log(response.data.token);
+            console.log(response.data)
         })
         .catch(function (error) {
             console.log(error);

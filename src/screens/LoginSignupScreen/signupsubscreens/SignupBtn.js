@@ -7,7 +7,7 @@ import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { Text } from 'react-native-paper';
 import { loginBtn as styles } from '../css';
-import signUpNewAccount from '../../../utils/signUpNewAccount';
+import signUpNewAccount from '../../../utils/api/signUpNewAccount';
 import { useSignupContext } from '../../../context/SignupProvider';
 import { useAuth } from '../../../context/AuthProvider';
 

@@ -18,13 +18,16 @@ import NextBtn from "./subscreens/NextBtn";
 import ScreenTitle from "../../components/ScreenTitle";
 import { title as styles } from "./css";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { useResourceContext } from "../../context/ResourceProvider";
+import resourceDataCompletenessChecker from "../../utils/resourceDataCompletenessChecker";
 
-
-const DescribeServicePage = ({navigation}) => {
+const DescribeServicePage = ({navigation, route}) => {
+  const {resource} = useResourceContext()
+  const {title, purpose} = route.params
   return (
     <DescribeServicePageContainer>
         {/* Render the screen title */}
-        <ScreenTitle titleMessage={'Describe your service'} style={styles.titleStyle} numberOfLines={2}/>
+        <ScreenTitle titleMessage={title} style={styles.titleStyle} numberOfLines={2}/>
         <KeyboardAwareScrollView nestedScrollEnabled >
             {/* Render the sections for describing the service */}
             <AboutSection/>
@@ -34,7 +37,16 @@ const DescribeServicePage = ({navigation}) => {
             <ImageSection/>
         </KeyboardAwareScrollView>
         {/* Render the NextBtn for navigation */}
-        <NextBtn navigation={navigation} navigateTo={'Third Step'}/>
+        <NextBtn onPress={() => {
+          //check if all the fields in the resource have been entered except images 
+          const allFilled = resourceDataCompletenessChecker(resource)
+          //if all the fields have been entered. Move to publish page
+          if (allFilled) navigation.navigate('Third Step', {purpose: purpose})
+          
+          //otherwise giver alert to user
+          else alert("Some fields has not been filled out.")
+
+        }}/>
     </DescribeServicePageContainer>
   )
 
