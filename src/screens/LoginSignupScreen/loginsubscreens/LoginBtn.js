@@ -9,7 +9,7 @@ import { Text } from 'react-native-paper';
 import { loginBtn as styles } from '../css';
 import { useAuth } from '../../../context/AuthProvider';
 import { useLoginContext } from '../../../context/LoginProvider';
-import handleLogin from '../../../utils/handleLogin';
+import handleLogin from '../../../utils/api/handleLogin';
 
 /**
  * @component LoginBtn

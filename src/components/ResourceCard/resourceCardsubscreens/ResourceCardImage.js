@@ -3,11 +3,9 @@ import React, {useState} from 'react';
 import {View, Image, TouchableOpacity} from 'react-native';
 import {resourceCard as styles} from '../../css';
 import EditButton from './ResourceCardEditBtn';
-import renderExpoIcon from "../../../utils/renderExpoIcon";
-import {fontScale} from "../../../base";
 import {bookmarkedIcon, whiteBookmarkedIcon} from "../../icons";
 
-const ResourceCardImage = ({picture, hasEditButton}) => {
+const ResourceCardImage = ({picture, editBtnFunction}) => {
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   const handleBookmark = () => {
@@ -39,7 +37,7 @@ const ResourceCardImage = ({picture, hasEditButton}) => {
         </View>
       </TouchableOpacity>
       {/* edit btn */}
-      {hasEditButton && <EditButton text={'edit'}/>}
+      {editBtnFunction && <EditButton text={'edit'} onPress={editBtnFunction}/>}
     </View>
   );
 };

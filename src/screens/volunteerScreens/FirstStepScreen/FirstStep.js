@@ -10,7 +10,7 @@ const FirstStep = ({navigation}) => (
   <FirstStepScreenContainer>
     <ScreenTitle titleMessage={'Select a category for your service'} style={styles.title}/>
     <ListOfProvidedServices/>
-    <NextBtn onPress={() => navigation.navigate('Describe Service')}/>
+    <NextBtn onPress={() => navigation.navigate('Describe Service', {title: 'Describe your service',purpose: 'create'})}/>
   </FirstStepScreenContainer>
 );
 export default FirstStep;

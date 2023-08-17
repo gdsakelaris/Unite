@@ -12,9 +12,13 @@ const PublishedServices = ({navigation}) => {
     <PublishedServiceContainer>
       <ScreenTitle titleMessage={'My Published Service'} style={styles.title}/>
       <ScrollView>
-        <ResourceCard item={mockupdata} hasEditButton={true}/>
-        <ResourceCard item={mockupdata} hasEditButton={true}/>
-        <ResourceCard item={mockupdata} hasEditButton={true}/>
+        <ResourceCard item={mockupdata} editBtnFunction={() => {
+          //navigate to describe service page
+          //call function to populate resource-state variable 
+          navigation.navigate('Describe Service', {title: 'Update your service', purpose: 'update'})
+        }}/>
+        <ResourceCard item={mockupdata} editBtnFunction/>
+        <ResourceCard item={mockupdata} editBtnFunction/>
       </ScrollView>
       <AddBtn navigation={navigation}/>
     </PublishedServiceContainer>
