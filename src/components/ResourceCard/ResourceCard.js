@@ -1,5 +1,5 @@
 //this file will create a resource card component for every provided services
-import React from "react";
+import React, {useState} from "react";
 import ResourceCardContainer from "./resourceCardsubscreens/ResourceCardContainer";
 import ResourceCardContactInfo from "./resourceCardsubscreens/ResourceCardContactInfo";
 import ResourceCardContent from "./resourceCardsubscreens/ResourceCardContent";
