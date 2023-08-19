@@ -6,7 +6,6 @@ import { Text } from 'react-native-paper';
 import { locationIcon, phoneIcon } from '../icons';
 import RemoveBtn from './RemoveBtn';
 import { bookmarkedCard as styles } from '../css';
-
 import removeBookmarkedResources from '../../../utils/api/bookmarkservices';
 
 //this component will take the name, location, phoneNumber, and picture of the resource to make a resource card
