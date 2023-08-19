@@ -4,12 +4,24 @@ import {View, Image, TouchableOpacity} from 'react-native';
 import {resourceCard as styles} from '../../css';
 import EditButton from './ResourceCardEditBtn';
 import {bookmarkedIcon, whiteBookmarkedIcon} from "../../icons";
+import { useAuth } from '../../../context/AuthProvider';
 
-const ResourceCardImage = ({picture, editBtnFunction}) => {
+const ResourceCardImage = ({picture, editBtnFunction, resourceId}) => {
   const [isBookmarked, setIsBookmarked] = useState(false);
-
+  const {setIsLoading, userToken} = useAuth()
   const handleBookmark = () => {
+    /**
+     * Include everthing below in try/catch block 
+     * 
+     * setIsBookmarked(!isBookmarked) - change the color of the bookmarked icon when pressed
+     * setIsLoading(true) - start the loading state
+     * bookmarkResources(resourceId, userToken) - send request to backend to bookmark resource
+     * setIsLoading(false)
+     * if 200 - alert('The resource is bookmarked successfully')
+     * 500 - alert('Bookmark resource fail')
+     */
     setIsBookmarked(!isBookmarked);
+
   };
 
   return (
@@ -23,8 +35,8 @@ const ResourceCardImage = ({picture, editBtnFunction}) => {
         style={styles.image}
         resizeMode="cover"
       />
-      {/* saved resource btn */}
-      <TouchableOpacity
+      {/* saved resource btn. No saved btn for resource that user publishes*/}
+      {!editBtnFunction && <TouchableOpacity
         style={styles.bookmarkButton}
         onPress={() => {
           /* Bookmark function */
@@ -35,7 +47,7 @@ const ResourceCardImage = ({picture, editBtnFunction}) => {
         <View style={isBookmarked ? styles.greenBox : styles.whiteBox}>
           {isBookmarked ? whiteBookmarkedIcon : bookmarkedIcon}
         </View>
-      </TouchableOpacity>
+      </TouchableOpacity>}
       {/* edit btn */}
       {editBtnFunction && <EditButton text={'edit'} onPress={editBtnFunction}/>}
     </View>

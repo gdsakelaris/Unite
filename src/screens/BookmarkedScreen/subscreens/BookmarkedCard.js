@@ -7,7 +7,7 @@ import { locationIcon, phoneIcon } from '../icons';
 import RemoveBtn from './RemoveBtn';
 import { bookmarkedCard as styles} from '../css';
 //this component will take the name, location, phoneNumber, and picture of the resource to make a resource card
-const BookmarkedCard = ({cardName, location, phoneNumber, source }) => (
+const BookmarkedCard = ({cardName, location, phoneNumber, source, resourceId }) => (
   //create the shape of the card
   <View style={styles.bookmarkedCardContainer}>
       {/* load the image of the resource on the card */}
@@ -27,8 +27,19 @@ const BookmarkedCard = ({cardName, location, phoneNumber, source }) => (
           <Text style={styles.info}>{phoneNumber}</Text>
         </View>
       </View>
-      {/* the remove button */}
-      <RemoveBtn/>
+      {/* the remove button
+         */}
+      <RemoveBtn onPress={
+        () => {
+          /**
+           * const {userToken} = useAuth()
+           * setIsLoading(true) - start loading state 
+           * removeBookmarkedResources(resourceId, userToken)
+           * setIsLoading(false) - end loading state
+           * 
+           */
+        }
+      }/>
   </View>
 )
 export default BookmarkedCard;

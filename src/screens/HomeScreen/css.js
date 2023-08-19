@@ -51,8 +51,25 @@ export const servicecard = StyleSheet.create({
     shadowColor:colors.lightdark,
     shadowOpacity:0.25,
     shadowRadius:10,
-    borderWidth:0.25,
     shadowOffset:{ height: 9 }
-  
    }
+})
+
+export const newresourcebutton = StyleSheet.create({
+  newResourceDefaultStyle: {
+    backgroundColor: colors.darkgrey,
+    color: 'white',
+    alignSelf:'center',
+    borderRadius: 50,
+    justifyContent: 'center',
+    height: '7%',
+    width:'70%',
+    marginBottom: '7%',
+  },
+  textStyle:{
+    color: 'white',
+    paddingHorizontal:'15%',
+    fontSize: 24/ fontScale,
+
+  }
 })
