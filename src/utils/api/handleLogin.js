@@ -26,14 +26,16 @@ export default handleLogin = (email, password) => {
       var user = userCredential.user;
       console.log("User logged in:", user);
       var return_x = {
-          userToken: "token",
-          userInfo: {
-						"name": "example name",
-						"phonenumber": "123-456-7890",
-						"email": "user123@example.com",
-						"password": "password"
-					}
-
+        "data": {	
+        "msg": "Client login successful",
+            "client": {
+              "name": "example name",
+              "phonenumber": "123-456-7890",
+              "email": "user123@example.com",
+              "password": "password"
+            }
+        },
+        "error": null
       }
       return return_x;
     })
