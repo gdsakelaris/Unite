@@ -18,12 +18,10 @@ export const title = StyleSheet.create({
 
 export const section = StyleSheet.create({
   sectionContainer: {
-    width:'100%',
-    //paddingLeft: 20,
+    // flex: 2,
+    // paddingLeft: 20,
     paddingHorizontal: 5,
     paddingBottom: 30,
-    height:'10%', 
-    marginBottom:'3%'
 
   },
   titleSectionContainer: {
@@ -38,13 +36,9 @@ export const section = StyleSheet.create({
 })
 
 export const about = StyleSheet.create({
-  aboutSection: {
-    height:'20%'
-  },  
   contentContainer: {
-    width:'100%',
-    paddingLeft: 20,
-    height:'100%'
+    flex: 4,
+    paddingLeft: 20
   },
   inputFieldForTitleContainer: {
     flexDirection: 'row',
@@ -64,25 +58,22 @@ export const about = StyleSheet.create({
     borderColor: colors.lightgray,
     backgroundColor: colors.lightgray,
     paddingVertical: 3,
-    paddingHorizontal: 20,
-    fontSize: 16 / fontScale
+    paddingHorizontal: 20
   },
   descriptionTextInput: {
-    height:'70%',
-    maxHeight: '70%',
+    height: '70%',
     borderWidth: 0.5,
     borderRadius: 5,
     borderColor: colors.lightgray,
     backgroundColor: colors.lightgray,
     paddingHorizontal: 10,
     marginTop: 12,
-    fontSize: 16 / fontScale
   },
 })
 
 export const media = StyleSheet.create({
   mediaSection: {
-    height:'15%'
+    flex: 1
   },
   contentContainer: {
     paddingLeft: 10,
@@ -93,56 +84,47 @@ export const media = StyleSheet.create({
     paddingLeft: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: '70%',
-    height:'60%',
+    width: '53%',
     paddingBottom: 10,
-    
-    
   },
   mediaTextInput: {
     borderWidth: 0.5,
-    borderRadius: 5,
+    borderRadius: 7,
     borderColor: colors.lightgray,
     backgroundColor: colors.lightgray,
     paddingHorizontal: 10,
     width: '100%',
-    height: '80%',
+    height: '90%',
     marginLeft: '5%',
-    top: '2%',
-    fontSize: 16 / fontScale
-    
+    top: '2%'
   },
-  mediaIcons: {
-    alignSelf:'center'
-  }
 })
 
 export const location = StyleSheet.create({
   locationSection: {
-    height: '10%',
+    flex: 1
   },
   contentContainer: {
     paddingLeft: 10,
-    justifyContent: 'space-around',
-   
+    flex: 3,
+    justifyContent: 'space-around'
   },
   inputFieldForLocation: {
-    paddingLeft: 10,
+    paddingLeft: 8,
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '70%',
   },
   locationTextInput: {
     borderWidth: 0.5,
-    borderRadius: 5,
+    borderRadius: 7,
     borderColor: colors.lightgray,
     backgroundColor: colors.lightgray,
     paddingHorizontal: 10,
     width: '100%',
-    height: '100%',
-    marginLeft: '2%',
-    fontSize: 14 / fontScale,
-    paddingVertical:4
+    height: '120%',
+    marginLeft: '5%',
+    // top: '1%'
   },
 })
 
@@ -156,7 +138,7 @@ export const hour = StyleSheet.create({
   saveButton: {
     width: '43%',
     height: 45,
-    borderRadius: 20,
+    borderRadius: '10%',
     backgroundColor: colors.appBtn,
     justifyContent: 'center',
     alignItems: 'center',
@@ -166,7 +148,7 @@ export const hour = StyleSheet.create({
   cancelButton: {
     width: '43%',
     height: 45,
-    borderRadius: 20,
+    borderRadius: '10%',
     backgroundColor: colors.white,
     justifyContent: 'center',
     alignItems: 'center',
@@ -204,13 +186,12 @@ export const hour = StyleSheet.create({
   timePickingFieldContainer: {
     width: '35%',
     height: '80%',
-    
+    // borderRadius: colors.lightgray,
     borderWidth: 0.5,
     borderColor: colors.lightgray,
     borderRadius: 5,
     backgroundColor: colors.lightgray,
     flexDirection: 'row',
-    paddingRight:'2%'
 
   },
   timePickingField: {
@@ -225,36 +206,31 @@ export const hour = StyleSheet.create({
   },
   arrowDownIcon: {
     alignSelf: 'center',
+    bottom: '20%',
+    right: '30%'
   },
   titleForTimePickingField: {
-    fontSize: 14 / fontScale,
-    right: 10
+    fontSize: 14 / fontScale
   },
   hourSection: {
-    height:'30%'
+    flex: 3
   },
   hourContentContainer: {
-    width:'100%',
+    flex: 7,
     paddingLeft: 15,
-    height:'100%'
-    
   },
   openAndCloseHourContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     height: '100%',
-  },
-  lock_icon: {
-    right: 20
-    
   }
 })
 
 export const addImage = StyleSheet.create({
   addImageSection: {
-    height:'20%',
-    
+    flex: 2,
+    // backgroundColor:'red'
   },
   addImageSectionTitleContainer: {
     flex: 0.5
@@ -268,7 +244,7 @@ export const nextBtn = StyleSheet.create({
     width: '30%',
     alignSelf: 'flex-end',
     backgroundColor: colors.appBtn,
-    borderRadius: 20,
+    borderRadius: '15%',
     height: '5%',
     marginRight: '5%',
     marginBottom: '10%',
@@ -291,5 +267,6 @@ export const describeServicePageContainer = StyleSheet.create({
     paddingHorizontal: '3%',
     backgroundColor: colors.white,
     justifyContent: 'space-evenly',
+
   }
 })

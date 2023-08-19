@@ -10,9 +10,9 @@ const ServiceOption = ({title, setdetailOption, detailOption, index}) => (
   <View style={[styles.serviceDetailOptionStyle, {borderBottomWidth: detailOption.optionTitle === title && 4}]}>
       {/* when the user clicks on the section, we will render the detail page for the clicked section */}
       <Pressable onPress={() => setdetailOption(listOfProvidedSection[index])}> 
-        <Text style={styles.serviceDetailOptionTextStyle}>{title}</Text>
+        <Text style={styles.serviceDetailOptionTextStyle}>{title}</Text> 
       </Pressable>
   </View>
-  )
+  );
 
 export default ServiceOption;

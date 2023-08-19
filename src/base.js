@@ -14,7 +14,7 @@ export const colors = {
   lightorange: '#F78154',
   white: '#FFFFFF',
   darkorange: '#F24E1E',
-  lightgray: '#C3C2C2',
+  lightgray: '#EAEAF5',
   lightdark: '#4E4E4E',
   green: '#337155',
   orange: '#E87F10',

@@ -14,5 +14,5 @@ const ServicesFullPage = () => {
       <ServiceDetail detailOption={detailOption} setdetailOption={setdetailOption}/>
     </ServicePageContainer>
   );
-}
+}  
 export default ServicesFullPage;

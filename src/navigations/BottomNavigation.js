@@ -7,8 +7,6 @@ import MapScreen from '../screens/MapScreen/MapScreen';
 import ProfileNavigation from './ProfileNavigation';
 import HomeScreenNavigation from './HomeScreenNavigation';
 
-
-
 const Tab = createBottomTabNavigator();
 
 const BottomNavigation = () => {

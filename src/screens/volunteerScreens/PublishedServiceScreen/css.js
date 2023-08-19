@@ -21,7 +21,7 @@ export const addBtn = StyleSheet.create({
     width: '40%',
     height: '6%',
     backgroundColor: colors.appBtn,
-    borderRadius: 20,
+    borderRadius: '20%',
     justifyContent: "space-around",
     alignItems: "center",
     position: "absolute",

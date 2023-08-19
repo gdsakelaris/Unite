@@ -6,7 +6,7 @@ import { serviceOptionDetail as styles } from '../css';
 const ServiceOptionDetail = ({detailOption}) => (
   <View style={styles.serviceOptionDetail}> 
       <ScrollView>
-        <Text >{detailOption && detailOption.detail}</Text>    
+        <Text >{detailOption && detailOption.detail}</Text>     
       </ScrollView>
   </View>
 )

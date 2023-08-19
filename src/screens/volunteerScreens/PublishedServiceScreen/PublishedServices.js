@@ -7,6 +7,7 @@ import { title as styles } from "./css";
 import { mockupdata } from "./mockupdata";
 import ResourceCard from "../../../components/ResourceCard/ResourceCard";
 import ScreenTitle from "../../../components/ScreenTitle";
+
 const PublishedServices = ({navigation}) => {
   //the variable that stores all the published resources
   const [publishedResource, setPublishedResources] = useState([])
@@ -38,7 +39,5 @@ const PublishedServices = ({navigation}) => {
     </PublishedServiceContainer>
   );
 };
-
-
 
 export default PublishedServices;

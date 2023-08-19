@@ -10,7 +10,7 @@ const ServicePageInfo = () => (
           <Text style={styles.serviceTitleStyle} >Anchor Church</Text>
           <Text>
             {star}
-            <Text>3.0</Text>
+            <Text>3.0</Text> 
           </Text>
           <Text style={styles.numberOfReviewStyle}>6 Reviews</Text>  
       </View> 

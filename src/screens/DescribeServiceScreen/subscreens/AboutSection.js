@@ -9,10 +9,9 @@ import SectionTitle from './SectionTitle';
 import AboutContentContainer from './aboutSubscreens/AboutContentContainer';
 import InputFieldForDescription from './aboutSubscreens/InputFieldForDescription';
 import InputFieldForTitle from './aboutSubscreens/InputFieldForTitle';
-import { about as styles } from '../css';
 const AboutSection = () => {
   return (
-    <SectionContainer style={styles.aboutSection}>
+    <SectionContainer>
       <SectionTitle title={'1 About'}/>
       <AboutContentContainer>
         <InputFieldForTitle/>
