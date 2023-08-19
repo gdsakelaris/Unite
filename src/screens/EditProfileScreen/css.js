@@ -7,6 +7,31 @@ export const editProfileContainer = StyleSheet.create({
   }
 })
 
+export const saveBtn = StyleSheet.create({
+  button: {
+    width: "90%",
+    height: "10%",
+    backgroundColor: colors.appBtn,
+    borderRadius: 43,
+    alignItems: "center",
+    justifyContent: "center",
+    alignSelf: "center",
+    shadowColor:colors.lightdark,
+    shadowOpacity:0.25,
+    shadowRadius:10,
+    borderWidth:1,
+    borderColor:colors.lightgray,
+    shadowOffset:{ height: 9 },
+    marginTop: "10%",
+  },
+  buttonText: {
+    color: colors.white,
+    fontSize: 21 / fontScale,
+    fontWeight: "bold",
+  },
+})
+
+
 export const editProfile = StyleSheet.create({
   editProfilePictureContainer: {
     flex: 3,

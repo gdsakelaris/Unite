@@ -47,7 +47,12 @@ const DescribeServicePage = ({navigation, route}) => {
           //check if all the fields in the resource have been entered except images 
           const allFilled = resourceDataCompletenessChecker(resource)
           //if all the fields have been entered. Move to publish page
-          if (allFilled) navigation.navigate('Third Step', {purpose: purpose})
+          if (allFilled) {
+            
+            navigation.navigate('Third Step', {purpose: purpose});
+          
+          }
+            
           
           //otherwise giver alert to user
           else alert("Some fields has not been filled out.")
