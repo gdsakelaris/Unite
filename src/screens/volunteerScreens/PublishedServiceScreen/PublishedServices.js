@@ -24,15 +24,15 @@ const PublishedServices = ({navigation}) => {
     <PublishedServiceContainer>
       <ScreenTitle titleMessage={'My Published Service'} style={styles.title}/>
       <ScrollView>
-        <ResourceCard item={mockupdata} editBtnFunction={() => {
+        <ResourceCard resource={mockupdata} editBtnFunction={() => {
           /**
            * when edit btn is pressed, populate all fields in resource-state variable 
            * move to Desribe Servie page, and send necessary data to the 'Update your service' screen
            */
           navigation.navigate('Describe Service', {title: 'Update your service', purpose: 'update', resourceId: '...'})
-        }}/>
-        <ResourceCard item={mockupdata} editBtnFunction/>
-        <ResourceCard item={mockupdata} editBtnFunction/>
+        }} navigation={navigation}/>
+        <ResourceCard resource={mockupdata} editBtnFunction navigation={navigation}/>
+        <ResourceCard resource={mockupdata} editBtnFunction navigation={navigation}/>
       </ScrollView>
       <AddBtn navigation={navigation}/>
     </PublishedServiceContainer>

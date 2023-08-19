@@ -11,16 +11,17 @@ import { useAuth } from '../../context/AuthProvider';
 
 const BookmarkedServices = () => {
 
-  const userId = 1;
-  const savedResources = getSavedResourcesByUserId(userId);
-  console.log(savedResources);
+  // const userId = 1;
+  // const savedResources = getSavedResourcesByUserId(userId);
+  // console.log(savedResources);
+
   const [bookmarkedResource, setBookmarkedResource] = useState([])
 
   /**
    * useEffect(
-   * const {userToken, setIsLoading} = useAuth()
+   *  const {userToken, setIsLoading} = useAuth()
    *  setIsLoading(true) - start loading state
-   *  const bookmarkedResources =getbookmarkedresources(userToken) -get bookmarkedresouces - if 200, return an array of resources
+   *  const bookmarkedResources = getbookmarkedresources(userToken) -get bookmarkedresouces - if 200, return an array of resources //check the front end api or contact Nick for more information
    *  setBookmarkedResource(bookmarkedResources)
    *  setIsLoading(false) - end loading state
    * )
@@ -31,13 +32,14 @@ const BookmarkedServices = () => {
     <BookmarkedScreenContainer>
       <ScrollView>
       {/* Render bookmarked cards for the retrieved saved resources */}
-      {/* loop through bookmarkedResource array and make  */}
+      {/* loop through bookmarkedResource array and make BookmarkedCard */}
       {savedResources.map((resource, i) => (
         <BookmarkedCard
           cardName={resource.name}
           location={resource.location}
           phoneNumber={resource.phoneNumber}
           source={img}
+          resourceId={'id'}
           key={i.toString()}
         />
       ))}

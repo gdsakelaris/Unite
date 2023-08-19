@@ -15,7 +15,6 @@ function ReviewCard(props) {
   return (
     //outside react native elements
     <Card mode='outlined' style={styles.container} >
-      {/*this is how you do comments inside react native elements*/}
       <ReviewerProfileBar 
         postedDate={postedDate} 
         ratings={rating} 

@@ -44,7 +44,7 @@ const ResourceCard = ({ resource, navigation, editBtnFunction}) => {
           
         }
           />
-        <ResourceCardRatingAndReview rating={resource.rating} review={resource.reviews} onPress={() => navigation.navigate('Review')}/>
+        <ResourceCardRatingAndReview rating={resource.rating} review={resource.reviews}/>
         <ResourceCardDescription description={resource.desc}/>
         <ResourceCardContactInfo location={resource.location}/>
         <ResourceCardContactInfo number={resource.number}/>

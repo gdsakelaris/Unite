@@ -30,7 +30,7 @@ export default handleLogin = async (email, password) => {
               * const token = response.header.token
               * return {  userToken: token,
               *           userInfo: userInfo
-              *         }
+              *        }
     */ 
     console.log(email, password)
     

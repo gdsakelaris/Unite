@@ -28,8 +28,8 @@ const LoginBtn = () => {
    */
   const onPressLogin = () => {
     /**
-     * setIsLoading(true) - display loading state
-     * handleLogin(email, password) - if no error, should return  {userToken: “... “, userInfo: “ ...“}
+     * setIsLoading(true) - start loading state
+     * handleLogin(email, password) - if 200, should return  {userToken: “... “, userInfo: “ ...“}
      * saveUserAuth(userToken, userInfo) - save user's token and info to async storage
      * loggingIn() - direct user to homepage
      * setIsLoading(false) - end loading state
