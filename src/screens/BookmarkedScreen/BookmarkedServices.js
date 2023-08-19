@@ -7,21 +7,31 @@ import BookmarkedCard from './subscreens/BookmarkedCard';
 //mockup data for testing purpose (Later on, this data will be retrieved from database)
 import { ScrollView } from 'react-native';
 import { useAuth } from '../../context/AuthProvider';
-import getbookmarkedresources from '../../utils/api/bookmarkservices'
+import {getbookmarkedresources} from '../../utils/api/bookmarkservices'
 
 const BookmarkedServices = () => {
   const { userToken, setIsLoading } = useAuth();
   const [bookmarkedResource, setBookmarkedResource] = useState([]);
 
-  //loads the resources, if any, into the variable
-  useEffect(
-    () => {
-      setIsLoading(true);//- start loading state
-      const bookmarkedResources = getbookmarkedresources(userToken);// -get bookmarkedresouces - if 200, return an array of resources //check the front end api or contact Nick for more information
-      setBookmarkedResource(bookmarkedResources);
-      setIsLoading(false);//- end loading state
+  // Loads the resources, if any, into the variable
+  useEffect(() => {
+    setIsLoading(true); // Start loading state
+
+    try {
+      const fetchBookmarkedResources = async () => {
+        const resources = await getbookmarkedresources(userToken);
+        setBookmarkedResource(resources);
+      };
+
+      fetchBookmarkedResources().catch((err) => {
+        setError(err.message);
+      });
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false); // End loading state
     }
-  )
+  }, [userToken, setIsLoading]);
 
   //return the component
   if (bookmarkedResource == null) {

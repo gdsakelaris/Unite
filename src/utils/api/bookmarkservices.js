@@ -5,6 +5,7 @@ import axios from "axios";
 //api url
 const BASE_URL = 'https://34.27.143.72/';
 const getbookmarkedresources = async (userToken) => {
+  console.log(userToken);
 
   try {
     //Send post request here
@@ -18,10 +19,11 @@ const getbookmarkedresources = async (userToken) => {
     if (response.status === 200) {
       return response.data.data.resources;
     } else {
-      throw new Error(response.data.error);
+      console.log(response.data.error);
     }
   } catch (error) {
-    throw new Error("Failed to fetch bookmarked resources: " + error.message);
+    console.log("Failed to fetch bookmarked resources: " + error.message);
+    return null;
   }
 };
 
@@ -43,10 +45,11 @@ const removeBookmarkedResources = async (resourceId, userToken) => {
     if (response.status === 200) {
       return response.data.data.resources;
     } else {
-      throw new Error(response.data.error);
+      console.log(response.data.error);
     }
   } catch (error) {
-    throw new Error("Failed to delete bookmarked resources: " + error.message);
+    console.log("Failed to delete bookmarked resources: " + error.message);
+    return null;
   }
 };
 
