@@ -26,7 +26,7 @@ export default handleLogin = (email, password) => {
       var user = userCredential.user;
       console.log("User logged in:", user);
       var return_x = {
-          userToken: "fake token",
+          userToken: "token",
           userInfo: {
 						"name": "example name",
 						"phonenumber": "123-456-7890",
