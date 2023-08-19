@@ -1,10 +1,10 @@
 //provided services
-import shelterPicture from '../../../images/shelter.png'
-import healthPicture from '../../../images/health.jpeg'
-import communityPicture from '../../../images/community.jpeg'
-import educationPicture from '../../../images/education.jpeg'
-import employmentPicture from '../../../images/employment.jpeg'
-import foodPicture from '../../../images/food.jpeg'
+import shelterPicture from '../../../images/shelterIcon.png'
+import healthPicture from '../../../images/healthIcon.png'
+import communityPicture from '../../../images/communityIcon.png'
+import educationPicture from '../../../images/educationIcon.png'
+import employmentPicture from '../../../images/employmentIcon.png'
+import foodPicture from '../../../images/foodIcon.png'
 import { Image } from 'react-native'
 const shelterImageUri = Image.resolveAssetSource(shelterPicture).uri
 const healthImageUri = Image.resolveAssetSource(healthPicture).uri

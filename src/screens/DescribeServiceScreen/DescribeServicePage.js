@@ -20,12 +20,18 @@ import { title as styles } from "./css";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { useResourceContext } from "../../context/ResourceProvider";
 import resourceDataCompletenessChecker from "../../utils/resourceDataCompletenessChecker";
+import ProgressBar from "../../components/ProgressBar";
 
 const DescribeServicePage = ({navigation, route}) => {
   const {resource} = useResourceContext()
   const {title, purpose} = route.params
+  /**
+   * if purpose is update, send retrieve resourceId from route.params and send it to the Third Step Screen 
+   */
   return (
     <DescribeServicePageContainer>
+        {/* Progress bar. Only show when user create resource */}
+        {purpose === 'create' && <ProgressBar step={2}/>}
         {/* Render the screen title */}
         <ScreenTitle titleMessage={title} style={styles.titleStyle} numberOfLines={2}/>
         <KeyboardAwareScrollView nestedScrollEnabled >

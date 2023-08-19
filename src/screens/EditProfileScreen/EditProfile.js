@@ -19,7 +19,7 @@ const EditProfile = () => {
     password
  }
  */
-  const {userInfo} = useAuth()
+  const {userInfo, userToken, setUserInfo} = useAuth()
   console.log(userInfo)
   const [emailAddress, setEmailAddress] = useState(userInfo.email)
   const [userName, setUserName] = useState('John')
@@ -35,6 +35,22 @@ const EditProfile = () => {
           <ProfileInfoField title={'Password'} content={password} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} secureTextEntry={true} onChangeText={(text) => setPassword(text)}/>
           <ProfileInfoField title={'Phone Number'} content={phoneNumber} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} onChangeText={(newphoneNumber) => setPhoneNumber(newphoneNumber)}/>
           <ProfileInfoField title={'Location'} content={location} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} onChangeText={(newLocation) => setLocation(newLocation) }/>
+          
+          {/* 
+              Make a 'Save' btn here to send put request
+              include everything below inside try/catch
+
+              setIsLoading(true) -start loading state
+              updateUser(email, name, password, phonenumber, userToken) - if nothing fails, it would return  {client: {
+                                                                                                                “name”: “example name”,
+                                                                                                                “phonenumber”: “123-456-7890”,
+                                                                                                                “email”: “user123@example.com”,
+                                                                                                                “password”: “password”
+                                                                                                              }}
+              setUserInfo(newUserInfo) -set userInfo to new info
+              setIsLoading(false) - end loading state
+          */}
+
       </EditProfileInfoContainer>
     </EditProfileContainer>
     

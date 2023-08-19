@@ -35,7 +35,6 @@ const AppNav = () => {
     <PaperProvider>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{headerShown: false}}>
-          <Stack.Screen name='PickLanguage' component={PickLanguages}/>
           <Stack.Screen name='LoginSignup'>
           {() => <LoginSignupScreen/>}
           </Stack.Screen>

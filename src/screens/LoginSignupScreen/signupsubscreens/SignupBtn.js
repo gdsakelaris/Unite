@@ -17,14 +17,24 @@ const SignupBtn = () => {
 
   //get the authetication functions from AuthProvider context to toggle between login page and signup page
   //If the new user is registered successfully, direct user to login page
-  const {switchPage} = useAuth()
+  const {switchPage, setIsLoading} = useAuth()
 
   /**
    * Handles the signup process when the signup button is pressed.
    * @function onPressSignup
    */
   const onPressSignup = () => {
-    signUpNewAccount(name, email, password, confirmPassword, switchPage)
+    /**
+     * include everything below in try catch
+     * check if confirm password match with password
+     * setIsLoading(true) - start loading state
+     * signupNewAccount(name, email, password)
+     * switchPage() - direct to login page after signing up successfully
+     * setIsLoading(false) - end loading state
+     * 
+     */
+    signUpNewAccount(name, email, password)
+    switchPage()
   }
   return (
     <TouchableOpacity style={styles.button} onPress={onPressSignup}>

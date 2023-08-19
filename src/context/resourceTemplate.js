@@ -1,7 +1,7 @@
 /**
  * @file resourceTemplate.js
  * @description This file defines the initial state, reducer, and actions for managing resource-related data.
- * It provides a template for resource data and actions to create and submit resource information.
+ * It provides a template for resource data and actions to create and clear resource information.
  */
 
 /**
@@ -79,7 +79,7 @@ export const initialState = {
  */
 const types = {
   CREATE: 'CREATE',
-  SUBMIT: 'SUBMIT',
+  ClEAR: 'CLEAR',
 }
 
 /**
@@ -95,7 +95,7 @@ const types = {
  */
 export const resourceActions = {
   create: (resourceData) => ({type: types.CREATE, data: resourceData}),
-  submit: () => ({type: types.SUBMIT}),
+  clear: () => ({type: types.ClEAR}),
 }
 
 
@@ -106,14 +106,14 @@ export const resourceActions = {
  * @param {object} action - The action to perform on the resource state.
  * @returns {object} The updated resource state.
  * CREATE: update resource's info with new info
- * SUBMIT: submit resource's info to the database and clear all the info in the resource state 
+ * CLEAR: clear resource's info in the resource state, useful when after creating resource 
  * 
  */
 export const reducer = (state, action) => {
   switch (action.type) {
     case types.CREATE:
       return {...state, ...action.data}
-    case types.SUBMIT:
+    case types.ClEAR:
       return {...initialState}
   }
 }

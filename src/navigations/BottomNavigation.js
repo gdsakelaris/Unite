@@ -21,7 +21,7 @@ const BottomNavigation = () => {
           tabBarVisible: false
       }}
       > 
-        <Tab.Screen
+        {/* <Tab.Screen
           name="Map"
           component={MapScreen}
           options={{
@@ -31,7 +31,7 @@ const BottomNavigation = () => {
             ),
             headerShown: false,
           }}
-        />
+        /> */}
         <Tab.Screen
           name="Home"
           component={HomeScreenNavigation}
