@@ -1,5 +1,5 @@
 //this file will create a card for the provided service that will be displayed in the First Step (volunteer's flow)
-import React, {useState} from "react";
+import React from "react";
 import {View, Text, Image, TouchableOpacity} from "react-native";
 import {servicecard as styles} from "./css";
 
@@ -14,17 +14,20 @@ const ServiceCard = ({picture, title, style, onPress, isSelected}) => {
       onPress={onPress}
     >
       {/* Image of the service card */}
-      <Image
-        source={picture !== null
-          ? {uri: picture}
-          : {uri: "https://placehold.co/400?text=No+image+available"}}
-        style={styles.cardImage}
-        resizeMode='cover'/>
-      {/* name of the service card */}
+      <View style={isSelected ? styles.cardTitleClicked : styles.cardImage}>
+        <Image
+          style={styles.imageIcon}
+          source={picture !== null
+            ? {uri: picture}
+            : {uri: "https://placehold.co/400?text=No+image+available"}}
+          // resizeMode='cover'
+          />
+        {/* name of the service card */}
+      </View>
       <View
-        style={isSelected ? styles.cardTitleContainerClicked : styles.cardTitleContainer}>
+        style={styles.cardTitleContainer}>
         <Text
-          style={isSelected ? styles.cardTitleClicked : styles.cardTitle}>
+          style={styles.cardTitle}>
           {title}
         </Text>
       </View>

@@ -51,7 +51,6 @@ export const servicecard = StyleSheet.create({
     shadowColor:colors.lightdark,
     shadowOpacity:0.25,
     shadowRadius:10,
-    borderWidth:0.25,
     shadowOffset:{ height: 9 }
   
    }

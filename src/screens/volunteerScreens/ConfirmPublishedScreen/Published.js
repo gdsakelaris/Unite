@@ -8,6 +8,8 @@ import ConfirmPublishedBtn from "./subscreens/ConfirmPublishedBtn";
 import ButtonContainer from "./subscreens/ButtonContainer";
 import { infos as styles } from "./css";
 const Published = ({navigation}) => {
+  // pass route.title and purpose to this screen 
+  //display correct title on the screen
   return (
     <ConfirmPublishedScreenContainer>
           <Text style = {styles.title}>Published!</Text>

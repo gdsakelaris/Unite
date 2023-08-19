@@ -1,13 +1,14 @@
 // for sign up screen
 import axios from "axios";
-export default signUpNewAccount = (name, email, password, confirmPassword, switchPage) => {
+export default signUpNewAccount = (name, email, password) => {
   try {
     /**
+     * Remove try catch here and place try catch in onPressSignup in SignupBtn
+     * 
      * Send post request here
    axios
         .post("...."", {
             name
-            confirmPassword,
             email,
             password,
         })
@@ -20,9 +21,7 @@ export default signUpNewAccount = (name, email, password, confirmPassword, switc
     */ 
   //Move to login page after sign up account successfully
   console.log(email, password, confirmPassword, name)
-  switchPage()
-    
-
+  
   }
   catch(err) {
     console.log(err)

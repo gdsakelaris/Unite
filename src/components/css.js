@@ -38,20 +38,22 @@ export const imageInput = StyleSheet.create({
 
 export const servicecard = StyleSheet.create({
   cardStyle: {
-    width: '45%',
-    height: '25%',
+    width: '40%',
+    height: '29%',
     marginBottom: '5%',
-    borderWidth: 0.05,
-    borderRadius: 12,
-    overflow:'hidden',
+    boxShadow: '4px 4px 10px 0px #00000040',
   },
   cardImage: {
     width: '100%',
-    height: '100%',
+    backgroundColor: colors.appBtn, 
+    height: '70%',
+    borderRadius: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: "absolute",
   },
   cardTitleContainer: {
     position: 'absolute',
-    backgroundColor: colors.white ,
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
@@ -60,25 +62,24 @@ export const servicecard = StyleSheet.create({
     borderBottomRightRadius: 12,
     height: '30%'
   },
-  cardTitleContainerClicked: {
-    position: 'absolute',
-    backgroundColor: colors.appBtn ,
-    justifyContent: 'center',
-    alignItems: 'center',
+  cardTitleClicked: {
+    backgroundColor: '#2a3036' ,
     width: '100%',
-    top: '70%',
-    borderBottomLeftRadius: 12,
-    borderBottomRightRadius: 12,
-    height: '30%'
+    height: '70%',
+    borderRadius: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: "absolute",
+  },
+  imageIcon: {
+    height: '60%',
+    width: '100%',
+    objectFit: 'contain',
+    position: "relative",
   },
   cardTitle: {
     fontSize: 18 / fontScale,
     fontWeight: '400'
-  },
-  cardTitleClicked: {
-    fontSize: 18 / fontScale,
-    fontWeight: '700',
-    color: colors.white
   },
 })
 
@@ -268,6 +269,32 @@ export const keyboardAvoidingWrapper = StyleSheet.create({
     width:'100%',
     height:'100%',
     
+  }
+})
+
+export const progressBar = StyleSheet.create({
+  wholeBar: {
+    width: '100%',
+    height: 6,
+    justifyContent: "space-between",
+    flexDirection: 'row',
+  },
+  internalBar: {
+    width: '32.8%',
+    height: '100%',
+    backgroundColor: '#e6e6e6',
+    flexDirection: 'row',
+
+  },
+  progressPartActiv: {
+    height: '100%',
+    width: '50%',
+    backgroundColor: '#fcd804'
+  },
+  progressPartNotActiv: {
+    height: '100%',
+    width: '50%',
+    backgroundColor: 'transparent'
   }
 })
 

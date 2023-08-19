@@ -5,10 +5,16 @@ import { title as styles } from './css';
 import PublishedBtn from './subscreens/PublishedBtn';
 import ServicesFullPage from '../../ServiceFullPageScreen/ServicesFullPage';
 import ScreenTitle from '../../../components/ScreenTitle';
+import ProgressBar from '../../../components/ProgressBar';
 const ThirdStep = ({navigation, route}) => {
+  /**
+   * if purpose is update, use updateResources(resource, userToken, resourceId) for onPress for PublishBtn
+   * if purpose is create, use submitResource(resource)
+   */
   const {purpose} = route.params
   return (
     <PreviewServiceContainer>
+      {purpose === 'create' && <ProgressBar step={3}/>}
       <ScreenTitle titleMessage={'Preview'} style={styles.title}/>
       <ServicesFullPage/>
       <PublishedBtn onPress={() => {
