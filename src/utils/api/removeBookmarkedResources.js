@@ -1,9 +1,10 @@
 import axios from 'axios';
+import { REMOVE_BOOKMARKED_RESOURCE } from './apiRoutes';
 
 const removeBookmarkedResources = async (resourceId, userToken) => {
     try {
         const response = await axios.delete(
-            `${API_BASE_URL}/api/v1/bookmark/delete`,
+            REMOVE_BOOKMARKED_RESOURCE,
             {
                 headers: {
                     Authorization: `Bearer ${userToken}`

@@ -5,6 +5,7 @@ import SortBtn from "./subscreens/SortBtn";
 import { dataSearching } from "../../utils/resourceDataArrayToCards";
 import * as Location from "expo-location";
 import { container } from './css';
+import getResourceKind from "../../utils/api/getResourceKind";
 
 const AnyResource = ({ navigation, route }) => {
   const { resourceName } = route.params;
@@ -14,47 +15,59 @@ const AnyResource = ({ navigation, route }) => {
   const [loading, setLoading] = useState(true); // State to track loading status
 
   useEffect(() => {
-    const fetchLocation = async () => {
-      let { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== "granted") {
-        console.log("Permission to access location was denied.");
-        return;
-      }
-
-      try {
-        let location = await Location.getCurrentPositionAsync({});
-        setLocation({
-          latitude: location.coords.latitude,
-          longitude: location.coords.longitude,
-        });
+    const getResources = async () => {
+      try{
+        const response = await getResourceKind(resourceName);
+        console.log(response)
       } catch (error) {
-        console.log("Error getting location:", error);
+        console.log(error);
       }
-    };
-    fetchLocation();
-  }, []);
-
-  useEffect(() => {
-    // Fetch data and update cards state when location is available
-    if (location) {
-      dataSearching(
-        resourceName,
-        30000,
-        resourceName,
-        navigation,
-        location.latitude,
-        location.longitude
-      )
-        .then((result) => {
-          setCards(result);
-          setLoading(false); // Data loading is complete
-        })
-        .catch((error) => {
-          console.log("Error fetching data:", error);
-          setLoading(false); // Data loading is complete (even if it failed)
-        });
     }
-  }, [location, resourceName, navigation]);
+    getResources();
+  }, [])
+
+  // useEffect(() => {
+  //   const fetchLocation = async () => {
+  //     let { status } = await Location.requestForegroundPermissionsAsync();
+  //     if (status !== "granted") {
+  //       console.log("Permission to access location was denied.");
+  //       return;
+  //     }
+
+  //     try {
+  //       let location = await Location.getCurrentPositionAsync({});
+  //       setLocation({
+  //         latitude: location.coords.latitude,
+  //         longitude: location.coords.longitude,
+  //       });
+  //     } catch (error) {
+  //       console.log("Error getting location:", error);
+  //     }
+  //   };
+  //   fetchLocation();
+  // }, []);
+
+  // useEffect(() => {
+  //   // Fetch data and update cards state when location is available
+  //   if (location) {
+  //     dataSearching(
+  //       resourceName,
+  //       30000,
+  //       resourceName,
+  //       navigation,
+  //       location.latitude,
+  //       location.longitude
+  //     )
+  //       .then((result) => {
+  //         setCards(result);
+  //         setLoading(false); // Data loading is complete
+  //       })
+  //       .catch((error) => {
+  //         console.log("Error fetching data:", error);
+  //         setLoading(false); // Data loading is complete (even if it failed)
+  //       });
+  //   }
+  // }, [location, resourceName, navigation]);
 
   if (loading) {
     // Display a loading indicator while data is being fetched

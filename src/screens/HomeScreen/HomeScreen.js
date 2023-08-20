@@ -32,7 +32,7 @@ const HomeScreen = ({ navigation }) => {
           <ServiceCard
             title={service.name}
             picture={service.urlImage}
-            onPress={() => handleResourceButtonClick(service.name)} // Pass the resource name as a parameter
+            onPress={() => handleResourceButtonClick(service.name.toLowerCase())} // Pass the resource name as a parameter
             key={i.toString()}
             style={servicecard.servicecard}
           />
