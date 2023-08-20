@@ -1,34 +1,27 @@
 //for login page
 import axios from "axios";
+import { UPDATE_USER_ROUTE } from "./apiRoutes";
 
-//api url
-const BASE_URL = 'http://34.27.143.72/';
-
-const updateUser = async (email, name, password, phonenumber, userToken) => {
+const updateUser = async (email, name, password, phonenumber, userToken,setUserInfo) => {
   try {
+    console.log(email, name, password, phonenumber)
+    //start loading state 
     //Send post request here
-    const response = await axios.put(
-      `${BASE_URL}api/v1/client/update`,
-      {
+    const response = await axios.post(UPDATE_USER_ROUTE, {
         email: email,
         password: password,
         name: name,
         phonenumber: phonenumber
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${userToken}`
-        }
-      });
-
-    //check if there's an error, else return it
-    if (response.status === 200) {
-      return response.data.data.resources;
-    } else {
-      console.log(response.data.error);
-    }
+    }, {
+      headers: {
+        'Authorization': `Bearer ${userToken}`
+      }
+    });
+    console.log(response.data)
+    
   } catch (error) {
-    console.log("Failed to update user: " + error.message);
+    console.log(error)
+    alert('Failed to update user')
   }
 };
 

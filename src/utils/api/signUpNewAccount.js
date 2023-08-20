@@ -1,36 +1,23 @@
 // for sign up screen
 import axios from "axios";
-export default signUpNewAccount = async (name, email, password) => {
-
+import { SIGNUP_ROUTE } from "./apiRoutes";
+export default signUpNewAccount = async (name, email, password, switchPage) => {
   //Move to login page after sign up account successfully
-  console.log(email, password, confirmPassword, name);
-
-
   //api url
-  const api_url = 'https://34.27.143.72/' + 'api/v1/client/create';
-
-
+  console.log(name, email, password)
+  console.log(SIGNUP_ROUTE)
   try {
     //Send post request here
-    const response = await axios.post(api_url,
+    const response = await axios.post(SIGNUP_ROUTE,
       {
         name: name,
         email: email,
         password: password
       }
     )
-    const userInfo = response.data
-    const token = response.header.token
-    return {
-      userToken: token,
-      userInfo: userInfo
-    }
+    switchPage()
 
   } catch (err) {
-    console.log(err)
-
-    //Use alert to alert error to user
-    //alert(err.message)
-
+    alert("Can't signup account")
   }
 };

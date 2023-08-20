@@ -1,36 +1,26 @@
 //for login page
 import axios from "axios";
+import { LOGIN_ROUTE } from "./apiRoutes";
 
-import { getUserByID } from "./userFunctions";
-
-export default handleLogin = async (email, password) => {
-
-  console.log(email, password);
+export default handleLogin = async (email, password, loggingIn, saveUserAuth, setIsLoading) => {
   
 //api url
-const api_url = 'https://34.27.143.72/' + 'api/v1/client/login';
   try {
+    setIsLoading(true)
     //Send post request here
-    console.log("test")
-    const response = await axios.post(api_url, {
+    const response = await axios.post(LOGIN_ROUTE, {
       email,
       password
     })
-    let token = response.header.token;
-    console.log(response.data.client);
-    //let userInfo = await getUserByID(token)
-    let userInfo = response.data.client;
-
-    return {
-      userToken: token,
-      userInfo: userInfo
-    }
+    const userInfo = response.data.data.client
+    const token = response.headers.authorization.split(' ')[1]
+    saveUserAuth(token, userInfo)
+    loggingIn()
+    setIsLoading(false)
 
   } catch (err) {
-    console.log(err)
-
-    //Use alert to alert error to user
-    alert(err.message)
+    alert("Login failed")
+    setIsLoading(false)
 
   }
 };

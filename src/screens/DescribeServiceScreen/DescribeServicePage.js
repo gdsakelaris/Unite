@@ -48,8 +48,13 @@ const DescribeServicePage = ({navigation, route}) => {
           const allFilled = resourceDataCompletenessChecker(resource)
           //if all the fields have been entered. Move to publish page
           if (allFilled) {
-            
-            navigation.navigate('Third Step', {purpose: purpose});
+            if (purpose === 'create') {
+              navigation.navigate('Third Step', {purpose: purpose});
+            }
+            else {
+              const {resourceId} = route.params 
+              navigation.navigate('Third Step', {purpose: purpose, resourceId: resourceId});
+            }
           
           }
             

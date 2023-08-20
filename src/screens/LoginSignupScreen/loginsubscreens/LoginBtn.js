@@ -26,20 +26,9 @@ const LoginBtn = () => {
    * Handles the login process when the login button is pressed.
    * @function onPressLogin
    */
-  const onPressLogin = () => {
-    /**
-     * setIsLoading(true) - start loading state
-     * handleLogin(email, password) - if 200, should return  {userToken: “... “, userInfo: “ ...“}
-     * saveUserAuth(userToken, userInfo) - save user's token and info to async storage
-     * loggingIn() - direct user to homepage
-     * setIsLoading(false) - end loading state
-     * 
-     */
-    setIsLoading(true)
-    handleLogin(email, password);
-    saveUserAuth('fake token', {'email': email, 'password': password})
-    loggingIn()
-    setIsLoading(false)
+  const onPressLogin = () => { 
+    console.log('test')
+    handleLogin(email, password, loggingIn, saveUserAuth, setIsLoading);
   };
 
   return (
