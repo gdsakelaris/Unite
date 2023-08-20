@@ -5,6 +5,7 @@ import EditProfileInfoContainer from './subscreens/EditProfileInfoContainer';
 import ProfileInfoField from './subscreens/ProfileInfoField';
 import { useAuth } from '../../context/AuthProvider';
 import SaveProfileBtn from './subscreens/SaveProfileBtn';
+import { updateUser } from '../../utils/api/userFunctions';
 const EditProfile = () => {
   //mockup data
   /**
@@ -20,12 +21,11 @@ const EditProfile = () => {
     password
  }
  */
-  const {userInfo, userToken, setUserInfo} = useAuth()
-  console.log(userInfo)
-  const [emailAddress, setEmailAddress] = useState(userInfo.email)
-  const [userName, setUserName] = useState('John')
+  const {userInfo, userToken, setUserInfo, setIsLoading} = useAuth()
+  const [email, setEmail] = useState(userInfo.email)
+  const [name, setName] = useState(userInfo.name)
   const [password, setPassword] = useState(userInfo.password)
-  const [phoneNumber, setPhoneNumber] = useState('408777222')
+  const [phonenumber, setPhoneNumber] = useState(userInfo.phonenumber)
   //const [location, setLocation] = useState('San Jose, CA')
 
 
@@ -33,18 +33,16 @@ const EditProfile = () => {
     <EditProfileContainer>
       <ProfilePicture/>
       <EditProfileInfoContainer>
-          <ProfileInfoField title={'Email Address'} content={emailAddress} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} onChangeText={(text) => setEmailAddress(text)}/>
-          <ProfileInfoField title={'Username'} content={userName} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} onChangeText={(text) => setUserName(text)}/>
+          <ProfileInfoField title={'Email Address'} content={email} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} onChangeText={(text) => setEmail(text)}/>
+          <ProfileInfoField title={'Username'} content={name} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} onChangeText={(text) => setName(text)}/>
           <ProfileInfoField title={'Password'} content={password} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} secureTextEntry={true} onChangeText={(text) => setPassword(text)}/>
-          <ProfileInfoField title={'Phone Number'} content={phoneNumber} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} onChangeText={(newphoneNumber) => setPhoneNumber(newphoneNumber)}/>
+          <ProfileInfoField title={'Phone Number'} content={phonenumber} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} onChangeText={(newphoneNumber) => setPhoneNumber(newphoneNumber)}/>
           <SaveProfileBtn
-            email={emailAddress}
-            name={userName}
-            password={password}
-            phonenumber={phoneNumber}
-            userToken={userToken}
-            
+            onPress={() => {
+                updateUser(email, name, password, phonenumber, userToken, setUserInfo )
+            }}
           />
+
           {/*
           this was disabled in favor of an upload button
           <ProfileInfoField title={'Location'} content={location} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} onChangeText={(newLocation) => setLocation(newLocation) }/>*/}

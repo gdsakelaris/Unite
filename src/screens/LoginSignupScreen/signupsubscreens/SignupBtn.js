@@ -24,17 +24,14 @@ const SignupBtn = () => {
    * @function onPressSignup
    */
   const onPressSignup = () => {
-    /**
-     * include everything below in try catch
-     * check if confirm password match with password
-     * setIsLoading(true) - start loading state
-     * signupNewAccount(name, email, password)
-     * switchPage() - direct to login page after signing up successfully
-     * setIsLoading(false) - end loading state
-     * 
-     */
-    signUpNewAccount(name, email, password)
-    switchPage()
+    if (password === confirmPassword) {
+      setIsLoading(true)
+      signUpNewAccount(name, email, password, switchPage)
+      setIsLoading(false)
+    }
+    else {
+      alert('confirm password does not match with password')
+    }
   }
   return (
     <TouchableOpacity style={styles.button} onPress={onPressSignup}>

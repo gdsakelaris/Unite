@@ -7,17 +7,19 @@ import ResourceCardDescription from "./resourceCardsubscreens/ResourceCardDescri
 import ResourceCardImage from "./resourceCardsubscreens/ResourceCardImage";
 import ResourceCardRatingAndReview from "./resourceCardsubscreens/ResourceCardRatingAndReview";
 import ResourceCardTitle from "./resourceCardsubscreens/ResourceCardTitle";
-
+import { useResourceContext } from "../../context/ResourceProvider";
+import updateResourceWithClickedResource from "../../utils/updateResourceWithClickedResource";
+import dummyImg from '../../images/Dummyresource.png'
 /**
  @resource - an object - {
                                 “name”: “example name”,
-                                “kindofresource”: “example kind”,
+                                “kindOfResource”: “example kind”,
                                 “email”: “example@gmail.com”,
                                 “address”: “123 main street, new york city, NY 101010”,
                                 “description”: “example description”
-                                “phonenumber”: “14087777777”,  // not required
+                                “phoneNumber”: “14087777777”,  // not required
                                 “website”: “www.example.com”,   // not required
-                                “publishedby: “userid”
+                                “publishedBy: “userid”
                                 “hours”: {
                                         1: {	//Monday
                                               “opentime”: “8:00”  // string type
@@ -30,9 +32,20 @@ import ResourceCardTitle from "./resourceCardsubscreens/ResourceCardTitle";
   @navigation - navigation object
   @ediBtnFunction - function for the edit btn if resource has edit btn
  */
-const ResourceCard = ({ resource, navigation, editBtnFunction}) => {
+const ResourceCard = ({ resource, navigation}) => {
   //make a variable to store resourceId for sending to the bookmark route
-  const [resourceId, setResourceId] = useState('1') //resource id 
+  const [resourceId, setResourceId] = useState(resource.id) //resource id
+  const {dispatch} = useResourceContext()
+  const editButtonPress = () => {
+    //populate all the resource-state variable fields with the resource's info 
+    console.log(resource)
+    console.log(resource.hours)
+    updateResourceWithClickedResource(dispatch, resource)
+    navigation.navigate('Describe Service', {title: 'Update your service', purpose: 'update', resourceId: resourceId})
+    
+  }
+
+
   return (
     <ResourceCardContainer>
       <ResourceCardContent>
@@ -44,12 +57,13 @@ const ResourceCard = ({ resource, navigation, editBtnFunction}) => {
           
         }
           />
-        <ResourceCardRatingAndReview rating={resource.rating} review={resource.reviews}/>
-        <ResourceCardDescription description={resource.desc}/>
-        <ResourceCardContactInfo location={resource.location}/>
-        <ResourceCardContactInfo number={resource.number}/>
+          {/* use dummy review and image for the first release */}
+        <ResourceCardRatingAndReview rating={resource.rating} review={'0'}/>
+        <ResourceCardDescription description={resource.description}/>
+        <ResourceCardContactInfo location={resource.address}/>
+        <ResourceCardContactInfo number={resource.phoneNumber}/>
       </ResourceCardContent>
-      <ResourceCardImage picture={resource.image} editBtnFunction={editBtnFunction} resourceId={resourceId}/>
+      <ResourceCardImage picture={dummyImg} editBtnFunction={editButtonPress} resourceId={resourceId}/>
     </ResourceCardContainer>
 
   ) 
