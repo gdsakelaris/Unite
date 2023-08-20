@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 //api url
-const BASE_URL = 'https://34.27.143.72/';
+const BASE_URL = 'http://34.27.143.72/';
 
 const updateUser = async (email, name, password, phonenumber, userToken) => {
   try {
