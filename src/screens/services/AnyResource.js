@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { ScrollView } from "react-native";
+import { ScrollView, ActivityIndicator } from "react-native";
 import ServiceContainer from "./subscreens/ServiceContainer";
 import SortBtn from "./subscreens/SortBtn";
 import { dataSearching } from "../../utils/resourceDataArrayToCards";
-import * as Location from "expo-location"; 
-import { response } from "express";
+import * as Location from "expo-location";
+import { container } from './css';
 
-const AnyResource = async ({ navigation, route }) => {
+const AnyResource = ({ navigation, route }) => {
   const { resourceName } = route.params;
 
   const [location, setLocation] = useState(null);
+  const [cards, setCards] = useState(null); // State to store the cards data
+  const [loading, setLoading] = useState(true); // State to track loading status
 
-  // This will get the user's location from their mobile
   useEffect(() => {
     const fetchLocation = async () => {
       let { status } = await Location.requestForegroundPermissionsAsync();
@@ -33,46 +34,53 @@ const AnyResource = async ({ navigation, route }) => {
     fetchLocation();
   }, []);
 
-  let latitude = 0;
-  let longitude = 0;
+  useEffect(() => {
+    // Fetch data and update cards state when location is available
+    if (location) {
+      dataSearching(
+        resourceName,
+        30000,
+        resourceName,
+        navigation,
+        location.latitude,
+        location.longitude
+      )
+        .then((result) => {
+          setCards(result);
+          setLoading(false); // Data loading is complete
+        })
+        .catch((error) => {
+          console.log("Error fetching data:", error);
+          setLoading(false); // Data loading is complete (even if it failed)
+        });
+    }
+  }, [location, resourceName, navigation]);
 
-  if (location) {
-    latitude = location?.latitude;
-    longitude = location?.longitude;
-  }
-  
-  try {
-    
-     // This will be where you need to make the SQL query
-     const cards = await dataSearching(
-      resourceName,
-      30000,
-      resourceName,
-      navigation,
-      latitude,
-      longitude // Pass the latitude and longitude values to dataSearching function
+  if (loading) {
+    // Display a loading indicator while data is being fetched
+    return (
+      <ServiceContainer>
+        <ActivityIndicator size="large" color="#0000ff" />
+      </ServiceContainer>
     );
+  }
 
-    console.log("cards:")
-    console.log(cards)
-
-
-  // Conditional rendering based on whether cards is null
-    const responseX =
+  // Conditional rendering based on whether cards is null or empty
+  if (cards && cards.length > 0) {
+    return (
       <ServiceContainer>
         <SortBtn />
         <ScrollView>{cards}</ScrollView>
-      </ServiceContainer>;
-
-    console.log(responseX);
-    return responseX;
-    
-  } 
-  catch (error) {
-    console.log(error);
+      </ServiceContainer>
+    );
+  } else {
+    return (
+      <ServiceContainer>
+        <SortBtn />
+        <ScrollView></ScrollView>
+      </ServiceContainer>
+    );
   }
-  return <></>;
- 
 };
 
 export default AnyResource;
