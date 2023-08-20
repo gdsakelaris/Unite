@@ -4,6 +4,8 @@ import ProfilePicture from './subscreens/ProfilePicture';
 import EditProfileInfoContainer from './subscreens/EditProfileInfoContainer';
 import ProfileInfoField from './subscreens/ProfileInfoField';
 import { useAuth } from '../../context/AuthProvider';
+import SaveProfileBtn from './subscreens/SaveProfileBtn';
+import getUserByID from '../../utils/api/userFunctions'
 const EditProfile = () => {
   //mockup data
   /**
@@ -21,10 +23,11 @@ const EditProfile = () => {
  */
   const {userInfo, userToken, setUserInfo} = useAuth()
   console.log(userInfo)
+  
   const [emailAddress, setEmailAddress] = useState(userInfo.email)
-  const [userName, setUserName] = useState('John')
+  const [userName, setUserName] = useState(userInfo.name)
   const [password, setPassword] = useState(userInfo.password)
-  const [phoneNumber, setPhoneNumber] = useState('408777222')
+  const [phoneNumber, setPhoneNumber] = useState(userInfo.phonenumber)
   const [location, setLocation] = useState('San Jose, CA')
   return (  
     <EditProfileContainer>
@@ -34,7 +37,17 @@ const EditProfile = () => {
           <ProfileInfoField title={'Username'} content={userName} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} onChangeText={(text) => setUserName(text)}/>
           <ProfileInfoField title={'Password'} content={password} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} secureTextEntry={true} onChangeText={(text) => setPassword(text)}/>
           <ProfileInfoField title={'Phone Number'} content={phoneNumber} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} onChangeText={(newphoneNumber) => setPhoneNumber(newphoneNumber)}/>
-          <ProfileInfoField title={'Location'} content={location} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} onChangeText={(newLocation) => setLocation(newLocation) }/>
+          <SaveProfileBtn
+            email={emailAddress}
+            name={userName}
+            password={password}
+            phonenumber={phoneNumber}
+            userToken={userToken}
+            
+          />
+          {/*
+          this was disabled in favor of an upload button
+          <ProfileInfoField title={'Location'} content={location} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} onChangeText={(newLocation) => setLocation(newLocation) }/>*/}
           
           {/* 
               Make a 'Save' btn here to send put request

@@ -6,6 +6,8 @@ import ListOfProvidedServices from "./subscreens/ListOfProvidedServices";
 import NextBtn from "../../DescribeServiceScreen/subscreens/NextBtn";
 import ScreenTitle from "../../../components/ScreenTitle";
 import { title as styles } from "./css";
+import { ScrollView, View, Text } from "react-native"; // Import ScrollView
+
 import ProgressBar from "../../../components/ProgressBar";
 const FirstStep = ({navigation}) => {
   const [selectedService, setSelectedService] = useState(null);
@@ -26,6 +28,9 @@ const FirstStep = ({navigation}) => {
     }
   }
     />
-  </FirstStepScreenContainer>)
+  </FirstStepScreenContainer>
+  )
 };
+
+
 export default FirstStep;

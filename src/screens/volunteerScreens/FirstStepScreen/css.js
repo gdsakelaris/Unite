@@ -9,10 +9,15 @@ export const firstStepScreenContainer = StyleSheet.create({
 
 export const cardContainer = StyleSheet.create({
   providedServicesContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
     flex: 8,
     flexWrap: "wrap",
     alignContent: "space-around",
     paddingTop: "5%",
+    marginHorizontal: "5%", // Adjust the margin as needed
+    marginVertical: "5%", // Adjust the margin as needed
   },
 })
 
@@ -34,7 +39,7 @@ export const nextBtn = StyleSheet.create({
     padding: 3,
     justifyContent:'center',
     alignItems:'center',
-    alignSelf:'flex-end'
+    alignSelf:'center'
   },
   nxtButtonText: {
     color: colors.white,

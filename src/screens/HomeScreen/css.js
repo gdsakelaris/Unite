@@ -1,7 +1,5 @@
 import { StyleSheet } from "react-native";
 import { fontScale, colors } from "../../base";
-
-
 export const homeScreenContainer = StyleSheet.create({
   homeScreenContainer: {
     flex: 1,
