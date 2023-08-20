@@ -3,10 +3,11 @@ import React, { useState } from 'react';
 import { addBtn as styles } from '../css';
 import { addIcon } from '../icons';
 import { Pressable, Text } from 'react-native';
-
+import { useResourceContext } from '../../../../context/ResourceProvider';
+import clearResourceData from '../../../../utils/clearResourceData';
 const AddBtn = ({ navigation }) => {
   const [isPressed, setIsPressed] = useState(false);
-
+  const {dispatch} = useResourceContext()
   const handlePressIn = () => {
     setIsPressed(true);
   };
@@ -20,7 +21,12 @@ const AddBtn = ({ navigation }) => {
       style={[styles.addbtn, isPressed && styles.addbtnPressed]}
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
-      onPress={() => navigation.navigate('Get Started')}
+      onPress={() => {
+          //clear resource - state variable before creating resource
+          clearResourceData(dispatch)
+          navigation.navigate('Get Started')
+        }
+        }
     >
       {addIcon}
       <Text style={styles.addbtntext}>Add</Text>

@@ -12,28 +12,29 @@ import {getbookmarkedresources} from '../../utils/api/bookmarkservices'
 // ... (other imports)
 
 const BookmarkedServices = () => {
-    const userId = 1;
+    const {userToken} = useAuth()
     const [savedResources, setSavedResources] = useState([]);
 
     useEffect(() => {
-        const getSavedResources = async () => {
-            try {
-                const resources = await getSavedResourcesByUserId(userId);
-                setSavedResources(resources);
-            } catch (error) {
-                console.error("Error fetching saved resources:", error);
-            }
-        };
+        // const getSavedResources = async () => {
+        //     try {
+        //         const resources = await getbookmarkedresources(userToken, setSavedResources);
+        //         setSavedResources(resources);
+        //     } catch (error) {
+        //         console.error("Error fetching saved resources:", error);
+        //     }
+        // };
 
-        getSavedResources();
+        // getSavedResources();
+        getbookmarkedresources(userToken, setSavedResources)
     }, []); // Empty dependency array to run the effect only once
 
     // Rest of your code
 
-    if (savedResources === null) {
-        // Return a loading indicator or a message while fetching data
-        return <p>Loading...</p>;
-    }
+    // if (savedResources === null) {
+    //     // Return a loading indicator or a message while fetching data
+    //     return <p>Loading...</p>;
+    // }
 
     return (
         <BookmarkedScreenContainer>
@@ -41,10 +42,10 @@ const BookmarkedServices = () => {
                 {savedResources.map((resource, i) => (
                     <BookmarkedCard
                         cardName={resource.name}
-                        location={resource.location}
+                        location={resource.address}
                         phoneNumber={resource.phoneNumber}
                         source={img}
-                        resourceId={'id'}
+                        resourceId={resource.id}
                         key={i.toString()}
                     />
                 ))}

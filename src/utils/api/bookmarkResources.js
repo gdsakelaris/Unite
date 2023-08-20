@@ -1,9 +1,9 @@
 import axios from 'axios';
-
+import { SAVE_RESOURCE_ROUTE } from './apiRoutes';
 const bookmarkResources = async (resourceId, userToken) => {
     try {
         const response = await axios.post(
-            `${API_BASE_URL}/api/v1/bookmark/create`, 
+            SAVE_RESOURCE_ROUTE, 
             { resourceId },
             {
                 headers: {

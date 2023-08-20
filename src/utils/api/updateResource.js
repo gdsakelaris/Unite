@@ -1,29 +1,26 @@
-const axios = require('axios');
+import axios from "axios";
+import { UPDATE_RESOURCE_ROUTE } from "./apiRoutes";
+import clearResourceData from "../clearResourceData";
+export default updateResource = async (resource, userToken, resourceId, navigation, dispatch) => {
+  try {
+    console.log(resource)
+    console.log(resourceId)
+    const response = await axios.put(UPDATE_RESOURCE_ROUTE, {
+      resource: {...resource},
+      resourceid: resourceId
 
-function submitResource(resource, userToken) {
-  const headers = {
-    Authorization: `Bearer ${userToken}`
-  };
+    }, {
+      headers: {
+        'Authorization': `Bearer ${userToken}`
+      }
+    } )
+    //clear resource-state variable after update
+    clearResourceData(dispatch)
+    navigation.navigate('Published Service')
 
-  const requestBody = {
-    name: resource.name,
-    kindofresource: resource.kindofresource,
-    email: resource.email,
-    address: resource.address,
-    description: resource.description,
-    phonenumber: resource.phonenumber || null, // Make it null if not provided
-    website: resource.website || null, // Make it null if not provided
-    hours: resource.hours || {} // Make it an empty object if not provided
-  };
-
-  // Perform the POST request using axios
-  return axios.post('api/v1/resource/create', requestBody, { headers })
-    .then(response => {
-      return response.data; // Return the response data
-    })
-    .catch(error => {
-      throw error; // Throw any errors that occur during the request
-    });
+  } catch(err) {
+    console.log(err)
+    alert('Failed to update resource')
+  }
 }
 
-export default submitResource;

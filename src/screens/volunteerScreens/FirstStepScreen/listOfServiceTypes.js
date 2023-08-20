@@ -16,7 +16,7 @@ export const listOfServiceTypes = [
       {name: "Shelter", urlImage: shelterImageUri},
       {name: "Education", urlImage: educationImageUri},
       {name: "Community", urlImage: communityImageUri},
-      {name: "Food", urlImage: foodImageUri},
+      {name: "FoodResource", urlImage: foodImageUri},
       {name: "Employment", urlImage: employmentImageUri},
       {name: "Health", urlImage: healthImageUri}
 ]
