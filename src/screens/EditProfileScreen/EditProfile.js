@@ -5,6 +5,7 @@ import EditProfileInfoContainer from './subscreens/EditProfileInfoContainer';
 import ProfileInfoField from './subscreens/ProfileInfoField';
 import { useAuth } from '../../context/AuthProvider';
 import SaveProfileBtn from './subscreens/SaveProfileBtn';
+import getUserByID from '../../utils/api/userFunctions'
 const EditProfile = () => {
   //mockup data
   /**
@@ -22,13 +23,12 @@ const EditProfile = () => {
  */
   const {userInfo, userToken, setUserInfo} = useAuth()
   console.log(userInfo)
+  
   const [emailAddress, setEmailAddress] = useState(userInfo.email)
-  const [userName, setUserName] = useState('John')
+  const [userName, setUserName] = useState(userInfo.name)
   const [password, setPassword] = useState(userInfo.password)
-  const [phoneNumber, setPhoneNumber] = useState('408777222')
-  //const [location, setLocation] = useState('San Jose, CA')
-
-
+  const [phoneNumber, setPhoneNumber] = useState(userInfo.phonenumber)
+  const [location, setLocation] = useState('San Jose, CA')
   return (  
     <EditProfileContainer>
       <ProfilePicture/>
