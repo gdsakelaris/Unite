@@ -1,47 +1,21 @@
 import React from 'react';
+import HomeScreenContainer from './subscreens/HomeScreenContainer';
 import SearchBar from '../../components/SearchBar';
-import LocationText from './subscreens/LocationText';
-import ServiceCard from '../../components/ServiceCard';
-import { SafeAreaView, View, Dimensions } from 'react-native'; // Import Dimensions
-import {
-  homeScreenContainer,
-  providedServicesContainer,
-  locationText,
-  searchbar,
-  servicecard,
-} from './css';
-import { providedServices } from './listOfProvidedServices'; // Import providedServices array
-
-const HomeScreen = ({ navigation }) => {
-  const handleResourceButtonClick = (resourceName) => {
-    navigation.navigate('AnyResource', { resourceName });
-  };
-
-  // Calculate the width of each item in the 2x3 grid based on the screen width
-  const itemWidth = Dimensions.get('window').width / 2; // Two items per row
-
+import LocationText from './subscreens/LocationText'
+import ProvidedServices from './subscreens/ProvidedServices';
+import { searchbar as styles } from './css';
+import NewResourceButton from './subscreens/NewResourceButton';
+const HomeScreen = ({navigation}) => {
   return (
-    <SafeAreaView style={homeScreenContainer.homeScreenContainer}>
+    <HomeScreenContainer>
       {/* Search bar */}
-      <SearchBar style={searchbar.searchbar} />
+      <SearchBar style={styles.searchbar}/>
       {/* Location sign */}
-      <View style={locationText.locationSignContainer}>
-        <LocationText location={'Florida,USA'} />
-      </View>
+      <LocationText location={'Florida,USA'}/>
       {/* Provided Services */}
-      <View style={providedServicesContainer.servicesContainer}>
-        {providedServices.map((service, i) => (
-          <ServiceCard
-            title={service.name}
-            picture={service.urlImage}
-            onPress={() => handleResourceButtonClick(service.name)} // Pass the resource name as a parameter
-            key={i.toString()}
-            style={servicecard.servicecard}
-          />
-        ))}
-      </View>
-    </SafeAreaView>
+      <ProvidedServices navigation={navigation}/>
+      <NewResourceButton navigation={navigation}/>
+    </HomeScreenContainer>
   );
 };
-
 export default HomeScreen;

@@ -44,6 +44,11 @@ export const inputBox = StyleSheet.create({
   inputBoxForSignUp: {
     height:'67%',
     top: '30%'
+  },
+  showPasswordEyeIcon: {
+    alignSelf: 'flex-end', 
+    position:'absolute',
+    justifyContent:'center'
   }
 })
 
@@ -182,16 +187,5 @@ export const bottomPart= StyleSheet.create({
   bottomPart: {
     flex:1, 
     backgroundColor: colors.white
-  }
-})
-
-export const collapseAllText = StyleSheet.create({
-  collapseAllText: {
-    color: colors.darkgrey,
-    fontSize: 17 / fontScale,
-    textDecorationLine: "underline",
-    alignSelf: "flex-end",
-    marginTop: "5%",
-    marginBottom: "5%",
   }
 })
