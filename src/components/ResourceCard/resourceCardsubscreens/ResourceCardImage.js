@@ -5,11 +5,12 @@ import {resourceCard as styles} from '../../css';
 import EditButton from './ResourceCardEditBtn';
 import {bookmarkedIcon, whiteBookmarkedIcon} from "../../icons";
 import { useAuth } from '../../../context/AuthProvider';
+import bookmarkResources from '../../../utils/api/bookmarkResources';
 
 const ResourceCardImage = ({picture, editBtnFunction, resourceId}) => {
   const [isBookmarked, setIsBookmarked] = useState(false);
   const {setIsLoading, userToken} = useAuth()
-  const handleBookmark = () => {
+  const handleBookmark = async () => {
     /**
      * Include everthing below in try/catch block 
      * 
@@ -20,6 +21,12 @@ const ResourceCardImage = ({picture, editBtnFunction, resourceId}) => {
      * if 200 - alert('The resource is bookmarked successfully')
      * 500 - alert('Bookmark resource fail')
      */
+    try {
+      const response = bookmarkResources(resourceId, userToken);
+      console.log(response)
+    } catch (error) {
+      throw new Error('Error: ' + error)
+    }
     setIsBookmarked(!isBookmarked);
 
   };

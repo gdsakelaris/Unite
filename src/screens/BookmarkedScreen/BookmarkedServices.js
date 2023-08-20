@@ -1,5 +1,5 @@
 //Bookmarked service screen
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import img from '../../images/Dummyresource.png';
 import BookmarkedScreenContainer from './subscreens/BookmarkedScreenContainer';
 import BookmarkedCard from './subscreens/BookmarkedCard';
@@ -9,43 +9,48 @@ import { getSavedResourcesByUserId } from './mockupData'; // Import the new func
 import { ScrollView } from 'react-native';
 import { useAuth } from '../../context/AuthProvider';
 
+// ... (other imports)
+
 const BookmarkedServices = () => {
+    const userId = 1;
+    const [savedResources, setSavedResources] = useState([]);
 
-  // const userId = 1;
-  // const savedResources = getSavedResourcesByUserId(userId);
-  // console.log(savedResources);
+    useEffect(() => {
+        const getSavedResources = async () => {
+            try {
+                const resources = await getSavedResourcesByUserId(userId);
+                setSavedResources(resources);
+            } catch (error) {
+                console.error("Error fetching saved resources:", error);
+            }
+        };
 
-  const [bookmarkedResource, setBookmarkedResource] = useState([])
+        getSavedResources();
+    }, []); // Empty dependency array to run the effect only once
 
-  /**
-   * useEffect(
-   *  const {userToken, setIsLoading} = useAuth()
-   *  setIsLoading(true) - start loading state
-   *  const bookmarkedResources = getbookmarkedresources(userToken) -get bookmarkedresouces - if 200, return an array of resources //check the front end api or contact Nick for more information
-   *  setBookmarkedResource(bookmarkedResources)
-   *  setIsLoading(false) - end loading state
-   * )
-   * 
-   */
+    // Rest of your code
 
-  return (
-    <BookmarkedScreenContainer>
-      <ScrollView>
-      {/* Render bookmarked cards for the retrieved saved resources */}
-      {/* loop through bookmarkedResource array and make BookmarkedCard */}
-      {savedResources.map((resource, i) => (
-        <BookmarkedCard
-          cardName={resource.name}
-          location={resource.location}
-          phoneNumber={resource.phoneNumber}
-          source={img}
-          resourceId={'id'}
-          key={i.toString()}
-        />
-      ))}
-      </ScrollView>
-    </BookmarkedScreenContainer>
-  );
+    if (savedResources === null) {
+        // Return a loading indicator or a message while fetching data
+        return <p>Loading...</p>;
+    }
+
+    return (
+        <BookmarkedScreenContainer>
+            <ScrollView>
+                {savedResources.map((resource, i) => (
+                    <BookmarkedCard
+                        cardName={resource.name}
+                        location={resource.location}
+                        phoneNumber={resource.phoneNumber}
+                        source={img}
+                        resourceId={'id'}
+                        key={i.toString()}
+                    />
+                ))}
+            </ScrollView>
+        </BookmarkedScreenContainer>
+    );
 };
 
 export default BookmarkedServices;
