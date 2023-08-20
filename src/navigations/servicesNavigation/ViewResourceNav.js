@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import DisplayResource from '../../screens/services/DisplayResource';
+import AnyResource from '../../screens/services/AnyResource';
 import ServicesFullPage from '../../screens/ServiceFullPageScreen/ServicesFullPage';
 import Header from '../Header';
 import Review from '../../screens/ViewReviewScreen/Review';
@@ -9,7 +9,7 @@ const ViewResourceNav = () => {
   const Stack = createStackNavigator();
   return (
       <Stack.Navigator>
-          <Stack.Screen name= 'View All Resources' component={DisplayResource} options={{header: ({navigation}) => (
+          <Stack.Screen name= 'View All Resources' component={AnyResource} options={{header: ({navigation}) => (
         <Header navigation={navigation}/>
       )}}/>
           <Stack.Screen name= 'View Resource' component={ServicesFullPage} options={{header: ({navigation}) => (

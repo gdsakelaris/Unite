@@ -24,7 +24,7 @@ const EditProfile = () => {
   const {userInfo, userToken, setUserInfo, setIsLoading} = useAuth()
   const [email, setEmail] = useState(userInfo.email)
   const [name, setName] = useState(userInfo.name)
-  const [password, setPassword] = useState(userInfo.password)
+  //const [password, setPassword] = useState(userInfo.password)
   const [phonenumber, setPhoneNumber] = useState(userInfo.phonenumber)
   //const [location, setLocation] = useState('San Jose, CA')
 
@@ -35,7 +35,7 @@ const EditProfile = () => {
       <EditProfileInfoContainer>
           <ProfileInfoField title={'Email Address'} content={email} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} onChangeText={(text) => setEmail(text)}/>
           <ProfileInfoField title={'Username'} content={name} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} onChangeText={(text) => setName(text)}/>
-          <ProfileInfoField title={'Password'} content={password} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} secureTextEntry={true} onChangeText={(text) => setPassword(text)}/>
+          {/* <ProfileInfoField title={'Password'} content={password} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} secureTextEntry={true} onChangeText={(text) => setPassword(text)}/> */}
           <ProfileInfoField title={'Phone Number'} content={phonenumber} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} onChangeText={(newphoneNumber) => setPhoneNumber(newphoneNumber)}/>
           <SaveProfileBtn
             onPress={() => {

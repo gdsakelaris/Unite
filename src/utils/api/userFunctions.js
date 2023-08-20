@@ -25,4 +25,30 @@ const updateUser = async (email, name, password, phonenumber, userToken,setUserI
   }
 };
 
-export { updateUser };
+
+const getUserByID = async (userToken) => {
+  try {
+    //Send post request here
+    const response = await axios.get(
+      `${BASE_URL}api/v1/client/get`,
+      null,
+      {
+        headers: {
+          Authorization: `${userToken}`
+        }
+      });
+
+    //check if there's an error, else return it
+    if (response.status === 200) {
+      return response.body.data.client;
+    } else {
+      console.log(response.data.error);
+    }
+  } catch (error) {
+    console.log("Failed to get user: " + error.message);
+  }
+};
+
+
+
+export { updateUser, getUserByID };
