@@ -7,7 +7,7 @@ import ResourceObjToJSX from '../listOfProvidedServiceDetail';
 const ServiceOptionDetail = ({detailOption, resource}) => (
   <View style={styles.serviceOptionDetail}> 
       <ScrollView>
-        {ResourceObjToJSX(detailOption, resource)}   
+        {ResourceObjToJSX(detailOption, resource).detail}   
       </ScrollView>
   </View>
 )

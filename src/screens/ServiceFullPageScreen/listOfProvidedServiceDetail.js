@@ -85,7 +85,7 @@ function ResourceObjToJSX(key, object) {
       break;
   }
 
-  let returnVal = {optionTitle: _optionTitle, detail: _detail}
+  let returnVal = {"optionTitle": _optionTitle, "detail": _detail}
   return returnVal;
 }
 

@@ -43,7 +43,7 @@ const ResourceCard = ({ resource, navigation, editButtonPress}) => {
           /**
            * send resource to view resource page to populate all the fields there 
            */
-          () => navigation.navigate('View Resource', {resource: resource})
+          () => navigation.navigate('ViewResource', {resource: resource})
           
         }
           />
