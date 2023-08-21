@@ -1,22 +1,5 @@
 import { View, Text } from "react-native";
 
-// Supported sections and their _details for the service full page screen
-const listOfProvidedSection = [
-  {
-    _optionTitle: 'About',
-    _detail: 'Anchor Church is a Christ-centered community. We worship together each Sunday at 9:00 AM and have small group ministry in various locations & at various times throughout the week. We desire each gathering adds value to your life. We specialize in encouraging people to experience their destiny as an individual designed for beauty and fulfillment. We have an especially strong focus in the arts, the infallible Word of God, and growing in relationships with Jesus through meaningful relationships.'
-  },
-  //add the Hours _detail
-  {
-    _optionTitle: 'Hours',
-    _detail: 'Sunday:         Closed\nMonday:        10 to 16 \nTuesday:       10 to 16 \nWednesday: 10 to 16 \nThursday:     10 to 16 \nFriday:           10 to 16 \nSaturday:      10 to 16'
-  },
-  //add the Media _detail
-  {
-    _optionTitle: 'Media',
-    _detail: 'www.https://myweb\n777-777-7777'
-  }
-];
 
 //key is an index of 0 to 2
 //0: about
@@ -95,10 +78,10 @@ function ResourceObjToJSX(key, object) {
 
     case 0:
     default:
-      const descrition = object.descrition;
+      const description = object.description;
 
       _optionTitle = 'About';
-      _detail = descrition;
+      _detail = description;
       break;
   }
 
@@ -106,4 +89,4 @@ function ResourceObjToJSX(key, object) {
   return returnVal;
 }
 
-export default { listOfProvidedSection, ResourceObjToJSX };
+export default  ResourceObjToJSX;

@@ -5,8 +5,9 @@ import ServicePageInfo from './subscreens/ServicePageInfo';
 import ServicePageContainer from './subscreens/ServicePageContainer';
 import listOfProvidedSection from './listOfProvidedServiceDetail'
 
-const ServicesFullPage = () => {
-  const [detailOption, setdetailOption] = useState(listOfProvidedSection[0])
+const ServicesFullPage = ({route}) => {
+  const [detailOption, setdetailOption] = useState(0)
+  const {resource} = route.params
   return (
     <ServicePageContainer>
       <ServicePageImage/>

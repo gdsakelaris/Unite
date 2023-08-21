@@ -22,7 +22,7 @@ export const providedServices = [
   {name: "Shelter", urlImage: shelterImageUri, title:'Shelter'},
   {name: "Education", urlImage: educationImageUri, title:'Education' },
   {name: "Community", urlImage: communityImageUri, title:'Community' },
-  {name: "Food", urlImage: foodImageUri, title:'Food Resources' },
+  {name: "FoodResource", urlImage: foodImageUri, title:'Food Resources' },
   {name: "Employment", urlImage: employmentImageUri,title:'Employment'},
   {name: "Health", urlImage: healthImageUri, title:'Health' }
 ]

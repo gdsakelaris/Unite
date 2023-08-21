@@ -8,7 +8,6 @@ import ResourceCardImage from "./resourceCardsubscreens/ResourceCardImage";
 import ResourceCardRatingAndReview from "./resourceCardsubscreens/ResourceCardRatingAndReview";
 import ResourceCardTitle from "./resourceCardsubscreens/ResourceCardTitle";
 import { useResourceContext } from "../../context/ResourceProvider";
-import updateResourceWithClickedResource from "../../utils/updateResourceWithClickedResource";
 import dummyImg from '../../images/Dummyresource.png'
 /**
  @resource - an object - {
@@ -32,19 +31,10 @@ import dummyImg from '../../images/Dummyresource.png'
   @navigation - navigation object
   @ediBtnFunction - function for the edit btn if resource has edit btn
  */
-const ResourceCard = ({ resource, navigation}) => {
+const ResourceCard = ({ resource, navigation, editButtonPress}) => {
   //make a variable to store resourceId for sending to the bookmark route
   const [resourceId, setResourceId] = useState(resource.id) //resource id
   const {dispatch} = useResourceContext()
-  const editButtonPress = () => {
-    //populate all the resource-state variable fields with the resource's info 
-    console.log(resource)
-    console.log(resource.hours)
-    updateResourceWithClickedResource(dispatch, resource)
-    navigation.navigate('Describe Service', {title: 'Update your service', purpose: 'update', resourceId: resourceId})
-    
-  }
-
 
   return (
     <ResourceCardContainer>
@@ -53,7 +43,7 @@ const ResourceCard = ({ resource, navigation}) => {
           /**
            * send resource to view resource page to populate all the fields there 
            */
-          () => navigation.navigate('View Resource', {params: resource})
+          () => navigation.navigate('View Resource', {resource: resource})
           
         }
           />

@@ -8,7 +8,6 @@ import HomeScreenContainer from './subscreens/HomeScreenContainer';
 import ProvidedServices from './subscreens/ProvidedServices';
 import NewResourceButton from './subscreens/NewResourceButton';
 import ServiceCard from '../../components/ServiceCard';
-import { Alert } from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
   const handleResourceButtonClick = (resourceName) => {

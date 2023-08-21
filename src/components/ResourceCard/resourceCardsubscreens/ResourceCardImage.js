@@ -9,26 +9,9 @@ import bookmarkResources from '../../../utils/api/bookmarkResources';
 
 const ResourceCardImage = ({picture, editBtnFunction, resourceId}) => {
   const [isBookmarked, setIsBookmarked] = useState(false);
-  const {setIsLoading, userToken} = useAuth()
+  const {userToken} = useAuth()
   const handleBookmark = async () => {
-    /**
-     * Include everthing below in try/catch block 
-     * 
-     * setIsBookmarked(!isBookmarked) - change the color of the bookmarked icon when pressed
-     * setIsLoading(true) - start the loading state
-     * bookmarkResources(resourceId, userToken) - send request to backend to bookmark resource
-     * setIsLoading(false)
-     * if 200 - alert('The resource is bookmarked successfully')
-     * 500 - alert('Bookmark resource fail')
-     */
-    try {
-      const response = bookmarkResources(resourceId, userToken);
-      console.log(response)
-    } catch (error) {
-      throw new Error('Error: ' + error)
-    }
-    setIsBookmarked(!isBookmarked);
-
+    bookmarkResources(resourceId, userToken, setIsBookmarked);
   };
 
   return (
@@ -47,7 +30,12 @@ const ResourceCardImage = ({picture, editBtnFunction, resourceId}) => {
         style={styles.bookmarkButton}
         onPress={() => {
           /* Bookmark function */
-          handleBookmark();
+          if (!isBookmarked) {
+            handleBookmark();
+          }
+          else {
+            setIsBookmarked(false)
+          }
         }}
       >
         {/*bookmark icon*/}
