@@ -16,12 +16,12 @@ const BookmarkedCard = ({cardName, location, phoneNumber, source, resourceId }) 
     const { userToken } = useAuth();
 
     const handleRemoveBookmark = async (resourceId, userToken) => {
-        console.log('removing bookmark');
-        setIsRemoveBookmarkLoading(true);
-        const response = await removeBookmarkedResources(resourceId, userToken);
-        console.log(response);
-        console.log('Bookmark removed.');
-        setIsRemoveBookmarkLoading(false);
+        // console.log('removing bookmark');
+        // setIsRemoveBookmarkLoading(true);
+        // const response = await removeBookmarkedResources(resourceId, userToken);
+         removeBookmarkedResources(resourceId, userToken);
+        // console.log('Bookmark removed.');
+        // setIsRemoveBookmarkLoading(false);
     }
 
     return (

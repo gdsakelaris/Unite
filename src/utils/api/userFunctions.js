@@ -2,14 +2,14 @@
 import axios from "axios";
 import { UPDATE_USER_ROUTE } from "./apiRoutes";
 
-const updateUser = async (email, name, password, phonenumber, userToken,setUserInfo) => {
+const updateUser = async (name, phonenumber, userToken, userInfo) => {
   try {
-    console.log(email, name, password, phonenumber)
+    console.log(userInfo)
     //start loading state 
     //Send post request here
     const response = await axios.post(UPDATE_USER_ROUTE, {
-        email: email,
-        password: password,
+        email: userInfo.email,
+        password: userInfo.password,
         name: name,
         phonenumber: phonenumber
     }, {
@@ -17,7 +17,7 @@ const updateUser = async (email, name, password, phonenumber, userToken,setUserI
         'Authorization': `Bearer ${userToken}`
       }
     });
-    console.log(response.data)
+    //setUserInfo(response.data.client)
     
   } catch (error) {
     console.log(error)

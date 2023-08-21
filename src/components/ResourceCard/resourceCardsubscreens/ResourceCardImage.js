@@ -7,7 +7,7 @@ import {bookmarkedIcon, whiteBookmarkedIcon} from "../../icons";
 import { useAuth } from '../../../context/AuthProvider';
 import bookmarkResources from '../../../utils/api/bookmarkResources';
 
-const ResourceCardImage = ({picture, editBtnFunction, resourceId}) => {
+const ResourceCardImage = ({picture, editBtnFunction, resourceId, hasEditButton}) => {
   const [isBookmarked, setIsBookmarked] = useState(false);
   const {userToken} = useAuth()
   const handleBookmark = async () => {
@@ -26,7 +26,7 @@ const ResourceCardImage = ({picture, editBtnFunction, resourceId}) => {
         resizeMode="cover"
       />
       {/* saved resource btn. No saved btn for resource that user publishes*/}
-      {!editBtnFunction && <TouchableOpacity
+      {!hasEditButton && <TouchableOpacity
         style={styles.bookmarkButton}
         onPress={() => {
           /* Bookmark function */
@@ -44,7 +44,7 @@ const ResourceCardImage = ({picture, editBtnFunction, resourceId}) => {
         </View>
       </TouchableOpacity>}
       {/* edit btn */}
-      {editBtnFunction && <EditButton text={'edit'} onPress={editBtnFunction}/>}
+      {hasEditButton && <EditButton text={'edit'} onPress={editBtnFunction}/>}
     </View>
   );
 };

@@ -39,7 +39,7 @@ const BookmarkedServices = () => {
     return (
         <BookmarkedScreenContainer>
             <ScrollView>
-                {savedResources.map((resource, i) => (
+                {savedResources && savedResources.map((resource, i) => (
                     <BookmarkedCard
                         cardName={resource.name}
                         location={resource.address}

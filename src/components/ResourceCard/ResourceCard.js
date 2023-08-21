@@ -9,6 +9,7 @@ import ResourceCardRatingAndReview from "./resourceCardsubscreens/ResourceCardRa
 import ResourceCardTitle from "./resourceCardsubscreens/ResourceCardTitle";
 import { useResourceContext } from "../../context/ResourceProvider";
 import dummyImg from '../../images/Dummyresource.png'
+import updateResourceWithClickedResource from "../../utils/updateResourceWithClickedResource";
 /**
  @resource - an object - {
                                 “name”: “example name”,
@@ -31,10 +32,19 @@ import dummyImg from '../../images/Dummyresource.png'
   @navigation - navigation object
   @ediBtnFunction - function for the edit btn if resource has edit btn
  */
-const ResourceCard = ({ resource, navigation, editButtonPress}) => {
+const ResourceCard = ({ resource, navigation, hasEditButton}) => {
   //make a variable to store resourceId for sending to the bookmark route
   const [resourceId, setResourceId] = useState(resource.id) //resource id
   const {dispatch} = useResourceContext()
+
+  const editButtonPress = () => {
+    //populate all the resource-state variable fields with the resource's info 
+    console.log(resource)
+    console.log(resource.hours)
+    updateResourceWithClickedResource(dispatch, resource)
+    navigation.navigate('Describe Service', {title: 'Update your service', purpose: 'update', resourceId: resourceId})
+    
+  }
 
   return (
     <ResourceCardContainer>
@@ -53,7 +63,7 @@ const ResourceCard = ({ resource, navigation, editButtonPress}) => {
         <ResourceCardContactInfo location={resource.address}/>
         <ResourceCardContactInfo number={resource.phoneNumber}/>
       </ResourceCardContent>
-      <ResourceCardImage picture={dummyImg} editBtnFunction={editButtonPress} resourceId={resourceId}/>
+      <ResourceCardImage picture={dummyImg} editBtnFunction={editButtonPress} resourceId={resourceId} hasEditButton={hasEditButton}/>
     </ResourceCardContainer>
 
   ) 

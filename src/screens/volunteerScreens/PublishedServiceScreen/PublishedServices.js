@@ -8,7 +8,7 @@ import ResourceCard from "../../../components/ResourceCard/ResourceCard";
 import ScreenTitle from "../../../components/ScreenTitle";
 import { useAuth } from "../../../context/AuthProvider";
 import getPublishedResources from "../../../utils/api/getPublishedResources";
-import updateResourceWithClickedResource from "../../../utils/updateResourceWithClickedResource";
+
 const PublishedServices = ({navigation}) => {
   //the variable that stores all the published resources
   const [publishedResource, setPublishedResources] = useState([])
@@ -17,21 +17,11 @@ const PublishedServices = ({navigation}) => {
     getPublishedResources(userToken, setPublishedResources)
   }, [navigation])
 
-
-  const editButtonPress = () => {
-    //populate all the resource-state variable fields with the resource's info 
-    console.log(resource)
-    console.log(resource.hours)
-    updateResourceWithClickedResource(dispatch, resource)
-    navigation.navigate('Describe Service', {title: 'Update your service', purpose: 'update', resourceId: resourceId})
-    
-  }
-
   return (
     <PublishedServiceContainer>
       <ScreenTitle titleMessage={'My Published Service'} style={styles.title}/>
       <ScrollView>
-        {publishedResource.map((resource, i) => <ResourceCard resource={resource} navigation={navigation} key={i.toString()} editButtonPress={editButtonPress}/>)} 
+        {publishedResource.map((resource, i) => <ResourceCard resource={resource} navigation={navigation} key={i.toString()} hasEditButton={true}/>)} 
         
       </ScrollView>
       <AddBtn navigation={navigation}/>
