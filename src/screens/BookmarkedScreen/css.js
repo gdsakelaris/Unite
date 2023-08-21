@@ -1,5 +1,10 @@
 import { StyleSheet } from "react-native";
 import {fontScale, colors} from '../../base'
+import { Dimensions } from 'react-native';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
 //bookmarkedScreen container
 export const bookmarkedScreenContainer = StyleSheet.create({
   bookmarkedScreenContainer: {
@@ -21,9 +26,9 @@ export const bookmarkedCard = StyleSheet.create({
     flexDirection: "row",
     alignSelf: "center",
     width: "90%",
-    height: '15%',
+    height: windowHeight * 0.15,
     backgroundColor: colors.white,
-    marginTop: '6%',
+    marginTop: windowHeight * 0.06, 
     borderRadius: 20,
     padding: 10,
     shadowColor: colors.lightdark,
@@ -61,10 +66,10 @@ export const bookmarkedCard = StyleSheet.create({
 export const removeBtn = StyleSheet.create({
   removeButton: {
     position: "absolute",
-    bottom: '20%',
-    right: '4%',
-    width: '30%',
-    height: '45%',
+    bottom: '5%',
+    right: '2%',
+    width: '25%',
+    height: '35%',
     backgroundColor: colors.appBtn,
     justifyContent: "center",
     alignItems: "center",
