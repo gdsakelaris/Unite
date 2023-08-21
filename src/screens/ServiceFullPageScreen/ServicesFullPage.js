@@ -90,7 +90,7 @@ const ServicePageImage = ({ source }) => (
   </View>
 );
 
-const ServicePageInfo = ({resource}) => (
+const ServicePageInfo = ({ resource }) => (
   <View style={infoStyles.serviceInfoStyle}>
     <View style={infoStyles.infoStyle1}>
       <Text style={infoStyles.serviceTitleStyle}>{resource.name}</Text>
@@ -121,7 +121,7 @@ function extractCityStateFromAddress(address) {
     return (<View style={infoStyles.infoStyle2}>
       {location}
       <Text>{cityState}</Text>
-    </View> )
+    </View>)
   } else {
     // Return null on error
     return <></>;
@@ -132,6 +132,7 @@ function extractCityStateFromAddress(address) {
 const ServicesFullPage = ({ route }) => {
   const [detailOption, setDetailOption] = useState(0);
   const { resource } = route.params;
+  console.log(resource.hours)
 
   return (
     <View style={containerStyles.serviceFullPagecontainer}>
@@ -144,7 +145,7 @@ const ServicesFullPage = ({ route }) => {
             <ServiceOption title='Hours' setDetailOption={setDetailOption} detailOption={detailOption} index={1} />
             <ServiceOption title='Media' setDetailOption={setDetailOption} detailOption={detailOption} index={2} />
           </View>
-          {detailOption !== 0 && <ServiceOptionDetail detailOption={detailOption} resource={resource} />}
+          <ServiceOptionDetail detailOption={detailOption} resource={resource} />
         </View>
       </View>
     </View>
