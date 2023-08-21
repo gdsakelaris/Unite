@@ -23,8 +23,17 @@ const formatTime = (time) => {
 const HoursSection = ({ hours }) => {
   const renderDaySchedule = (dayName, schedule) => (
     <View key={dayName} style={styles.daySchedule}>
-      <Text>{daysOfWeek[dayName - 1]}:</Text>
-      <Text>{schedule ? `${formatTime(schedule.open_time)} to ${formatTime(schedule.close_time)}` : 'Closed'}</Text>
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <Text style={{ width: '30%' }}>{daysOfWeek[dayName - 1]}:</Text>
+
+        {schedule ?
+          <><Text style={{ width: '22%', textAlign: 'left' }}> {formatTime(schedule.open_time)}</Text>
+            <Text style={{ width: '8%', textAlign: 'left' }}> to </Text>
+            <Text style={{ width: '22%', textAlign: 'left' }}>{formatTime(schedule.close_time)}</Text>
+          </>
+          : <Text style={{ color: 'red' }}> 'Closed'</Text>}
+
+      </View>
     </View>
   );
 
@@ -68,9 +77,9 @@ const ServiceOption = ({ title, setDetailOption, detailOption, index }) => (
 const ServiceOptionDetail = ({ detailOption, resource }) => (
   <View style={optionDetailStyles.serviceOptionDetail}>
     <ScrollView>
+      {detailOption === 0 && <AboutSection description={resource.description} />}
       {detailOption === 1 && <HoursSection hours={resource.hours} />}
       {detailOption === 2 && <MediaSection website={resource.website} phone={resource.phone} />}
-      {detailOption === 0 && <AboutSection description={resource.description} />}
     </ScrollView>
   </View>
 );
@@ -81,23 +90,44 @@ const ServicePageImage = ({ source }) => (
   </View>
 );
 
-const ServicePageInfo = () => (
+const ServicePageInfo = ({resource}) => (
   <View style={infoStyles.serviceInfoStyle}>
     <View style={infoStyles.infoStyle1}>
-      <Text style={infoStyles.serviceTitleStyle}>Anchor Church</Text>
+      <Text style={infoStyles.serviceTitleStyle}>{resource.name}</Text>
       <Text>
         {star}
-        <Text>3.0</Text>
+        <Text>{resource.rating}</Text>
       </Text>
-      <Text style={infoStyles.numberOfReviewStyle}>6 Reviews</Text>
+      <Text style={infoStyles.numberOfReviewStyle}>6000 Reviews</Text>
     </View>
-
-    <View style={infoStyles.infoStyle2}>
-      {location}
-      <Text>Austin, Texas</Text>
-    </View>
+    {extractCityStateFromAddress(resource.address)}
   </View>
 );
+
+function extractCityStateFromAddress(address) {
+  // Regular expression to match the city and state
+  const cityStateRegex = /([^,]+),\s*([^,]+)\s*(\d{5})/;
+
+  // Use the regex to extract city and state
+  const matches = address.match(cityStateRegex);
+
+  if (matches) {
+    const city = matches[1].trim(); // Extracted city
+    const state = matches[2].trim(); // Extracted state
+
+    // Combine city and state
+    const cityState = `${city}, ${state}`;
+
+    return (<View style={infoStyles.infoStyle2}>
+      {location}
+      <Text>{cityState}</Text>
+    </View> )
+  } else {
+    // Return null on error
+    return <></>;
+  }
+}
+
 
 const ServicesFullPage = ({ route }) => {
   const [detailOption, setDetailOption] = useState(0);
@@ -106,7 +136,7 @@ const ServicesFullPage = ({ route }) => {
   return (
     <View style={containerStyles.serviceFullPagecontainer}>
       <ServicePageImage />
-      <ServicePageInfo />
+      <ServicePageInfo resource={resource} />
       <View style={styles.serviceDetailStyle}>
         <View style={styles.servicesDetailInnerContainer}>
           <View style={styles.serviceDetailOptionContainer}>
