@@ -5,7 +5,7 @@ import {serviceFullPageDetail as styles} from '../css';
 import ServiceOptionDetail from './ServiceOptionDetail';
 import ServiceOption from './ServiceOption';
 
-const ServiceDetail = ({detailOption, setdetailOption}) => (
+const ServiceDetail = ({detailOption, setdetailOption, resource}) => (
   //outter container
   <View style={styles.serviceDetailStyle}>
     {/* inner container */}
@@ -21,7 +21,7 @@ const ServiceDetail = ({detailOption, setdetailOption}) => (
         <ServiceOption title='Media' setdetailOption={setdetailOption} detailOption={detailOption} index={2}/>
       </View>
       {/* expanded view for the detail of one of the sections above */}
-      {detailOption && <ServiceOptionDetail detailOption={detailOption}/>}
+      {detailOption && <ServiceOptionDetail detailOption={detailOption} resource={resource}/>}
     </View>
   </View>
 )

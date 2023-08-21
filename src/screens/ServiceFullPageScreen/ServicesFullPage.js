@@ -12,7 +12,7 @@ const ServicesFullPage = ({route}) => {
     <ServicePageContainer>
       <ServicePageImage/>
       <ServicePageInfo/>
-      <ServiceDetail detailOption={detailOption} setdetailOption={setdetailOption}/>
+      <ServiceDetail detailOption={detailOption} setdetailOption={setdetailOption} resource={resource}/>
     </ServicePageContainer>
   );
 }

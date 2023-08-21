@@ -7,9 +7,9 @@ import listOfProvidedSection from '../listOfProvidedServiceDetail'
 //this component will take a title prop, which stands for the title of section, 
 //setdetailOption, detailOption, and index props, which helps in the implementation of the logic for rendering the detailed view of the section that has been clicked on the service full page screen
 const ServiceOption = ({title, setdetailOption, detailOption, index}) => (
-  <View style={[styles.serviceDetailOptionStyle, {borderBottomWidth: detailOption.optionTitle === title && 4}]}>
+  <View style={[styles.serviceDetailOptionStyle, {borderBottomWidth: detailOption === index && 4}]}>
       {/* when the user clicks on the section, we will render the detail page for the clicked section */}
-      <Pressable onPress={() => setdetailOption(listOfProvidedSection[index])}> 
+      <Pressable onPress={() => setdetailOption(index)}> 
         <Text style={styles.serviceDetailOptionTextStyle}>{title}</Text>
       </Pressable>
   </View>

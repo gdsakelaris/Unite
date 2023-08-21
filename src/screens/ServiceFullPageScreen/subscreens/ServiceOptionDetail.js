@@ -3,10 +3,11 @@ import React from 'react';
 import { View, ScrollView} from 'react-native';
 import { Text } from 'react-native-paper';
 import { serviceOptionDetail as styles } from '../css';
-const ServiceOptionDetail = ({detailOption}) => (
+import ResourceObjToJSX from '../listOfProvidedServiceDetail';
+const ServiceOptionDetail = ({detailOption, resource}) => (
   <View style={styles.serviceOptionDetail}> 
       <ScrollView>
-        <Text >{detailOption && detailOption.detail}</Text>    
+        {ResourceObjToJSX(detailOption, resource)}   
       </ScrollView>
   </View>
 )
