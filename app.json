@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Unite",
-    "slug": "Unite",
+    "slug": "irise",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -33,11 +33,12 @@
     },
     "extra": {
       "eas": {
-        "projectId": "ca194e84-f711-4e50-855b-20ab46cbbac3"
+        "projectId": "ff76c819-25d9-444a-8921-01074097c9f3"
       }
     },
     "plugins": [
       "expo-build-properties"
-    ]
+    ],
+    "owner": "unite"
   }
 }
