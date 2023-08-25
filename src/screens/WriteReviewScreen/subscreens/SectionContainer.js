@@ -1,4 +1,11 @@
-//this file will make a container which wraps around all the content of a single section on the Write Review Screen
+/**
+ * @file SectionContainer.js
+ * @description This file defines a container component that stores all the content of a single section such as add image, write review, etc on the Write Review screen .
+ * @param {React.ReactNode} children - The child components to be wrapped within this container.
+ * @returns {JSX.Element} The SectionContainer component.
+ */
+
+
 import React from 'react';
 import { View } from 'react-native';
 import { sectionContainer as styles } from '../css';

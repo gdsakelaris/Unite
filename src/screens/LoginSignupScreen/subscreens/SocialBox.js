@@ -1,6 +1,6 @@
 /**
  * @file SocialBox.js
- * @description This file contains a component for displaying alternative options for logging in and signing up using social media accounts.
+ * @description This file makes a view component that displays all the social media accounts that user can use as the alternative options to log in or sign up.
  */
 
 import React from 'react';

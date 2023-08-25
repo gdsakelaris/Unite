@@ -1,4 +1,9 @@
-// this file will make a Terms Of Service Screen component that displays some paragraphs about the term of service of this app
+/**
+ * Component to display the Terms of Service of the app.
+ *
+ * @component
+ * @returns {JSX.Element} - A JSX element representing the Terms of Service Screen.
+ */
 import React from 'react';
 import { ScrollView, View } from 'react-native';
 import { Text } from 'react-native-paper';

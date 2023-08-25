@@ -1,4 +1,11 @@
-//Write Review screen. This is the screen that the user will see when they run the application
+/**
+ * @file WriteReview.js
+ * @description This file defines the write review screen where the user can write review for the resource they click
+ * @param {Object} navigation - navigation object that allows user to move to different pages 
+ * @returns {JSX.Element} The write review screen component.
+ */
+
+
 import React from "react";
 import WriteReviewPageContainer from "./subscreens/WriteReviewPageContainer";
 import SectionTitle from "./subscreens/SectionTitle";
@@ -16,13 +23,13 @@ const WriteReview = ({navigation}) => {
         <StarRating/>
       </SectionContainer>
 
-      {/* add Photo */}
+      {/* Add Review Photo Here*/}
       <AddImageSection/>
       
-      {/* write Review */}
+      {/* Textbox to write review */}
       <ReviewTextBox/>
     
-      {/* submit btn */}
+      {/* Submit Btn */}
       <SectionContainer>
         <SubmitBtn onPress={() => navigation.navigate('Review')}/>
       </SectionContainer>

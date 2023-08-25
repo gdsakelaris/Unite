@@ -1,3 +1,11 @@
+/**
+ * ProfileNavigation component.
+ * This component sets up the navigation stack for the user's profile-related screens.
+ *
+ * @component
+ * @returns {JSX.Element} ProfileNavigation component
+ */
+
 import React, {useLayoutEffect} from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import ProfilePage from '../screens/ProfileScreen/ProfilePage';
@@ -13,6 +21,7 @@ const ProfileNavigation = () => {
   const navigation = useNavigation();
   const route = useRoute();
 
+  // Wanting's code
   useLayoutEffect(() => {
     const routeName = getFocusedRouteNameFromRoute(route);
     const shouldHideTabBar = routeName === 'View Published Service';

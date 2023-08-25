@@ -1,6 +1,6 @@
 /**
  * @file LoginBtn.js
- * @description This file contains a component for the login button displayed on the login input box.
+ * @description This file makes a login button component that displayed on the login input box.
  */
 
 import React from 'react';

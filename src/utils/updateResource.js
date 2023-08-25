@@ -1,10 +1,10 @@
 /**
  * Dispatch function to update resource-related state variables.
  * 
- * @param {Function} dispatch - The dispatch function from the resource context.
+ * @param {Function} dispatch - A dispatch function from ResourceProvider that allows to modify the value of resource-state variable. Reasearch about useReducer hook in react native to understand the whole process of creating ResourceProvider.
  * @param {...{field: string, value: any}} updates - An array of updates, each containing a field name and its new value.
  * @example
- * // Assuming you have access to the dispatch function from the resource context
+ * Assuming you have access to the dispatch function from the resource context
  * const {dispatch} = useResourceContext();
  * 
  * // Call the function to update multiple fields at once

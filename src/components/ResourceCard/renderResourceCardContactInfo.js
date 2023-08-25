@@ -1,4 +1,12 @@
-//return a view of contact info with an icon on the resource card
+/**
+ * Renders a contact information view with an appropriate icon on the resource card.
+ *
+ * @function
+ * @param {string} location - The location information of the resource.
+ * @param {string} number - The phone number of the resource.
+ * @returns {JSX.Element} - A view of contact information with an icon on the resource card.
+ */
+
 import { locationIcon, phoneIcon } from "../icons"
 import { View } from "react-native"
 import { Text } from "react-native-paper"

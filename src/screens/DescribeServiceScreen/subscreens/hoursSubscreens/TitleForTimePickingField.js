@@ -4,7 +4,7 @@
  *
  * @param {string} title - The title text to be displayed.
  * @returns {JSX.Element} - The rendered title.
- * Used inside the TimePickingFieldForDay component to render the day name of the field
+ * Used inside the TimePickingFieldForDay component to display the day name that the picking hour field belongs to
  */
 
 import React from 'react';

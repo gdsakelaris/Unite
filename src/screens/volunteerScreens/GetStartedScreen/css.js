@@ -1,3 +1,7 @@
+/**
+ * This file contains css of all files in GetStartedScreen folder
+ */
+
 import { StyleSheet } from "react-native";
 import { colors, fontScale } from "../../../base";
 export const instructionCard = StyleSheet.create({

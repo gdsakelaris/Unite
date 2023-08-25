@@ -1,4 +1,7 @@
-//icons for profile page
+/**
+ * the file that contains the icons of all the files in ProfileScreen folder
+ */
+
 import { fontScale, colors } from "../../base";
 import renderExpoIcon from "../../utils/renderExpoIcon";
 export const bookmarkedIcon = renderExpoIcon('FontAwesome', 'bookmark', {size: 27 / fontScale, color: colors.appBtn})

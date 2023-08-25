@@ -1,3 +1,11 @@
+/**
+ * @function removeBookmarkedResources
+ * @description remove bookmarked resource
+ * @param {number} resourceId - An id that helps backend to determine which resource that user is removing
+ * @param {string} userToken - A token that authethicate user with backend
+ */
+
+
 import axios from 'axios';
 import { REMOVE_BOOKMARKED_RESOURCE } from './apiRoutes';
 

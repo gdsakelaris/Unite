@@ -1,6 +1,6 @@
 /**
  * @file InputBox.js
- * @description This file contains a component that wraps input fields for the login and sign-up screens.
+ * @description This file makes a component that stores input fields for the login or signup screens.
  */
 
 import React from 'react';

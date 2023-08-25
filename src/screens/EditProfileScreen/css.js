@@ -1,3 +1,6 @@
+/**
+ * the file that contains the css of all the files in EditProfileScreen folder
+ */
 import { StyleSheet } from "react-native"
 import { fontScale, colors } from "../../base"
 export const editProfileContainer = StyleSheet.create({

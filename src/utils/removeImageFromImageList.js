@@ -1,5 +1,10 @@
-//this function will remove the existing image from the image list
-//listOfImages: a state variable which its value is the list of added images
-//setImageHool: a function provided by useState to set the new value to the listOfImages state variable
-//removedImage: the image uri u want to remove
+/**
+ * @function removeImageFromImageList
+ * @description remove image URI from the existing list of images.
+ * @param {Array} listOfImages - The current list of image URIs.
+ * @param {function} setImageHook - The state setter function provided by useState to update the listOfImages.
+ * @param {string} removedImage - The URI of the image that is about to be removed.
+ * @returns {void}
+ */
+
 export default removeImageFromImageList = (listOfImages, setImageHook, removedImage) => setImageHook(listOfImages.filter(imageUri => imageUri !== removedImage))

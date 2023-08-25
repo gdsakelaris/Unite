@@ -1,3 +1,7 @@
+/**
+ * the file that contains the css of all the files in SettingsScreen folder
+ */
+
 import { StyleSheet } from "react-native"
 import {colors, fontScale} from '../../base'
 export const settingContainer = StyleSheet.create({

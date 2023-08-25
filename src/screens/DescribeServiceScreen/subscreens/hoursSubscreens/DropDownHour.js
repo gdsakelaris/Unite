@@ -5,7 +5,7 @@
  *
  * @component
  * @param {object} hourSetting - The hour settings being managed in the object of {day: '', type: ''}
- *  day: value is one of the following: 'Monday, 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'.Used to determine which days the picked times belong to
+ *  day: is one of the following: 'Monday, 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'.Used to determine which days the picked times belong to
  * type: either 'openTime' or 'closeTime'. Used to determine the whether the picked is for openTime or closeTime
  * @param {Object} operationalHour - An object containing operational hour data for a specific day.
  * @returns {JSX.Element} - A JSX element representing the dropdown hour picker.

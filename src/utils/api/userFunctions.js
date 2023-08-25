@@ -2,6 +2,14 @@
 import axios from "axios";
 import { UPDATE_USER_ROUTE } from "./apiRoutes";
 
+/**
+ * @function updateUser
+ * @description Update user (only update user's name and phonenumber)
+ * @param {string} phonenumber - User's phonenumber
+ * @param {string} name - User's name
+ * @param {string} userToken - A token that authethicate user with backend
+ * @param {Object} userInfo - an object that contains users' infos
+ */
 const updateUser = async (name, phonenumber, userToken, userInfo) => {
   try {
     console.log(userInfo)

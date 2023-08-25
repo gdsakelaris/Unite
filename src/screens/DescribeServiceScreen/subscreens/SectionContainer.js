@@ -1,6 +1,6 @@
 /**
  * SectionContainer component.
- * Renders a container for a single section on the Describe Service Page,
+ * Renders a container that wraps around all the content of a single section on the Describe Service Page,
  * including the section title and content.
  *
  * @component

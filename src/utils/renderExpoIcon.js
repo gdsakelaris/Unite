@@ -1,4 +1,13 @@
-//render expo icon based on the passed params
+/**
+ * Renders expo icon.
+ *
+ * @function renderExpoIcon 
+ * @param {string} expoType - the type of expo icon
+ * @param {string} iconName - name of icon
+ * @param {Object} iconProps - an object that contains all the props of expo icon
+ * @returns {JSX.Element} - Expo icon component.
+ */
+
 import * as ExpoIcon from "@expo/vector-icons";
 export default renderExpoIcon = (expoType, iconName, iconProps) => {
   //check if the provided expo type is valid 

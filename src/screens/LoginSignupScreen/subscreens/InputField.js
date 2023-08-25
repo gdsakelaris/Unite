@@ -1,6 +1,6 @@
 /**
  * @file InputField.js
- * @description This file contains a component for input fields used in the login and sign-up screens.
+ * @description This file makes a input field component that would be used in the login and sign-up input box.
  */
 
 import React from 'react';

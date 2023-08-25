@@ -1,3 +1,8 @@
+/**
+ * the file that contains the css of all the files in PolicyScreens folder
+ */
+
+
 import { StyleSheet } from "react-native";
 import {colors, fontScale} from '../../base'
 export const policyScreen = StyleSheet.create({

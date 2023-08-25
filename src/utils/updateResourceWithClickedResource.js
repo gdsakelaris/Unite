@@ -1,4 +1,19 @@
-//update resource-state variable with the clicked resource
+/**
+ * @file updateResourceWithClickedResource
+ * @description Update the resource-state variable with the resource provided in the second parameter. 
+ * 
+ * The aim of this function is that when a user clicks on a published resource to update it, they are directed to the Describe Service Page, which uses the resource-state variable to populate all of the fields in it. As a result, before proceeding to the Describe Service Page, we must update the resource state variable with all of the information from the clicked resource, so that when the user arrives at the Describe Service Page, all of the fields on that page are filled out with all of the current information of the clicked resource. 
+ 
+ * @param {Function} dispatch - A dispatch function from ResourceProvider that allows to modify the value of resource-state variable. Reasearch about useReducer hook in react native to understand the whole process of creating ResourceProvider.
+ * Assuming you have access to the dispatch function from the resource context
+ * const {dispatch} = useResourceContext();
+ * 
+ * @param {Object} resource - A resource variable from ResourceProvider. Reasearch about useReducer hook in react native to understand the whole process of creating ResourceProvider.
+ * Assuming you have access to the resource variable from the resource context
+ * const {resource} = useResourceContext();
+ * 
+ */
+
 import { resourceActions } from "../context/resourceTemplate"
 export default updateResourceWithClickedResource = (dispatch, resource) => {
     const updatedResource = {
