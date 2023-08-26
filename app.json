@@ -19,7 +19,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "org.mylearningtools.irise",
+      "bundleIdentifier": "org.mylearningtools.irize",
       "buildNumber": "1"
     },
     "android": {
