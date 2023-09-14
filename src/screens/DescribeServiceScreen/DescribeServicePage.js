@@ -24,10 +24,9 @@ import ProgressBar from "../../components/ProgressBar";
 
 const DescribeServicePage = ({navigation, route}) => {
   const {resource} = useResourceContext()
+
+  //Any screen that navigates to the DescribeServicePage screen must pass the parameters 'title' and 'purpose' so that the DescribeServicePage screen knows if the information entered in this screen is for updating an existing resource or creating a new resource. 
   const {title, purpose} = route.params
-  /**
-   * if purpose is update, send retrieve resourceId from route.params and send it to the Third Step Screen 
-   */
   return (
     <DescribeServicePageContainer>
         {/* Progress bar. Only show when user create resource */}
@@ -52,6 +51,7 @@ const DescribeServicePage = ({navigation, route}) => {
               navigation.navigate('Third Step', {purpose: purpose});
             }
             else {
+              //if purpose is update, retrieve resourceId from route.params and send it to the Third Step Screen
               const {resourceId} = route.params 
               navigation.navigate('Third Step', {purpose: purpose, resourceId: resourceId});
             }
@@ -59,7 +59,7 @@ const DescribeServicePage = ({navigation, route}) => {
           }
             
           
-          //otherwise giver alert to user
+          //otherwise, alert user
           else alert("Some fields has not been filled out.")
 
         }}/>

@@ -1,4 +1,10 @@
-//this file will make a write review section on the Write Review screen 
+/**
+ * @file ReviewTextBox.js
+ * @description This file defines the text input where user can write their review on. Maximum 1000 characters
+ * @returns {JSX.Element} The ReviewTextBox component.
+ */
+
+
 import React, {useState} from 'react';
 import { Text } from 'react-native-paper';
 import { TextInput } from 'react-native';
@@ -9,15 +15,20 @@ import calculateRemainingChars from '../../../utils/calculateRemainingChars';
 const ReviewTextBox = () => {
   const [value, onChangeText] = useState("");  //the value that the user typed into the write review textbox
   const [remainingChars, setRemainingChars] = useState(1000); //the maximum character that the user is allowd to type into the write review textbox
+
+  //count and update the number of characters that user typed into the text input
   const handleTextChange = (text) => {
     onChangeText(text);
     setRemainingChars(calculateRemainingChars(1000, text.length)); // Update the character count based on your maximum character limit
   };
+
+
   return (
     <SectionContainer>
-      {/* section title */}
+      {/* Section title */}
       <SectionTitle title={'Write your Review'}/>
-       {/* write review textbox */}
+
+       {/* TextInput for writing review */}
        <TextInput
           editable
           multiline
@@ -27,7 +38,8 @@ const ReviewTextBox = () => {
           style={styles.Txtinput}
           maxLength={1000}
         />
-        {/* character count */}
+
+        {/* Display number of characters typed into the text input */}
         <Text style={styles.remainingChars}>
           {remainingChars}/1000 characters
         </Text>

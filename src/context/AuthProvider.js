@@ -16,8 +16,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
  * isLoading: show the loading process
  * loggingIn: a function that direct user to homepage after their credential is verified
  * switchPage: a function that toggle between the login page and sign up page 
- * loggedIn: a function that will be run when the user first opens the app and helps figure out if the user has already logged in. If they have logged in before but haven't signed out, send them straight to the homepage. If they have logged out and haven't logged in for a long time, make them log in again.
+ * loggedIn: a function that will be run when the user first opens the app and helps figure out if the user has already logged in. If they have logged in before but haven't logged out, send them straight to the homepage. If they have logged out, make them log in again.
  * saveUserAuth: a function that save user's token and info to asynstorage. These two infos will be utilized throughout the app to populate pages or autheticate with backend
+ * logout: a function that remove user's token from asyncstorage, causing user to be logged out
  */
 const AuthContext = createContext()
 

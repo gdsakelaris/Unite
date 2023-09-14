@@ -1,4 +1,6 @@
-//this file will contain the css of all the components
+/**
+ * the file that will contains all the css of all the created components in the component folder
+ */
 import { StyleSheet } from "react-native";
 import {fontScale, colors} from '../base'
 export const imageInputList = StyleSheet.create({

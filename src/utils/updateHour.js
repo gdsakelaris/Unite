@@ -5,9 +5,11 @@
  *
  * @function
  * @param {object} resource - The resource-related state.
- * @param {function} dispatch - The dispatch function from the context used for state management.
+ * @param {function} dispatch - A dispatch function from ResourceProvider that allows to modify the value of resource-state variable. Reasearch about useReducer hook in react native to understand the whole process of creating ResourceProvider.
+ * Assuming you have access to the dispatch function from the resource context
+ * const {dispatch} = useResourceContext();
  * @param {object} hourSetting - The hour settings being managed in the object of {day: '', type: ''}
- *  day: value is one of the following: 'Monday, 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'.Used to determine which days the picked times belong to
+ *  day: is one of the following: 'Monday, 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'. Used to determine which days the picked times belong to
  * type: either 'openTime' or 'closeTime'. Used to determine the whether the picked is for openTime or closeTime
  * @param {Date} pickedTime - The new time value to be updated.
  * @example

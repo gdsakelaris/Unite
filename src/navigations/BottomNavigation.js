@@ -1,3 +1,10 @@
+/**
+ * BottomNavigation component.
+ * This component sets up a bottom tab navigation for the app.
+ *
+ * @component
+ * @returns {JSX.Element} BottomNavigation component
+ */
 
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
@@ -21,6 +28,9 @@ const BottomNavigation = () => {
           tabBarVisible: false
       }}
       > 
+
+        {/* Map Screen Tab */}
+
         {/* <Tab.Screen
           name="Map"
           component={MapScreen}
@@ -32,6 +42,8 @@ const BottomNavigation = () => {
             headerShown: false,
           }}
         /> */}
+
+        {/* Home Screen Tab */}
         <Tab.Screen
           name="Home"
           component={HomeScreenNavigation}
@@ -43,6 +55,8 @@ const BottomNavigation = () => {
             headerShown:false,
           }}
         />
+
+        {/* Profile Screen Tab */}
         <Tab.Screen
           name="ProfileNavigation"
           component={ProfileNavigation}

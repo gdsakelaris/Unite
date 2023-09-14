@@ -1,6 +1,6 @@
 /**
  * @file BottomPart.js
- * @description This file contains a component for the white background view displayed at the bottom part of the login and signup screens.
+ * @description This file makes a white background view displayed at the bottom part of the login and signup screens.
  */
 
 import React from 'react';

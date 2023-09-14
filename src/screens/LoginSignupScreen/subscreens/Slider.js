@@ -1,6 +1,6 @@
 /**
  * @file Slider.js
- * @description This file contains a component for a slider that allows users to navigate between the login and sign-up screens.
+ * @description This file makes a slider that allows users to navigate between the login and sign-up screens.
  */
 
 import React from 'react';

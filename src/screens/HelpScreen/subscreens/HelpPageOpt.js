@@ -1,4 +1,14 @@
-//this file will make a help question field component for the help screen
+/**
+ * HelpPageOpt component.
+ * This component represents a help question field for the HelpPage screen.
+ * It provides the functionality to toggle the visibility of the expanded view containing details.
+ *
+ * @component
+ * @param {string} question - The question for which help is needed.
+ * @param {string} detail - The detailed information related to the question.
+ * @returns {JSX.Element} HelpPageOpt component
+ */
+
 import React, {useState} from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
 import { arrowDownIcon, arrowUpIcon } from '../icons';

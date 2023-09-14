@@ -1,4 +1,8 @@
-//this file will use the language card component to create a view of all supported languages 
+/**
+ * @file SupportedLangsView.js
+ * @description This file contains a component that displays a view of all supported languages using the LanguageCard component.
+ */
+
 import React from 'react';
 import { View, Image } from 'react-native';
 import afghanistanflag from '../../../images/countryflags/afghanistanflag.png'
@@ -15,6 +19,15 @@ import ukraineflag from '../../../images/countryflags/ukraineflag.png'
 import unitedarabflag from '../../../images/countryflags/unitedarabflag.png'
 import LanguageCard from './LanguageCard';
 import { supportedLangsViewStyle as styles } from '../css';
+
+
+/**
+ * Component to display a view of all supported languages.
+ *
+ * @component
+ * @param {Object} navigation - The navigation object for navigating to other screens.
+ * @returns {JSX.Element} - A JSX element representing the view of all supported languages.
+ */
 const SupportedLangsView = ({navigation}) => {
       //list of all supported languages in this app along with the image's uri
       const supportedLanguages = [
@@ -31,7 +44,7 @@ const SupportedLangsView = ({navigation}) => {
             {name: '日本語', picture: Image.resolveAssetSource(japanflag).uri},
             {name: 'русский', picture: Image.resolveAssetSource(russiaflag).uri},
       ]
-      //render a view of supported langs
+      //render a view that contains all the supported langs
       return (
             <View style={styles.supportedLangsContainer}>
                   <View style={styles.innerViewOfSupportedLangs}>

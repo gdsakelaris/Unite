@@ -1,7 +1,7 @@
 /**
  * Lock the operational hours for a specific day, setting the openTime and closeTime to a closed state.
  * @param operationalHour - An object containing the operational hour data for a specific day.
- * @param {Function} dispatch - The dispatch function from the resource context.
+ * @param {Function} dispatch - The dispatch function from the ResourceProvider. Reasearch about useReducer hook in react native to understand the whole process of creating ResourceProvider.
  * @example
  * // Assuming you have access to the dispatch function from the resource context
  * const {dispatch} = useResourceContext();

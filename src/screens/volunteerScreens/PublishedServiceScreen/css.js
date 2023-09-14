@@ -1,3 +1,7 @@
+/**
+ * This file contains css of all files in PublishedServiceScreen folder
+ */
+
 import { StyleSheet } from "react-native";
 import { fontScale, colors } from "../../../base";
 export const publishedServiceContainer = StyleSheet.create({

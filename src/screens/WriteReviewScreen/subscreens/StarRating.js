@@ -1,4 +1,7 @@
-//this file will make a list of rating stars based on the raing 
+/**
+ * Yash's code. Reach out to him for explanation about the code
+ */
+
 import React, { useState } from 'react';
 import { View } from 'react-native';
 import { starRating as styles } from '../css';

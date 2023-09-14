@@ -1,4 +1,9 @@
-//this file will render a view that wraps around all the contents of the describeService page
+/**
+ * @file DescribeServicePageContainer.js
+ * @description This file makes a container that wraps around all the content of the DescribeServicePage screen
+ * @param {React.ReactNode} children - The content to be wrapped by the container.
+ */
+
 import React from 'react';
 import {TouchableWithoutFeedback, View, Keyboard} from 'react-native';
 import { describeServicePageContainer as styles } from '../css';

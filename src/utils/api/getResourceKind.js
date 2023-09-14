@@ -1,3 +1,9 @@
+/**
+ * @function getResourceKind
+ * @description Get all the resources based on kind of service
+ * @param {string} kindType - A kind of service
+ */
+
 import axios from 'axios';
 import { GET_RESOURCE_KIND } from './apiRoutes';
 

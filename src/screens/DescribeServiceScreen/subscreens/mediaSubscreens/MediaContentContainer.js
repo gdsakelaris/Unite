@@ -1,6 +1,6 @@
 /**
  * MediaContentContainer component.
- * Represents a container that stores all the media options for a provided resource.
+ * This file makes a container that stores all the media input fields on the DescribeServicePage .
  *
  * @param {React.ReactNode} children - The children components to be rendered within the container.
  * @returns {React.ReactNode} - The MediaContentContainer component.

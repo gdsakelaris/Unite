@@ -1,8 +1,19 @@
-//this file will make the clickable star component that will be used in the list of rating stars
+/**
+ * @file Star.js
+ * @description This file will make the clickable star component that will be ultilized in StarRating.js
+ * @param {number} rating rating  
+ * @returns {JSX.Element} The Star component.
+ */
+
 import React from 'react';
 import { TouchableOpacity} from 'react-native';
 import { whiteStarIcon, blackStarIcon } from '../icons';
 import { starRating as styles } from '../css';
+/**
+ * Yash's code. Reach out to him for explanation about the code
+ */
+
+
 //starPostion is the postion of star in the scale 1 -> 5
 const Star = ({rating, starPosition, setRating}) => {
   const star = rating >= starPosition ? whiteStarIcon : blackStarIcon; //decide whether to render white star or black star based on the rating prop

@@ -1,3 +1,7 @@
+/**
+ * the file that contains the css of all the files in SettingsLanguageScreen folder
+ */
+
 import { StyleSheet } from "react-native";
 import {fontScale, colors} from '../../base'
 export const settingsLanguage = StyleSheet.create({

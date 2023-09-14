@@ -1,3 +1,10 @@
+/**
+ * Component to display a map with markers.
+ *
+ * @component
+ * @returns {JSX.Element} - A JSX element representing the MapScreen.
+ */
+
 import React, { useState, useEffect } from "react";
 import { Text, View } from "react-native";
 import MapView, { Marker } from "react-native-maps";
@@ -7,7 +14,7 @@ import { map as styles } from "./css";
 import * as Location from "expo-location";
 
 const MapScreen = () => {
-  const [location, setLocation] = useState(null);
+  const [location, setLocation] = useState(null); // a state variable that store location 
 
   // fetch your location
 
@@ -42,6 +49,7 @@ const MapScreen = () => {
   const changeLocation = (region) => setLocation(region);
   return (
     <View style={styles.container}>
+      {/* MapView component to display the map */}
       <MapView
         style={styles.map}
         mapType="standard" //standard view
@@ -49,7 +57,8 @@ const MapScreen = () => {
         initialRegion={location} //initial location that appears on the map when it is first rendered
         //onRegionChange={(region) => changeLocation(region)}
       >
-        {/* marker */}
+
+        {/* Markers */}
         <Marker
           // location of marker
           coordinate={location}
@@ -62,6 +71,7 @@ const MapScreen = () => {
         >
           {markerIcon}
         </Marker>
+        {/* Add more markers as needed */}
       </MapView>
     </View>
   );

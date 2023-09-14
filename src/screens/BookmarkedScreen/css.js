@@ -1,3 +1,6 @@
+/**
+ * the file that will contains all the css of all the created components in the BookmarkedScreen folder
+ */
 import { StyleSheet } from "react-native";
 import {fontScale, colors} from '../../base'
 import { Dimensions } from 'react-native';

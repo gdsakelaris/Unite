@@ -1,4 +1,8 @@
-//this file will make a published button for the Third Step screen so the user can use it to publish their resource
+/**
+ * This file makes a Published button for the ThirdStep screen
+ * @param {Function} onPress - function for published button when it is pressed.
+ */
+
 import React from 'react';
 import { Button} from 'react-native-paper';
 import { btnSettings } from '../submitBtnProp';

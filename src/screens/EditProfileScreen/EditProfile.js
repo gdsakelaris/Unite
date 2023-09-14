@@ -1,3 +1,11 @@
+/**
+ * EditProfile component.
+ * This component provides a screen for users to edit their profile information.
+ *
+ * @component
+ * @returns {JSX.Element} EditProfile component
+ */
+
 import React, { useState } from 'react';
 import EditProfileContainer from './subscreens/EditProfileContainer';
 import ProfilePicture from './subscreens/ProfilePicture';
@@ -22,8 +30,12 @@ const EditProfile = () => {
  }
  */
 
+  //get userToken to authenticate with backend before updating profile's informations
+  //get userInfo to populate all the editable fields with the profile's current informations
   const {userInfo, userToken, setUserInfo} = useAuth()
   console.log(userInfo)
+
+  // States for editable fields
   const [name, setName] = useState(userInfo.name)
   //const [password, setPassword] = useState(userInfo.password)
   const [phonenumber, setPhoneNumber] = useState(userInfo.phonenumber)
@@ -34,12 +46,24 @@ const EditProfile = () => {
     <EditProfileContainer>
       <ProfilePicture/>
       <EditProfileInfoContainer>
+
+          {/* Editable fields */}
+
           {/* <ProfileInfoField title={'Email Address'} content={email} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} onChangeText={(text) => setEmail(text)}/> */}
+
+
           <ProfileInfoField title={'Username'} content={name} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} onChangeText={(text) => setName(text)}/>
+
+
           {/* <ProfileInfoField title={'Password'} content={password} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} secureTextEntry={true} onChangeText={(text) => setPassword(text)}/> */}
+
+
           <ProfileInfoField title={'Phone Number'} content={phonenumber} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} onChangeText={(newphoneNumber) => setPhoneNumber(newphoneNumber)}/>
-          <SaveProfileBtn
+          
+           {/* Save button */}
+           <SaveProfileBtn
             onPress={() => {
+                //send request to backend to update user when pressed 
                 updateUser(name, phonenumber, userToken, userInfo)
             }}
           />
@@ -48,21 +72,6 @@ const EditProfile = () => {
           this was disabled in favor of an upload button
           <ProfileInfoField title={'Location'} content={location} autoCorrect={false} autoCapitalize='none' autoComplete='off' clearButtonMode={'always'} onChangeText={(newLocation) => setLocation(newLocation) }/>*/}
           
-          {/* 
-              Make a 'Save' btn here to send put request
-              include everything below inside try/catch
-
-              setIsLoading(true) -start loading state
-              updateUser(email, name, password, phonenumber, userToken) - if nothing fails, it would return  {client: {
-                                                                                                                “name”: “example name”,
-                                                                                                                “phonenumber”: “123-456-7890”,
-                                                                                                                “email”: “user123@example.com”,
-                                                                                                                “password”: “password”
-                                                                                                              }}
-              setUserInfo(newUserInfo) -set userInfo to new info
-              setIsLoading(false) - end loading state
-          */}
-
       </EditProfileInfoContainer>
     </EditProfileContainer>
     

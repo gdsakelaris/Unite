@@ -1,3 +1,9 @@
+/**
+ * @file FirstPage.js
+ * @description This file defines a first page of the app where the user have options to choose their role (whether they are provider or user). The UI team removed this page from the Figma design.
+ * @returns {JSX.Element} FirstPage component.
+ */
+
 import React from 'react';
 import { View, StyleSheet, Image, Text} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
