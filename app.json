@@ -2,7 +2,7 @@
   "expo": {
     "name": "Unite",
     "slug": "Unite",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
@@ -34,7 +34,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "cfc8c605-d4dc-42a5-891e-303e54e65c86"
+        "projectId": "ff76c819-25d9-444a-8921-01074097c9f3"
       }
     },
     "runtimeVersion": {
