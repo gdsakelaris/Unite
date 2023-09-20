@@ -18,7 +18,7 @@ import LoginInputBox from './loginsubscreens/LoginInputBox';
  * @description Represents the main screen for user login and sign up.
  */
 const LoginSignupScreen = () => {
-  //get the state variable from AuthProvider context to determine whether the user is in login page or signup page
+  //get the state variable from AuthProvider context to determine the user's position
   const {inLoginPage} = useAuth()
   return (
   <Container>

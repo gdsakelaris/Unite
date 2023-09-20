@@ -1,12 +1,4 @@
-/**
- * @file ListOfProvidedServices.js
- * @description This file defines a list component that contains all the service cards and is displayed on the First Step screen.
- * @param {string} selectedService - the name of the selected service card.
- * @param {Function} setSelectedService - function that set the selectedService variable to the name of the selected service card.
- * @returns {JSX.Element} A list component containing service cards for the First Step screen.
- */
-
-
+//this file will make a list which it contains all the services card and is displayed on the first step screen 
 import React, {useState} from 'react';
 import ProvidedServicesContainer from './ProvidedServicesContainer';
 import {listOfServiceTypes} from '../listOfServiceTypes';
@@ -27,8 +19,7 @@ const ListOfProvidedServices = ({selectedService, setSelectedService}) => {
           picture={service.urlImage}
           key={i.toString()}
           onPress={() => {
-            //Once the user select the service card in the First Step screen, update the resource-state variable with the name of the selected service card. The resource-state variable will later be sent to the backend to create resourcce
-            //user won't be able to go the the next page if they haven't selected any cards
+            //set selected services to kindofresource in state
             updateResource(dispatch, {'field': 'kindOfResource', 'value': service.name.toLowerCase()})
             setSelectedService(service.name)
           }}

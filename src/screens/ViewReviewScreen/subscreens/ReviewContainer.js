@@ -1,10 +1,4 @@
-/**
- * @file ReviewContainer.js
- * @description This file defines a container component that wraps around all the content of the review screen.
- * @param {React.ReactNode} children - The child components to be wrapped within this container.
- * @returns {JSX.Element} A container component wrapping around the content of the review screen.
- */
-
+//this file will make a container component which wraps around all the content of the review screen
 import React from 'react';
 import { View} from 'react-native';
 import { reviewContainer as styles } from '../css';

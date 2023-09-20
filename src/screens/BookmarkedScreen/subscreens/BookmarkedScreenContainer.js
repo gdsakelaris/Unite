@@ -1,12 +1,4 @@
-/**
- * BookmarkedScreenContainer component.
- * This component wraps the content of the bookmarked service screen.
- *
- * @component
- * @param {React.ReactNode} children - The content to be wrapped by the container.
- * @returns {JSX.Element} BookmarkedScreenContainer component
- */
-
+//container for bookmarked service screen. Every content of the bookmarked service screen will be wrapped by this component. 
 import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { bookmarkedScreenContainer as styles } from '../css';

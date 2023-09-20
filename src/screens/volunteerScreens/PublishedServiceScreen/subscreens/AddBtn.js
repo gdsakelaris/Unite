@@ -1,8 +1,4 @@
-/**
- * This component makes a add button for the PublishedService screen  
- * @param {Object} navigation navigation object that allows user to move to "Get Started" screen 
- */
-
+//this file will make an add btn on the PublishedService screen so the user can publish their resources
 import React, { useState } from 'react';
 import { addBtn as styles } from '../css';
 import { addIcon } from '../icons';
@@ -10,22 +6,28 @@ import { Pressable, Text } from 'react-native';
 import { useResourceContext } from '../../../../context/ResourceProvider';
 import clearResourceData from '../../../../utils/clearResourceData';
 const AddBtn = ({ navigation }) => {
+  const [isPressed, setIsPressed] = useState(false);
   const {dispatch} = useResourceContext()
+  const handlePressIn = () => {
+    setIsPressed(true);
+  };
+
+  const handlePressOut = () => {
+    setIsPressed(false);
+  };
 
   return (
     <Pressable
-      style={styles.addbtn}
+      style={[styles.addbtn, isPressed && styles.addbtnPressed]}
+      onPressIn={handlePressIn}
+      onPressOut={handlePressOut}
       onPress={() => {
-          
-          //Set the resource-state variable to initial value. The reason is the resource-state variable is used to store all the informations of the resource that user is about to create and the value of the resource-state variable will populate the Describe Service Screen. That's why, clearing or setting resource-state variable to its initial value is needed that it ensures the resource-state is clean before letting the user start putting new infos to it.  
+          //clear resource - state variable before creating resource
           clearResourceData(dispatch)
-
-          //Navigate to 'Get Started' screen to start the process of creating resource
           navigation.navigate('Get Started')
         }
         }
     >
-      
       {addIcon}
       <Text style={styles.addbtntext}>Add</Text>
     </Pressable>

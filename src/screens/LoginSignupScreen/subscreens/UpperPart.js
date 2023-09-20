@@ -1,6 +1,6 @@
 /**
  * @file UpperPart.js
- * @description This file renders the upper part of both LoginScreen and SignupScreen.
+ * @description This file contains a component that renders the upper part of screens in this folder.
  */
 
 import React from 'react';

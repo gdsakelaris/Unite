@@ -1,8 +1,3 @@
-/**
- * API URL
- */
-
-
 export const BASE_URL = 'http://34.27.143.72/';
 export const SIGNUP_ROUTE = BASE_URL + 'api/v1/client/create'
 export const LOGIN_ROUTE = BASE_URL + 'api/v1/client/login'

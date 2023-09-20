@@ -5,9 +5,7 @@
  * It checks if the resource is not closed on the selected day before opening the modal.
  *
  * @param {Object} operationalHour - An object containing the operational hour data for a specific day.
- * @param {function} dispatch - A dispatch function from ResourceProvider that allows to modify the value of resource-state variable. Reasearch about useReducer hook in react native to understand the whole process of creating ResourceProvider.
- * Assuming you have access to the dispatch function from the resource context
- * const {dispatch} = useResourceContext();
+ * @param {function} dispatch - A function used to dispatch actions to update the resource-related state.
  * @returns {void}
  * @example
  * // Usage

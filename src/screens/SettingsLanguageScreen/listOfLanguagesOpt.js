@@ -1,6 +1,4 @@
-/**
- * supported langs
- */
+//supported languages
 export const languageOptions = [
   { label: "English", value: "english" },
   { label: "Spanish", value: "spanish" },

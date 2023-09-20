@@ -1,6 +1,6 @@
 /**
  * @file OrText.js
- * @description This file makes a 'Or' text message that displayed on both the sign-up and login screens.
+ * @description This file contains a component for displaying the 'Or' text message on both the sign-up and login screens.
  */
 
 import React from 'react';

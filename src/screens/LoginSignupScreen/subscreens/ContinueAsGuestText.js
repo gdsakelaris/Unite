@@ -1,6 +1,6 @@
 /**
  * @file ContinueAsGuestText.js
- * @description This file makes clickable text component that displays the 'Continue as guest' message.
+ * @description This file contains a clickable text component that displays the 'Continue as guest' message.
  */
 
 

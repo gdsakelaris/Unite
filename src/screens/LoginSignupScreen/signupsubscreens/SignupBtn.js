@@ -1,6 +1,6 @@
 /**
  * @file SignupBtn.js
- * @description This file makes a signup button component that displayed on the signup inputbox.
+ * @description This file contains a component for the signup button displayed on the signup inputbox.
  */
 
 import React from 'react';

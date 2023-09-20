@@ -1,7 +1,4 @@
-/**
- * the file that contains all the provided services that user can choose to publish in the First Step screen
- */
-
+//provided services
 import shelterPicture from '../../../images/shelterIcon.png'
 import healthPicture from '../../../images/healthIcon.png'
 import communityPicture from '../../../images/communityIcon.png'

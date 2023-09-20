@@ -1,6 +1,4 @@
-/**
- * dummy reviews 
- */
+//mockup reviews
 import { Image } from 'react-native';
 import reviewer from '../../images/twitterIcon.png'
 import reviewer2 from '../../images/Reslogo.png'

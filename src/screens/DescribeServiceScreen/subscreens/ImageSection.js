@@ -1,6 +1,6 @@
 /**
  * ImageSection component.
- * Represents the section for adding images for a resource on the DescribeService page.
+ * Represents the section for adding images to a resource on the DescribeService page.
  *
  * @returns {React.ReactNode} - The ImageSection component.
  */

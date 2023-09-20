@@ -1,14 +1,4 @@
-/**
- * Profile Info Field component.
- * This component displays a title and a text input field on the Edit Profile screen.
- *
- * @component
- * @param {string} title - The title of the information field.
- * @param {string} content - The content of the information field.
- * @param {TextInputProps} textInputProp - Additional props to be passed to the TextInput component.
- * @returns {JSX.Element} ProfileInfoField component
- */
-
+//this file will make a field that displays the user's info on the edit profile screen 
 import React from 'react';
 import { View, TextInput } from 'react-native';
 import { Text } from 'react-native-paper';

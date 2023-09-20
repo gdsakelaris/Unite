@@ -1,12 +1,4 @@
-/**
- * ExpandedView component.
- * This component displays the detailed text that appears when the arrow down button is clicked in the HelpPage.
- *
- * @component
- * @param {string} detail - The detailed text to be displayed.
- * @returns {JSX.Element} ExpandedView component
- */
-
+//this file will make a text component that will be appeared under the question view right afer the arrow down btn on the question view is clicked
 import React from 'react';
 import { Text } from 'react-native-paper';
 import { helpOptDetail as styles } from '../css';

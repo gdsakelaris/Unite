@@ -1,13 +1,3 @@
-/**
- * HomeScreen component.
- * This component represents the home screen of the application.
- * It displays a search bar, location text, a list of provided services, and a button for adding new resources.
- *
- * @component
- * @param {Object} navigation - Navigation object used for navigating between screens.
- * @returns {JSX.Element} HomeScreen component
- */
-
 import React from 'react';
 import SearchBar from '../../components/SearchBar';
 import LocationText from './subscreens/LocationText';
@@ -20,14 +10,6 @@ import NewResourceButton from './subscreens/NewResourceButton';
 import ServiceCard from '../../components/ServiceCard';
 
 const HomeScreen = ({ navigation }) => {
-   /**
-   * Handle clicking the service card.
-   * Navigate to the corresponding resource screen with the provided service card name as a parameter.
-   * 
-   * Pass the 'resourceName' parameter to the 'AnyResource' screen to tell the backend to give resources categorized under the specified 'resourceName,' 
-   *
-   * @param {string} resourceName - The name of the resource.
-   */
   const handleResourceButtonClick = (resourceName) => {
     navigation.navigate('AnyResource', { resourceName });
   };
@@ -55,7 +37,6 @@ const HomeScreen = ({ navigation }) => {
           />
         ))}
       </View>
-       {/* Button for adding new resources */}
       <NewResourceButton navigation={navigation}/>
     </SafeAreaView>
   );

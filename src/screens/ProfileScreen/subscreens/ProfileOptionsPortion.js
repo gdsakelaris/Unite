@@ -1,10 +1,4 @@
-/**
- * @file ProfileOptionsPortion.js
- * @description This file defines the lower part of the profile screen, which includes a collection of profile option cards. These cards allow the user to perform various actions on the profile screen, such as navigating to bookmarked services, settings, or logging out.
- * @param {ReactNode} children - The content to be displayed inside the profile options portion.
- * @returns {JSX.Element} A component representing the lower part of the profile screen with profile option cards.
- */
-
+//this file will make the lower pard of the profile screen, which includes several profile option cards that allows user to perform some actions on the profile screen such as navigating to bookmarked services, settings or loging out
 import React from 'react';
 import { View } from 'react-native';
 import { profileOptionsContainer as styles } from '../css';

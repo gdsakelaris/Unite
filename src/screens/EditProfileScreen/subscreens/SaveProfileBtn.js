@@ -1,10 +1,6 @@
 /**
- * SaveProfileBtn component.
- * This component displays a button to save a user's profile changes.
- *
- * @component
- * @param {Function} onPress - Function to be called when the button is pressed.
- * @returns {JSX.Element} SaveProfileBtn component
+ * @file SaveProfileBtn.js
+ * @description This file contains a component for the save profile button.
  */
 
 import React from 'react';

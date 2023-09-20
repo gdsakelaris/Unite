@@ -1,14 +1,4 @@
-/**
- * A reusable component to display a resource card for provided services.
- *
- * @component
- * @param {Object} resource - The resource data to populate the card.
- * @param {Object} navigation - The navigation object from React Navigation.
- * @param {boolean} hasEditButton - A flag indicating whether the card should have an edit button.
- * @returns {JSX.Element} - A resource card component.
- */
-
-
+//this file will create a resource card component for every provided services
 import React, {useState} from "react";
 import ResourceCardContainer from "./resourceCardsubscreens/ResourceCardContainer";
 import ResourceCardContactInfo from "./resourceCardsubscreens/ResourceCardContactInfo";
@@ -20,26 +10,38 @@ import ResourceCardTitle from "./resourceCardsubscreens/ResourceCardTitle";
 import { useResourceContext } from "../../context/ResourceProvider";
 import dummyImg from '../../images/Dummyresource.png'
 import updateResourceWithClickedResource from "../../utils/updateResourceWithClickedResource";
+/**
+ @resource - an object - {
+                                “name”: “example name”,
+                                “kindOfResource”: “example kind”,
+                                “email”: “example@gmail.com”,
+                                “address”: “123 main street, new york city, NY 101010”,
+                                “description”: “example description”
+                                “phoneNumber”: “14087777777”,  // not required
+                                “website”: “www.example.com”,   // not required
+                                “publishedBy: “userid”
+                                “hours”: {
+                                        1: {	//Monday
+                                              “opentime”: “8:00”  // string type
+                                              “closetime”: “8:00”  // string type
+                                            },
+                                              … include for all 7 days
+                                  }
 
-
+                          }
+  @navigation - navigation object
+  @ediBtnFunction - function for the edit btn if resource has edit btn
+ */
 const ResourceCard = ({ resource, navigation, hasEditButton}) => {
-  // State to store the resourceId for bookmarking
-  const [resourceId, setResourceId] = useState(resource.id) 
+  //make a variable to store resourceId for sending to the bookmark route
+  const [resourceId, setResourceId] = useState(resource.id) //resource id
   const {dispatch} = useResourceContext()
 
-  
-  /**
-   * For card, which have edit button
-   * Callback function when the edit button is pressed.
-   * Populates resource-state variables and navigates to the Describe Service page for editing.
-   */
   const editButtonPress = () => {
+    //populate all the resource-state variable fields with the resource's info 
     console.log(resource)
     console.log(resource.hours)
-    // Populate resource-state variables with the clicked resource's information
     updateResourceWithClickedResource(dispatch, resource)
-
-     // Navigate to the Describe Service page for updating the resource
     navigation.navigate('Describe Service', {title: 'Update your service', purpose: 'update', resourceId: resourceId})
     
   }
@@ -47,7 +49,6 @@ const ResourceCard = ({ resource, navigation, hasEditButton}) => {
   return (
     <ResourceCardContainer>
       <ResourceCardContent>
-        {/* Display resource title and navigate to the View Resource page */}
         <ResourceCardTitle title={resource.name} onPress={
           /**
            * send resource to view resource page to populate all the fields there 
@@ -56,18 +57,12 @@ const ResourceCard = ({ resource, navigation, hasEditButton}) => {
           
         }
           />
-
-
-        {/* Display rating and review (placeholder for now) */}
+          {/* use dummy review and image for the first release */}
         <ResourceCardRatingAndReview rating={resource.rating} review={'0'}/>
-
-         {/* Display resource description and contact information */}
         <ResourceCardDescription description={resource.description}/>
         <ResourceCardContactInfo location={resource.address}/>
         <ResourceCardContactInfo number={resource.phoneNumber}/>
       </ResourceCardContent>
-
-      {/* Display resource image with optional edit button (using dummy image, not resource's images) */}
       <ResourceCardImage picture={dummyImg} editBtnFunction={editButtonPress} resourceId={resourceId} hasEditButton={hasEditButton}/>
     </ResourceCardContainer>
 

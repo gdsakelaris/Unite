@@ -1,6 +1,4 @@
-/**
- * the file that will contains all the icons of all the created components in the component folder
- */
+//this file contains all the icons that is used in this component folder
 import { fontScale } from '../base';
 import renderExpoIcon from '../utils/renderExpoIcon';
 export const cameraIcon = renderExpoIcon('MaterialCommunityIcons', 'camera',{size: 40 / fontScale} )

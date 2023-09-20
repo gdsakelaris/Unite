@@ -1,9 +1,4 @@
-/**
- * Container component that wraps around all the content of the SettingsConnected screen.
- * @param {React.ReactNode} children - The child components to be wrapped within this container.
- * @returns {JSX.Element} A container component for the SettingsConnected screen.
- */
-
+//this file will make a container component which wraps around all the content of the SettingsConnected screen
 import React from 'react';
 import { View} from 'react-native';
 import { settingConnectedContainer as styles } from '../css';

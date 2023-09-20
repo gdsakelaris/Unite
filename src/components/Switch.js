@@ -1,10 +1,4 @@
-/**
- * Renders a custom switch component for setting screen.
- *
- * @component
- * @returns {JSX.Element} The Switch component.
- */
-
+//This file will render a custom switch component that will be used for setting screen and setting connected screens
 import React, {useState} from 'react';
 import CustomSwitch from 'react-native-custom-switch';
 import { View } from 'react-native';

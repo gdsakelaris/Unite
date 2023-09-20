@@ -1,16 +1,10 @@
-/**
- * BookmarkedServices component.
- * This component displays a list of bookmarked services.
- *
- * @component
- * @returns {JSX.Element} BookmarkedServices component
- */
-
-
+//Bookmarked service screen
 import React, { useEffect, useState } from 'react';
 import img from '../../images/Dummyresource.png';
 import BookmarkedScreenContainer from './subscreens/BookmarkedScreenContainer';
 import BookmarkedCard from './subscreens/BookmarkedCard';
+
+//mockup data for testing purpose (Later on, this data will be retrieved from database)
 import { ScrollView } from 'react-native';
 import { useAuth } from '../../context/AuthProvider';
 import {getbookmarkedresources} from '../../utils/api/bookmarkservices'
@@ -18,10 +12,7 @@ import {getbookmarkedresources} from '../../utils/api/bookmarkservices'
 // ... (other imports)
 
 const BookmarkedServices = () => {
-
-    //get userToken to authethicate with backend when fetching bookmarked resources
     const {userToken} = useAuth()
-    //a state variable that store all the bookmarked resources after fetching from the backend
     const [savedResources, setSavedResources] = useState([]);
 
     useEffect(() => {
@@ -35,8 +26,6 @@ const BookmarkedServices = () => {
         // };
 
         // getSavedResources();
-
-        // Fetch and set bookmarked resources when the component mounts
         getbookmarkedresources(userToken, setSavedResources)
     }, []); // Empty dependency array to run the effect only once
 
@@ -50,7 +39,6 @@ const BookmarkedServices = () => {
     return (
         <BookmarkedScreenContainer>
             <ScrollView>
-                 {/* Map through all bookmarked resources retrieved from the backend and render BookmarkedCard for each */}
                 {savedResources && savedResources.map((resource, i) => (
                     <BookmarkedCard
                         cardName={resource.name}

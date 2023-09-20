@@ -1,6 +1,6 @@
 /**
  * @file InputFieldForDescription.js
- * @description This file renders a text input field for inputting the resource's description 
+ * @description This file contains a text input component used for entering the description of a resource.
  */
 
 import React from 'react';

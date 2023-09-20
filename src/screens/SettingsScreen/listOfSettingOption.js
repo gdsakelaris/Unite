@@ -1,7 +1,4 @@
-/**
- * supported setting options and name of screens that user will be directed to when the setting option is pressed
- */
-
+//supported setting options
 export const settingsOption = [
   {title: 'Push Notification'},
   {title: 'Dark Mode'},

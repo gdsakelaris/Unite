@@ -1,11 +1,4 @@
-/**
- * A component that displays the description of a resource card.
- *
- * @function
- * @param {string} description - The description to be displayed.
- * @returns {JSX.Element} - A component that displays the description of the resource card.
- */
-
+//make a description portion for resource card
 import React from 'react';
 import { View} from 'react-native';
 import { Text } from 'react-native-paper';

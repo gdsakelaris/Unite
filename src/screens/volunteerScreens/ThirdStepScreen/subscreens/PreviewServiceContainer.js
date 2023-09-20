@@ -1,8 +1,4 @@
-/**
- * Render a container component that wraps around all the content of the Third Step screen
- * @param {React.ReactNode} children - The child components to be wrapped within this container.
- */
-
+//this file will make a container component which wraps around all the content of the ThirdStep screen
 import React from 'react';
 import { View} from 'react-native';
 import { previewServiceContainer as styles } from '../css';

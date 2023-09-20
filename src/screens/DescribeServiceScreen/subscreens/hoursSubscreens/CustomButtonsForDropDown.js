@@ -6,7 +6,7 @@
  * @component
  * @param {Date} pickedTime - The selected time for which the day and time of the hour settings are being managed.
  * @param {object} hourSetting - The hour settings being managed in the object of {day: '', type: ''}
- *  day: is one of the followings: 'Monday, 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'. Used to determine which days the picked times belong to
+ *  day: value is one of the following: 'Monday, 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'.Used to determine which days the picked times belong to
  * type: either 'openTime' or 'closeTime'. Used to determine the whether the picked is for openTime or closeTime
  * @example
  * // Inside a parent component
@@ -21,7 +21,7 @@ import { useResourceContext } from '../../../../context/ResourceProvider';
 import hideDropDownHour from '../../../../utils/hideDropDownHour';
 import updateHour from '../../../../utils/updateHour';
 const CustomButtonsForDropDown = ({pickedTime, hourSetting}) => {
-  //get resource-related state variables and a function to change the value of the resource state variable
+  //get resource-related state variables and a function to change the value of the state
   const {resource, dispatch} = useResourceContext()
   return (
     <View style={styles.dropDownHourButtonsContainer}>

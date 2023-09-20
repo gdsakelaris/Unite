@@ -1,12 +1,8 @@
+//for login page
 import axios from "axios";
 import { GET_SAVEDRESOURCES_ROUTE, REMOVE_BOOKMARKED_RESOURCE } from "./apiRoutes";
 
-/**
- * @function getbookmarkedresources
- * @description Send request to backend to get all the bookmarked resources
- * @param {string} userToken - A token that authethicate user with backend
- * @param {Function} setSavedResources- A function that set the value of savedResources state variable with the returned array, which contains all the bookmarked resources, from the backend
- */
+//api url
 const getbookmarkedresources = async (userToken, setSavedResources) => {
   console.log(userToken);
 
@@ -25,14 +21,6 @@ const getbookmarkedresources = async (userToken, setSavedResources) => {
   }
 };
 
-
-/**
- * @function removeBookmarkedResources
- * @description Remove bookmarked resource
- * @param {number} resourceId - An id that helps backend to determine which resource that user is removing
- * @param {string} userToken - A token that authethicate user with backend
- * @returns {void}
- */
 const removeBookmarkedResources = async (resourceId, userToken) => {
 
   try {

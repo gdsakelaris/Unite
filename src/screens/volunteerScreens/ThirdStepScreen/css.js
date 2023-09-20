@@ -1,7 +1,3 @@
-/**
- * This file contains css of all files in ThirdStepScreen folder
- */
-
 import { StyleSheet } from "react-native";
 import { fontScale, colors } from "../../../base";
 export const previewServiceContainer = StyleSheet.create({

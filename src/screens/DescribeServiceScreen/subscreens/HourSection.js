@@ -1,6 +1,6 @@
 /**
  * HourSection component.
- * Represents the section for inputting operational hours of a resource on the DescribeService page.
+ * Represents the section for setting operational hours of a resource on the DescribeService page.
  *
  * @returns {React.ReactNode} - The HourSection component.
  */

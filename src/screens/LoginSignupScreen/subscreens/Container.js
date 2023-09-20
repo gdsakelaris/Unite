@@ -1,6 +1,6 @@
 /**
  * @file Container.js
- * @description This file makes a container component that wraps all the screens in this folder.
+ * @description This file contains a container component that wraps all the contents of screens in this folder.
  */
 
 import React from 'react';

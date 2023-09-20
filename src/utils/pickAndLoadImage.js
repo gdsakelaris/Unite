@@ -1,28 +1,11 @@
 import * as ImagePicker from 'expo-image-picker'
-
-/**
- * Picks and loads an image from the user's device library based on the provided image URI.
- *
- * @function
- * @param {function} onChangeImage - Callback function to handle the change of the image.
- * @param {string} imageUri - The current image URI.
- * @returns {void}
- */
+//return the uri of the selected image
 export default pickAndLoadImage = (onChangeImage, imageUri) => {
   if (!imageUri) selectImage(onChangeImage)
-  // If the placeholder already has an image, remove the image
+  // if the placeholder already had image, then remove image
   else onChangeImage(null)
 }
 
-
- /**
- * Launches the image picker to select an image from the user's library.
- *
- * @async
- * @function
- * @param {function} onChangeImage - Callback function to handle the change of the image.
- * @returns {void}
- */
 const selectImage = async (onChangeImage) => {
   try {
     //launch to user's library
@@ -30,13 +13,11 @@ const selectImage = async (onChangeImage) => {
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       quality: 0.5
     })
-    
-     // If an image is selected and not canceled
+    //if you have picked a photo
     if (!result.canceled){
-        // Get the URI of the selected photo
+        //get the uri of that photo
         const imagePath = result.assets[0].uri
-        
-        // Place the selected image into the placeholder
+        //place that image to the placeholder
         onChangeImage(imagePath)
         return imagePath
     }

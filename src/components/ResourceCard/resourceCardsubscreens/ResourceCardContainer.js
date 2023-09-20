@@ -1,11 +1,4 @@
-/**
- * A container component that wraps around all components that build up resource card.
- *
- * @function
- * @param {React.ReactNode} children - The components to be wrapped within the container.
- * @returns {JSX.Element} - A container that wraps around all components that build up resource card.
- */
-
+//make a container that will wrap around all the resource card stuffs
 import React from 'react';
 import { View} from 'react-native';
 import { resourceCard as styles } from '../../css';

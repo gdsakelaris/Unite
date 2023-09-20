@@ -1,8 +1,4 @@
-/**
- * Render a container component that wraps around all the content of the PublishedServiceContainer screen
- * @param {React.ReactNode} children - The child components to be wrapped within this container.
- */
-
+//this file will make a container which wraps around all the content of the PublishedService screen
 import React from 'react';
 import { SafeAreaView} from 'react-native';
 import { publishedServiceContainer as styles } from '../css';

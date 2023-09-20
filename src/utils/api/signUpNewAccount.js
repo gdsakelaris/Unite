@@ -1,13 +1,4 @@
-/**
- * @function signUpNewAccount
- * @description Signup/create new account
- * @param {string} email - User's email
- * @param {string} password - User's password
- * @param {string} name - User's name
- * @param {Function} switchPage - A function that direct user to login page after they have created new account successfully
- */
-
-
+// for sign up screen
 import axios from "axios";
 import { SIGNUP_ROUTE } from "./apiRoutes";
 export default signUpNewAccount = async (name, email, password, switchPage) => {

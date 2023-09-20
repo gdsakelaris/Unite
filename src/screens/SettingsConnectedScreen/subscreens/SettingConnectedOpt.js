@@ -1,10 +1,4 @@
-/**
- * Represents a setting option with a switch to enable or disable the option.
- * This component is likely to be used within the SettingsConnected screen.
- * @param {string} connectedOptName - The name of the connected option (e.g., 'Google', 'Facebook').
- * @returns {JSX.Element} A component representing a connected setting option.
- */
-
+//this file will create a component on the SettingConnected screen that represents a setting option which allows user to set their preferred settings in the app.
 import React from 'react';
 import { View} from 'react-native';
 import { Text } from 'react-native-paper';

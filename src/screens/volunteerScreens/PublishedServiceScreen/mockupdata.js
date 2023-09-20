@@ -1,7 +1,4 @@
-/**
- * Dummy published resource
- */
-
+//published mockup resource for Published service screen
 import img from '../../../images/Dummyresource.png'
 export const mockupdata = {
   name: "Name of Resource",

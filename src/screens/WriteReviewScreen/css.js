@@ -1,8 +1,3 @@
-/**
- * This file contains css of all files in WriteReviewScreen folder
- */
-
-
 import { StyleSheet } from "react-native";
 import { fontScale, colors } from "../../base";
 export const writeReviewPageContainer = StyleSheet.create({

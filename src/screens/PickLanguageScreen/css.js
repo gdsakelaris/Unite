@@ -1,7 +1,3 @@
-/**
- * the file that contains the css of all the files in PickLanguageScreen folder
- */
-
 import { StyleSheet } from "react-native"
 import { colors, fontScale} from "../../base"
 export const pickLanguageContainerStyle = StyleSheet.create({

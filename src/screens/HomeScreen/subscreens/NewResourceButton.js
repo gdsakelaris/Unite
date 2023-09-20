@@ -1,10 +1,5 @@
 /**
- * NewResourceButton component.
- * This component creates an 'Add Resource' button that, when pressed, navigates to the 'View Published Service' screen.
- *
- * @component
- * @param {object} navigation - The navigation prop from React Navigation to enable navigation.
- * @returns {JSX.Element} NewResourceButton component
+ * This file make a 'Add Resource' button
  */
 
 import * as React from 'react';

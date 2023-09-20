@@ -1,20 +1,16 @@
 /**
- * ProvidedServices component.
- * This component renders a set of service cards on the Home page.
- *
- * @component
- * @param {object} navigation - The navigation prop from React Navigation to enable navigation.
- * @returns {JSX.Element} ProvidedServices component
+ * Render 6 service cards in the HomePage
  */
-
-
 import React from 'react';
 import { providedServices } from '../listOfProvidedServices';
 import ProvidedServicesContainer from './ProvidedServicesContainer';
 import ServiceCard from '../../../components/ServiceCard';
 import { servicecard as styles } from '../css';
 
-
+/**
+ * 
+ * @param navigation navigation object that used to navigate to 'DisplayResource' screen 
+ */
 const ProvidedServices = ({ navigation }) => {
   return (
     <ProvidedServicesContainer>

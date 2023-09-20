@@ -1,6 +1,6 @@
 /**
  * @file InputFieldForTitle.js
- * @description This file renders a text input field for inputting the resource's title 
+ * @description This component is used to input the resource's title in a text input field.
  */
 
 import React from 'react';
