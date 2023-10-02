@@ -54,10 +54,10 @@ const LoginInputBox = () => {
           {/* login button */}
           <LoginBtn/>
           {/* 'or' text */}
-          <OrText/> 
+          {/* <OrText/> */}
           {/*  */}
           {/* the box that renders goolgle, facebook, twitter icons */}
-          <SocialBox/>
+          {/* <SocialBox/> */}
           {/* 'continue as guess' clickable text*/}
           {/*<ContinueAsGuestText/>*/}
       </InputBox> 
