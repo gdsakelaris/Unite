@@ -1,25 +1,22 @@
 {
   "cli": {
-    "version": ">= 4.1.2",
-    "requireCommit": true 
+    "version": ">= 4.1.2"
   },
   "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal"
+      "distribution": "internal",
+      "channel": "development"
     },
     "preview": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "channel": "preview"
     },
-    "production": {}
+    "production": {
+      "channel": "production"
+    }
   },
   "submit": {
-    "production": {
-    "ios": {
-      "appleId": "unite@mylearningtools.org",
-      "ascAppId": "6463458189",
-      "appleTeamId": "78A7QFQBBX"
-    }
-  }
+    "production": {}
   }
 }

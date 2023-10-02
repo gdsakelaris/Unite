@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "iRize",
-    "slug": "irise",
+    "name": "Unite",
+    "slug": "Unite",
     "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -12,22 +12,22 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/cfc8c605-d4dc-42a5-891e-303e54e65c86"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "org.mylearningtools.irize",
-      "buildNumber": "1"
+      "bundleIdentifier": "org.mylearningtools.urize"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "org.mylearningtools.irize"
+      "package": "org.mylearningtools.urize"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -37,9 +37,8 @@
         "projectId": "ff76c819-25d9-444a-8921-01074097c9f3"
       }
     },
-    "plugins": [
-      "expo-build-properties"
-    ],
-    "owner": "unite"
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    }
   }
 }
