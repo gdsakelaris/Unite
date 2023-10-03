@@ -2,6 +2,7 @@
 import axios from "axios";
 import { LOGIN_ROUTE } from "./apiRoutes";
 
+//Official Implementation - Lines 6-27
 export default handleLogin = async (email, password, loggingIn, saveUserAuth, setIsLoading) => {
   
 //api url
@@ -24,3 +25,13 @@ export default handleLogin = async (email, password, loggingIn, saveUserAuth, se
 
   }
 };
+
+//Implementation for Front End testing without Back End Access - Lines 30-37
+/*export default handleLogin = (email, password, loggingIn, saveUserAuth, setIsLoading) => {
+  try {
+    console.log(email, password)
+    loggingIn()
+  } catch(err) {
+    console.log(err)
+  }
+};*/
